@@ -1,0 +1,5 @@
+{
+  "title": "Hover descriptions for built-in CSS properties that ship without one",
+  "why": "VS Code's data has properties with an empty description (the upstream description list was updated but the data file wasn't regenerated, and MDN lookups for newer properties were broken). Until that ships, the extension re-supplies those entries with a description built from the spec (webref) or, for non-spec properties, from mdn-data.",
+  "fillEmptyBuiltinDescriptions": true
+}

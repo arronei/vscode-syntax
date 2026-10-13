@@ -1,0 +1,26 @@
+Live check in VS Code 1.141.0 (npm run check-vscode), 2026-10-09, extension v0.2.0
+
+Check                                                | Without extension                  | With extension
+CSS: rule-co| completes rule-color                   | (none)                             | PASS  rule-color
+CSS: rule-color value offers colors                  | (none)                             | PASS  red, transparent
+CSS: color-interpolation values                      | (none)                             | PASS  auto, sRGB, linearRGB
+CSS: display values (built-in, regression guard)     | block, flex, grid                  | PASS  block, flex, grid
+CSS: hover text-fit                                  | (none)                             | PASS  Defined in *CSS Text Module Level 5*. Initial value: `none`. Applies t…
+CSS: hover animation-trigger (filled description)    | (none)                             | PASS  Defined in *Animation Triggers*. Initial value: `none`. Applies to: al…
+CSS: no unknown-property warnings                    | Unknown property: 'color-interpol… | PASS  none
+CSS: no unknown-at-rule warning for @function        | Unknown at rule @function          | PASS  none
+CSS: ::sea| completes ::search-text                  | (none)                             | PASS  ::search-text
+CSS: :hea| completes :heading                        | (none)                             | PASS  :heading
+CSS: @fun| completes @function                       | (none)                             | PASS  @function
+HTML: <dialog closedby="|">                          | (none)                             | PASS  any, closerequest, none
+HTML: <input colorspace="|">                         | (none)                             | PASS  limited-srgb, display-p3
+HTML: global writingsuggestions="|"                  | (none)                             | PASS  true, false
+HTML: hover <geolocation>                            | (none)                             | PASS  A browser-rendered button for getting the user's location. Clicking it…
+HTML: <geolocation a|> attributes                    | (none)                             | PASS  autolocate
+HTML: <iframe loading="|">                           | (none)                             | PASS  eager, lazy
+HTML: <template shadowrootmode="|">                  | (none)                             | PASS  open, closed
+HTML: <geol| completes geolocation                   | (none)                             | PASS  geolocation
+HTML: <button comm|> attributes                      | (none)                             | PASS  command, commandfor
+HTML: 'button' entries in tag completion (known qui… | 1×                                 | PASS  2×
+
+21/21 checks pass with the extension

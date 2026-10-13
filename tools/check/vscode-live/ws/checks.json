@@ -1,0 +1,23 @@
+[
+  { "label": "CSS: rule-co| completes rule-color", "file": "test.css", "line": 5, "find": "rule-co", "offset": 7, "op": "complete", "prefix": "rule-co", "expect": ["rule-color"] },
+  { "label": "CSS: rule-color value offers colors", "file": "test.css", "line": 1, "find": "red", "offset": 0, "op": "complete", "expect": ["red", "transparent"] },
+  { "label": "CSS: color-interpolation values", "file": "test.css", "line": 0, "find": "sRGB", "offset": 0, "op": "complete", "expect": ["auto", "sRGB", "linearRGB"] },
+  { "label": "CSS: display values (built-in, regression guard)", "file": "test.css", "line": 3, "find": "flex", "offset": 0, "op": "complete", "expect": ["block", "flex", "grid"] },
+  { "label": "CSS: hover text-fit", "file": "test.css", "line": 1, "find": "text-fit", "offset": 2, "op": "hover", "contains": "CSS Text Module Level 5" },
+  { "label": "CSS: hover animation-trigger (filled description)", "file": "test.css", "line": 2, "find": "animation-trigger", "offset": 2, "op": "hover", "contains": "Animation Triggers" },
+  { "label": "CSS: no unknown-property warnings", "file": "test.css", "op": "diagnostics", "absent": "Unknown property: '(color-interpolation|rule-color|text-fit|window-drag|rule-break)'" },
+  { "label": "CSS: no unknown-at-rule warning for @function", "file": "test.css", "op": "diagnostics", "absent": "Unknown at rule @function" },
+  { "label": "CSS: ::sea| completes ::search-text", "file": "test.css", "line": 6, "find": "::sea", "offset": 5, "op": "complete", "prefix": "::", "expect": ["::search-text"] },
+  { "label": "CSS: :hea| completes :heading", "file": "test.css", "line": 7, "find": ":hea", "offset": 4, "op": "complete", "prefix": ":h", "expect": [":heading"] },
+  { "label": "CSS: @fun| completes @function", "file": "test.css", "line": 8, "find": "@fun", "offset": 4, "op": "complete", "prefix": "@f", "expect": ["@function"] },
+  { "label": "HTML: <dialog closedby=\"|\">", "file": "test.html", "line": 0, "find": "\"\"", "offset": 1, "op": "complete", "expect": ["any", "closerequest", "none"] },
+  { "label": "HTML: <input colorspace=\"|\">", "file": "test.html", "line": 1, "find": "\"\"", "offset": 1, "op": "complete", "expect": ["limited-srgb", "display-p3"] },
+  { "label": "HTML: global writingsuggestions=\"|\"", "file": "test.html", "line": 2, "find": "\"\"", "offset": 1, "op": "complete", "expect": ["true", "false"] },
+  { "label": "HTML: hover <geolocation>", "file": "test.html", "line": 3, "find": "geolocation", "offset": 2, "op": "hover", "contains": "location" },
+  { "label": "HTML: <geolocation a|> attributes", "file": "test.html", "line": 4, "find": " a", "offset": 2, "op": "complete", "prefix": "a", "expect": ["autolocate"] },
+  { "label": "HTML: <iframe loading=\"|\">", "file": "test.html", "line": 5, "find": "\"\"", "offset": 1, "op": "complete", "expect": ["eager", "lazy"] },
+  { "label": "HTML: <template shadowrootmode=\"|\">", "file": "test.html", "line": 6, "find": "\"\"", "offset": 1, "op": "complete", "expect": ["open", "closed"] },
+  { "label": "HTML: <geol| completes geolocation", "file": "test.html", "line": 7, "find": "geol", "offset": 4, "op": "complete", "prefix": "geo", "expect": ["geolocation"] },
+  { "label": "HTML: <button comm|> attributes", "file": "test.html", "line": 9, "find": "comm", "offset": 4, "op": "complete", "prefix": "comm", "expect": ["command", "commandfor"] },
+  { "label": "HTML: 'button' entries in tag completion (known quirk)", "file": "test.html", "line": 8, "find": "butt", "offset": 4, "op": "count", "label_equals": "button" }
+]

@@ -1,0 +1,27 @@
+Fix MDN description lookup after MDN moved the CSS reference
+
+MDN moved its CSS reference from files/en-us/web/css/<name> to
+web/css/reference/{properties,at-rules,selectors}/<name>, and current
+pages declare the sidebar in front matter (`sidebar: cssref`) instead
+of a `{{CSSRef}}` macro. fetchDocFromMDN only tried the old path and
+only recognized the old macro, so every lookup now returns nothing:
+regenerating with mdn-data 2.37.2 lists 28 entries needing a
+description, and all 28 come back empty.
+
+- Try the new reference location first, then the old flat path.
+- Read the first prose paragraph of front-matter pages, skipping
+  banner macros such as {{SeeCompatTable}}.
+- Lowercase the path (mdn/content file names are lowercase).
+
+With this change, 13 of them get their MDN description: border-shape,
+flex-line-count, frame-sizing, link-parameters, path-length, text-fit,
+view-transition-scope and the six timeline-trigger-* properties. The
+other 15 have no MDN page yet: window-drag, scroll-axis-lock,
+page-margin-safety and 12 -webkit-border-* aliases.
+
+Lookups for selectors (_colon_hover, _doublecolon_before), at-rules
+(@container) and descriptors (@font-face/font-display) work too.
+No data files change.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_014fSnD1PNptV3WyQLkbSVcM

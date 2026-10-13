@@ -1,0 +1,41 @@
+{
+  "name": "web-spec-additions",
+  "displayName": "Web Spec Additions (HTML & CSS)",
+  "description": "HTML attributes and CSS properties from current specs that VS Code's built-in data doesn't have yet. Items are dropped once VS Code ships them.",
+  "version": "0.2.0",
+  "publisher": "arronei",
+  "license": "SEE LICENSE IN README.md",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "html",
+    "css",
+    "scss",
+    "less",
+    "intellisense",
+    "custom data",
+    "webref"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onLanguage:css",
+    "onLanguage:scss",
+    "onLanguage:less"
+  ],
+  "contributes": {
+    "html": {
+      "customData": [
+        "./data/html.html-data.json"
+      ]
+    },
+    "css": {
+      "customData": [
+        "./data/css.css-data.json"
+      ]
+    }
+  }
+}

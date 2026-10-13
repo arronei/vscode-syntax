@@ -1,0 +1,634 @@
+{
+  "-webkit-tap-highlight-color": {
+    "description": "Part of WebKit Extensions. Initial value: `black`. Applies to: all elements. Inherited: yes.",
+    "syntax": "<color>",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/-webkit-tap-highlight-color"
+      }
+    ]
+  },
+  "-webkit-text-fill-color": {
+    "description": "Defined in *Compatibility*.\n\nInitial value: `currentcolor`. Applies to: all elements. Inherited: yes. Animation type: by computed value type.",
+    "syntax": "<color>",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/-webkit-text-fill-color"
+      },
+      {
+        "name": "Specification",
+        "url": "https://compat.spec.whatwg.org/#propdef--webkit-text-fill-color"
+      }
+    ]
+  },
+  "-webkit-text-stroke": {
+    "description": "Defined in *Compatibility*.\n\nShorthand property.",
+    "syntax": "<length> || <color>",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/-webkit-text-stroke"
+      },
+      {
+        "name": "Specification",
+        "url": "https://compat.spec.whatwg.org/#propdef--webkit-text-stroke"
+      }
+    ]
+  },
+  "-webkit-text-stroke-color": {
+    "description": "Defined in *Compatibility*.\n\nInitial value: `currentcolor`. Applies to: all elements. Inherited: yes. Animation type: by computed value type.",
+    "syntax": "<color>",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/-webkit-text-stroke-color"
+      },
+      {
+        "name": "Specification",
+        "url": "https://compat.spec.whatwg.org/#propdef--webkit-text-stroke-color"
+      }
+    ]
+  },
+  "-webkit-text-stroke-width": {
+    "description": "Defined in *Compatibility*.\n\nInitial value: `0`. Applies to: all elements. Inherited: yes. Animation type: discrete.",
+    "syntax": "<length>",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/-webkit-text-stroke-width"
+      },
+      {
+        "name": "Specification",
+        "url": "https://compat.spec.whatwg.org/#propdef--webkit-text-stroke-width"
+      }
+    ]
+  },
+  "-webkit-touch-callout": {
+    "description": "Part of WebKit Extensions. Initial value: `default`. Applies to: all elements. Inherited: yes.",
+    "syntax": "default | none",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/-webkit-touch-callout"
+      }
+    ]
+  },
+  "animation-trigger": {
+    "description": "Defined in *Animation Triggers*.\n\nInitial value: `none`. Applies to: all elements. Inherited: no. Animation type: not animatable.",
+    "syntax": "[ none | [ <dashed-ident> <animation-action>+ ]+ ]#",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-trigger"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/animation-triggers-1/#propdef-animation-trigger"
+      }
+    ]
+  },
+  "baseline-source": {
+    "description": "Defined in *CSS Inline Layout Module Level 3*.\n\nInitial value: `auto`. Applies to: inline-level boxes that establish an independent formatting context. Inherited: no. Animation type: discrete.",
+    "syntax": "auto | first | last",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/baseline-source"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-inline-3/#propdef-baseline-source"
+      }
+    ]
+  },
+  "caret-animation": {
+    "description": "Defined in *CSS Basic User Interface Module Level 4*.\n\nInitial value: `auto`. Applies to: text or elements that accept text input. Inherited: yes. Animation type: discrete.",
+    "syntax": "auto | manual",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/caret-animation"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-ui-4/#propdef-caret-animation"
+      }
+    ]
+  },
+  "column-height": {
+    "description": "Defined in *CSS Multi-column Layout Module Level 2*.\n\nInitial value: `auto`. Applies to: block containers except table wrapper boxes. Inherited: no. Animation type: by computed value type.",
+    "syntax": "auto | <length [0,∞]>",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-height"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-multicol-2/#propdef-column-height"
+      }
+    ]
+  },
+  "column-wrap": {
+    "description": "Defined in *CSS Multi-column Layout Module Level 2*.\n\nInitial value: `auto`. Applies to: multicol containers. Inherited: no. Animation type: discrete.",
+    "syntax": "auto | nowrap | wrap",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-wrap"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-multicol-2/#propdef-column-wrap"
+      }
+    ]
+  },
+  "corner-block-end-shape": {
+    "description": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nShorthand property.",
+    "syntax": "<corner-shape-value>{1,2}",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-block-end-shape"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-block-end-shape"
+      }
+    ]
+  },
+  "corner-block-start-shape": {
+    "description": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nShorthand property.",
+    "syntax": "<corner-shape-value>{1,2}",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-block-start-shape"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-block-start-shape"
+      }
+    ]
+  },
+  "corner-bottom-shape": {
+    "description": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nShorthand property.",
+    "syntax": "<corner-shape-value>{1,2}",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-bottom-shape"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-bottom-shape"
+      }
+    ]
+  },
+  "corner-bottom-left-shape": {
+    "description": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `round`. Applies to: all elements where border-radius can apply. Inherited: no. Animation type: see superellipse interpolation.",
+    "syntax": "<corner-shape-value>",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-bottom-left-shape"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-bottom-left-shape"
+      }
+    ]
+  },
+  "corner-bottom-right-shape": {
+    "description": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `round`. Applies to: all elements where border-radius can apply. Inherited: no. Animation type: see superellipse interpolation.",
+    "syntax": "<corner-shape-value>",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-bottom-right-shape"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-bottom-right-shape"
+      }
+    ]
+  },
+  "corner-end-end-shape": {
+    "description": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `round`. Applies to: all elements where border-radius can apply. Inherited: no. Animation type: see superellipse interpolation.",
+    "syntax": "<corner-shape-value>",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-end-end-shape"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-end-end-shape"
+      }
+    ]
+  },
+  "corner-end-start-shape": {
+    "description": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `round`. Applies to: all elements where border-radius can apply. Inherited: no. Animation type: see superellipse interpolation.",
+    "syntax": "<corner-shape-value>",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-end-start-shape"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-end-start-shape"
+      }
+    ]
+  },
+  "corner-inline-end-shape": {
+    "description": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nShorthand property.",
+    "syntax": "<corner-shape-value>{1,2}",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-inline-end-shape"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-inline-end-shape"
+      }
+    ]
+  },
+  "corner-inline-start-shape": {
+    "description": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nShorthand property.",
+    "syntax": "<corner-shape-value>{1,2}",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-inline-start-shape"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-inline-start-shape"
+      }
+    ]
+  },
+  "corner-left-shape": {
+    "description": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nShorthand property.",
+    "syntax": "<corner-shape-value>{1,2}",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-left-shape"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-left-shape"
+      }
+    ]
+  },
+  "corner-right-shape": {
+    "description": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nShorthand property.",
+    "syntax": "<corner-shape-value>{1,2}",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-right-shape"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-right-shape"
+      }
+    ]
+  },
+  "corner-shape": {
+    "description": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `round`. Applies to: all elements where border-radius can apply. Inherited: no. Animation type: see individual properties.",
+    "syntax": "<corner-shape-value>{1,4}",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-shape"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-shape"
+      }
+    ]
+  },
+  "corner-start-start-shape": {
+    "description": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `round`. Applies to: all elements where border-radius can apply. Inherited: no. Animation type: see superellipse interpolation.",
+    "syntax": "<corner-shape-value>",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-start-start-shape"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-start-start-shape"
+      }
+    ]
+  },
+  "corner-start-end-shape": {
+    "description": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `round`. Applies to: all elements where border-radius can apply. Inherited: no. Animation type: see superellipse interpolation.",
+    "syntax": "<corner-shape-value>",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-start-end-shape"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-start-end-shape"
+      }
+    ]
+  },
+  "corner-top-shape": {
+    "description": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nShorthand property.",
+    "syntax": "<corner-shape-value>{1,2}",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-top-shape"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-top-shape"
+      }
+    ]
+  },
+  "corner-top-left-shape": {
+    "description": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `round`. Applies to: all elements where border-radius can apply. Inherited: no. Animation type: see superellipse interpolation.",
+    "syntax": "<corner-shape-value>",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-top-left-shape"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-top-left-shape"
+      }
+    ]
+  },
+  "corner-top-right-shape": {
+    "description": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `round`. Applies to: all elements where border-radius can apply. Inherited: no. Animation type: see superellipse interpolation.",
+    "syntax": "<corner-shape-value>",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-top-right-shape"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-top-right-shape"
+      }
+    ]
+  },
+  "dynamic-range-limit": {
+    "description": "Defined in *CSS Color HDR Module Level 1*.\n\nInitial value: `no-limit`. Applies to: all elements. Inherited: yes. Animation type: by dynamic-range-limit-mix().",
+    "syntax": "standard | no-limit | constrained | <dynamic-range-limit-mix()>",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/dynamic-range-limit"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-color-hdr-1/#propdef-dynamic-range-limit"
+      }
+    ]
+  },
+  "font-width": {
+    "description": "Defined in *CSS Fonts Module Level 4*.\n\nInitial value: `normal`. Applies to: all elements and text. Inherited: yes. Animation type: by computed value type.",
+    "syntax": "normal | <percentage [0,∞]> | ultra-condensed | extra-condensed | condensed | semi-condensed | semi-expanded | expanded | extra-expanded | ultra-expanded",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-width"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-fonts-4/#propdef-font-width"
+      }
+    ]
+  },
+  "interactivity": {
+    "description": "Defined in *CSS Basic User Interface Module Level 4*.\n\nInitial value: `auto`. Applies to: all elements. Inherited: yes. Animation type: discrete.",
+    "syntax": "auto | inert",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interactivity"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-ui-4/#propdef-interactivity"
+      }
+    ]
+  },
+  "interest-delay": {
+    "description": "Defined in *CSS Basic User Interface Module Level 4*.\n\nShorthand property.",
+    "syntax": "<'interest-delay-start'>{1,2}",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interest-delay"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-ui-4/#propdef-interest-delay"
+      }
+    ]
+  },
+  "interest-delay-end": {
+    "description": "Defined in *CSS Basic User Interface Module Level 4*.\n\nInitial value: `normal`. Applies to: all elements. Inherited: yes. Animation type: by computed value type.",
+    "syntax": "normal | <time>",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interest-delay-end"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-ui-4/#propdef-interest-delay-end"
+      }
+    ]
+  },
+  "interest-delay-start": {
+    "description": "Defined in *CSS Basic User Interface Module Level 4*.\n\nInitial value: `normal`. Applies to: all elements. Inherited: yes. Animation type: by computed value type.",
+    "syntax": "normal | <time>",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interest-delay-start"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-ui-4/#propdef-interest-delay-start"
+      }
+    ]
+  },
+  "reading-flow": {
+    "description": "Defined in *CSS Display Module Level 4*.\n\nInitial value: `normal`. Applies to: block, flex and grid containers. Inherited: no. Animation type: not animatable.",
+    "syntax": "normal | source-order | flex-visual | flex-flow | grid-rows | grid-columns | grid-order",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/reading-flow"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-display-4/#propdef-reading-flow"
+      }
+    ]
+  },
+  "reading-order": {
+    "description": "Defined in *CSS Display Module Level 4*.\n\nInitial value: `0`. Applies to: Direct block-level, grid item, or flex item children of a reading flow container.. Inherited: no. Animation type: by computed value type.",
+    "syntax": "<integer>",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/reading-order"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-display-4/#propdef-reading-order"
+      }
+    ]
+  },
+  "scroll-initial-target": {
+    "description": "Defined in *CSS Scroll Snap Module Level 2*.\n\nInitial value: `none`. Applies to: all elements. Inherited: no. Animation type: none.",
+    "syntax": "none | nearest",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-initial-target"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-scroll-snap-2/#propdef-scroll-initial-target"
+      }
+    ]
+  },
+  "scroll-marker-group": {
+    "description": "Defined in *CSS Overflow Module Level 5*.\n\nInitial value: `none`. Applies to: scroll containers. Inherited: no. Animation type: discrete.",
+    "syntax": "none | before | after",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-marker-group"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-overflow-5/#propdef-scroll-marker-group"
+      }
+    ]
+  },
+  "scroll-target-group": {
+    "description": "Defined in *CSS Overflow Module Level 5*.\n\nInitial value: `none`. Applies to: all elements. Inherited: no. Animation type: discrete.",
+    "syntax": "none | auto",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-target-group"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-overflow-5/#propdef-scroll-target-group"
+      }
+    ]
+  },
+  "stroke-color": {
+    "description": "Defined in *CSS Fill and Stroke Module Level 3*.\n\nInitial value: `transparent`. Applies to: text and SVG shapes. Inherited: yes. Animation type: by computed value.",
+    "syntax": "<color>",
+    "references": [
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/fill-stroke-3/#propdef-stroke-color"
+      }
+    ]
+  },
+  "text-autospace": {
+    "description": "Defined in *CSS Text Module Level 4*.\n\nInitial value: `normal`. Applies to: text. Inherited: yes. Animation type: discrete.",
+    "syntax": "normal | <autospace> | auto",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-autospace"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-text-4/#propdef-text-autospace"
+      }
+    ]
+  },
+  "text-decoration-inset": {
+    "description": "Defined in *CSS Text Decoration Module Level 4*.\n\nInitial value: `0`. Applies to: all elements. Inherited: no. Animation type: by computed value.",
+    "syntax": "<length>{1,2} | auto",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-decoration-inset"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/css-text-decor-4/#propdef-text-decoration-inset"
+      }
+    ]
+  },
+  "timeline-trigger": {
+    "description": "Defined in *Animation Triggers*.\n\nShorthand property.",
+    "syntax": "none | [ <'timeline-trigger-name'> <'timeline-trigger-source'> <'timeline-trigger-range'> [ '/' <'timeline-trigger-exit-range'> ]? ]#",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger"
+      }
+    ]
+  },
+  "timeline-trigger-name": {
+    "description": "Defined in *Animation Triggers*.\n\nInitial value: `none`. Applies to: all elements. Inherited: no. Animation type: not animatable.",
+    "syntax": "none | <dashed-ident>#",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-name"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-name"
+      }
+    ]
+  },
+  "timeline-trigger-source": {
+    "description": "Defined in *Animation Triggers*.\n\nInitial value: `auto`. Applies to: all elements. Inherited: no. Animation type: not animatable.",
+    "syntax": "<single-animation-timeline>#",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-source"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-source"
+      }
+    ]
+  },
+  "trigger-scope": {
+    "description": "Defined in *Animation Triggers*.\n\nInitial value: `none`. Applies to: all elements. Inherited: no. Animation type: not animatable.",
+    "syntax": "none | all | <dashed-ident>#",
+    "references": [
+      {
+        "name": "MDN Reference",
+        "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/trigger-scope"
+      },
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/animation-triggers-1/#propdef-trigger-scope"
+      }
+    ]
+  }
+}

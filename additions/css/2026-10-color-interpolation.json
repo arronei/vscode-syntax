@@ -1,0 +1,19 @@
+{
+  "title": "color-interpolation",
+  "why": "Standard SVG/CSS property shipping in all four engines, but missing from mdn-data, so VS Code reports it as an unknown property.",
+  "upstream": {
+    "mdn-data": "branch css/color-interpolation: adds the property to css/properties.json (needs PR to mdn/data)",
+    "vscode-custom-data": "picks it up after an mdn-data release + dependency bump; description lookup needs the fix-mdn-doc-paths change"
+  },
+  "properties": [
+    {
+      "name": "color-interpolation",
+      "description": "Specifies the color space used for gradient interpolation, color animation and alpha compositing in SVG.",
+      "values": {
+        "auto": "The browser may interpolate in either the sRGB or the linearRGB color space.",
+        "sRGB": "Interpolate in the sRGB color space. This is the initial value.",
+        "linearRGB": "Interpolate in the linearized RGB color space."
+      }
+    }
+  ]
+}

@@ -1,0 +1,3014 @@
+{
+  "version": 1.1,
+  "properties": [
+    {
+      "name": "color-interpolation",
+      "syntax": "auto | sRGB | linearRGB",
+      "values": [
+        {
+          "name": "auto",
+          "description": "The browser may interpolate in either the sRGB or the linearRGB color space.",
+          "browsers": [
+            "E79",
+            "FF3",
+            "FFA4",
+            "S4",
+            "SM3.2",
+            "C1",
+            "CA18",
+            "O15"
+          ],
+          "baseline": {
+            "status": "high",
+            "baseline_low_date": "2020-01-15",
+            "baseline_high_date": "2022-07-15"
+          }
+        },
+        {
+          "name": "sRGB",
+          "description": "Interpolate in the sRGB color space. This is the initial value.",
+          "browsers": [
+            "E79",
+            "FF3",
+            "FFA4",
+            "S4",
+            "SM3.2",
+            "C1",
+            "CA18",
+            "O15"
+          ],
+          "baseline": {
+            "status": "high",
+            "baseline_low_date": "2020-01-15",
+            "baseline_high_date": "2022-07-15"
+          }
+        },
+        {
+          "name": "linearRGB",
+          "description": "Interpolate in the linearized RGB color space.",
+          "browsers": [
+            "E79",
+            "FF3",
+            "FFA4",
+            "S4",
+            "SM3.2",
+            "C31",
+            "CA31",
+            "O18"
+          ],
+          "baseline": {
+            "status": "high",
+            "baseline_low_date": "2020-01-15",
+            "baseline_high_date": "2022-07-15"
+          }
+        }
+      ],
+      "restrictions": [
+        "enum"
+      ],
+      "browsers": [
+        "E79",
+        "FF3",
+        "FFA4",
+        "S4",
+        "SM3.2",
+        "C1",
+        "CA18",
+        "O15"
+      ],
+      "baseline": {
+        "status": "high",
+        "baseline_low_date": "2020-01-15",
+        "baseline_high_date": "2022-07-15"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/color-interpolation"
+        },
+        {
+          "name": "Specification",
+          "url": "https://w3c.github.io/svgwg/svg2-draft/painting.html#ColorInterpolationProperty"
+        }
+      ],
+      "description": "Specifies the color space used for gradient interpolation, color animation and alpha compositing in SVG."
+    },
+    {
+      "name": "border-shape",
+      "syntax": "none | [ <basic-shape> <geometry-box>?]{1,2}",
+      "values": [
+        {
+          "name": "none",
+          "browsers": [
+            "E147",
+            "C147",
+            "CA147",
+            "O131"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "shape",
+        "geometry-box",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E147",
+        "C147",
+        "CA147",
+        "O131"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-shape"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-border-shape"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `none`. Applies to: all elements. Inherited: no. Animation type: by computed value."
+      }
+    },
+    {
+      "name": "column-rule-break",
+      "syntax": "none | normal | intersection",
+      "values": [
+        {
+          "name": "none",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "normal",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "intersection",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-rule-break"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-column-rule-break"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nInitial value: `normal`. Applies to: grid containers, flex containers, multicol containers, and grid lanes containers. Inherited: no. Animation type: discrete."
+      }
+    },
+    {
+      "name": "column-rule-inset",
+      "syntax": "<'column-rule-inset-cap'> [ / <'column-rule-inset-junction'> ]?",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-column-rule-inset"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: Same as column-rule-inset-cap, column-rule-inset-junction, row-rule-inset-cap, and row-rule-inset-junction."
+      }
+    },
+    {
+      "name": "column-rule-inset-cap",
+      "syntax": "<inset-value> <inset-value>?",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-rule-inset-cap"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-column-rule-inset-cap"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: same as its longhand properties."
+      }
+    },
+    {
+      "name": "column-rule-inset-cap-end",
+      "syntax": "<inset-value>",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-rule-inset-cap-end"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-column-rule-inset-cap-end"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nInitial value: `0`. Applies to: grid containers, flex containers, multicol containers, and grid lanes containers. Inherited: no. Animation type: by computed value type."
+      }
+    },
+    {
+      "name": "column-rule-inset-cap-start",
+      "syntax": "<inset-value>",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-rule-inset-cap-start"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-column-rule-inset-cap-start"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nInitial value: `0`. Applies to: grid containers, flex containers, multicol containers, and grid lanes containers. Inherited: no. Animation type: by computed value type."
+      }
+    },
+    {
+      "name": "column-rule-inset-end",
+      "syntax": "<inset-value>",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-column-rule-inset-end"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: same as its longhand properties."
+      }
+    },
+    {
+      "name": "column-rule-inset-junction",
+      "syntax": "<inset-value> <inset-value>?",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-rule-inset-junction"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-column-rule-inset-junction"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: same as its longhand properties."
+      }
+    },
+    {
+      "name": "column-rule-inset-junction-end",
+      "syntax": "<inset-value>",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-rule-inset-junction-end"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-column-rule-inset-junction-end"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nInitial value: `0`. Applies to: grid containers, flex containers, multicol containers, and grid lanes containers. Inherited: no. Animation type: by computed value type."
+      }
+    },
+    {
+      "name": "column-rule-inset-junction-start",
+      "syntax": "<inset-value>",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-column-rule-inset-junction-start"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nInitial value: `0`. Applies to: grid containers, flex containers, multicol containers, and grid lanes containers. Inherited: no. Animation type: by computed value type."
+      }
+    },
+    {
+      "name": "column-rule-inset-start",
+      "syntax": "<inset-value>",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-column-rule-inset-start"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: same as its longhand properties."
+      }
+    },
+    {
+      "name": "column-rule-visibility-items",
+      "syntax": "all | around | between | normal",
+      "values": [
+        {
+          "name": "all",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "around",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "between",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "normal",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-rule-visibility-items"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-column-rule-visibility-items"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nInitial value: `normal`. Applies to: grid containers and multicol containers. Inherited: no. Animation type: discrete."
+      }
+    },
+    {
+      "name": "flex-line-count",
+      "syntax": "<integer [1,∞]>",
+      "values": [],
+      "restrictions": [
+        "integer"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E150",
+        "C150",
+        "CA150",
+        "O134"
+      ],
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/flex-line-count"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-flexbox-2/#propdef-flex-line-count"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Flexible Box Layout Module Level 2*.\n\nInitial value: `1`. Applies to: multi-line flex containers. Inherited: no. Animation type: as integer."
+      }
+    },
+    {
+      "name": "frame-sizing",
+      "syntax": "auto | content-width | content-height | content-block-size | content-inline-size",
+      "values": [
+        {
+          "name": "auto",
+          "browsers": [
+            "E154",
+            "C154",
+            "CA154",
+            "O138"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "content-width",
+          "browsers": [
+            "E154",
+            "C154",
+            "CA154",
+            "O138"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "content-height",
+          "browsers": [
+            "E154",
+            "C154",
+            "CA154",
+            "O138"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "content-block-size",
+          "browsers": [
+            "E154",
+            "C154",
+            "CA154",
+            "O138"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "content-inline-size",
+          "browsers": [
+            "E154",
+            "C154",
+            "CA154",
+            "O138"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E154",
+        "C154",
+        "CA154",
+        "O138"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/frame-sizing"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-sizing-4/#propdef-frame-sizing"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Box Sizing Module Level 4*.\n\nInitial value: `auto`. Applies to: replaced elements (but see below for details). Inherited: no. Animation type: discrete."
+      }
+    },
+    {
+      "name": "row-rule",
+      "syntax": "<gap-rule-list> | <gap-auto-rule-list>",
+      "values": [],
+      "restrictions": [
+        "line-width",
+        "line-style",
+        "color"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/row-rule"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-row-rule"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property."
+      }
+    },
+    {
+      "name": "row-rule-break",
+      "syntax": "none | normal | intersection",
+      "values": [
+        {
+          "name": "none",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "normal",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "intersection",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/row-rule-break"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-row-rule-break"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nInitial value: `normal`. Applies to: grid containers, flex containers, multicol containers, and grid lanes containers. Inherited: no. Animation type: discrete."
+      }
+    },
+    {
+      "name": "row-rule-color",
+      "syntax": "<line-color-list> | <auto-line-color-list>",
+      "values": [],
+      "restrictions": [
+        "color"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/row-rule-color"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-row-rule-color"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nInitial value: `currentcolor`. Applies to: grid containers, flex containers, multicol containers, and grid lanes containers. Inherited: no. Animation type: repeatable list, see § 4.7 Interpolation of list values.."
+      }
+    },
+    {
+      "name": "row-rule-inset",
+      "syntax": "<'column-rule-inset-cap'> [ / <'column-rule-inset-junction'> ]?",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-row-rule-inset"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: Same as column-rule-inset-cap, column-rule-inset-junction, row-rule-inset-cap, and row-rule-inset-junction."
+      }
+    },
+    {
+      "name": "row-rule-inset-cap",
+      "syntax": "<inset-value> <inset-value>?",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/row-rule-inset-cap"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-row-rule-inset-cap"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: same as its longhand properties."
+      }
+    },
+    {
+      "name": "row-rule-inset-cap-end",
+      "syntax": "<inset-value>",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/row-rule-inset-cap-end"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-row-rule-inset-cap-end"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nInitial value: `0`. Applies to: grid containers, flex containers, multicol containers, and grid lanes containers. Inherited: no. Animation type: by computed value type."
+      }
+    },
+    {
+      "name": "row-rule-inset-cap-start",
+      "syntax": "<inset-value>",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/row-rule-inset-cap-start"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-row-rule-inset-cap-start"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nInitial value: `0`. Applies to: grid containers, flex containers, multicol containers, and grid lanes containers. Inherited: no. Animation type: by computed value type."
+      }
+    },
+    {
+      "name": "row-rule-inset-end",
+      "syntax": "<inset-value>",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-row-rule-inset-end"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: same as its longhand properties."
+      }
+    },
+    {
+      "name": "row-rule-inset-junction",
+      "syntax": "<inset-value> <inset-value>?",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/row-rule-inset-junction"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-row-rule-inset-junction"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: same as its longhand properties."
+      }
+    },
+    {
+      "name": "row-rule-inset-junction-end",
+      "syntax": "<inset-value>",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-row-rule-inset-junction-end"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nInitial value: `0`. Applies to: grid containers, flex containers, multicol containers, and grid lanes containers. Inherited: no. Animation type: by computed value type."
+      }
+    },
+    {
+      "name": "row-rule-inset-junction-start",
+      "syntax": "<inset-value>",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-row-rule-inset-junction-start"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nInitial value: `0`. Applies to: grid containers, flex containers, multicol containers, and grid lanes containers. Inherited: no. Animation type: by computed value type."
+      }
+    },
+    {
+      "name": "row-rule-inset-start",
+      "syntax": "<inset-value>",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-row-rule-inset-start"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: same as its longhand properties."
+      }
+    },
+    {
+      "name": "row-rule-style",
+      "syntax": "<line-style-list> | <auto-line-style-list>",
+      "values": [],
+      "restrictions": [
+        "line-style"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/row-rule-style"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-row-rule-style"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nInitial value: `none`. Applies to: grid containers, flex containers, multicol containers, and grid lanes containers. Inherited: no. Animation type: discrete."
+      }
+    },
+    {
+      "name": "row-rule-visibility-items",
+      "syntax": "all | around | between | normal",
+      "values": [
+        {
+          "name": "all",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "around",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "between",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "normal",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/row-rule-visibility-items"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-row-rule-visibility-items"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nInitial value: `normal`. Applies to: grid containers and multicol containers. Inherited: no. Animation type: discrete."
+      }
+    },
+    {
+      "name": "row-rule-width",
+      "syntax": "<line-width-list> | <auto-line-width-list>",
+      "values": [],
+      "restrictions": [
+        "line-width"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/row-rule-width"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-row-rule-width"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nInitial value: `medium`. Applies to: grid containers, flex containers, multicol containers, and grid lanes containers. Inherited: no. Animation type: repeatable list, see § 4.7 Interpolation of list values.."
+      }
+    },
+    {
+      "name": "rule",
+      "syntax": "<'column-rule'>",
+      "values": [],
+      "restrictions": [
+        "length",
+        "line-width",
+        "line-style",
+        "color"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/rule"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-rule"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: Same as column-rule and row-rule."
+      }
+    },
+    {
+      "name": "rule-break",
+      "syntax": "<'column-rule-break'>",
+      "values": [
+        {
+          "name": "none",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "normal",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "intersection",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/rule-break"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-rule-break"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: Same as column-rule-break and row-rule-break."
+      }
+    },
+    {
+      "name": "rule-color",
+      "syntax": "<'column-rule-color'>",
+      "values": [],
+      "restrictions": [
+        "color"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/rule-color"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-rule-color"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: Same as column-rule-color and row-rule-color."
+      }
+    },
+    {
+      "name": "rule-inset",
+      "syntax": "<'column-rule-inset'>",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-rule-inset"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: Same as column-rule-inset and row-rule-inset."
+      }
+    },
+    {
+      "name": "rule-inset-cap",
+      "syntax": "<'column-rule-inset-cap'>",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/rule-inset-cap"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-rule-inset-cap"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: Same as column-rule-inset-cap and row-rule-inset-cap."
+      }
+    },
+    {
+      "name": "rule-inset-end",
+      "syntax": "<'column-rule-inset-end'>",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-rule-inset-end"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: Same as column-rule-inset-end and row-rule-inset-end."
+      }
+    },
+    {
+      "name": "rule-inset-junction",
+      "syntax": "<'column-rule-inset-junction'>",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/rule-inset-junction"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-rule-inset-junction"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: Same as column-rule-inset-junction and row-rule-inset-junction."
+      }
+    },
+    {
+      "name": "rule-inset-start",
+      "syntax": "<'column-rule-inset-start'>",
+      "values": [
+        {
+          "name": "overlap-join",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-rule-inset-start"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: Same as column-rule-inset-start and row-rule-inset-start."
+      }
+    },
+    {
+      "name": "rule-overlap",
+      "syntax": "row-over-column | column-over-row",
+      "values": [
+        {
+          "name": "row-over-column",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "column-over-row",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-rule-overlap"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nInitial value: `row-over-column`. Applies to: grid containers, flex containers, and grid lanes containers. Inherited: no. Animation type: discrete."
+      }
+    },
+    {
+      "name": "rule-style",
+      "syntax": "<'column-rule-style'>",
+      "values": [],
+      "restrictions": [
+        "line-style"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/rule-style"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-rule-style"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: Same as column-rule-style and row-rule-style."
+      }
+    },
+    {
+      "name": "rule-visibility-items",
+      "syntax": "<'column-rule-visibility-items'>",
+      "values": [
+        {
+          "name": "all",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "around",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "between",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "normal",
+          "browsers": [
+            "E149",
+            "C149",
+            "CA149",
+            "O133"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/rule-visibility-items"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-rule-visibility-items"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: Same as column-rule-visibility-items and row-rule-visibility-items."
+      }
+    },
+    {
+      "name": "rule-width",
+      "syntax": "<'column-rule-width'>",
+      "values": [],
+      "restrictions": [
+        "length",
+        "line-width"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/rule-width"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-gaps-1/#propdef-rule-width"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nShorthand property. Applies to: Same as column-rule-width and row-rule-width."
+      }
+    },
+    {
+      "name": "text-fit",
+      "syntax": "[ none | grow | shrink ] [consistent | per-line | per-line-all]? <percentage>?",
+      "values": [
+        {
+          "name": "none",
+          "browsers": [
+            "E150",
+            "C150",
+            "CA150",
+            "O134"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "grow",
+          "browsers": [
+            "E150",
+            "C150",
+            "CA150",
+            "O134"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "shrink",
+          "browsers": [
+            "E150",
+            "C150",
+            "CA150",
+            "O134"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "consistent",
+          "browsers": [
+            "E150",
+            "C150",
+            "CA150",
+            "O134"
+          ]
+        },
+        {
+          "name": "per-line",
+          "browsers": [
+            "E150",
+            "C150",
+            "CA150",
+            "O134"
+          ]
+        },
+        {
+          "name": "per-line-all",
+          "browsers": [
+            "E150",
+            "C150",
+            "CA150",
+            "O134"
+          ]
+        }
+      ],
+      "restrictions": [
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E150",
+        "C150",
+        "CA150",
+        "O134"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-fit"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-text-5/#propdef-text-fit"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Text Module Level 5*.\n\nInitial value: `none`. Applies to: block containers. Inherited: yes. Animation type: discrete."
+      }
+    },
+    {
+      "name": "timeline-trigger-activation-range",
+      "syntax": "[ <'timeline-trigger-activation-range-start'> <'timeline-trigger-activation-range-end'>? ]#",
+      "values": [
+        {
+          "name": "normal",
+          "browsers": [
+            "E146",
+            "C146",
+            "CA146",
+            "O130"
+          ]
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E146",
+        "C146",
+        "CA146",
+        "O130"
+      ],
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-activation-range"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-activation-range"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *Animation Triggers*.\n\nShorthand property."
+      }
+    },
+    {
+      "name": "timeline-trigger-activation-range-end",
+      "syntax": "[ normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#",
+      "values": [
+        {
+          "name": "normal",
+          "browsers": [
+            "E146",
+            "C146",
+            "CA146",
+            "O130"
+          ]
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E146",
+        "C146",
+        "CA146",
+        "O130"
+      ],
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-activation-range-end"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-activation-range-end"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *Animation Triggers*.\n\nInitial value: `normal`. Applies to: all elements. Inherited: no. Animation type: not animatable."
+      }
+    },
+    {
+      "name": "timeline-trigger-activation-range-start",
+      "syntax": "[ normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#",
+      "values": [
+        {
+          "name": "normal",
+          "browsers": [
+            "E146",
+            "C146",
+            "CA146",
+            "O130"
+          ]
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E146",
+        "C146",
+        "CA146",
+        "O130"
+      ],
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-activation-range-start"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-activation-range-start"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *Animation Triggers*.\n\nInitial value: `normal`. Applies to: all elements. Inherited: no. Animation type: not animatable."
+      }
+    },
+    {
+      "name": "timeline-trigger-active-range",
+      "syntax": "[ <'timeline-trigger-active-range-start'> <'timeline-trigger-active-range-end'>? ]#",
+      "values": [
+        {
+          "name": "auto",
+          "browsers": [
+            "E146",
+            "C146",
+            "CA146",
+            "O130"
+          ]
+        },
+        {
+          "name": "normal",
+          "browsers": [
+            "E146",
+            "C146",
+            "CA146",
+            "O130"
+          ]
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E146",
+        "C146",
+        "CA146",
+        "O130"
+      ],
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-active-range"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-active-range"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *Animation Triggers*.\n\nShorthand property."
+      }
+    },
+    {
+      "name": "timeline-trigger-active-range-end",
+      "syntax": "[ auto | normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#",
+      "values": [
+        {
+          "name": "auto",
+          "browsers": [
+            "E146",
+            "C146",
+            "CA146",
+            "O130"
+          ]
+        },
+        {
+          "name": "normal",
+          "browsers": [
+            "E146",
+            "C146",
+            "CA146",
+            "O130"
+          ]
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E146",
+        "C146",
+        "CA146",
+        "O130"
+      ],
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-active-range-end"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-active-range-end"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *Animation Triggers*.\n\nInitial value: `auto`. Applies to: all elements. Inherited: no. Animation type: not animatable."
+      }
+    },
+    {
+      "name": "timeline-trigger-active-range-start",
+      "syntax": "[ auto | normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#",
+      "values": [
+        {
+          "name": "auto",
+          "browsers": [
+            "E146",
+            "C146",
+            "CA146",
+            "O130"
+          ]
+        },
+        {
+          "name": "normal",
+          "browsers": [
+            "E146",
+            "C146",
+            "CA146",
+            "O130"
+          ]
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E146",
+        "C146",
+        "CA146",
+        "O130"
+      ],
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-active-range-start"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-active-range-start"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *Animation Triggers*.\n\nInitial value: `auto`. Applies to: all elements. Inherited: no. Animation type: not animatable."
+      }
+    },
+    {
+      "name": "view-transition-group",
+      "syntax": "normal | contain | nearest | <custom-ident>",
+      "values": [
+        {
+          "name": "normal",
+          "browsers": [
+            "E140",
+            "C140",
+            "CA140",
+            "O124"
+          ]
+        },
+        {
+          "name": "contain",
+          "browsers": [
+            "E140",
+            "C140",
+            "CA140",
+            "O124"
+          ]
+        },
+        {
+          "name": "nearest",
+          "browsers": [
+            "E140",
+            "C140",
+            "CA140",
+            "O124"
+          ]
+        }
+      ],
+      "restrictions": [
+        "identifier",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E140",
+        "C140",
+        "CA140",
+        "O124"
+      ],
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-view-transitions-2/#propdef-view-transition-group"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS View Transitions Module Level 2*.\n\nInitial value: `normal`. Applies to: all elements. Inherited: no. Animation type: discrete."
+      }
+    },
+    {
+      "name": "view-transition-scope",
+      "syntax": "none | all",
+      "values": [
+        {
+          "name": "none",
+          "browsers": [
+            "E147",
+            "C147",
+            "CA147",
+            "O131"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "all",
+          "browsers": [
+            "E147",
+            "C147",
+            "CA147",
+            "O131"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E147",
+        "C147",
+        "CA147",
+        "O131"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/view-transition-scope"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-view-transitions-2/#propdef-view-transition-scope"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS View Transitions Module Level 2*.\n\nInitial value: `none`. Applies to: all elements. Inherited: no. Animation type: discrete."
+      }
+    },
+    {
+      "name": "window-drag",
+      "syntax": "none | move",
+      "values": [
+        {
+          "name": "none",
+          "browsers": [
+            "E152",
+            "C152",
+            "O136"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "move",
+          "browsers": [
+            "E152",
+            "C152",
+            "O136"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "E152",
+        "C152",
+        "O136"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-ui-4/#propdef-window-drag"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Basic User Interface Module Level 4*.\n\nInitial value: `none`. Applies to: all elements. Inherited: yes. Animation type: discrete."
+      }
+    },
+    {
+      "name": "flow-tolerance",
+      "syntax": "normal | <length-percentage [0,∞]> | infinite",
+      "values": [
+        {
+          "name": "normal",
+          "browsers": [
+            "S26.4",
+            "SM26.4"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "infinite",
+          "browsers": [
+            "S26.4",
+            "SM26.4"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "S26.4",
+        "SM26.4"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-grid-3/#propdef-flow-tolerance"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Grid Layout Module Level 3*.\n\nInitial value: `normal`. Applies to: grid lanes containers. Inherited: no. Animation type: as length."
+      }
+    },
+    {
+      "name": "scroll-axis-lock",
+      "syntax": "auto | none",
+      "values": [
+        {
+          "name": "auto",
+          "browsers": [
+            "C153",
+            "O137"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "none",
+          "browsers": [
+            "C153",
+            "O137"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "C153",
+        "O137"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-overflow-5/#propdef-scroll-axis-lock"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Overflow Module Level 5*.\n\nInitial value: `auto`. Applies to: scroll container elements. Inherited: no. Animation type: discrete."
+      }
+    },
+    {
+      "name": "text-decoration-skip-spaces",
+      "syntax": "none | all | [ start || end ]",
+      "values": [
+        {
+          "name": "none",
+          "browsers": [
+            "C155",
+            "O139"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "all",
+          "browsers": [
+            "C155",
+            "O139"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "start",
+          "browsers": [
+            "C155",
+            "O139"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "end",
+          "browsers": [
+            "C155",
+            "O139"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "C155",
+        "O139"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-text-decor-4/#propdef-text-decoration-skip-spaces"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Text Decoration Module Level 4*.\n\nInitial value: `start end`. Applies to: all elements. Inherited: yes. Animation type: discrete."
+      }
+    }
+  ],
+  "atDirectives": [
+    {
+      "name": "@function",
+      "description": {
+        "kind": "markdown",
+        "value": "Defines a custom CSS function, called like a built-in one as `--name(arguments)`. Its body can declare local custom properties and returns the value of its `result` descriptor.\n\n— *CSS Functions and Mixins Module*\n\nSyntax: `@function <function-token> <function-parameter>#? ) [ returns <css-type> ]? { <declaration-rule-list> }`"
+      },
+      "status": "experimental",
+      "browsers": [
+        "E139",
+        "C139",
+        "CA139",
+        "O123"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/At-rules/@function"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-mixins-1/#at-ruledef-function"
+        }
+      ]
+    }
+  ],
+  "pseudoClasses": [
+    {
+      "name": ":interest-source",
+      "description": {
+        "kind": "markdown",
+        "value": "Matches an element with `interestfor` while the user is showing interest in it, for example by hovering or focusing it."
+      },
+      "status": "experimental",
+      "browsers": [
+        "E142",
+        "C142",
+        "CA142",
+        "O126"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:interest-source"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/selectors-5/#selectordef-interest-source"
+        }
+      ]
+    },
+    {
+      "name": ":interest-target",
+      "description": {
+        "kind": "markdown",
+        "value": "Matches the target of an `interestfor` element while the user is showing interest in that element."
+      },
+      "status": "experimental",
+      "browsers": [
+        "E142",
+        "C142",
+        "CA142",
+        "O126"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:interest-target"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/selectors-5/#selectordef-interest-target"
+        }
+      ]
+    },
+    {
+      "name": ":navigation-source",
+      "description": {
+        "kind": "markdown",
+        "value": "Matches the element that started the current navigation, such as the clicked link. It reflects `NavigateEvent.sourceElement`."
+      },
+      "status": "experimental",
+      "browsers": [
+        "E156",
+        "C156",
+        "CA156"
+      ],
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-navigation-1/#navigation-source-pseudo"
+        }
+      ]
+    },
+    {
+      "name": ":target-after",
+      "description": {
+        "kind": "markdown",
+        "value": "Matches scroll markers that come after the active one (the marker matching `:target-current`) in their scroll marker group."
+      },
+      "status": "experimental",
+      "browsers": [
+        "E142",
+        "C142",
+        "CA142",
+        "O126"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:target-after"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-overflow-5/#selectordef-target-after"
+        }
+      ]
+    },
+    {
+      "name": ":target-before",
+      "description": {
+        "kind": "markdown",
+        "value": "Matches scroll markers that come before the active one (the marker matching `:target-current`) in their scroll marker group."
+      },
+      "status": "experimental",
+      "browsers": [
+        "E142",
+        "C142",
+        "CA142",
+        "O126"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:target-before"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-overflow-5/#selectordef-target-before"
+        }
+      ]
+    },
+    {
+      "name": ":heading",
+      "description": {
+        "kind": "markdown",
+        "value": "Matches elements that have a heading level, such as `<h1>`–`<h6>`. The functional form `:heading(2, 3)` matches only the listed levels."
+      },
+      "status": "experimental",
+      "browsers": [
+        "S27",
+        "SM27"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:heading"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/selectors-5/#heading-pseudo"
+        }
+      ]
+    }
+  ],
+  "pseudoElements": [
+    {
+      "name": "::scroll-button",
+      "description": {
+        "kind": "markdown",
+        "value": "A browser-generated button that scrolls its scroll container. The argument picks the direction (`up`, `down`, `left`, `right`, `block-start`, `block-end`, `inline-start`, `inline-end`, or `*` for all); the button appears once it has a `content` value."
+      },
+      "status": "experimental",
+      "browsers": [
+        "E135",
+        "C135",
+        "CA135",
+        "O120"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/::scroll-button"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-overflow-5/#selectordef-scroll-button---scroll-button-direction"
+        }
+      ]
+    },
+    {
+      "name": "::search-text",
+      "description": {
+        "kind": "markdown",
+        "value": "Styles text matched by the browser's find-in-page feature. `::search-text:current` targets the active match."
+      },
+      "status": "experimental",
+      "browsers": [
+        "E144",
+        "C144",
+        "CA144",
+        "O128"
+      ],
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/::search-text"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-pseudo-4/#selectordef-search-text"
+        }
+      ]
+    },
+    {
+      "name": "::view-transition-group-children",
+      "description": {
+        "kind": "markdown",
+        "value": "Wraps the nested view transition groups of a captured element when `view-transition-group` nests them, so they can be clipped or styled together. Takes a view transition name."
+      },
+      "status": "experimental",
+      "browsers": [
+        "E140",
+        "C140",
+        "CA140",
+        "O124"
+      ],
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-view-transitions-2/#selectordef-view-transition-group-children"
+        }
+      ]
+    }
+  ]
+}

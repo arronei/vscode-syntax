@@ -1,0 +1,9 @@
+{
+  "folders": [
+    { "name": "vscode-syntax", "path": "." },
+    { "name": "vscode-custom-data", "path": "../vscode-custom-data" },
+    { "name": "vscode-css-languageservice", "path": "../vscode-css-languageservice" },
+    { "name": "vscode-html-languageservice", "path": "../vscode-html-languageservice" },
+    { "name": "mdn-data (fork)", "path": "../mdn-data" }
+  ]
+}

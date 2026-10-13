@@ -1,0 +1,173 @@
+{
+  "title": "Add missing Baseline HTML attributes",
+  "criteria": "Attribute is defined in the WHATWG HTML Standard and missing from web-data/html. 15 are Baseline per web-features; <video playsinline> and <template shadowrootserializable> ship in Chromium and WebKit and are included because they are widely used / complete the declarative shadow DOM set (their hovers show 'Limited availability').",
+  "valueSets": [
+    {
+      "name": "command",
+      "values": [
+        {
+          "name": "show-modal",
+          "description": "Opens the target `<dialog>` as a modal."
+        },
+        {
+          "name": "close",
+          "description": "Closes the target `<dialog>`."
+        },
+        {
+          "name": "request-close",
+          "description": "Asks the target `<dialog>` to close. A cancelable `cancel` event fires first."
+        },
+        {
+          "name": "show-popover",
+          "description": "Shows the target popover."
+        },
+        {
+          "name": "hide-popover",
+          "description": "Hides the target popover."
+        },
+        {
+          "name": "toggle-popover",
+          "description": "Toggles the target popover between showing and hidden."
+        }
+      ]
+    },
+    {
+      "name": "shadowrootmode",
+      "values": [
+        {
+          "name": "open",
+          "description": "The shadow root is reachable from JavaScript through the host's `shadowRoot` property."
+        },
+        {
+          "name": "closed",
+          "description": "The shadow root is hidden from JavaScript outside the shadow tree; the host's `shadowRoot` property returns `null`."
+        }
+      ]
+    }
+  ],
+  "valueSetEdits": [
+    {
+      "name": "loading",
+      "reason": "The set is now shared by <img> and <iframe>, so describe the resource generically.",
+      "values": {
+        "eager": "Loads the resource immediately, regardless of whether or not it is currently within the visible viewport (this is the default value).",
+        "lazy": "Defers loading the resource until it reaches a calculated distance from the viewport, as defined by the browser. The intent is to avoid the network and storage bandwidth needed to handle the resource until it's reasonably certain that it will be needed. This generally improves the performance of the content in most typical use cases."
+      }
+    }
+  ],
+  "attributes": [
+    {
+      "tag": "area",
+      "name": "referrerpolicy",
+      "valueSet": "referrerpolicy",
+      "description": "Indicates which [referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) to send when following the hyperlink. Takes the same values as the `referrerpolicy` attribute of `<a>`.",
+      "bcd": "html.elements.area.referrerpolicy"
+    },
+    {
+      "tag": "button",
+      "name": "command",
+      "valueSet": "command",
+      "description": "The action to perform on the element referenced by `commandfor` when the button is activated. Built-in commands are `show-modal`, `close` and `request-close` for `<dialog>` elements, and `show-popover`, `hide-popover` and `toggle-popover` for popovers. Custom commands start with two dashes (for example `--rotate`) and fire a `command` event on the target without any built-in behavior.",
+      "bcd": "html.elements.button.command"
+    },
+    {
+      "tag": "button",
+      "name": "commandfor",
+      "description": "The `id` of the element this button controls. Used together with `command` to act on that element, such as opening a dialog or toggling a popover, without JavaScript.",
+      "bcd": "html.elements.button.commandfor"
+    },
+    {
+      "tag": "form",
+      "name": "rel",
+      "description": "A space-separated list of the link types the form submission creates. Allowed values are `external`, `help`, `license`, `next`, `nofollow`, `noopener`, `noreferrer`, `opener`, `prev` and `search`.",
+      "bcd": "html.elements.form.rel"
+    },
+    {
+      "tag": "iframe",
+      "name": "loading",
+      "valueSet": "loading",
+      "description": "Indicates when the browser should load the iframe. `eager` (the default) loads it immediately; `lazy` defers loading until the iframe nears the viewport.",
+      "bcd": "html.elements.iframe.loading"
+    },
+    {
+      "tag": "link",
+      "name": "disabled",
+      "valueSet": "v",
+      "description": "For `rel=\"stylesheet\"`, a Boolean attribute that keeps the style sheet from being loaded and applied. Removing the attribute enables the style sheet.",
+      "bcd": "html.elements.link.disabled"
+    },
+    {
+      "tag": "link",
+      "name": "fetchpriority",
+      "valueSet": "fetchpriority",
+      "description": "Provides a hint of the relative priority to use when fetching the linked resource, such as a preloaded resource or a style sheet.",
+      "bcd": "html.elements.link.fetchpriority"
+    },
+    {
+      "tag": "link",
+      "name": "imagesizes",
+      "description": "For `rel=\"preload\"` with `as=\"image\"`, the source sizes to use when choosing which image to preload. Same syntax and meaning as the `sizes` attribute of `<img>`.",
+      "bcd": "html.elements.link.imagesizes"
+    },
+    {
+      "tag": "link",
+      "name": "imagesrcset",
+      "description": "For `rel=\"preload\"` with `as=\"image\"`, the candidate images to choose from when preloading a responsive image. Same syntax and meaning as the `srcset` attribute of `<img>`.",
+      "bcd": "html.elements.link.imagesrcset"
+    },
+    {
+      "tag": "script",
+      "name": "fetchpriority",
+      "valueSet": "fetchpriority",
+      "description": "Provides a hint of the relative priority to use when fetching an external script.",
+      "bcd": "html.elements.script.fetchpriority"
+    },
+    {
+      "tag": "source",
+      "name": "width",
+      "description": "The intrinsic width of the image resource in CSS pixels. Only allowed when the `<source>` is a child of `<picture>`; lets the browser reserve space for the selected image before it loads.",
+      "bcd": "html.elements.source.width"
+    },
+    {
+      "tag": "source",
+      "name": "height",
+      "description": "The intrinsic height of the image resource in CSS pixels. Only allowed when the `<source>` is a child of `<picture>`; lets the browser reserve space for the selected image before it loads.",
+      "bcd": "html.elements.source.height"
+    },
+    {
+      "tag": "template",
+      "name": "shadowrootmode",
+      "valueSet": "shadowrootmode",
+      "description": "Turns the `<template>` into a declarative shadow root attached to its parent element. `open` exposes the shadow root to JavaScript through the host's `shadowRoot` property; `closed` does not.",
+      "bcd": "html.elements.template.shadowrootmode"
+    },
+    {
+      "tag": "template",
+      "name": "shadowrootclonable",
+      "valueSet": "v",
+      "description": "Sets the `clonable` property of a shadow root created with `shadowrootmode`, so the shadow root is copied when its host is cloned with `cloneNode()` or `importNode()`.",
+      "bcd": "html.elements.template.shadowrootclonable"
+    },
+    {
+      "tag": "template",
+      "name": "shadowrootdelegatesfocus",
+      "valueSet": "v",
+      "description": "Sets the `delegatesFocus` property of a shadow root created with `shadowrootmode`, so focusing the host moves focus to the first focusable element in the shadow tree.",
+      "bcd": "html.elements.template.shadowrootdelegatesfocus"
+    },
+    {
+      "tag": "template",
+      "name": "shadowrootserializable",
+      "valueSet": "v",
+      "description": "Sets the `serializable` property of a shadow root created with `shadowrootmode`, so the shadow root is included when serializing with `getHTML({ serializableShadowRoots: true })`.",
+      "bcd": "html.elements.template.shadowrootserializable"
+    },
+    {
+      "tag": "video",
+      "name": "playsinline",
+      "valueSet": "v",
+      "description": "A Boolean attribute indicating that the video should play inline, within the element's playback area, instead of automatically entering fullscreen. Mainly affects mobile browsers.",
+      "bcd": "html.elements.video.playsinline"
+    }
+  ]
+}

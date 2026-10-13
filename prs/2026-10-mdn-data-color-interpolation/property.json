@@ -1,0 +1,30 @@
+{
+  "name": "color-interpolation",
+  "source": "https://w3c.github.io/svgwg/svg2-draft/painting.html#ColorInterpolationProperty",
+  "entry": {
+    "syntax": "auto | sRGB | linearRGB",
+    "media": "visual",
+    "inherited": true,
+    "animationType": "discrete",
+    "percentages": "no",
+    "groups": [
+      "Scalable Vector Graphics"
+    ],
+    "initial": "sRGB",
+    "appliesto": "limitedSVGElementsContainerGraphicsGradientUseAnimate",
+    "computed": "asSpecified",
+    "order": "perGrammar",
+    "status": "standard",
+    "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/color-interpolation"
+  },
+  "l10n": {
+    "limitedSVGElementsContainerGraphicsGradientUseAnimate": {
+      "en-US": "Container elements, graphics elements, gradient elements, {{SVGElement(\"use\")}}, and {{SVGElement(\"animate\")}} in {{SVGElement(\"svg\")}}"
+    }
+  },
+  "schemaEnums": {
+    "appliesto": [
+      "limitedSVGElementsContainerGraphicsGradientUseAnimate"
+    ]
+  }
+}

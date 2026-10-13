@@ -1,0 +1,219 @@
+{
+  "title": "CSS features in the specs that ship in browsers but are missing from VS Code",
+  "generatedFrom": "gr.json (2026-10-09), priorities P1+P2",
+  "sources": {
+    "mdn-data": "2.37.2",
+    "@mdn/browser-compat-data": "8.1.5",
+    "@webref/css": "8.7.6",
+    "@webref/elements": "2.9.1",
+    "web-features": "3.42.0"
+  },
+  "properties": [
+    {
+      "name": "border-shape"
+    },
+    {
+      "name": "column-rule-break"
+    },
+    {
+      "name": "column-rule-inset"
+    },
+    {
+      "name": "column-rule-inset-cap"
+    },
+    {
+      "name": "column-rule-inset-cap-end"
+    },
+    {
+      "name": "column-rule-inset-cap-start"
+    },
+    {
+      "name": "column-rule-inset-end"
+    },
+    {
+      "name": "column-rule-inset-junction"
+    },
+    {
+      "name": "column-rule-inset-junction-end"
+    },
+    {
+      "name": "column-rule-inset-junction-start"
+    },
+    {
+      "name": "column-rule-inset-start"
+    },
+    {
+      "name": "column-rule-visibility-items"
+    },
+    {
+      "name": "flex-line-count"
+    },
+    {
+      "name": "frame-sizing"
+    },
+    {
+      "name": "row-rule"
+    },
+    {
+      "name": "row-rule-break"
+    },
+    {
+      "name": "row-rule-color"
+    },
+    {
+      "name": "row-rule-inset"
+    },
+    {
+      "name": "row-rule-inset-cap"
+    },
+    {
+      "name": "row-rule-inset-cap-end"
+    },
+    {
+      "name": "row-rule-inset-cap-start"
+    },
+    {
+      "name": "row-rule-inset-end"
+    },
+    {
+      "name": "row-rule-inset-junction"
+    },
+    {
+      "name": "row-rule-inset-junction-end"
+    },
+    {
+      "name": "row-rule-inset-junction-start"
+    },
+    {
+      "name": "row-rule-inset-start"
+    },
+    {
+      "name": "row-rule-style"
+    },
+    {
+      "name": "row-rule-visibility-items"
+    },
+    {
+      "name": "row-rule-width"
+    },
+    {
+      "name": "rule"
+    },
+    {
+      "name": "rule-break"
+    },
+    {
+      "name": "rule-color"
+    },
+    {
+      "name": "rule-inset"
+    },
+    {
+      "name": "rule-inset-cap"
+    },
+    {
+      "name": "rule-inset-end"
+    },
+    {
+      "name": "rule-inset-junction"
+    },
+    {
+      "name": "rule-inset-start"
+    },
+    {
+      "name": "rule-overlap"
+    },
+    {
+      "name": "rule-style"
+    },
+    {
+      "name": "rule-visibility-items"
+    },
+    {
+      "name": "rule-width"
+    },
+    {
+      "name": "text-fit"
+    },
+    {
+      "name": "timeline-trigger-activation-range"
+    },
+    {
+      "name": "timeline-trigger-activation-range-end"
+    },
+    {
+      "name": "timeline-trigger-activation-range-start"
+    },
+    {
+      "name": "timeline-trigger-active-range"
+    },
+    {
+      "name": "timeline-trigger-active-range-end"
+    },
+    {
+      "name": "timeline-trigger-active-range-start"
+    },
+    {
+      "name": "view-transition-group"
+    },
+    {
+      "name": "view-transition-scope"
+    },
+    {
+      "name": "window-drag"
+    },
+    {
+      "name": "flow-tolerance"
+    },
+    {
+      "name": "scroll-axis-lock"
+    },
+    {
+      "name": "text-decoration-skip-spaces"
+    }
+  ],
+  "atRules": [
+    {
+      "name": "@function",
+      "description": "Defines a custom CSS function, called like a built-in one as `--name(arguments)`. Its body can declare local custom properties and returns the value of its `result` descriptor."
+    }
+  ],
+  "selectors": [
+    {
+      "name": "::scroll-button",
+      "description": "A browser-generated button that scrolls its scroll container. The argument picks the direction (`up`, `down`, `left`, `right`, `block-start`, `block-end`, `inline-start`, `inline-end`, or `*` for all); the button appears once it has a `content` value."
+    },
+    {
+      "name": "::search-text",
+      "description": "Styles text matched by the browser's find-in-page feature. `::search-text:current` targets the active match."
+    },
+    {
+      "name": "::view-transition-group-children",
+      "description": "Wraps the nested view transition groups of a captured element when `view-transition-group` nests them, so they can be clipped or styled together. Takes a view transition name."
+    },
+    {
+      "name": ":interest-source",
+      "description": "Matches an element with `interestfor` while the user is showing interest in it, for example by hovering or focusing it."
+    },
+    {
+      "name": ":interest-target",
+      "description": "Matches the target of an `interestfor` element while the user is showing interest in that element."
+    },
+    {
+      "name": ":navigation-source",
+      "description": "Matches the element that started the current navigation, such as the clicked link. It reflects `NavigateEvent.sourceElement`."
+    },
+    {
+      "name": ":target-after",
+      "description": "Matches scroll markers that come after the active one (the marker matching `:target-current`) in their scroll marker group."
+    },
+    {
+      "name": ":target-before",
+      "description": "Matches scroll markers that come before the active one (the marker matching `:target-current`) in their scroll marker group."
+    },
+    {
+      "name": ":heading",
+      "description": "Matches elements that have a heading level, such as `<h1>`–`<h6>`. The functional form `:heading(2, 3)` matches only the listed levels."
+    }
+  ]
+}

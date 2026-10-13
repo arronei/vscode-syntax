@@ -1,0 +1,130 @@
+{
+  "title": "Remaining HTML features that ship in at least one engine",
+  "criteria": "From the 2026-10-09 gap report: standards-track, not deprecated, shipping in at least one engine, and missing from VS Code's built-in data.",
+  "valueSets": [
+    {
+      "name": "closedby",
+      "values": [
+        { "name": "any", "description": "Close requests (such as Esc) and clicks outside the dialog (light dismiss) both close it." },
+        { "name": "closerequest", "description": "Only close requests (such as Esc) close the dialog." },
+        { "name": "none", "description": "No user action closes the dialog automatically." }
+      ]
+    },
+    {
+      "name": "blocking",
+      "values": [
+        { "name": "render", "description": "Hold off rendering the page until this resource has loaded." }
+      ]
+    },
+    {
+      "name": "controlslist",
+      "values": [
+        { "name": "nodownload", "description": "Hide the download button." },
+        { "name": "nofullscreen", "description": "Hide the fullscreen button." },
+        { "name": "noremoteplayback", "description": "Hide the remote playback (casting) button." }
+      ]
+    },
+    {
+      "name": "colorspace",
+      "values": [
+        { "name": "limited-srgb", "description": "8-bit sRGB colors such as `#123456`. This is the default." },
+        { "name": "display-p3", "description": "Colors in the Display P3 space, such as `color(display-p3 1 0.2 0.1)`." }
+      ]
+    },
+    {
+      "name": "shadowrootslotassignment",
+      "values": [
+        { "name": "named", "description": "Children are assigned to slots by their `slot` attribute. This is the default." },
+        { "name": "manual", "description": "Slot assignment is done by script with `HTMLSlotElement.assign()`." }
+      ]
+    },
+    {
+      "name": "writingsuggestions",
+      "values": [
+        { "name": "true", "description": "Allow browser-provided writing suggestions." },
+        { "name": "false", "description": "Turn off browser-provided writing suggestions." }
+      ]
+    },
+    {
+      "name": "stagemode",
+      "values": [
+        { "name": "none", "description": "User input doesn't move the model. This is the default." },
+        { "name": "orbit", "description": "Dragging rotates the model." }
+      ]
+    }
+  ],
+  "attributes": [
+    { "tag": "input", "name": "webkitdirectory", "valueSet": "v", "bcd": "html.elements.input.webkitdirectory",
+      "description": "For `type=\"file\"`, lets the user choose a directory instead of individual files; every file inside it, including subdirectories, is selected. Defined by the File and Directory Entries API, not the HTML Standard." },
+    { "tag": "input", "name": "alpha", "valueSet": "v", "bcd": "html.elements.input.alpha",
+      "description": "For `type=\"color\"`, lets the user pick a color with transparency instead of only fully opaque colors." },
+    { "tag": "input", "name": "colorspace", "valueSet": "colorspace", "bcd": "html.elements.input.colorspace",
+      "description": "For `type=\"color\"`, the color space of the value, which also hints at the picker to show. `limited-srgb` (the default) gives 8-bit sRGB colors; `display-p3` gives `color(display-p3 …)` values." },
+    { "tag": "dialog", "name": "closedby", "valueSet": "closedby", "bcd": "html.elements.dialog.closedby",
+      "description": "Which user actions close the dialog. `any`: close requests (such as Esc) and clicks outside the dialog. `closerequest`: close requests only. `none`: neither. When omitted, modal dialogs behave like `closerequest` and non-modal dialogs like `none`." },
+    { "tag": "link", "name": "blocking", "valueSet": "blocking", "bcd": "html.elements.link.blocking",
+      "description": "Operations to block until this resource has loaded, as a space-separated list. The only token is `render`, which keeps the page from rendering until the style sheet or preloaded resource arrives." },
+    { "tag": "script", "name": "blocking", "valueSet": "blocking", "bcd": "html.elements.script.blocking",
+      "description": "Operations to block until this external script has loaded, as a space-separated list. The only token is `render`, which keeps the page from rendering until then (useful with `async` scripts)." },
+    { "tag": "style", "name": "blocking", "valueSet": "blocking", "bcd": "html.elements.style.blocking",
+      "description": "Operations to block until this style sheet and its imports have loaded, as a space-separated list. The only token is `render`." },
+    { "tag": "template", "name": "for", "bcd": "html.elements.template.for",
+      "description": "Names the `<?marker>` or `<?start>` processing instruction where this template's content is inserted, or the start of the range it replaces, for declarative partial updates. The value must match that instruction's `name`." },
+    { "tag": "template", "name": "shadowrootslotassignment", "valueSet": "shadowrootslotassignment", "bcd": "html.elements.template.shadowrootslotassignment",
+      "description": "Slot assignment mode for the declarative shadow root: `named` (the default) assigns children by their `slot` attribute; `manual` leaves assignment to script." },
+    { "tag": "template", "name": "shadowrootcustomelementregistry", "valueSet": "v", "bcd": "html.elements.template.shadowrootcustomelementregistry",
+      "description": "Creates the declarative shadow root without a custom element registry, so that a scoped `CustomElementRegistry` can be attached to it later with `initialize()`." },
+    { "tag": "audio", "name": "loading", "valueSet": "loading", "bcd": "html.elements.audio.loading",
+      "description": "`lazy` defers fetching the media until the element nears the viewport; it takes precedence over `preload`, and with `autoplay` it also delays playback. `eager` loads immediately." },
+    { "tag": "video", "name": "loading", "valueSet": "loading", "bcd": "html.elements.video.loading",
+      "description": "`lazy` defers fetching the media until the element nears the viewport; it takes precedence over `preload`, and with `autoplay` it also delays playback. `eager` loads immediately." },
+    { "tag": "audio", "name": "disableremoteplayback", "valueSet": "v", "bcd": "html.elements.audio.disableremoteplayback",
+      "description": "Stops the browser from offering remote playback (casting the media to another device) for this element." },
+    { "tag": "video", "name": "disableremoteplayback", "valueSet": "v", "bcd": "html.elements.video.disableremoteplayback",
+      "description": "Stops the browser from offering remote playback (casting the media to another device) for this element." },
+    { "tag": "video", "name": "disablepictureinpicture", "valueSet": "v", "bcd": "html.elements.video.disablepictureinpicture",
+      "description": "Stops the browser from offering picture-in-picture for this video, including automatic picture-in-picture." },
+    { "tag": "audio", "name": "controlslist", "valueSet": "controlslist", "bcd": "html.elements.audio.controlslist",
+      "description": "Hides buttons in the browser's built-in media controls, as a space-separated list of `nodownload`, `nofullscreen` and `noremoteplayback`." },
+    { "tag": "video", "name": "controlslist", "valueSet": "controlslist", "bcd": "html.elements.video.controlslist",
+      "description": "Hides buttons in the browser's built-in media controls, as a space-separated list of `nodownload`, `nofullscreen` and `noremoteplayback`." },
+    { "tag": "iframe", "name": "credentialless", "valueSet": "v", "bcd": "html.elements.iframe.credentialless",
+      "description": "Loads the iframe's document in a new, ephemeral context without the embedder's cookies or storage. Lets cross-origin-isolated pages embed third-party content that doesn't send CORP or COEP headers." },
+    { "tag": "iframe", "name": "privateToken", "bcd": "html.elements.iframe.privateToken",
+      "description": "JSON-encoded parameters for a Private State Token operation (such as a token redemption) to attach to the iframe's navigation request." },
+    { "tag": "a", "name": "attributionsourceid", "bcd": "html.elements.a.attributionsourceid",
+      "description": "An 8-bit (0–255) source ID for Private Click Measurement. Used with `attributiondestination` to measure ad click conversions without cross-site tracking." }
+  ],
+  "globalAttributes": [
+    { "name": "writingsuggestions", "valueSet": "writingsuggestions", "bcd": "html.global_attributes.writingsuggestions",
+      "description": "Whether the browser may offer writing suggestions, such as predictive inline text, while the user types in this editable element. `false` turns them off; `true` or an empty value turns them on. Descendants inherit the setting." },
+    { "name": "elementtiming", "bcd": "html.global_attributes.elementtiming",
+      "description": "Marks an image or text element for the Element Timing API. When it renders, a `PerformanceElementTiming` entry with this identifier is reported to `PerformanceObserver`." }
+  ],
+  "elements": [
+    { "name": "camera", "bcd": "html.elements.camera",
+      "description": "A browser-rendered control that asks for camera access when the user activates it, then delivers a video track. Fires `track` on success, `cancel` if the user declines, and `error` on failure." },
+    { "name": "microphone", "bcd": "html.elements.microphone",
+      "description": "A browser-rendered control that asks for microphone access when the user activates it, then delivers an audio track. Fires `track` on success, `cancel` if the user declines, and `error` on failure." },
+    { "name": "usermedia", "bcd": "html.elements.usermedia",
+      "description": "A browser-rendered control that asks for camera and microphone access when the user activates it, then delivers one `MediaStream` with both tracks. Fires `stream`, `cancel` or `error`." },
+    { "name": "geolocation", "bcd": "html.elements.geolocation",
+      "description": "A browser-rendered button for getting the user's location. Clicking it shows the permission prompt; if the user allows it, the position is available on the element and a `location` event fires. Child content is fallback for browsers without support.",
+      "attributes": [
+        { "name": "autolocate", "valueSet": "v", "bcd": "html.elements.geolocation.autolocate",
+          "description": "If permission was already granted, get the location as soon as the element is attached, without waiting for a click." },
+        { "name": "watch", "valueSet": "v", "bcd": "html.elements.geolocation.watch",
+          "description": "Keep reporting position changes, like `watchPosition()`, instead of reporting once." }
+      ] },
+    { "name": "model", "bcd": "html.elements.model",
+      "description": "Embeds an interactive 3D model rendered by the browser.",
+      "attributes": [
+        { "name": "src", "bcd": "html.elements.model.src", "description": "Address of the 3D model resource." },
+        { "name": "autoplay", "valueSet": "v", "bcd": "html.elements.model.autoplay", "description": "Start the model's animation automatically once it has loaded." },
+        { "name": "loop", "valueSet": "v", "bcd": "html.elements.model.loop", "description": "Repeat the model's animation." },
+        { "name": "stagemode", "valueSet": "stagemode", "bcd": "html.elements.model.stagemode", "description": "How user input affects the model: `none` (the default) leaves it in place; `orbit` lets the user rotate it by dragging." },
+        { "name": "width", "bcd": "html.elements.model.width", "description": "Width of the element. The model is scaled to fit on first load." },
+        { "name": "height", "bcd": "html.elements.model.height", "description": "Height of the element. The model is scaled to fit on first load." }
+      ] }
+  ]
+}

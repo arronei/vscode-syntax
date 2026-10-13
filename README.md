@@ -1,0 +1,44 @@
+# vscode-syntax
+
+Keeps VS Code's HTML and CSS IntelliSense (completions, hovers, validation) current with the web specs:
+
+1. **Find** what's missing.
+2. **Review** it: interim fix, upstream fix, or skip.
+3. **Use it now** through a local extension that works everywhere.
+4. **Fix it upstream** with PRs, so the item ships in VS Code and drops out of the extension.
+
+## Docs
+
+| Step | Doc | Command |
+|---|---|---|
+| Set up | [Setup](docs/setup.md) | `npm install` |
+| Background | [Where VS Code's data comes from](docs/data-pipeline.md) | |
+| Get info | [Gap report](docs/gap-report.md) | `npm run gap-report` |
+| Look over results | [Review results](docs/review-results.md) | |
+| Interim fix | [Additions files](docs/additions.md) | `npm run additions-from-gap-report -- <report> <out>` |
+| Interim fix | [Build, package, install the extension](docs/build-extension.md) | `npm run build-extension`, `npm run package-extension` |
+| Verify | [Live check in real VS Code](docs/check-vscode.md) | `npm run check-vscode` |
+| Verify | [Language service checks](docs/check-language-service.md) | `npm run check-html`, `npm run check-css` |
+| Produce PRs | [Upstream PRs](docs/upstream-prs.md) | |
+| PR tool | [apply-html](docs/apply-html.md): HTML additions → vscode-custom-data | `npm run apply-html -- <additions> <web-data>` |
+| PR tool | [mdn-data-add-property](docs/mdn-data-add-property.md): CSS property → mdn/data | `npm run mdn-data-add-property -- <mdn-data> <property.json>` |
+| Plan | [Next steps](docs/next-steps.md) | |
+
+## Current state
+
+- **Extension:** Web Spec Additions (HTML & CSS) v0.2.0. Contents: [extension/CONTENTS.md](extension/CONTENTS.md). Install: `code --install-extension D:\GitHub\vscode-syntax\extension\web-spec-additions-0.2.0.vsix --force`
+- **Latest gap report:** [reports/latest.json](reports/latest.json)
+- **Latest live check:** [reports/vscode-1.141-live-check.txt](reports/vscode-1.141-live-check.txt) (21/21)
+- **Upstream PRs:** three branches pushed, see [status](docs/upstream-prs.md#status)
+
+## Layout
+
+| Path | What it is |
+|---|---|
+| `additions/html/`, `additions/css/` | One file per batch: the source of truth for the extension and the PRs |
+| `extension/` | The VS Code extension: `package.json`, `extension.js` (hover provider), generated `data/` and `CONTENTS.md` |
+| `prs/` | Commit message, PR description and patch per upstream PR |
+| `reports/` | Gap reports and live VS Code check results |
+| `tools/` | The scripts behind the commands above |
+| `docs/` | One doc per tool and process |
+| `_to_delete/` | Superseded files, safe to remove |
