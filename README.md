@@ -47,7 +47,7 @@ Yellow means something newer is out: `npm run update`, `npm run all`, commit the
 
 ## Current state
 
-- **Extension:** Web Spec Additions (HTML & CSS). Download the `.vsix` from the [latest release](https://github.com/arronei/vscode-syntax/releases/latest), then `code --install-extension web-spec-additions.vsix --force`. Contents: [extension/CONTENTS.md](extension/CONTENTS.md)
+- **Extension:** Web Spec Additions (HTML & CSS). Download the `.vsix` from the [latest release](https://github.com/arronei/vscode-syntax/releases/latest), then `code --install-extension web-spec-additions.vsix --force` or **Extensions: Install from VSIX…** in VS Code. Don't double-click it: Windows opens it with Visual Studio's installer, which fails. Contents: [extension/CONTENTS.md](extension/CONTENTS.md)
 - **Latest gap report:** [reports/latest.json](reports/latest.json)
 - **Latest live check:** [reports/vscode-1.141-live-check.txt](reports/vscode-1.141-live-check.txt) (21/21)
 - **Upstream PRs:** three branches pushed, see [status](docs/upstream-prs.md#status)

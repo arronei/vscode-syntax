@@ -55,7 +55,19 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           v=v$(node -p "require('./extension/package.json').version")
-          gh release view "$v" >/dev/null 2>&1 || gh release create "$v" _site/web-spec-additions.vsix --title "Extension $v" --notes-file extension/CONTENTS.md
+          gh release view "$v" >/dev/null 2>&1 && exit 0
+          cat extension/CONTENTS.md - > notes.md <<'EOF'
+
+          ## Install
+
+          Download `web-spec-additions.vsix` from **Assets** below. Don't double-click it: Windows opens `.vsix` files with Visual Studio's installer, which can't install VS Code extensions. Instead, either:
+
+          - In VS Code, open the Extensions view, click **⋯** (Views and More Actions), choose **Install from VSIX…** and pick the file. The Command Palette has the same command: **Extensions: Install from VSIX…**
+          - Or, from a terminal in your downloads folder: `code --install-extension web-spec-additions.vsix --force`
+
+          Reload the window if VS Code asks.
+          EOF
+          gh release create "$v" _site/web-spec-additions.vsix --title "Extension $v" --notes-file notes.md
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
