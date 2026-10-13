@@ -7,6 +7,16 @@ Keeps VS Code's HTML and CSS IntelliSense (completions, hovers, validation) curr
 3. **Use it now** through a local extension that works everywhere.
 4. **Fix it upstream** with PRs, so the item ships in VS Code and drops out of the extension.
 
+## Status
+
+| | |
+|---|---|
+| [Site](https://arronei.github.io/vscode-syntax/) | [![Pages](https://github.com/arronei/vscode-syntax/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/arronei/vscode-syntax/actions/workflows/pages.yml) ![gap report](https://img.shields.io/endpoint?url=https://arronei.github.io/vscode-syntax/badges/report.json) |
+| Data the report was built from | ![mdn-data](https://img.shields.io/endpoint?url=https://arronei.github.io/vscode-syntax/badges/npm-mdn-data.json) ![@mdn/browser-compat-data](https://img.shields.io/endpoint?url=https://arronei.github.io/vscode-syntax/badges/npm-mdn-browser-compat-data.json) ![@webref/css](https://img.shields.io/endpoint?url=https://arronei.github.io/vscode-syntax/badges/npm-webref-css.json) ![@webref/elements](https://img.shields.io/endpoint?url=https://arronei.github.io/vscode-syntax/badges/npm-webref-elements.json) ![web-features](https://img.shields.io/endpoint?url=https://arronei.github.io/vscode-syntax/badges/npm-web-features.json) |
+| Upstream since the report | ![vscode-custom-data](https://img.shields.io/endpoint?url=https://arronei.github.io/vscode-syntax/badges/repo-vscode-custom-data.json) ![mdn/data](https://img.shields.io/endpoint?url=https://arronei.github.io/vscode-syntax/badges/repo-mdn-data.json) ![vscode-css-languageservice](https://img.shields.io/endpoint?url=https://arronei.github.io/vscode-syntax/badges/repo-vscode-css-languageservice.json) ![vscode-html-languageservice](https://img.shields.io/endpoint?url=https://arronei.github.io/vscode-syntax/badges/repo-vscode-html-languageservice.json) |
+
+Yellow means something newer is out: `npm run update`, `npm run all`, commit the report and push. Red Pages means the published site is behind `main`. How the badges work: [docs/site.md](docs/site.md#status-badges).
+
 ## Commands
 
 | Command | When | What it does |

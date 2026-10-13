@@ -98,9 +98,9 @@ function archive() {
   console.log(`\nP1/P2 changes since ${prev}:\n${lines.join('\n') || '  none'}`);
 }
 
-// The GitHub Pages site in _site/: site/index.html, the data it reads, and the packaged extension.
-// .github/workflows/pages.yml runs this on every push to main.
-function site() {
+// The GitHub Pages site in _site/: site/index.html, the data it reads, the packaged extension, and the README badges.
+// .github/workflows/pages.yml runs this on every push to main, and daily so the badges stay current.
+async function site() {
   const out = path.join(root, '_site');
   fs.rmSync(out, { recursive: true, force: true });
   fs.mkdirSync(out);
@@ -108,10 +108,40 @@ function site() {
   fs.copyFileSync(path.join(root, 'reports', 'latest.json'), path.join(out, 'latest.json'));
   fs.copyFileSync(path.join(root, 'extension', 'package.json'), path.join(out, 'extension.json'));
   sh(`npx -y @vscode/vsce@3 package --skip-license --allow-missing-repository --no-rewrite-relative-links --out ${JSON.stringify(path.join(out, 'web-spec-additions.vsix'))}`, path.join(root, 'extension'));
+  await badges(path.join(out, 'badges'));
   console.log(`\nsite written to _site/. Preview: npx -y serve _site`);
+}
+
+// shields.io endpoint badges (https://shields.io/badges/endpoint-badge) for the README: how the published gap report
+// compares with the latest data releases and upstream commits. Yellow means a rerun would pick up something new.
+// A failed lookup gives a grey "unknown" badge instead of failing the deploy.
+async function badges(dir) {
+  fs.mkdirSync(dir);
+  const report = readJSON(path.join(root, 'reports', 'latest.json'));
+  const get = async (url, headers) => { const r = await fetch(url, { headers }); if (!r.ok) throw new Error(`${r.status} ${url}`); return r.json(); };
+  const badge = async (name, label, status) => {
+    let message = 'unknown', color = 'lightgrey';
+    try { [message, color] = await status(); } catch (e) { console.warn(yellow(`badge ${name}: ${e.message}`)); }
+    fs.writeFileSync(path.join(dir, `${name}.json`), JSON.stringify({ schemaVersion: 1, label, message, color }) + '\n');
+  };
+  const days = (Date.now() - new Date(report.generatedAt)) / 864e5;
+  await badge('report', 'gap report', () => [report.generatedAt.slice(0, 10), days < 7 ? 'brightgreen' : days < 30 ? 'yellow' : 'red']);
+  for (const [p, v] of Object.entries(report.sources)) {
+    await badge(`npm-${p.replace(/^@/, '').replace('/', '-')}`, p, async () => {
+      const latest = (await get(`https://registry.npmjs.org/${p}/latest`)).version;
+      return v === latest ? [v, 'brightgreen'] : [`${v} → ${latest}`, 'yellow'];
+    });
+  }
+  const auth = process.env.GITHUB_TOKEN ? { authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {};
+  for (const s of SIBLINGS) {
+    await badge(`repo-${s.dir}`, s.upstream, async () => {
+      const n = (await get(`https://api.github.com/repos/${s.upstream}/commits?since=${report.generatedAt}&per_page=100`, auth)).length;
+      return n ? [`${n < 100 ? n : '100+'} new commits`, 'yellow'] : ['no new commits', 'brightgreen'];
+    });
+  }
 }
 
 const commands = { setup, update, all, warn, archive, site };
 const cmd = commands[process.argv[2]];
 if (!cmd) { console.error(`usage: node tools/cli.mjs ${Object.keys(commands).join(' | ')}`); process.exit(2); }
-cmd();
+await cmd();

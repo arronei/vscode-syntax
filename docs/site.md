@@ -21,9 +21,22 @@ npx -y serve _site
 
 ## Publish
 
-`.github/workflows/pages.yml` runs `build-site` and deploys `_site/` on every push to `main` that touches `site/`, `reports/latest.json` or `extension/`. You can also run it by hand from the Actions tab.
+`.github/workflows/pages.yml` runs `build-site` and deploys `_site/` on every push to `main` that touches `site/`, `reports/latest.json` or `extension/`, and once a day. You can also run it by hand from the Actions tab.
 
 One-time setup: **Settings → Pages → Source: GitHub Actions**. Pages on a private repo needs a paid GitHub plan, and the published site is public.
+
+## Status badges
+
+The README's Status table. `build-site` writes one [shields.io endpoint](https://shields.io/badges/endpoint-badge) file per badge to `_site/badges/`, and the README points shields.io at the published copies. They are on Pages because the repo is private and shields.io can't read it.
+
+| Badge | Green | Yellow / red |
+|---|---|---|
+| Pages | Last run of the workflow passed, so the site matches `main` | Last run failed (GitHub's own badge, only visible to people with repo access) |
+| gap report | `reports/latest.json` is under 7 days old | Yellow under 30 days, red after |
+| Data packages, one per entry in the report's `sources` | The report used the latest npm release | `used → latest` |
+| Upstream repos, one per sibling repo | No commits on upstream's default branch since the report | Number of new commits |
+
+The daily run is what moves them: the comparisons are made at build time. A lookup that fails gives a grey "unknown" badge and doesn't stop the deploy. shields.io caches each badge for about 5 minutes.
 
 ## Changes
 
