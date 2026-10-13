@@ -19,7 +19,7 @@ Go through the P1 and P2 items. For each one, decide: add it to the extension no
 | HTML element or attribute | Hand-write an entry with a description in `additions/html/` ([format](additions.md#html-format)) | vscode-custom-data `htmlTags.json` ([apply-html](apply-html.md)) |
 | HTML global attribute | `globalAttributes` in `additions/html/` | vscode-custom-data `htmlGlobalAttributes.json`, by hand |
 | Empty CSS description (`emptyCssDescriptions`) | Automatic: the `fillEmptyBuiltinDescriptions` batch covers every one with a spec or mdn-data entry | vscode-custom-data `css/mdn/mdn-documentation.mjs`, then regenerate |
-| P3 | Skip, unless there's a reason. Record the reason in the batch's `criteria`. | Skip |
+| P3 | Skip, unless there's a reason. Record the reason in the batch's `criteria`. Proprietary items are hidden unless the `proprietary` [setting](build-extension.md#data-levels) is on, so they can go in without changing the default. Draft items show at the default level. | Skip |
 
 Before adding an item:
 - Open its `spec` and `mdn` links. Is it standards-track, and is the name right?
@@ -30,7 +30,7 @@ See [data-pipeline.md](data-pipeline.md) for why each fix goes where it does, an
 
 ## Read `extension/CONTENTS.md`
 
-- A count per kind, then a table per kind: name, Chrome/Firefox/Safari versions, and the additions file it came from.
+- A count per kind and [level](build-extension.md#data-levels), then a table per kind: name, level, Chrome/Firefox/Safari versions, and the additions file it came from.
 - **Dropped because VS Code now has them**: items the last build pruned. That's the signal an upstream fix has shipped. Update the [PR status](upstream-prs.md#status).
 
 ## Read a live check

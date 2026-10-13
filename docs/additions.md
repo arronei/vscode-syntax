@@ -8,7 +8,7 @@
 npm run additions-from-gap-report -- reports/latest.json additions/css/2026-11-shipping-from-specs.json
 ```
 
-- Optional third argument: priorities to keep, default `P1,P2`.
+- Optional third argument: priorities and/or [levels](build-extension.md#data-levels) to keep, default `P1,P2`. An item is kept if it matches any of them, so `P1,P2,proprietary` adds proprietary items too.
 - Skips names already in other CSS additions files.
 - If the output file exists, entries keep their hand-written fields (`description`, `values`, `syntax`).
 - Prints the HTML items it found. Those need a written description, so add them to an HTML file by hand.
@@ -38,6 +38,7 @@ Then [build the extension](build-extension.md).
 | `values` | no | Keyword → description. The keywords themselves come from the syntax. |
 | `syntax` | only if not in `@webref/css` or `mdn-data` | The build fails with `no syntax for <name>` otherwise. |
 | `bcd` | no | BCD key, when it isn't `css.properties.<name>`, `css.at-rules.<name>` or `css.selectors.<name>`. |
+| `level` | no | `baseline`, `standard`, `draft` or `proprietary`. Overrides the [computed level](build-extension.md#data-levels). |
 | `fillEmptyBuiltinDescriptions` | no | Batch-level. Writes hover text for every built-in property with an empty description. One file has it already (`2026-10-fill-empty-descriptions.json`). |
 
 ## HTML format
@@ -66,7 +67,8 @@ Then [build the extension](build-extension.md).
 |---|---|
 | `description` | Required, markdown. Write it yourself; don't copy MDN text. |
 | `valueSet` | `v` for a boolean attribute, the name of a built-in set (`loading`, `fetchpriority`, `referrerpolicy`, …), or one defined in `valueSets`. Built-in sets you reference are copied into the extension data automatically. |
-| `bcd` | Adds browser versions, Baseline and the MDN link to the hover. Take it from the gap report's `bcdKey`. |
+| `bcd` | Adds browser versions, Baseline and the MDN link to the hover. Take it from the gap report's `bcdKey`. Also sets the [level](build-extension.md#data-levels): without it, the item has no spec link and comes out `proprietary`. |
+| `level` | Overrides the computed level. Use it for items without `bcd`. Not used for `elements[].attributes`, which go with their element. |
 | `valueSetEdits` | Replaces descriptions of values in an existing set |
 | `elements[].attributes` | Same shape as `attributes`, without `tag` |
 

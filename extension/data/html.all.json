@@ -1,0 +1,1684 @@
+{
+  "version": 1.1,
+  "tags": [
+    {
+      "name": "area",
+      "attributes": [
+        {
+          "name": "referrerpolicy",
+          "level": "baseline",
+          "valueSet": "referrerpolicy",
+          "description": {
+            "kind": "markdown",
+            "value": "Indicates which [referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) to send when following the hyperlink. Takes the same values as the `referrerpolicy` attribute of `<a>`."
+          },
+          "browsers": [
+            "E79",
+            "FF50",
+            "FFA50",
+            "S14",
+            "SM14",
+            "C51",
+            "CA51",
+            "O38"
+          ],
+          "status": {
+            "baseline": "high",
+            "baseline_low_date": "2020-09-16",
+            "baseline_high_date": "2023-03-16"
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-referrerpolicy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "attributes": [
+        {
+          "name": "command",
+          "level": "baseline",
+          "valueSet": "command",
+          "description": {
+            "kind": "markdown",
+            "value": "The action to perform on the element referenced by `commandfor` when the button is activated. Built-in commands are `show-modal`, `close` and `request-close` for `<dialog>` elements, and `show-popover`, `hide-popover` and `toggle-popover` for popovers. Custom commands start with two dashes (for example `--rotate`) and fire a `command` event on the target without any built-in behavior."
+          },
+          "browsers": [
+            "E135",
+            "FF144",
+            "FFA144",
+            "S26.2",
+            "SM26.2",
+            "C135",
+            "CA135",
+            "O120"
+          ],
+          "status": {
+            "baseline": "low",
+            "baseline_low_date": "2025-12-12"
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-button-command"
+            }
+          ]
+        },
+        {
+          "name": "commandfor",
+          "level": "baseline",
+          "description": {
+            "kind": "markdown",
+            "value": "The `id` of the element this button controls. Used together with `command` to act on that element, such as opening a dialog or toggling a popover, without JavaScript."
+          },
+          "browsers": [
+            "E135",
+            "FF144",
+            "FFA144",
+            "S26.2",
+            "SM26.2",
+            "C135",
+            "CA135",
+            "O120"
+          ],
+          "status": {
+            "baseline": "low",
+            "baseline_low_date": "2025-12-12"
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-button-commandfor"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "attributes": [
+        {
+          "name": "rel",
+          "level": "baseline",
+          "description": {
+            "kind": "markdown",
+            "value": "A space-separated list of the link types the form submission creates. Allowed values are `external`, `help`, `license`, `next`, `nofollow`, `noopener`, `noreferrer`, `opener`, `prev` and `search`."
+          },
+          "browsers": [
+            "E108",
+            "FF111",
+            "FFA111",
+            "S15.4",
+            "SM15.4",
+            "C108",
+            "CA108",
+            "O94"
+          ],
+          "status": {
+            "baseline": "high",
+            "baseline_low_date": "2023-03-14",
+            "baseline_high_date": "2025-09-14"
+          },
+          "references": [
+            {
+              "name": "MDN Reference",
+              "url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/rel"
+            },
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/forms.html#attr-form-rel"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "iframe",
+      "attributes": [
+        {
+          "name": "loading",
+          "level": "baseline",
+          "valueSet": "loading",
+          "description": {
+            "kind": "markdown",
+            "value": "Indicates when the browser should load the iframe. `eager` (the default) loads it immediately; `lazy` defers loading until the iframe nears the viewport."
+          },
+          "browsers": [
+            "E79",
+            "FF121",
+            "FFA121",
+            "S16.4",
+            "SM16.4",
+            "C77",
+            "CA77",
+            "O64"
+          ],
+          "status": {
+            "baseline": "high",
+            "baseline_low_date": "2023-12-19",
+            "baseline_high_date": "2026-06-19"
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-loading"
+            }
+          ]
+        },
+        {
+          "name": "credentialless",
+          "level": "draft",
+          "valueSet": "v",
+          "description": {
+            "kind": "markdown",
+            "value": "Loads the iframe's document in a new, ephemeral context without the embedder's cookies or storage. Lets cross-origin-isolated pages embed third-party content that doesn't send CORP or COEP headers."
+          },
+          "browsers": [
+            "E110",
+            "C110",
+            "CA110",
+            "O96"
+          ],
+          "status": {
+            "baseline": false
+          },
+          "references": [
+            {
+              "name": "MDN Reference",
+              "url": "https://developer.mozilla.org/docs/Web/HTTP/Guides/IFrame_credentialless"
+            },
+            {
+              "name": "Specification",
+              "url": "https://wicg.github.io/anonymous-iframe/#attr-iframe-credentialless"
+            }
+          ]
+        },
+        {
+          "name": "privateToken",
+          "level": "draft",
+          "description": {
+            "kind": "markdown",
+            "value": "JSON-encoded parameters for a Private State Token operation (such as a token redemption) to attach to the iframe's navigation request."
+          },
+          "browsers": [
+            "E117",
+            "C117",
+            "CA117",
+            "O103"
+          ],
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://wicg.github.io/trust-token-api/#iframe-private-token"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "link",
+      "attributes": [
+        {
+          "name": "disabled",
+          "level": "baseline",
+          "valueSet": "v",
+          "description": {
+            "kind": "markdown",
+            "value": "For `rel=\"stylesheet\"`, a Boolean attribute that keeps the style sheet from being loaded and applied. Removing the attribute enables the style sheet."
+          },
+          "browsers": [
+            "E12",
+            "FF1",
+            "FFA4",
+            "S4",
+            "SM3.2",
+            "C1",
+            "CA18",
+            "O12.1"
+          ],
+          "status": {
+            "baseline": "high",
+            "baseline_low_date": "2015-07-29",
+            "baseline_high_date": "2018-01-29"
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-disabled"
+            }
+          ]
+        },
+        {
+          "name": "fetchpriority",
+          "level": "baseline",
+          "valueSet": "fetchpriority",
+          "description": {
+            "kind": "markdown",
+            "value": "Provides a hint of the relative priority to use when fetching the linked resource, such as a preloaded resource or a style sheet."
+          },
+          "browsers": [
+            "E101",
+            "FF132",
+            "FFA132",
+            "S17.2",
+            "SM17.2",
+            "C101",
+            "CA101",
+            "O87"
+          ],
+          "status": {
+            "baseline": "low",
+            "baseline_low_date": "2024-10-29"
+          },
+          "references": [
+            {
+              "name": "MDN Reference",
+              "url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/fetchpriority"
+            },
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-fetchpriority"
+            }
+          ]
+        },
+        {
+          "name": "imagesizes",
+          "level": "baseline",
+          "description": {
+            "kind": "markdown",
+            "value": "For `rel=\"preload\"` with `as=\"image\"`, the source sizes to use when choosing which image to preload. Same syntax and meaning as the `sizes` attribute of `<img>`."
+          },
+          "browsers": [
+            "E79",
+            "FF78",
+            "FFA79",
+            "S17.2",
+            "SM17.2",
+            "C73",
+            "CA73",
+            "O60"
+          ],
+          "status": {
+            "baseline": "high",
+            "baseline_low_date": "2023-12-11",
+            "baseline_high_date": "2026-06-11"
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-imagesizes"
+            }
+          ]
+        },
+        {
+          "name": "imagesrcset",
+          "level": "baseline",
+          "description": {
+            "kind": "markdown",
+            "value": "For `rel=\"preload\"` with `as=\"image\"`, the candidate images to choose from when preloading a responsive image. Same syntax and meaning as the `srcset` attribute of `<img>`."
+          },
+          "browsers": [
+            "E79",
+            "FF78",
+            "FFA79",
+            "S17.2",
+            "SM17.2",
+            "C73",
+            "CA73",
+            "O60"
+          ],
+          "status": {
+            "baseline": "high",
+            "baseline_low_date": "2023-12-11",
+            "baseline_high_date": "2026-06-11"
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-imagesrcset"
+            }
+          ]
+        },
+        {
+          "name": "blocking",
+          "level": "standard",
+          "valueSet": "blocking",
+          "description": {
+            "kind": "markdown",
+            "value": "Operations to block until this resource has loaded, as a space-separated list. The only token is `render`, which keeps the page from rendering until the style sheet or preloaded resource arrives."
+          },
+          "browsers": [
+            "E105",
+            "S18.2",
+            "SM18.2",
+            "C105",
+            "CA105",
+            "O91"
+          ],
+          "status": {
+            "baseline": false
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-blocking"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "script",
+      "attributes": [
+        {
+          "name": "fetchpriority",
+          "level": "baseline",
+          "valueSet": "fetchpriority",
+          "description": {
+            "kind": "markdown",
+            "value": "Provides a hint of the relative priority to use when fetching an external script."
+          },
+          "browsers": [
+            "E101",
+            "FF132",
+            "FFA132",
+            "S17.2",
+            "SM17.2",
+            "C101",
+            "CA101",
+            "O87"
+          ],
+          "status": {
+            "baseline": "low",
+            "baseline_low_date": "2024-10-29"
+          },
+          "references": [
+            {
+              "name": "MDN Reference",
+              "url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/fetchpriority"
+            },
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-fetchpriority"
+            }
+          ]
+        },
+        {
+          "name": "blocking",
+          "level": "standard",
+          "valueSet": "blocking",
+          "description": {
+            "kind": "markdown",
+            "value": "Operations to block until this external script has loaded, as a space-separated list. The only token is `render`, which keeps the page from rendering until then (useful with `async` scripts)."
+          },
+          "browsers": [
+            "E105",
+            "S18.2",
+            "SM18.2",
+            "C105",
+            "CA105",
+            "O91"
+          ],
+          "status": {
+            "baseline": false
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-blocking"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "source",
+      "attributes": [
+        {
+          "name": "width",
+          "level": "baseline",
+          "description": {
+            "kind": "markdown",
+            "value": "The intrinsic width of the image resource in CSS pixels. Only allowed when the `<source>` is a child of `<picture>`; lets the browser reserve space for the selected image before it loads."
+          },
+          "browsers": [
+            "E90",
+            "FF108",
+            "FFA108",
+            "S15",
+            "SM15",
+            "C90",
+            "CA90",
+            "O76"
+          ],
+          "status": {
+            "baseline": "high",
+            "baseline_low_date": "2022-12-13",
+            "baseline_high_date": "2025-06-13"
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/embedded-content-other.html#attr-dim-width"
+            }
+          ]
+        },
+        {
+          "name": "height",
+          "level": "baseline",
+          "description": {
+            "kind": "markdown",
+            "value": "The intrinsic height of the image resource in CSS pixels. Only allowed when the `<source>` is a child of `<picture>`; lets the browser reserve space for the selected image before it loads."
+          },
+          "browsers": [
+            "E90",
+            "FF108",
+            "FFA108",
+            "S15",
+            "SM15",
+            "C90",
+            "CA90",
+            "O76"
+          ],
+          "status": {
+            "baseline": "high",
+            "baseline_low_date": "2022-12-13",
+            "baseline_high_date": "2025-06-13"
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/embedded-content-other.html#attr-dim-height"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "template",
+      "attributes": [
+        {
+          "name": "shadowrootmode",
+          "level": "baseline",
+          "valueSet": "shadowrootmode",
+          "description": {
+            "kind": "markdown",
+            "value": "Turns the `<template>` into a declarative shadow root attached to its parent element. `open` exposes the shadow root to JavaScript through the host's `shadowRoot` property; `closed` does not."
+          },
+          "browsers": [
+            "E111",
+            "FF123",
+            "FFA123",
+            "S16.4",
+            "SM16.4",
+            "C111",
+            "CA111",
+            "O97"
+          ],
+          "status": {
+            "baseline": "high",
+            "baseline_low_date": "2024-02-20",
+            "baseline_high_date": "2026-08-20"
+          },
+          "references": [
+            {
+              "name": "MDN Reference",
+              "url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/template#shadowrootmode"
+            },
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-template-shadowrootmode"
+            }
+          ]
+        },
+        {
+          "name": "shadowrootclonable",
+          "level": "baseline",
+          "valueSet": "v",
+          "description": {
+            "kind": "markdown",
+            "value": "Sets the `clonable` property of a shadow root created with `shadowrootmode`, so the shadow root is copied when its host is cloned with `cloneNode()` or `importNode()`."
+          },
+          "browsers": [
+            "E124",
+            "FF125",
+            "FFA125",
+            "S17.5",
+            "SM17.5",
+            "C124",
+            "CA124",
+            "O110"
+          ],
+          "status": {
+            "baseline": "low",
+            "baseline_low_date": "2024-05-13"
+          },
+          "references": [
+            {
+              "name": "MDN Reference",
+              "url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/template#shadowrootclonable"
+            },
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-template-shadowrootclonable"
+            }
+          ]
+        },
+        {
+          "name": "shadowrootdelegatesfocus",
+          "level": "baseline",
+          "valueSet": "v",
+          "description": {
+            "kind": "markdown",
+            "value": "Sets the `delegatesFocus` property of a shadow root created with `shadowrootmode`, so focusing the host moves focus to the first focusable element in the shadow tree."
+          },
+          "browsers": [
+            "E123",
+            "FF123",
+            "FFA123",
+            "S16.4",
+            "SM16.4",
+            "C123",
+            "CA123",
+            "O109"
+          ],
+          "status": {
+            "baseline": "high",
+            "baseline_low_date": "2024-03-22",
+            "baseline_high_date": "2026-09-22"
+          },
+          "references": [
+            {
+              "name": "MDN Reference",
+              "url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/template#shadowrootdelegatesfocus"
+            },
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-template-shadowrootdelegatesfocus"
+            }
+          ]
+        },
+        {
+          "name": "shadowrootserializable",
+          "level": "standard",
+          "valueSet": "v",
+          "description": {
+            "kind": "markdown",
+            "value": "Sets the `serializable` property of a shadow root created with `shadowrootmode`, so the shadow root is included when serializing with `getHTML({ serializableShadowRoots: true })`."
+          },
+          "browsers": [
+            "E125",
+            "S18",
+            "SM18",
+            "C125",
+            "CA125",
+            "O111"
+          ],
+          "status": {
+            "baseline": false
+          },
+          "references": [
+            {
+              "name": "MDN Reference",
+              "url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/template#shadowrootserializable"
+            },
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-template-shadowrootserializable"
+            }
+          ]
+        },
+        {
+          "name": "for",
+          "level": "standard",
+          "description": {
+            "kind": "markdown",
+            "value": "Names the `<?marker>` or `<?start>` processing instruction where this template's content is inserted, or the start of the range it replaces, for declarative partial updates. The value must match that instruction's `name`."
+          },
+          "browsers": [
+            "E150",
+            "C150",
+            "CA150",
+            "O134"
+          ],
+          "status": {
+            "baseline": false
+          },
+          "references": [
+            {
+              "name": "MDN Reference",
+              "url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/template#for"
+            },
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-template-for"
+            }
+          ]
+        },
+        {
+          "name": "shadowrootslotassignment",
+          "level": "standard",
+          "valueSet": "shadowrootslotassignment",
+          "description": {
+            "kind": "markdown",
+            "value": "Slot assignment mode for the declarative shadow root: `named` (the default) assigns children by their `slot` attribute; `manual` leaves assignment to script."
+          },
+          "browsers": [
+            "FF151",
+            "FFA151"
+          ],
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-template-shadowrootslotassignment"
+            }
+          ]
+        },
+        {
+          "name": "shadowrootcustomelementregistry",
+          "level": "standard",
+          "valueSet": "v",
+          "description": {
+            "kind": "markdown",
+            "value": "Creates the declarative shadow root without a custom element registry, so that a scoped `CustomElementRegistry` can be attached to it later with `initialize()`."
+          },
+          "browsers": [
+            "E146",
+            "S26",
+            "SM26",
+            "C146",
+            "CA146",
+            "O130"
+          ],
+          "references": [
+            {
+              "name": "MDN Reference",
+              "url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/template#shadowrootcustomelementregistry"
+            },
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-template-shadowrootcustomelementregistry"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "video",
+      "attributes": [
+        {
+          "name": "playsinline",
+          "level": "standard",
+          "valueSet": "v",
+          "description": {
+            "kind": "markdown",
+            "value": "A Boolean attribute indicating that the video should play inline, within the element's playback area, instead of automatically entering fullscreen. Mainly affects mobile browsers."
+          },
+          "browsers": [
+            "E79",
+            "S10",
+            "SM10",
+            "C75",
+            "CA75",
+            "O62"
+          ],
+          "status": {
+            "baseline": false
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/media.html#attr-video-playsinline"
+            }
+          ]
+        },
+        {
+          "name": "loading",
+          "level": "standard",
+          "valueSet": "loading",
+          "description": {
+            "kind": "markdown",
+            "value": "`lazy` defers fetching the media until the element nears the viewport; it takes precedence over `preload`, and with `autoplay` it also delays playback. `eager` loads immediately."
+          },
+          "browsers": [
+            "E150",
+            "C150",
+            "CA150",
+            "O134"
+          ],
+          "status": {
+            "baseline": false
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/media.html#attr-media-loading"
+            }
+          ]
+        },
+        {
+          "name": "disableremoteplayback",
+          "level": "standard",
+          "valueSet": "v",
+          "description": {
+            "kind": "markdown",
+            "value": "Stops the browser from offering remote playback (casting the media to another device) for this element."
+          },
+          "browsers": [
+            "E121",
+            "S13.1",
+            "SM13",
+            "C121",
+            "CA56",
+            "O107"
+          ],
+          "status": {
+            "baseline": false
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://w3c.github.io/remote-playback/#the-disableremoteplayback-attribute"
+            }
+          ]
+        },
+        {
+          "name": "disablepictureinpicture",
+          "level": "draft",
+          "valueSet": "v",
+          "description": {
+            "kind": "markdown",
+            "value": "Stops the browser from offering picture-in-picture for this video, including automatic picture-in-picture."
+          },
+          "browsers": [
+            "E79",
+            "FF122",
+            "FFA122",
+            "S13.1",
+            "SM13.4",
+            "C69",
+            "CA105",
+            "O56"
+          ],
+          "status": {
+            "baseline": false
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://w3c.github.io/picture-in-picture/#dom-htmlvideoelement-disablepictureinpicture"
+            }
+          ]
+        },
+        {
+          "name": "controlslist",
+          "level": "draft",
+          "valueSet": "controlslist",
+          "description": {
+            "kind": "markdown",
+            "value": "Hides buttons in the browser's built-in media controls, as a space-separated list of `nodownload`, `nofullscreen` and `noremoteplayback`."
+          },
+          "browsers": [
+            "E79",
+            "C58",
+            "CA58",
+            "O45"
+          ],
+          "status": {
+            "baseline": false
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://wicg.github.io/controls-list/#solution-outline"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "attributes": [
+        {
+          "name": "webkitdirectory",
+          "level": "baseline",
+          "valueSet": "v",
+          "description": {
+            "kind": "markdown",
+            "value": "For `type=\"file\"`, lets the user choose a directory instead of individual files; every file inside it, including subdirectories, is selected. Defined by the File and Directory Entries API, not the HTML Standard."
+          },
+          "browsers": [
+            "E13",
+            "FF50",
+            "FFA141",
+            "S11.1",
+            "SM18.4",
+            "C7",
+            "CA132",
+            "O15"
+          ],
+          "status": {
+            "baseline": "low",
+            "baseline_low_date": "2025-07-22"
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://wicg.github.io/entries-api/#dom-htmlinputelement-webkitdirectory"
+            }
+          ]
+        },
+        {
+          "name": "alpha",
+          "level": "standard",
+          "valueSet": "v",
+          "description": {
+            "kind": "markdown",
+            "value": "For `type=\"color\"`, lets the user pick a color with transparency instead of only fully opaque colors."
+          },
+          "browsers": [
+            "S18.4",
+            "SM18.4"
+          ],
+          "status": {
+            "baseline": false
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/input.html#attr-input-alpha"
+            }
+          ]
+        },
+        {
+          "name": "colorspace",
+          "level": "standard",
+          "valueSet": "colorspace",
+          "description": {
+            "kind": "markdown",
+            "value": "For `type=\"color\"`, the color space of the value, which also hints at the picker to show. `limited-srgb` (the default) gives 8-bit sRGB colors; `display-p3` gives `color(display-p3 …)` values."
+          },
+          "browsers": [
+            "S18.4",
+            "SM18.4"
+          ],
+          "status": {
+            "baseline": false
+          },
+          "references": [
+            {
+              "name": "MDN Reference",
+              "url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/input/color"
+            },
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/input.html#attr-input-colorspace"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "attributes": [
+        {
+          "name": "closedby",
+          "level": "standard",
+          "valueSet": "closedby",
+          "description": {
+            "kind": "markdown",
+            "value": "Which user actions close the dialog. `any`: close requests (such as Esc) and clicks outside the dialog. `closerequest`: close requests only. `none`: neither. When omitted, modal dialogs behave like `closerequest` and non-modal dialogs like `none`."
+          },
+          "browsers": [
+            "E134",
+            "FF141",
+            "FFA141",
+            "C134",
+            "CA134",
+            "O119"
+          ],
+          "status": {
+            "baseline": false
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/interactive-elements.html#attr-dialog-closedby"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "style",
+      "attributes": [
+        {
+          "name": "blocking",
+          "level": "standard",
+          "valueSet": "blocking",
+          "description": {
+            "kind": "markdown",
+            "value": "Operations to block until this style sheet and its imports have loaded, as a space-separated list. The only token is `render`."
+          },
+          "browsers": [
+            "E105",
+            "S18.2",
+            "SM18.2",
+            "C105",
+            "CA105",
+            "O91"
+          ],
+          "status": {
+            "baseline": false
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/semantics.html#attr-style-blocking"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "audio",
+      "attributes": [
+        {
+          "name": "loading",
+          "level": "standard",
+          "valueSet": "loading",
+          "description": {
+            "kind": "markdown",
+            "value": "`lazy` defers fetching the media until the element nears the viewport; it takes precedence over `preload`, and with `autoplay` it also delays playback. `eager` loads immediately."
+          },
+          "browsers": [
+            "E150",
+            "C150",
+            "CA150",
+            "O134"
+          ],
+          "status": {
+            "baseline": false
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://html.spec.whatwg.org/multipage/media.html#attr-media-loading"
+            }
+          ]
+        },
+        {
+          "name": "disableremoteplayback",
+          "level": "standard",
+          "valueSet": "v",
+          "description": {
+            "kind": "markdown",
+            "value": "Stops the browser from offering remote playback (casting the media to another device) for this element."
+          },
+          "browsers": [
+            "E121",
+            "S13.1",
+            "SM13",
+            "C121",
+            "CA56",
+            "O107"
+          ],
+          "status": {
+            "baseline": false
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://w3c.github.io/remote-playback/#the-disableremoteplayback-attribute"
+            }
+          ]
+        },
+        {
+          "name": "controlslist",
+          "level": "draft",
+          "valueSet": "controlslist",
+          "description": {
+            "kind": "markdown",
+            "value": "Hides buttons in the browser's built-in media controls, as a space-separated list of `nodownload`, `nofullscreen` and `noremoteplayback`."
+          },
+          "browsers": [
+            "E79",
+            "C58",
+            "CA58",
+            "O45"
+          ],
+          "status": {
+            "baseline": false
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://wicg.github.io/controls-list/#solution-outline"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "a",
+      "attributes": [
+        {
+          "name": "attributionsourceid",
+          "level": "draft",
+          "description": {
+            "kind": "markdown",
+            "value": "An 8-bit (0–255) source ID for Private Click Measurement. Used with `attributiondestination` to measure ad click conversions without cross-site tracking."
+          },
+          "browsers": [
+            "S14.1",
+            "SM14.5"
+          ],
+          "status": {
+            "baseline": false
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://privacycg.github.io/private-click-measurement/#dom-htmlanchorelement-attributionsourceid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "camera",
+      "attributes": [],
+      "level": "draft",
+      "description": {
+        "kind": "markdown",
+        "value": "A browser-rendered control that asks for camera access when the user activates it, then delivers a video track. Fires `track` on success, `cancel` if the user declines, and `error` on failure."
+      },
+      "browsers": [
+        "E153",
+        "C153",
+        "CA153",
+        "O137"
+      ],
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://w3c.github.io/mediacapture-extensions/#the-camera-html-element"
+        }
+      ]
+    },
+    {
+      "name": "microphone",
+      "attributes": [],
+      "level": "draft",
+      "description": {
+        "kind": "markdown",
+        "value": "A browser-rendered control that asks for microphone access when the user activates it, then delivers an audio track. Fires `track` on success, `cancel` if the user declines, and `error` on failure."
+      },
+      "browsers": [
+        "E153",
+        "C153",
+        "CA153",
+        "O137"
+      ],
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://w3c.github.io/mediacapture-extensions/#the-microphone-html-element"
+        }
+      ]
+    },
+    {
+      "name": "usermedia",
+      "attributes": [],
+      "level": "draft",
+      "description": {
+        "kind": "markdown",
+        "value": "A browser-rendered control that asks for camera and microphone access when the user activates it, then delivers one `MediaStream` with both tracks. Fires `stream`, `cancel` or `error`."
+      },
+      "browsers": [
+        "E151",
+        "C151",
+        "CA151",
+        "O135"
+      ],
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://w3c.github.io/mediacapture-extensions/#the-usermedia-html-element"
+        }
+      ]
+    },
+    {
+      "name": "geolocation",
+      "attributes": [
+        {
+          "name": "autolocate",
+          "valueSet": "v",
+          "description": {
+            "kind": "markdown",
+            "value": "If permission was already granted, get the location as soon as the element is attached, without waiting for a click."
+          },
+          "browsers": [
+            "E144",
+            "C144",
+            "CA144",
+            "O128"
+          ],
+          "status": {
+            "baseline": false
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://wicg.github.io/PEPC/geolocation-element.html#element-attrdef-geolocation-autolocate"
+            }
+          ]
+        },
+        {
+          "name": "watch",
+          "level": "draft",
+          "valueSet": "v",
+          "description": {
+            "kind": "markdown",
+            "value": "Keep reporting position changes, like `watchPosition()`, instead of reporting once."
+          },
+          "browsers": [
+            "E144",
+            "C144",
+            "CA144",
+            "O128"
+          ],
+          "status": {
+            "baseline": false
+          },
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://wicg.github.io/PEPC/geolocation-element.html#element-attrdef-geolocation-watch"
+            }
+          ]
+        }
+      ],
+      "level": "draft",
+      "description": {
+        "kind": "markdown",
+        "value": "A browser-rendered button for getting the user's location. Clicking it shows the permission prompt; if the user allows it, the position is available on the element and a `location` event fires. Child content is fallback for browsers without support."
+      },
+      "browsers": [
+        "E144",
+        "C144",
+        "CA144",
+        "O128"
+      ],
+      "status": {
+        "baseline": false
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/geolocation"
+        },
+        {
+          "name": "Specification",
+          "url": "https://wicg.github.io/PEPC/geolocation-element.html#elementdef-geolocation"
+        }
+      ]
+    },
+    {
+      "name": "model",
+      "attributes": [
+        {
+          "name": "src",
+          "description": {
+            "kind": "markdown",
+            "value": "Address of the 3D model resource."
+          },
+          "browsers": [
+            "S27",
+            "SM27"
+          ],
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://immersive-web.github.io/model-element/#src-attribute"
+            }
+          ]
+        },
+        {
+          "name": "autoplay",
+          "level": "draft",
+          "valueSet": "v",
+          "description": {
+            "kind": "markdown",
+            "value": "Start the model's animation automatically once it has loaded."
+          },
+          "browsers": [
+            "S27",
+            "SM27"
+          ],
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://immersive-web.github.io/model-element/#autoplay-attribute"
+            }
+          ]
+        },
+        {
+          "name": "loop",
+          "level": "draft",
+          "valueSet": "v",
+          "description": {
+            "kind": "markdown",
+            "value": "Repeat the model's animation."
+          },
+          "browsers": [
+            "S27",
+            "SM27"
+          ],
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://immersive-web.github.io/model-element/#loop-attribute"
+            }
+          ]
+        },
+        {
+          "name": "stagemode",
+          "level": "draft",
+          "valueSet": "stagemode",
+          "description": {
+            "kind": "markdown",
+            "value": "How user input affects the model: `none` (the default) leaves it in place; `orbit` lets the user rotate it by dragging."
+          },
+          "browsers": [
+            "S27",
+            "SM27"
+          ],
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://immersive-web.github.io/model-element/#stagemode-attribute"
+            }
+          ]
+        },
+        {
+          "name": "width",
+          "level": "draft",
+          "description": {
+            "kind": "markdown",
+            "value": "Width of the element. The model is scaled to fit on first load."
+          },
+          "browsers": [
+            "S27",
+            "SM27"
+          ],
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://immersive-web.github.io/model-element/#width-attribute"
+            }
+          ]
+        },
+        {
+          "name": "height",
+          "level": "draft",
+          "description": {
+            "kind": "markdown",
+            "value": "Height of the element. The model is scaled to fit on first load."
+          },
+          "browsers": [
+            "S27",
+            "SM27"
+          ],
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://immersive-web.github.io/model-element/#height-attribute"
+            }
+          ]
+        }
+      ],
+      "level": "draft",
+      "description": {
+        "kind": "markdown",
+        "value": "Embeds an interactive 3D model rendered by the browser."
+      },
+      "browsers": [
+        "S27",
+        "SM27"
+      ],
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://immersive-web.github.io/model-element/#dfn-model"
+        }
+      ]
+    }
+  ],
+  "globalAttributes": [
+    {
+      "name": "writingsuggestions",
+      "level": "standard",
+      "valueSet": "writingsuggestions",
+      "description": {
+        "kind": "markdown",
+        "value": "Whether the browser may offer writing suggestions, such as predictive inline text, while the user types in this editable element. `false` turns them off; `true` or an empty value turns them on. Descendants inherit the setting."
+      },
+      "browsers": [
+        "E124",
+        "S18",
+        "SM18",
+        "C124",
+        "CA124",
+        "O110"
+      ],
+      "status": {
+        "baseline": false
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/writingsuggestions"
+        },
+        {
+          "name": "Specification",
+          "url": "https://html.spec.whatwg.org/multipage/interaction.html#writing-suggestions"
+        }
+      ]
+    },
+    {
+      "name": "elementtiming",
+      "level": "draft",
+      "description": {
+        "kind": "markdown",
+        "value": "Marks an image or text element for the Element Timing API. When it renders, a `PerformanceElementTiming` entry with this identifier is reported to `PerformanceObserver`."
+      },
+      "browsers": [
+        "E79",
+        "C77",
+        "CA77",
+        "O64"
+      ],
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://w3c.github.io/element-timing/#dom-element-elementtiming"
+        }
+      ]
+    }
+  ],
+  "valueSets": [
+    {
+      "name": "referrerpolicy",
+      "values": [
+        {
+          "name": "no-referrer"
+        },
+        {
+          "name": "no-referrer-when-downgrade"
+        },
+        {
+          "name": "origin"
+        },
+        {
+          "name": "origin-when-cross-origin"
+        },
+        {
+          "name": "same-origin"
+        },
+        {
+          "name": "strict-origin"
+        },
+        {
+          "name": "strict-origin-when-cross-origin"
+        },
+        {
+          "name": "unsafe-url"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "values": [
+        {
+          "name": "show-modal",
+          "description": {
+            "kind": "markdown",
+            "value": "Opens the target `<dialog>` as a modal."
+          }
+        },
+        {
+          "name": "close",
+          "description": {
+            "kind": "markdown",
+            "value": "Closes the target `<dialog>`."
+          }
+        },
+        {
+          "name": "request-close",
+          "description": {
+            "kind": "markdown",
+            "value": "Asks the target `<dialog>` to close. A cancelable `cancel` event fires first."
+          }
+        },
+        {
+          "name": "show-popover",
+          "description": {
+            "kind": "markdown",
+            "value": "Shows the target popover."
+          }
+        },
+        {
+          "name": "hide-popover",
+          "description": {
+            "kind": "markdown",
+            "value": "Hides the target popover."
+          }
+        },
+        {
+          "name": "toggle-popover",
+          "description": {
+            "kind": "markdown",
+            "value": "Toggles the target popover between showing and hidden."
+          }
+        }
+      ]
+    },
+    {
+      "name": "loading",
+      "values": [
+        {
+          "name": "eager",
+          "description": {
+            "kind": "markdown",
+            "value": "Loads the resource immediately, regardless of whether or not it is currently within the visible viewport (this is the default value)."
+          }
+        },
+        {
+          "name": "lazy",
+          "description": {
+            "kind": "markdown",
+            "value": "Defers loading the resource until it reaches a calculated distance from the viewport, as defined by the browser. The intent is to avoid the network and storage bandwidth needed to handle the resource until it's reasonably certain that it will be needed. This generally improves the performance of the content in most typical use cases."
+          }
+        }
+      ]
+    },
+    {
+      "name": "fetchpriority",
+      "values": [
+        {
+          "name": "high"
+        },
+        {
+          "name": "low"
+        },
+        {
+          "name": "auto"
+        }
+      ]
+    },
+    {
+      "name": "blocking",
+      "values": [
+        {
+          "name": "render",
+          "description": {
+            "kind": "markdown",
+            "value": "Hold off rendering the page until this resource has loaded."
+          }
+        }
+      ]
+    },
+    {
+      "name": "shadowrootmode",
+      "values": [
+        {
+          "name": "open",
+          "description": {
+            "kind": "markdown",
+            "value": "The shadow root is reachable from JavaScript through the host's `shadowRoot` property."
+          }
+        },
+        {
+          "name": "closed",
+          "description": {
+            "kind": "markdown",
+            "value": "The shadow root is hidden from JavaScript outside the shadow tree; the host's `shadowRoot` property returns `null`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "shadowrootslotassignment",
+      "values": [
+        {
+          "name": "named",
+          "description": {
+            "kind": "markdown",
+            "value": "Children are assigned to slots by their `slot` attribute. This is the default."
+          }
+        },
+        {
+          "name": "manual",
+          "description": {
+            "kind": "markdown",
+            "value": "Slot assignment is done by script with `HTMLSlotElement.assign()`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "controlslist",
+      "values": [
+        {
+          "name": "nodownload",
+          "description": {
+            "kind": "markdown",
+            "value": "Hide the download button."
+          }
+        },
+        {
+          "name": "nofullscreen",
+          "description": {
+            "kind": "markdown",
+            "value": "Hide the fullscreen button."
+          }
+        },
+        {
+          "name": "noremoteplayback",
+          "description": {
+            "kind": "markdown",
+            "value": "Hide the remote playback (casting) button."
+          }
+        }
+      ]
+    },
+    {
+      "name": "colorspace",
+      "values": [
+        {
+          "name": "limited-srgb",
+          "description": {
+            "kind": "markdown",
+            "value": "8-bit sRGB colors such as `#123456`. This is the default."
+          }
+        },
+        {
+          "name": "display-p3",
+          "description": {
+            "kind": "markdown",
+            "value": "Colors in the Display P3 space, such as `color(display-p3 1 0.2 0.1)`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "closedby",
+      "values": [
+        {
+          "name": "any",
+          "description": {
+            "kind": "markdown",
+            "value": "Close requests (such as Esc) and clicks outside the dialog (light dismiss) both close it."
+          }
+        },
+        {
+          "name": "closerequest",
+          "description": {
+            "kind": "markdown",
+            "value": "Only close requests (such as Esc) close the dialog."
+          }
+        },
+        {
+          "name": "none",
+          "description": {
+            "kind": "markdown",
+            "value": "No user action closes the dialog automatically."
+          }
+        }
+      ]
+    },
+    {
+      "name": "stagemode",
+      "values": [
+        {
+          "name": "none",
+          "description": {
+            "kind": "markdown",
+            "value": "User input doesn't move the model. This is the default."
+          }
+        },
+        {
+          "name": "orbit",
+          "description": {
+            "kind": "markdown",
+            "value": "Dragging rotates the model."
+          }
+        }
+      ]
+    },
+    {
+      "name": "writingsuggestions",
+      "values": [
+        {
+          "name": "true",
+          "description": {
+            "kind": "markdown",
+            "value": "Allow browser-provided writing suggestions."
+          }
+        },
+        {
+          "name": "false",
+          "description": {
+            "kind": "markdown",
+            "value": "Turn off browser-provided writing suggestions."
+          }
+        }
+      ]
+    }
+  ]
+}

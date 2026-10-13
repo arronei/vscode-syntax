@@ -4,6 +4,7 @@
 import fs from 'fs';
 import path from 'path';
 import { execFileSync } from 'child_process';
+import { levelFinder } from './levels.mjs';
 
 const [customData, mods, outFile] = process.argv.slice(2);
 const load = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -15,6 +16,7 @@ const webrefCss = load(path.join(mods, '@webref/css/css.json'));
 const webrefHtml = load(path.join(mods, '@webref/elements/html.json'));
 const bcd = load(path.join(mods, '@mdn/browser-compat-data/data.json'));
 const wf = load(path.join(mods, 'web-features/data.json'));
+const { levelOf } = levelFinder({ specs: load(path.join(mods, 'browser-specs/index.json')), wf });
 
 const BROWSERS = ['chrome', 'edge', 'firefox', 'safari'];
 
@@ -45,6 +47,7 @@ function entry(name, bcdKey, compat, specHref) {
   const bl = baselineByKey[bcdKey];
   return {
     name,
+    level: levelOf(name, compat, bcdKey, specHref),
     deprecated: compat?.status?.deprecated || undefined,
     nonStandard: compat && compat.status && !compat.status.standard_track ? true : undefined,
     bcdKey: compat ? bcdKey : undefined,
@@ -55,8 +58,8 @@ function entry(name, bcdKey, compat, specHref) {
   };
 }
 
-// P1 = standards-track, not deprecated, shipping in all four engines; P2 = shipping somewhere; P3 = not shipping / non-standard
-const priority = (e) => (e.deprecated || e.nonStandard ? 'P3' : e.shipsIn.length === 4 ? 'P1' : e.shipsIn.length >= 1 ? 'P2' : 'P3');
+// P1 = standards-track, not deprecated, shipping in all four engines; P2 = shipping somewhere; P3 = not shipping / proprietary
+const priority = (e) => (e.deprecated || e.level === 'proprietary' ? 'P3' : e.shipsIn.length === 4 ? 'P1' : e.shipsIn.length >= 1 ? 'P2' : 'P3');
 const sortGaps = (arr) => arr.sort((a, b) => b.shipsIn.length - a.shipsIn.length || a.name.localeCompare(b.name));
 
 // ---------- CSS properties ----------
@@ -66,7 +69,7 @@ const webrefProps = new Map(webrefCss.properties.map((p) => [p.name, p]));
 const cssPropGaps = [];
 const candidateProps = new Set([...Object.keys(bcdProps), ...webrefProps.keys()]);
 for (const name of candidateProps) {
-  if (haveProps.has(name) || name.startsWith('-') || name === 'custom-property' || name === '--*') continue;
+  if (haveProps.has(name) || name === 'custom-property' || name === '--*') continue;
   const compat = bcdProps[name]?.__compat;
   const e = entry(name, `css.properties.${name}`, compat, webrefProps.get(name)?.href);
   e.inSpec = webrefProps.has(name);
@@ -82,7 +85,7 @@ const haveAt = new Set(css.atDirectives.map((a) => a.name));
 const atGaps = [];
 const webrefAt = new Map(webrefCss.atrules.map((a) => [a.name, a]));
 for (const name of new Set([...Object.keys(bcd.css['at-rules']).map((n) => '@' + n), ...webrefAt.keys()])) {
-  if (haveAt.has(name) || name.startsWith('@-')) continue;
+  if (haveAt.has(name)) continue;
   const compat = bcd.css['at-rules'][name.slice(1)]?.__compat;
   const e = entry(name, `css.at-rules.${name.slice(1)}`, compat, webrefAt.get(name)?.href);
   atGaps.push(e);
@@ -109,11 +112,11 @@ for (const k of Object.keys(bcdSel)) {
   // skip combinators / basic selectors
   if (/^(child|descendant|next-sibling|subsequent-sibling|column|class|id|type|universal|attribute|list|namespace|nesting|selector_list)$/.test(k)) continue;
   const name = bcdSelName(k.replace(/function$/, ''));
-  if (haveSel.has(name) || k.startsWith('-')) continue;
+  if (haveSel.has(name)) continue;
   selGaps.push(entry(name, `css.selectors.${k}`, c, webrefSel.get(name)?.href));
 }
 for (const [name, s] of webrefSel) {
-  if (haveSel.has(name) || selGaps.some((g) => g.name === name) || !name.startsWith(':') || name.startsWith(':-') || name.startsWith('::-')) continue;
+  if (haveSel.has(name) || selGaps.some((g) => g.name === name) || !name.startsWith(':')) continue;
   const k = name.replace(/^::?/, '');
   if (bcdSel[k]) continue;
   selGaps.push(entry(name, undefined, undefined, s.href));
@@ -161,7 +164,7 @@ for (const [attr, node] of Object.entries(bcd.html.global_attributes)) {
 }
 sortGaps(globalGaps);
 
-const count = (arr) => ({ total: arr.length, P1: arr.filter((e) => priority(e) === 'P1').length, P2: arr.filter((e) => priority(e) === 'P2').length, P3: arr.filter((e) => priority(e) === 'P3').length });
+const count = (arr) => Object.fromEntries([['total', arr.length], ...['P1', 'P2', 'P3'].map((p) => [p, arr.filter((e) => priority(e) === p).length]), ...['baseline', 'standard', 'draft', 'proprietary'].map((l) => [l, arr.filter((e) => e.level === l).length])]);
 const report = {
   generatedAt: new Date().toISOString(),
   sources: Object.fromEntries(['mdn-data', '@mdn/browser-compat-data', '@webref/css', '@webref/elements', 'web-features'].map((p) => [p, load(path.join(mods, p, 'package.json')).version])),
@@ -175,5 +178,5 @@ if (outFile) fs.writeFileSync(outFile, JSON.stringify(report, null, 2));
 console.log(JSON.stringify({ sources: report.sources, shipped: report.shipped, summary: report.summary }, null, 2));
 for (const [k, list] of Object.entries(report.gaps)) {
   console.log(`\n## ${k} — P1 (all 4 browsers) / P2 (some browsers)`);
-  console.log(list.filter((e) => e.priority !== 'P3').map((e) => `${e.priority} ${e.name} [${e.shipsIn.join(',')}]`).join('\n'));
+  console.log(list.filter((e) => e.priority !== 'P3').map((e) => `${e.priority} ${e.name} [${e.shipsIn.join(',')}] ${e.level}`).join('\n'));
 }

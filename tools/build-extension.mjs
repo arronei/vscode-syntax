@@ -15,10 +15,16 @@
 //   HTML descriptions ............... the additions files (written by us)
 //
 // Also writes extension/data/css-hover.json for the hover provider in extension/extension.js.
+//
+// Every item gets a data level (tools/levels.mjs). The full data goes to extension/data/{css,html}.all.json.
+// The extension filters it to the levels its settings ask for, into the {css,html}.*-data.json files that
+// package.json contributes. The build writes those two at the settings' defaults.
 import fs from 'fs';
 import path from 'path';
+import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
 import { definitionSyntax } from 'css-tree';
+import { levelFinder } from './levels.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const readJSON = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -78,12 +84,8 @@ function references(compat, specHref) {
 }
 const cssStatus = (compat) => (compat?.status?.deprecated ? 'obsolete' : compat?.status?.experimental ? 'experimental' : compat && !compat.status?.standard_track ? 'nonstandard' : undefined);
 
-function specTitle(href) {
-  if (!href) return undefined;
-  const base = href.split('#')[0];
-  const hit = specs.find((s) => [s.nightly?.url, s.url].filter(Boolean).some((u) => base.startsWith(u)));
-  return hit?.title;
-}
+const { levelOf, specFor } = levelFinder({ specs, wf });
+const specTitle = (href) => specFor(href)?.title;
 
 function loadAdditions(kind) {
   const dir = path.join(root, 'additions', kind);
@@ -199,6 +201,7 @@ function buildProperty(add, origin) {
   const valueNotes = add.values || {};
   return {
     name: add.name,
+    level: add.level || levelOf(add.name, compat, bcdKey, spec?.href),
     syntax,
     values: keywords.map((k) => {
       const v = { name: k };
@@ -237,7 +240,7 @@ function buildSelector(add) {
   const description = add.description
     ? md(add.description)
     : md([spec?.prose ? firstSentences(spec.prose) : undefined, title ? `— *${title}*` : undefined].filter(Boolean).join('\n\n'));
-  return { name: plain(add.name), description, status: cssStatus(compat), browsers: browserStrings(compat), baseline: baseline(key), references: references(compat, spec?.href) };
+  return { name: plain(add.name), level: add.level || levelOf(add.name, compat, key, spec?.href), description, status: cssStatus(compat), browsers: browserStrings(compat), baseline: baseline(key), references: references(compat, spec?.href) };
 }
 function buildAtRule(add) {
   const spec = webrefCss.atrules.find((a) => a.name === add.name);
@@ -248,6 +251,7 @@ function buildAtRule(add) {
   const syntax = spec?.syntax ? `\n\nSyntax: \`${spec.syntax}\`` : '';
   return {
     name: add.name,
+    level: add.level || levelOf(add.name, compat, key, spec?.href),
     description: md([text, title ? `— *${title}*` : undefined].filter(Boolean).join('\n\n') + syntax),
     status: cssStatus(compat),
     browsers: browserStrings(compat),
@@ -314,9 +318,11 @@ const htmlTags = [];
 const htmlGlobals = [];
 const htmlValueSets = [];
 
-function buildAttribute(a) {
+// level: for top-level attributes only; an element's own attributes go with the element
+function buildAttribute(a, withLevel) {
   const compat = a.bcd ? compatAt(a.bcd) : undefined;
   const attr = { name: a.name };
+  if (withLevel) attr.level = htmlLevel(a, compat);
   if (a.valueSet) attr.valueSet = a.valueSet;
   attr.description = md(a.description);
   const browsers = browserStrings(compat);
@@ -327,6 +333,8 @@ function buildAttribute(a) {
   if (refs) attr.references = refs;
   return attr;
 }
+// HTML items without a `bcd` key have no spec link, so they come out proprietary unless they set `level`
+const htmlLevel = (a, compat) => a.level || levelOf(a.name, compat, a.bcd);
 const tagEntry = (name) => {
   let tag = htmlTags.find((t) => t.name === name);
   if (!tag) htmlTags.push((tag = { name, attributes: [] }));
@@ -336,18 +344,20 @@ const tagEntry = (name) => {
 for (const batch of htmlBatches) {
   for (const a of batch.attributes || []) {
     if (builtinTags.get(a.tag)?.has(a.name)) { pruned.push(`html <${a.tag} ${a.name}>`); continue; }
-    tagEntry(a.tag).attributes.push(buildAttribute(a));
-    included.html.push({ kind: 'attribute', name: `<${a.tag} ${a.name}>`, file: batch.file, browsers: browserStrings(a.bcd && compatAt(a.bcd)) });
+    const attr = buildAttribute(a, true);
+    tagEntry(a.tag).attributes.push(attr);
+    included.html.push({ kind: 'attribute', name: `<${a.tag} ${a.name}>`, file: batch.file, level: attr.level, browsers: browserStrings(a.bcd && compatAt(a.bcd)) });
   }
   for (const a of batch.globalAttributes || []) {
     if (builtinGlobals.has(a.name)) { pruned.push(`html global ${a.name}`); continue; }
-    htmlGlobals.push(buildAttribute(a));
-    included.html.push({ kind: 'global attribute', name: a.name, file: batch.file, browsers: browserStrings(a.bcd && compatAt(a.bcd)) });
+    htmlGlobals.push(buildAttribute(a, true));
+    included.html.push({ kind: 'global attribute', name: a.name, file: batch.file, level: htmlGlobals.at(-1).level, browsers: browserStrings(a.bcd && compatAt(a.bcd)) });
   }
   for (const el of batch.elements || []) {
     if (builtinTags.has(el.name)) { pruned.push(`html <${el.name}>`); continue; }
     const compat = el.bcd ? compatAt(el.bcd) : undefined;
     const tag = tagEntry(el.name);
+    tag.level = htmlLevel(el, compat);
     tag.description = md(el.description);
     const browsers = browserStrings(compat);
     if (browsers) tag.browsers = browsers;
@@ -356,7 +366,7 @@ for (const batch of htmlBatches) {
     const refs = references(compat);
     if (refs) tag.references = refs;
     tag.attributes.push(...(el.attributes || []).map(buildAttribute));
-    included.html.push({ kind: 'element', name: `<${el.name}>`, file: batch.file, browsers });
+    included.html.push({ kind: 'element', name: `<${el.name}>`, file: batch.file, level: tag.level, browsers });
   }
 }
 
@@ -378,10 +388,17 @@ for (const name of referenced) {
 // ---------- write ----------
 const outDir = path.join(root, 'extension', 'data');
 fs.mkdirSync(outDir, { recursive: true });
+const write = (file, data) => fs.writeFileSync(path.join(outDir, file), JSON.stringify(data, null, 2) + '\n');
+const { filterData } = createRequire(import.meta.url)('../extension/extension.js');
+const settings = readJSON(path.join(root, 'extension', 'package.json')).contributes.configuration.properties;
+const atDefaults = (lang, data) => filterData(data, settings[`webSpecAdditions.${lang}.level`].default, settings[`webSpecAdditions.${lang}.proprietary`].default);
 const cssData = { version: 1.1, properties: cssProperties, atDirectives: cssAtRules, pseudoClasses, pseudoElements };
-fs.writeFileSync(path.join(outDir, 'css.css-data.json'), JSON.stringify(cssData, null, 2) + '\n');
-fs.writeFileSync(path.join(outDir, 'css-hover.json'), JSON.stringify(cssHover, null, 2) + '\n');
-fs.writeFileSync(path.join(outDir, 'html.html-data.json'), JSON.stringify({ version: 1.1, tags: htmlTags, globalAttributes: htmlGlobals, valueSets: htmlValueSets }, null, 2) + '\n');
+const htmlData = { version: 1.1, tags: htmlTags, globalAttributes: htmlGlobals, valueSets: htmlValueSets };
+write('css.all.json', cssData);
+write('css.css-data.json', atDefaults('css', cssData));
+write('html.all.json', htmlData);
+write('html.html-data.json', atDefaults('html', htmlData));
+write('css-hover.json', cssHover);
 
 // CONTENTS.md: what the extension adds, and where each item came from
 const short = (b) => (b ? b.filter((x) => /^(C|FF|S)\d/.test(x)).join(' ') : '—');
@@ -390,9 +407,13 @@ const lines = [
   '',
   `Generated by \`npm run build-extension\` on ${new Date().toISOString().slice(0, 10)}. Compared against built-in data \`@vscode/web-custom-data\` ${builtinVersion}; anything VS Code already has is dropped automatically.`,
   '',
-  '| Kind | Count |',
-  '|---|---|',
+  'Level: which setting adds the item (see `tools/levels.mjs`). Baseline, standard and draft are cumulative; proprietary is opt-in.',
+  '',
+  '| Kind | Count | Baseline | Standard | Draft | Proprietary |',
+  '|---|---|---|---|---|---|',
 ];
+const LEVELS = ['baseline', 'standard', 'draft', 'proprietary'];
+const levelOfItem = (x) => x.entry?.level ?? x.level;
 const groups = [
   ['CSS properties', included.css.filter((x) => x.kind === 'property')],
   ['CSS at-rules', included.css.filter((x) => x.kind === 'at-rule')],
@@ -403,15 +424,16 @@ const groups = [
   ['HTML attributes', included.html.filter((x) => x.kind === 'attribute')],
   ['HTML global attributes', included.html.filter((x) => x.kind === 'global attribute')],
 ];
-for (const [label, list] of groups) lines.push(`| ${label} | ${list.length} |`);
+const byLevel = (list) => LEVELS.map((l) => list.filter((x) => levelOfItem(x) === l).length);
+for (const [label, list] of groups) lines.push(`| ${label} | ${list.length} | ${list.some(levelOfItem) ? byLevel(list).join(' | ') : '— | — | — | —'} |`);
 for (const [label, list] of groups) {
   if (!list.length) continue;
-  lines.push('', `## ${label}`, '', '| Name | Chrome / Firefox / Safari | Source |', '|---|---|---|');
-  for (const x of list) lines.push(`| \`${x.name}\` | ${short(x.entry?.browsers ?? x.browsers)} | ${x.file} |`);
+  lines.push('', `## ${label}`, '', '| Name | Level | Chrome / Firefox / Safari | Source |', '|---|---|---|---|');
+  for (const x of list) lines.push(`| \`${x.name}\` | ${levelOfItem(x) ?? '—'} | ${short(x.entry?.browsers ?? x.browsers)} | ${x.file} |`);
 }
 if (pruned.length) lines.push('', '## Dropped because VS Code now has them', '', ...pruned.map((p) => `- ${p}`));
 fs.writeFileSync(path.join(root, 'extension', 'CONTENTS.md'), lines.join('\n') + '\n');
 
 console.log(`built-in data compared against: @vscode/web-custom-data ${builtinVersion}`);
-for (const [label, list] of groups) console.log(`  ${label}: ${list.length}`);
+for (const [label, list] of groups) console.log(`  ${label}: ${list.length}${list.some(levelOfItem) ? `  (${LEVELS.map((l, i) => `${l} ${byLevel(list)[i]}`).join(', ')})` : ''}`);
 if (pruned.length) console.log(`dropped, already built in (${pruned.length}):\n  ` + pruned.join('\n  '));

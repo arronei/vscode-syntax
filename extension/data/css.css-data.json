@@ -3,6 +3,7 @@
   "properties": [
     {
       "name": "color-interpolation",
+      "level": "baseline",
       "syntax": "auto | sRGB | linearRGB",
       "values": [
         {
@@ -95,6 +96,7 @@
     },
     {
       "name": "border-shape",
+      "level": "draft",
       "syntax": "none | [ <basic-shape> <geometry-box>?]{1,2}",
       "values": [
         {
@@ -142,6 +144,7 @@
     },
     {
       "name": "column-rule-break",
+      "level": "draft",
       "syntax": "none | normal | intersection",
       "values": [
         {
@@ -211,6 +214,7 @@
     },
     {
       "name": "column-rule-inset",
+      "level": "draft",
       "syntax": "<'column-rule-inset-cap'> [ / <'column-rule-inset-junction'> ]?",
       "values": [
         {
@@ -254,6 +258,7 @@
     },
     {
       "name": "column-rule-inset-cap",
+      "level": "draft",
       "syntax": "<inset-value> <inset-value>?",
       "values": [
         {
@@ -301,6 +306,7 @@
     },
     {
       "name": "column-rule-inset-cap-end",
+      "level": "draft",
       "syntax": "<inset-value>",
       "values": [
         {
@@ -348,6 +354,7 @@
     },
     {
       "name": "column-rule-inset-cap-start",
+      "level": "draft",
       "syntax": "<inset-value>",
       "values": [
         {
@@ -395,6 +402,7 @@
     },
     {
       "name": "column-rule-inset-end",
+      "level": "draft",
       "syntax": "<inset-value>",
       "values": [
         {
@@ -438,6 +446,7 @@
     },
     {
       "name": "column-rule-inset-junction",
+      "level": "draft",
       "syntax": "<inset-value> <inset-value>?",
       "values": [
         {
@@ -485,6 +494,7 @@
     },
     {
       "name": "column-rule-inset-junction-end",
+      "level": "draft",
       "syntax": "<inset-value>",
       "values": [
         {
@@ -532,6 +542,7 @@
     },
     {
       "name": "column-rule-inset-junction-start",
+      "level": "draft",
       "syntax": "<inset-value>",
       "values": [
         {
@@ -575,6 +586,7 @@
     },
     {
       "name": "column-rule-inset-start",
+      "level": "draft",
       "syntax": "<inset-value>",
       "values": [
         {
@@ -618,6 +630,7 @@
     },
     {
       "name": "column-rule-visibility-items",
+      "level": "draft",
       "syntax": "all | around | between | normal",
       "values": [
         {
@@ -699,6 +712,7 @@
     },
     {
       "name": "flex-line-count",
+      "level": "draft",
       "syntax": "<integer [1,∞]>",
       "values": [],
       "restrictions": [
@@ -728,6 +742,7 @@
     },
     {
       "name": "frame-sizing",
+      "level": "draft",
       "syntax": "auto | content-width | content-height | content-block-size | content-inline-size",
       "values": [
         {
@@ -821,6 +836,7 @@
     },
     {
       "name": "row-rule",
+      "level": "draft",
       "syntax": "<gap-rule-list> | <gap-auto-rule-list>",
       "values": [],
       "restrictions": [
@@ -855,6 +871,7 @@
     },
     {
       "name": "row-rule-break",
+      "level": "draft",
       "syntax": "none | normal | intersection",
       "values": [
         {
@@ -924,6 +941,7 @@
     },
     {
       "name": "row-rule-color",
+      "level": "draft",
       "syntax": "<line-color-list> | <auto-line-color-list>",
       "values": [],
       "restrictions": [
@@ -956,6 +974,7 @@
     },
     {
       "name": "row-rule-inset",
+      "level": "draft",
       "syntax": "<'column-rule-inset-cap'> [ / <'column-rule-inset-junction'> ]?",
       "values": [
         {
@@ -999,6 +1018,7 @@
     },
     {
       "name": "row-rule-inset-cap",
+      "level": "draft",
       "syntax": "<inset-value> <inset-value>?",
       "values": [
         {
@@ -1046,6 +1066,7 @@
     },
     {
       "name": "row-rule-inset-cap-end",
+      "level": "draft",
       "syntax": "<inset-value>",
       "values": [
         {
@@ -1093,6 +1114,7 @@
     },
     {
       "name": "row-rule-inset-cap-start",
+      "level": "draft",
       "syntax": "<inset-value>",
       "values": [
         {
@@ -1140,6 +1162,7 @@
     },
     {
       "name": "row-rule-inset-end",
+      "level": "draft",
       "syntax": "<inset-value>",
       "values": [
         {
@@ -1183,6 +1206,7 @@
     },
     {
       "name": "row-rule-inset-junction",
+      "level": "draft",
       "syntax": "<inset-value> <inset-value>?",
       "values": [
         {
@@ -1230,6 +1254,7 @@
     },
     {
       "name": "row-rule-inset-junction-end",
+      "level": "draft",
       "syntax": "<inset-value>",
       "values": [
         {
@@ -1273,6 +1298,7 @@
     },
     {
       "name": "row-rule-inset-junction-start",
+      "level": "draft",
       "syntax": "<inset-value>",
       "values": [
         {
@@ -1316,6 +1342,7 @@
     },
     {
       "name": "row-rule-inset-start",
+      "level": "draft",
       "syntax": "<inset-value>",
       "values": [
         {
@@ -1359,6 +1386,7 @@
     },
     {
       "name": "row-rule-style",
+      "level": "draft",
       "syntax": "<line-style-list> | <auto-line-style-list>",
       "values": [],
       "restrictions": [
@@ -1391,6 +1419,7 @@
     },
     {
       "name": "row-rule-visibility-items",
+      "level": "draft",
       "syntax": "all | around | between | normal",
       "values": [
         {
@@ -1472,6 +1501,7 @@
     },
     {
       "name": "row-rule-width",
+      "level": "draft",
       "syntax": "<line-width-list> | <auto-line-width-list>",
       "values": [],
       "restrictions": [
@@ -1504,6 +1534,7 @@
     },
     {
       "name": "rule",
+      "level": "draft",
       "syntax": "<'column-rule'>",
       "values": [],
       "restrictions": [
@@ -1539,6 +1570,7 @@
     },
     {
       "name": "rule-break",
+      "level": "draft",
       "syntax": "<'column-rule-break'>",
       "values": [
         {
@@ -1608,6 +1640,7 @@
     },
     {
       "name": "rule-color",
+      "level": "draft",
       "syntax": "<'column-rule-color'>",
       "values": [],
       "restrictions": [
@@ -1640,6 +1673,7 @@
     },
     {
       "name": "rule-inset",
+      "level": "draft",
       "syntax": "<'column-rule-inset'>",
       "values": [
         {
@@ -1683,6 +1717,7 @@
     },
     {
       "name": "rule-inset-cap",
+      "level": "draft",
       "syntax": "<'column-rule-inset-cap'>",
       "values": [
         {
@@ -1730,6 +1765,7 @@
     },
     {
       "name": "rule-inset-end",
+      "level": "draft",
       "syntax": "<'column-rule-inset-end'>",
       "values": [
         {
@@ -1773,6 +1809,7 @@
     },
     {
       "name": "rule-inset-junction",
+      "level": "draft",
       "syntax": "<'column-rule-inset-junction'>",
       "values": [
         {
@@ -1820,6 +1857,7 @@
     },
     {
       "name": "rule-inset-start",
+      "level": "draft",
       "syntax": "<'column-rule-inset-start'>",
       "values": [
         {
@@ -1863,6 +1901,7 @@
     },
     {
       "name": "rule-overlap",
+      "level": "draft",
       "syntax": "row-over-column | column-over-row",
       "values": [
         {
@@ -1916,6 +1955,7 @@
     },
     {
       "name": "rule-style",
+      "level": "draft",
       "syntax": "<'column-rule-style'>",
       "values": [],
       "restrictions": [
@@ -1948,6 +1988,7 @@
     },
     {
       "name": "rule-visibility-items",
+      "level": "draft",
       "syntax": "<'column-rule-visibility-items'>",
       "values": [
         {
@@ -2029,6 +2070,7 @@
     },
     {
       "name": "rule-width",
+      "level": "draft",
       "syntax": "<'column-rule-width'>",
       "values": [],
       "restrictions": [
@@ -2062,6 +2104,7 @@
     },
     {
       "name": "text-fit",
+      "level": "draft",
       "syntax": "[ none | grow | shrink ] [consistent | per-line | per-line-all]? <percentage>?",
       "values": [
         {
@@ -2159,6 +2202,7 @@
     },
     {
       "name": "timeline-trigger-activation-range",
+      "level": "draft",
       "syntax": "[ <'timeline-trigger-activation-range-start'> <'timeline-trigger-activation-range-end'>? ]#",
       "values": [
         {
@@ -2200,6 +2244,7 @@
     },
     {
       "name": "timeline-trigger-activation-range-end",
+      "level": "draft",
       "syntax": "[ normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#",
       "values": [
         {
@@ -2241,6 +2286,7 @@
     },
     {
       "name": "timeline-trigger-activation-range-start",
+      "level": "draft",
       "syntax": "[ normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#",
       "values": [
         {
@@ -2282,6 +2328,7 @@
     },
     {
       "name": "timeline-trigger-active-range",
+      "level": "draft",
       "syntax": "[ <'timeline-trigger-active-range-start'> <'timeline-trigger-active-range-end'>? ]#",
       "values": [
         {
@@ -2332,6 +2379,7 @@
     },
     {
       "name": "timeline-trigger-active-range-end",
+      "level": "draft",
       "syntax": "[ auto | normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#",
       "values": [
         {
@@ -2382,6 +2430,7 @@
     },
     {
       "name": "timeline-trigger-active-range-start",
+      "level": "draft",
       "syntax": "[ auto | normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#",
       "values": [
         {
@@ -2432,6 +2481,7 @@
     },
     {
       "name": "view-transition-group",
+      "level": "draft",
       "syntax": "normal | contain | nearest | <custom-ident>",
       "values": [
         {
@@ -2486,6 +2536,7 @@
     },
     {
       "name": "view-transition-scope",
+      "level": "draft",
       "syntax": "none | all",
       "values": [
         {
@@ -2543,6 +2594,7 @@
     },
     {
       "name": "window-drag",
+      "level": "draft",
       "syntax": "none | move",
       "values": [
         {
@@ -2593,6 +2645,7 @@
     },
     {
       "name": "flow-tolerance",
+      "level": "draft",
       "syntax": "normal | <length-percentage [0,∞]> | infinite",
       "values": [
         {
@@ -2642,6 +2695,7 @@
     },
     {
       "name": "scroll-axis-lock",
+      "level": "draft",
       "syntax": "auto | none",
       "values": [
         {
@@ -2689,6 +2743,7 @@
     },
     {
       "name": "text-decoration-skip-spaces",
+      "level": "draft",
       "syntax": "none | all | [ start || end ]",
       "values": [
         {
@@ -2758,6 +2813,7 @@
   "atDirectives": [
     {
       "name": "@function",
+      "level": "draft",
       "description": {
         "kind": "markdown",
         "value": "Defines a custom CSS function, called like a built-in one as `--name(arguments)`. Its body can declare local custom properties and returns the value of its `result` descriptor.\n\n— *CSS Functions and Mixins Module*\n\nSyntax: `@function <function-token> <function-parameter>#? ) [ returns <css-type> ]? { <declaration-rule-list> }`"
@@ -2787,6 +2843,7 @@
   "pseudoClasses": [
     {
       "name": ":interest-source",
+      "level": "draft",
       "description": {
         "kind": "markdown",
         "value": "Matches an element with `interestfor` while the user is showing interest in it, for example by hovering or focusing it."
@@ -2814,6 +2871,7 @@
     },
     {
       "name": ":interest-target",
+      "level": "draft",
       "description": {
         "kind": "markdown",
         "value": "Matches the target of an `interestfor` element while the user is showing interest in that element."
@@ -2841,6 +2899,7 @@
     },
     {
       "name": ":navigation-source",
+      "level": "draft",
       "description": {
         "kind": "markdown",
         "value": "Matches the element that started the current navigation, such as the clicked link. It reflects `NavigateEvent.sourceElement`."
@@ -2860,6 +2919,7 @@
     },
     {
       "name": ":target-after",
+      "level": "draft",
       "description": {
         "kind": "markdown",
         "value": "Matches scroll markers that come after the active one (the marker matching `:target-current`) in their scroll marker group."
@@ -2887,6 +2947,7 @@
     },
     {
       "name": ":target-before",
+      "level": "draft",
       "description": {
         "kind": "markdown",
         "value": "Matches scroll markers that come before the active one (the marker matching `:target-current`) in their scroll marker group."
@@ -2914,6 +2975,7 @@
     },
     {
       "name": ":heading",
+      "level": "draft",
       "description": {
         "kind": "markdown",
         "value": "Matches elements that have a heading level, such as `<h1>`–`<h6>`. The functional form `:heading(2, 3)` matches only the listed levels."
@@ -2941,6 +3003,7 @@
   "pseudoElements": [
     {
       "name": "::scroll-button",
+      "level": "draft",
       "description": {
         "kind": "markdown",
         "value": "A browser-generated button that scrolls its scroll container. The argument picks the direction (`up`, `down`, `left`, `right`, `block-start`, `block-end`, `inline-start`, `inline-end`, or `*` for all); the button appears once it has a `content` value."
@@ -2968,6 +3031,7 @@
     },
     {
       "name": "::search-text",
+      "level": "draft",
       "description": {
         "kind": "markdown",
         "value": "Styles text matched by the browser's find-in-page feature. `::search-text:current` targets the active match."
@@ -2992,6 +3056,7 @@
     },
     {
       "name": "::view-transition-group-children",
+      "level": "draft",
       "description": {
         "kind": "markdown",
         "value": "Wraps the nested view transition groups of a captured element when `view-transition-group` nests them, so they can be clipped or styled together. Takes a view transition name."

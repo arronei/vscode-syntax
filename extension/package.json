@@ -24,7 +24,8 @@
   "activationEvents": [
     "onLanguage:css",
     "onLanguage:scss",
-    "onLanguage:less"
+    "onLanguage:less",
+    "onStartupFinished"
   ],
   "contributes": {
     "html": {
@@ -36,6 +37,71 @@
       "customData": [
         "./data/css.css-data.json"
       ]
+    },
+    "configuration": {
+      "title": "Web Spec Additions",
+      "properties": {
+        "webSpecAdditions.css.level": {
+          "type": "string",
+          "scope": "application",
+          "enum": [
+            "off",
+            "baseline",
+            "standard",
+            "draft"
+          ],
+          "enumItemLabels": [
+            "Off",
+            "Baseline",
+            "Standardized (CR or higher)",
+            "Editor's Draft"
+          ],
+          "enumDescriptions": [
+            "Add nothing: VS Code's built-in CSS data only.",
+            "Add features that are Baseline: newly or widely available across browsers.",
+            "Also add features defined in a spec at Candidate Recommendation or later, or in a WHATWG Living Standard.",
+            "Also add features that are only in Working Drafts, Editor's Drafts or Community Group drafts."
+          ],
+          "default": "draft",
+          "markdownDescription": "Which CSS features this extension adds to VS Code's built-in data. Each level includes the ones above it. VS Code's own data is always used and can't be hidden. Applies after a window reload."
+        },
+        "webSpecAdditions.css.proprietary": {
+          "type": "boolean",
+          "scope": "application",
+          "default": false,
+          "markdownDescription": "Also add proprietary CSS features: vendor-prefixed, non-standard, or in no spec. Has no effect when `#webSpecAdditions.css.level#` is `off`."
+        },
+        "webSpecAdditions.html.level": {
+          "type": "string",
+          "scope": "application",
+          "enum": [
+            "off",
+            "baseline",
+            "standard",
+            "draft"
+          ],
+          "enumItemLabels": [
+            "Off",
+            "Baseline",
+            "Standardized (CR or higher)",
+            "Editor's Draft"
+          ],
+          "enumDescriptions": [
+            "Add nothing: VS Code's built-in HTML data only.",
+            "Add features that are Baseline: newly or widely available across browsers.",
+            "Also add features defined in a spec at Candidate Recommendation or later, or in a WHATWG Living Standard.",
+            "Also add features that are only in Working Drafts, Editor's Drafts or Community Group drafts."
+          ],
+          "default": "draft",
+          "markdownDescription": "Which HTML features this extension adds to VS Code's built-in data. Each level includes the ones above it. VS Code's own data is always used and can't be hidden. Applies after a window reload."
+        },
+        "webSpecAdditions.html.proprietary": {
+          "type": "boolean",
+          "scope": "application",
+          "default": false,
+          "markdownDescription": "Also add proprietary HTML features: vendor-prefixed, non-standard, or in no spec. Has no effect when `#webSpecAdditions.html.level#` is `off`."
+        }
+      }
     }
   }
 }

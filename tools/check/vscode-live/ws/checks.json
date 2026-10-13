@@ -19,5 +19,7 @@
   { "label": "HTML: <template shadowrootmode=\"|\">", "file": "test.html", "line": 6, "find": "\"\"", "offset": 1, "op": "complete", "expect": ["open", "closed"] },
   { "label": "HTML: <geol| completes geolocation", "file": "test.html", "line": 7, "find": "geol", "offset": 4, "op": "complete", "prefix": "geo", "expect": ["geolocation"] },
   { "label": "HTML: <button comm|> attributes", "file": "test.html", "line": 9, "find": "comm", "offset": 4, "op": "complete", "prefix": "comm", "expect": ["command", "commandfor"] },
-  { "label": "HTML: 'button' entries in tag completion (known quirk)", "file": "test.html", "line": 8, "find": "butt", "offset": 4, "op": "count", "label_equals": "button" }
+  { "label": "HTML: 'button' entries in tag completion (known quirk)", "file": "test.html", "line": 8, "find": "butt", "offset": 4, "op": "count", "label_equals": "button" },
+  { "label": "Setting: HTML level baseline → Baseline items only", "op": "level", "setting": "webSpecAdditions.html.level", "value": "baseline", "data": "html.html-data.json", "levels": ["baseline"] },
+  { "label": "Setting: CSS level off → no items", "op": "level", "setting": "webSpecAdditions.css.level", "value": "off", "data": "css.css-data.json", "levels": [] }
 ]

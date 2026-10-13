@@ -37,10 +37,11 @@ Save the table as `reports/vscode-<version>-live-check.txt`, with a first line s
 | `line` | 0-based line number in that file |
 | `find` | Text on that line. The cursor goes to its start… |
 | `offset` | …plus this many characters |
-| `op` | `complete`, `hover`, `diagnostics` or `count` |
+| `op` | `complete`, `hover`, `diagnostics`, `count` or `level` |
 | `expect` | `complete`: labels that must all be offered |
 | `contains` | `hover`: text the hover must include |
 | `absent` | `diagnostics`: regex no diagnostic in the file may match. Needs no `line`. |
 | `label_equals` | `count`: label to count. Always passes; it tracks a known quirk. |
+| `setting`, `value`, `data`, `levels` | `level`: set `setting` to `value`, then check the extension rewrote `extension/data/<data>` with only items at `levels`. An empty `levels` means no items. The setting is reset afterwards. Needs no `file`. |
 
 A new check should fail in the *without* column. Otherwise it isn't testing the extension.

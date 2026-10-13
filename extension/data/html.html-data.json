@@ -6,6 +6,7 @@
       "attributes": [
         {
           "name": "referrerpolicy",
+          "level": "baseline",
           "valueSet": "referrerpolicy",
           "description": {
             "kind": "markdown",
@@ -40,6 +41,7 @@
       "attributes": [
         {
           "name": "command",
+          "level": "baseline",
           "valueSet": "command",
           "description": {
             "kind": "markdown",
@@ -68,6 +70,7 @@
         },
         {
           "name": "commandfor",
+          "level": "baseline",
           "description": {
             "kind": "markdown",
             "value": "The `id` of the element this button controls. Used together with `command` to act on that element, such as opening a dialog or toggling a popover, without JavaScript."
@@ -100,6 +103,7 @@
       "attributes": [
         {
           "name": "rel",
+          "level": "baseline",
           "description": {
             "kind": "markdown",
             "value": "A space-separated list of the link types the form submission creates. Allowed values are `external`, `help`, `license`, `next`, `nofollow`, `noopener`, `noreferrer`, `opener`, `prev` and `search`."
@@ -137,6 +141,7 @@
       "attributes": [
         {
           "name": "loading",
+          "level": "baseline",
           "valueSet": "loading",
           "description": {
             "kind": "markdown",
@@ -166,6 +171,7 @@
         },
         {
           "name": "credentialless",
+          "level": "draft",
           "valueSet": "v",
           "description": {
             "kind": "markdown",
@@ -193,6 +199,7 @@
         },
         {
           "name": "privateToken",
+          "level": "draft",
           "description": {
             "kind": "markdown",
             "value": "JSON-encoded parameters for a Private State Token operation (such as a token redemption) to attach to the iframe's navigation request."
@@ -217,6 +224,7 @@
       "attributes": [
         {
           "name": "disabled",
+          "level": "baseline",
           "valueSet": "v",
           "description": {
             "kind": "markdown",
@@ -246,6 +254,7 @@
         },
         {
           "name": "fetchpriority",
+          "level": "baseline",
           "valueSet": "fetchpriority",
           "description": {
             "kind": "markdown",
@@ -278,6 +287,7 @@
         },
         {
           "name": "imagesizes",
+          "level": "baseline",
           "description": {
             "kind": "markdown",
             "value": "For `rel=\"preload\"` with `as=\"image\"`, the source sizes to use when choosing which image to preload. Same syntax and meaning as the `sizes` attribute of `<img>`."
@@ -306,6 +316,7 @@
         },
         {
           "name": "imagesrcset",
+          "level": "baseline",
           "description": {
             "kind": "markdown",
             "value": "For `rel=\"preload\"` with `as=\"image\"`, the candidate images to choose from when preloading a responsive image. Same syntax and meaning as the `srcset` attribute of `<img>`."
@@ -334,6 +345,7 @@
         },
         {
           "name": "blocking",
+          "level": "standard",
           "valueSet": "blocking",
           "description": {
             "kind": "markdown",
@@ -364,6 +376,7 @@
       "attributes": [
         {
           "name": "fetchpriority",
+          "level": "baseline",
           "valueSet": "fetchpriority",
           "description": {
             "kind": "markdown",
@@ -396,6 +409,7 @@
         },
         {
           "name": "blocking",
+          "level": "standard",
           "valueSet": "blocking",
           "description": {
             "kind": "markdown",
@@ -426,6 +440,7 @@
       "attributes": [
         {
           "name": "width",
+          "level": "baseline",
           "description": {
             "kind": "markdown",
             "value": "The intrinsic width of the image resource in CSS pixels. Only allowed when the `<source>` is a child of `<picture>`; lets the browser reserve space for the selected image before it loads."
@@ -454,6 +469,7 @@
         },
         {
           "name": "height",
+          "level": "baseline",
           "description": {
             "kind": "markdown",
             "value": "The intrinsic height of the image resource in CSS pixels. Only allowed when the `<source>` is a child of `<picture>`; lets the browser reserve space for the selected image before it loads."
@@ -487,6 +503,7 @@
       "attributes": [
         {
           "name": "shadowrootmode",
+          "level": "baseline",
           "valueSet": "shadowrootmode",
           "description": {
             "kind": "markdown",
@@ -520,6 +537,7 @@
         },
         {
           "name": "shadowrootclonable",
+          "level": "baseline",
           "valueSet": "v",
           "description": {
             "kind": "markdown",
@@ -552,6 +570,7 @@
         },
         {
           "name": "shadowrootdelegatesfocus",
+          "level": "baseline",
           "valueSet": "v",
           "description": {
             "kind": "markdown",
@@ -585,6 +604,7 @@
         },
         {
           "name": "shadowrootserializable",
+          "level": "standard",
           "valueSet": "v",
           "description": {
             "kind": "markdown",
@@ -614,6 +634,7 @@
         },
         {
           "name": "for",
+          "level": "standard",
           "description": {
             "kind": "markdown",
             "value": "Names the `<?marker>` or `<?start>` processing instruction where this template's content is inserted, or the start of the range it replaces, for declarative partial updates. The value must match that instruction's `name`."
@@ -640,6 +661,7 @@
         },
         {
           "name": "shadowrootslotassignment",
+          "level": "standard",
           "valueSet": "shadowrootslotassignment",
           "description": {
             "kind": "markdown",
@@ -658,6 +680,7 @@
         },
         {
           "name": "shadowrootcustomelementregistry",
+          "level": "standard",
           "valueSet": "v",
           "description": {
             "kind": "markdown",
@@ -689,6 +712,7 @@
       "attributes": [
         {
           "name": "playsinline",
+          "level": "standard",
           "valueSet": "v",
           "description": {
             "kind": "markdown",
@@ -714,6 +738,7 @@
         },
         {
           "name": "loading",
+          "level": "standard",
           "valueSet": "loading",
           "description": {
             "kind": "markdown",
@@ -737,6 +762,7 @@
         },
         {
           "name": "disableremoteplayback",
+          "level": "standard",
           "valueSet": "v",
           "description": {
             "kind": "markdown",
@@ -762,6 +788,7 @@
         },
         {
           "name": "disablepictureinpicture",
+          "level": "draft",
           "valueSet": "v",
           "description": {
             "kind": "markdown",
@@ -789,6 +816,7 @@
         },
         {
           "name": "controlslist",
+          "level": "draft",
           "valueSet": "controlslist",
           "description": {
             "kind": "markdown",
@@ -817,6 +845,7 @@
       "attributes": [
         {
           "name": "webkitdirectory",
+          "level": "baseline",
           "valueSet": "v",
           "description": {
             "kind": "markdown",
@@ -845,6 +874,7 @@
         },
         {
           "name": "alpha",
+          "level": "standard",
           "valueSet": "v",
           "description": {
             "kind": "markdown",
@@ -866,6 +896,7 @@
         },
         {
           "name": "colorspace",
+          "level": "standard",
           "valueSet": "colorspace",
           "description": {
             "kind": "markdown",
@@ -896,6 +927,7 @@
       "attributes": [
         {
           "name": "closedby",
+          "level": "standard",
           "valueSet": "closedby",
           "description": {
             "kind": "markdown",
@@ -926,6 +958,7 @@
       "attributes": [
         {
           "name": "blocking",
+          "level": "standard",
           "valueSet": "blocking",
           "description": {
             "kind": "markdown",
@@ -956,6 +989,7 @@
       "attributes": [
         {
           "name": "loading",
+          "level": "standard",
           "valueSet": "loading",
           "description": {
             "kind": "markdown",
@@ -979,6 +1013,7 @@
         },
         {
           "name": "disableremoteplayback",
+          "level": "standard",
           "valueSet": "v",
           "description": {
             "kind": "markdown",
@@ -1004,6 +1039,7 @@
         },
         {
           "name": "controlslist",
+          "level": "draft",
           "valueSet": "controlslist",
           "description": {
             "kind": "markdown",
@@ -1032,6 +1068,7 @@
       "attributes": [
         {
           "name": "attributionsourceid",
+          "level": "draft",
           "description": {
             "kind": "markdown",
             "value": "An 8-bit (0–255) source ID for Private Click Measurement. Used with `attributiondestination` to measure ad click conversions without cross-site tracking."
@@ -1055,6 +1092,7 @@
     {
       "name": "camera",
       "attributes": [],
+      "level": "draft",
       "description": {
         "kind": "markdown",
         "value": "A browser-rendered control that asks for camera access when the user activates it, then delivers a video track. Fires `track` on success, `cancel` if the user declines, and `error` on failure."
@@ -1075,6 +1113,7 @@
     {
       "name": "microphone",
       "attributes": [],
+      "level": "draft",
       "description": {
         "kind": "markdown",
         "value": "A browser-rendered control that asks for microphone access when the user activates it, then delivers an audio track. Fires `track` on success, `cancel` if the user declines, and `error` on failure."
@@ -1095,6 +1134,7 @@
     {
       "name": "usermedia",
       "attributes": [],
+      "level": "draft",
       "description": {
         "kind": "markdown",
         "value": "A browser-rendered control that asks for camera and microphone access when the user activates it, then delivers one `MediaStream` with both tracks. Fires `stream`, `cancel` or `error`."
@@ -1140,6 +1180,7 @@
         },
         {
           "name": "watch",
+          "level": "draft",
           "valueSet": "v",
           "description": {
             "kind": "markdown",
@@ -1162,6 +1203,7 @@
           ]
         }
       ],
+      "level": "draft",
       "description": {
         "kind": "markdown",
         "value": "A browser-rendered button for getting the user's location. Clicking it shows the permission prompt; if the user allows it, the position is available on the element and a `location` event fires. Child content is fallback for browsers without support."
@@ -1208,6 +1250,7 @@
         },
         {
           "name": "autoplay",
+          "level": "draft",
           "valueSet": "v",
           "description": {
             "kind": "markdown",
@@ -1226,6 +1269,7 @@
         },
         {
           "name": "loop",
+          "level": "draft",
           "valueSet": "v",
           "description": {
             "kind": "markdown",
@@ -1244,6 +1288,7 @@
         },
         {
           "name": "stagemode",
+          "level": "draft",
           "valueSet": "stagemode",
           "description": {
             "kind": "markdown",
@@ -1262,6 +1307,7 @@
         },
         {
           "name": "width",
+          "level": "draft",
           "description": {
             "kind": "markdown",
             "value": "Width of the element. The model is scaled to fit on first load."
@@ -1279,6 +1325,7 @@
         },
         {
           "name": "height",
+          "level": "draft",
           "description": {
             "kind": "markdown",
             "value": "Height of the element. The model is scaled to fit on first load."
@@ -1295,6 +1342,7 @@
           ]
         }
       ],
+      "level": "draft",
       "description": {
         "kind": "markdown",
         "value": "Embeds an interactive 3D model rendered by the browser."
@@ -1314,6 +1362,7 @@
   "globalAttributes": [
     {
       "name": "writingsuggestions",
+      "level": "standard",
       "valueSet": "writingsuggestions",
       "description": {
         "kind": "markdown",
@@ -1343,6 +1392,7 @@
     },
     {
       "name": "elementtiming",
+      "level": "draft",
       "description": {
         "kind": "markdown",
         "value": "Marks an image or text element for the Element Timing API. When it renders, a `PerformanceElementTiming` entry with this identifier is reported to `PerformanceObserver`."

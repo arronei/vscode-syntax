@@ -20,12 +20,34 @@ async function hoverText(uri, pos) {
   return (hs || []).flatMap((h) => h.contents.map((c) => (typeof c === 'string' ? c : c.value))).join(' ').replace(/!\[[^\]]*\]\([^)]*\)/g, '[badge]').replace(/\\/g, '');
 }
 
+// Switch a data-level setting, then read the data file the extension rewrote: every item in it must be at one of
+// c.levels, and there must be some unless c.levels is empty. Restores the setting, and with it the file.
+async function levelCheck(c) {
+  const config = vscode.workspace.getConfiguration();
+  const ext = vscode.extensions.all.find((e) => e.packageJSON.name === 'web-spec-additions');
+  try {
+    await config.update(c.setting, c.value, vscode.ConfigurationTarget.Global);
+    await sleep(1000);
+    const d = JSON.parse(fs.readFileSync(path.join(ext.extensionPath, 'data', c.data), 'utf8'));
+    const tags = d.tags || [];
+    const items = [d.properties, d.atDirectives, d.pseudoClasses, d.pseudoElements, tags, tags.flatMap((t) => t.attributes), d.globalAttributes].flat().filter((e) => e?.level);
+    const wrong = items.filter((e) => !c.levels.includes(e.level));
+    const ok = !wrong.length && (items.length > 0) === (c.levels.length > 0);
+    return { label: c.label, ok, detail: wrong.length ? `also ${wrong[0].level}: ${wrong[0].name}` : `${items.length} items` };
+  } catch {
+    return { label: c.label, ok: false, detail: '(no setting)' };
+  } finally {
+    await config.update(c.setting, undefined, vscode.ConfigurationTarget.Global).then(() => sleep(1000), () => {});
+  }
+}
+
 exports.run = async function () {
   const ws = process.env.TEST_WS;
   const checks = JSON.parse(fs.readFileSync(path.join(ws, 'checks.json'), 'utf8'));
   const out = { vscode: vscode.version, results: [] };
   const opened = new Set();
   for (const c of checks) {
+    if (c.op === 'level') { out.results.push(await levelCheck(c)); continue; }
     const uri = vscode.Uri.file(path.join(ws, c.file));
     const doc = await vscode.workspace.openTextDocument(uri);
     if (!opened.has(c.file)) { await vscode.window.showTextDocument(doc); opened.add(c.file); await sleep(1500); }

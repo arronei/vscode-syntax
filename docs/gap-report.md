@@ -15,7 +15,7 @@ It then saves a dated copy, such as `reports/gap-report-2026-10-13.json`, and li
 
 ## Output
 
-**Console:** source versions, counts of what VS Code ships, a summary per category, then every P1/P2 item, for example `P2 border-shape [chrome,edge]`.
+**Console:** source versions, counts of what VS Code ships, a summary per category (by priority and by level), then every P1/P2 item, for example `P2 border-shape [chrome,edge] draft`.
 
 **`reports/latest.json`:**
 
@@ -30,7 +30,8 @@ Each gap entry:
 | Field | Meaning |
 |---|---|
 | `name` | `border-shape`, `@function`, `::search-text`, `<geolocation>`, `<button command>`, `writingsuggestions` |
-| `priority` | **P1** standards-track, not deprecated, ships in all four of Chrome, Edge, Firefox, Safari. **P2** same, but ships in 1–3. **P3** not shipping, deprecated or non-standard. |
+| `priority` | **P1** standards-track, not deprecated, ships in all four of Chrome, Edge, Firefox, Safari. **P2** same, but ships in 1–3. **P3** not shipping, deprecated or proprietary. |
+| `level` | `baseline`, `standard` (spec at CR or later, or a WHATWG Living Standard), `draft` (any other spec) or `proprietary` (vendor-prefixed, non-standard, or in no spec). The extension's settings filter by it. See [data levels](build-extension.md#data-levels). |
 | `shipsIn` | Which of the four ship it unflagged and unprefixed |
 | `baseline` | Widely available / Newly available / Limited (web-features) |
 | `spec`, `mdn` | Links to check the item by hand |
@@ -54,7 +55,7 @@ node -e "const [a,b]=['./reports/gap-report-2026-10-09.json','./reports/latest.j
 ## Limits
 
 - It compares against `upstream/main`, not the published npm package and not the extension. Items already in the extension stay in the report until VS Code's data has them. Items merged upstream drop out before they're published.
-- Vendor-prefixed names are skipped. So are HTML attribute keys containing `_` (BCD uses those for sub-features) and deprecated attributes.
+- HTML attribute keys containing `_` are skipped (BCD uses those for sub-features), and so are deprecated attributes. Vendor-prefixed names are listed as `proprietary`, P3.
 - For selectors found only in BCD, `:` vs `::` is inferred from the spec and MDN URLs and can occasionally be wrong.
 
 Next: [review-results.md](review-results.md).
