@@ -4,7 +4,7 @@
   "description": "HTML attributes and CSS properties from current specs that VS Code's built-in data doesn't have yet. Items are dropped once VS Code ships them.",
   "version": "0.2.0",
   "publisher": "arronei",
-  "license": "SEE LICENSE IN README.md",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.75.0"
   },
