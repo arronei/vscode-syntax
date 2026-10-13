@@ -2,6 +2,7 @@
 # and publishes it to GitHub Pages. The daily run keeps the README status badges current, and first rebuilds
 # the extension on the latest data sources: if its data changed, it bumps the build number (x.y.BUILD) and
 # commits that to main. Major and minor are bumped by hand in extension/package.json; set build to 0 then.
+# Any run whose extension version has no GitHub Release yet creates one (tag vX.Y.Z) with the .vsix attached.
 # One-time setup: Settings → Pages → Source: GitHub Actions.
 name: Pages
 
@@ -49,6 +50,12 @@ jobs:
       - run: npm run build-site
         env:
           GITHUB_TOKEN: ${{ github.token }}
+      - name: Release the extension if its version is new
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          v=v$(node -p "require('./extension/package.json').version")
+          gh release view "$v" >/dev/null 2>&1 || gh release create "$v" _site/web-spec-additions.vsix --title "Extension $v" --notes-file extension/CONTENTS.md
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
