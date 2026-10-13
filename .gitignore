@@ -3,3 +3,4 @@ node_modules/
 *.vsix
 _to_delete/
 .last-update
+_site/

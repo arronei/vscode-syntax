@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web Spec Additions</title>
+<meta name="description" content="A VS Code extension that adds HTML and CSS features from current web specs, plus reports of what VS Code's built-in data is missing.">
+<style>
+  :root { color-scheme: light dark; --fg: #1f2328; --muted: #59636e; --bg: #fff; --panel: #f6f8fa; --line: #d1d9e0; --accent: #0969da; --on-accent: #fff; --p1: #1a7f37; --p2: #9a6700; --p3: #59636e; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #e6edf3; --muted: #9198a1; --bg: #0d1117; --panel: #151b23; --line: #3d444d; --accent: #4493f8; --on-accent: #0d1117; --p1: #3fb950; --p2: #d29922; --p3: #9198a1; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--fg); background: var(--bg); }
+  header, main { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+  header { padding-top: 24px; }
+  h1 { margin: 0 0 4px; font-size: 1.6rem; }
+  h2 { margin: 24px 0 8px; font-size: 1.2rem; }
+  p { margin: 8px 0; }
+  a { color: var(--accent); }
+  code { font: 0.9em ui-monospace, "Cascadia Code", Consolas, monospace; }
+  .muted { color: var(--muted); }
+  [role="tablist"] { display: flex; gap: 4px; margin-top: 16px; border-bottom: 1px solid var(--line); overflow-x: auto; }
+  [role="tab"] { font: inherit; color: var(--muted); background: none; border: 0; border-bottom: 2px solid transparent; padding: 8px 12px; cursor: pointer; white-space: nowrap; }
+  [role="tab"][aria-selected="true"] { color: var(--fg); border-bottom-color: var(--accent); font-weight: 600; }
+  [role="tab"]:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  [role="tabpanel"] { padding: 8px 0 48px; }
+  .button { display: inline-block; padding: 8px 16px; border-radius: 6px; background: var(--accent); color: var(--on-accent); font-weight: 600; text-decoration: none; }
+  .box { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 12px 16px; margin: 12px 0; }
+  pre { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 8px 12px; overflow-x: auto; }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin: 12px 0; }
+  .filters input, .filters select { font: inherit; color: inherit; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px; }
+  details { border: 1px solid var(--line); border-radius: 6px; margin: 12px 0; }
+  summary { padding: 8px 12px; cursor: pointer; background: var(--panel); border-radius: 6px; }
+  summary strong { font-size: 1.05rem; }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: 4px 12px; border-top: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+  .P1 { color: var(--p1); font-weight: 600; } .P2 { color: var(--p2); font-weight: 600; } .P3 { color: var(--p3); }
+  .tag { font-size: 0.8rem; color: var(--muted); border: 1px solid var(--line); border-radius: 10px; padding: 0 6px; margin-left: 4px; }
+  .names { padding: 8px 12px; columns: 16rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Web Spec Additions</h1>
+  <p class="muted">Keeps VS Code's HTML and CSS IntelliSense current with the web specs.</p>
+  <div role="tablist" aria-label="Sections">
+    <button role="tab" id="tab-extension" aria-controls="extension">Extension</button>
+    <button role="tab" id="tab-html" aria-controls="html">HTML report</button>
+    <button role="tab" id="tab-css" aria-controls="css">CSS report</button>
+  </div>
+</header>
+
+<main>
+  <section role="tabpanel" id="extension" aria-labelledby="tab-extension">
+    <h2>Web Spec Additions (HTML &amp; CSS) <span id="version" class="muted"></span></h2>
+    <p>VS Code's HTML and CSS IntelliSense comes from built-in data that lags behind the specs. This extension adds HTML and CSS features that are in current web specs but missing from that data: completions, value completions, hovers with browser support and Baseline status, and no false "Unknown property" or "Unknown at rule" warnings.</p>
+    <ul>
+      <li>Works in every window, with or without a folder open. The CSS data also applies to SCSS and Less.</li>
+      <li>Fills in hover text for built-in CSS properties that VS Code ships with an empty description.</li>
+      <li>Each item is also sent upstream as a PR. Once VS Code ships an item, the next build of the extension drops it.</li>
+    </ul>
+
+    <h2>Download</h2>
+    <div class="box">
+      <p><strong>Visual Studio Marketplace:</strong> not published yet. Until it is, install the <code>.vsix</code> below.</p>
+    </div>
+    <p><a class="button" href="web-spec-additions.vsix" download>Download web-spec-additions.vsix</a></p>
+    <p>Built from the latest commit. Install it either way, then reload the window:</p>
+    <ul>
+      <li>In VS Code: open the Extensions view, choose <strong>⋯ → Install from VSIX…</strong> and pick the downloaded file.</li>
+      <li>From a terminal:</li>
+    </ul>
+    <pre><code>code --install-extension web-spec-additions.vsix --force</code></pre>
+    <p>Remove any <code>html.customData</code> or <code>css.customData</code> settings you added by hand for the same features, or completions show twice.</p>
+
+    <h2>Settings</h2>
+    <p>Choose which features the extension adds, by how established they are. Each level includes the ones above it. Changes apply after a window reload.</p>
+    <div id="settings" class="scroll"><p class="muted">Loading…</p></div>
+
+    <h2>Reports</h2>
+    <p>The <a href="#html">HTML</a> and <a href="#css">CSS</a> tabs list what VS Code's built-in data doesn't have yet, from the latest gap report. <strong>P1</strong>: ships in Chrome, Edge, Firefox and Safari. <strong>P2</strong>: ships in one to three of them. <strong>P3</strong>: not shipping, deprecated or non-standard.</p>
+    <p class="muted">Data: <a href="https://github.com/w3c/webref">w3c/webref</a>, <a href="https://github.com/w3c/browser-specs">browser-specs</a>, <a href="https://github.com/mdn/browser-compat-data">@mdn/browser-compat-data</a>, <a href="https://github.com/web-platform-dx/web-features">web-features</a> and <a href="https://github.com/mdn/data">mdn-data</a>.</p>
+  </section>
+
+  <section role="tabpanel" id="html" aria-labelledby="tab-html" hidden></section>
+  <section role="tabpanel" id="css" aria-labelledby="tab-css" hidden></section>
+</main>
+
+<script>
+// Each report tab shows these gap report categories. A JavaScript tab is one more button, panel and entry here.
+const REPORTS = {
+  html: { title: 'HTML', sections: [['htmlElements', 'Elements'], ['htmlAttributes', 'Attributes'], ['globalAttributes', 'Global attributes']] },
+  css: { title: 'CSS', sections: [['cssProperties', 'Properties'], ['atRules', 'At-rules'], ['selectors', 'Selectors']] },
+};
+
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+const link = (href, text) => (href ? `<a href="${esc(href)}">${esc(text)}</a>` : esc(text));
+const getJSON = (url) => fetch(url).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`${url}: ${r.status}`))));
+
+// ---------- tabs ----------
+const tabs = [...document.querySelectorAll('[role="tab"]')];
+function show(id) {
+  if (!tabs.some((t) => t.getAttribute('aria-controls') === id)) id = 'extension';
+  for (const t of tabs) {
+    const on = t.getAttribute('aria-controls') === id;
+    t.setAttribute('aria-selected', on);
+    t.tabIndex = on ? 0 : -1;
+    document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+  }
+}
+// pushState, not location.hash, so switching tabs doesn't scroll to the panel
+for (const t of tabs) t.addEventListener('click', () => { const id = t.getAttribute('aria-controls'); history.pushState(null, '', `#${id}`); show(id); });
+document.querySelector('[role="tablist"]').addEventListener('keydown', (e) => {
+  const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+  if (!step) return;
+  const next = tabs[(tabs.indexOf(document.activeElement) + step + tabs.length) % tabs.length];
+  next.focus();
+  next.click();
+});
+addEventListener('hashchange', () => show(location.hash.slice(1)));
+show(location.hash.slice(1));
+
+// ---------- extension tab ----------
+getJSON('extension.json').then((pkg) => {
+  document.getElementById('version').textContent = `v${pkg.version}`;
+  const rows = Object.entries(pkg.contributes.configuration.properties).map(([key, p]) => {
+    const options = p.enum
+      ? `<ul>${p.enum.map((v, i) => `<li><code>${esc(v)}</code> ${esc(p.enumItemLabels?.[i])}: ${esc(p.enumDescriptions?.[i])}</li>`).join('')}</ul>`
+      : esc(p.markdownDescription?.replace(/`#?([^`#]+)#?`/g, '$1'));
+    return `<tr><td><code>${esc(key)}</code></td><td><code>${esc(p.default)}</code></td><td>${options}</td></tr>`;
+  });
+  document.getElementById('settings').innerHTML = `<table><thead><tr><th>Setting</th><th>Default</th><th>Options</th></tr></thead><tbody>${rows.join('')}</tbody></table>`;
+}).catch((e) => (document.getElementById('settings').innerHTML = `<p class="muted">Couldn't load the settings (${esc(e.message)}).</p>`));
+
+// ---------- report tabs ----------
+function renderReport(panel, { title, sections }, report) {
+  const hasLevel = sections.some(([key]) => report.gaps[key].some((e) => e.level));
+  const table = (list) => `<div class="scroll"><table><thead><tr><th>Name</th><th>Priority</th>${hasLevel ? '<th>Level</th>' : ''}<th>Ships in</th><th>Baseline</th><th>Spec</th></tr></thead><tbody>${list.map((e) => `
+    <tr data-priority="${esc(e.priority)}" data-name="${esc(e.name.toLowerCase())}">
+      <td><code>${link(e.mdn, e.name)}</code>${e.deprecated ? '<span class="tag">deprecated</span>' : ''}${e.nonStandard ? '<span class="tag">non-standard</span>' : ''}</td>
+      <td class="${esc(e.priority)}">${esc(e.priority)}</td>
+      ${hasLevel ? `<td>${esc(e.level)}</td>` : ''}
+      <td>${esc(e.shipsIn?.join(', ') || '—')}</td>
+      <td>${esc(e.baseline || '—')}</td>
+      <td>${e.spec ? link(e.spec, new URL(e.spec).hostname) : '—'}</td>
+    </tr>`).join('')}</tbody></table></div>`;
+
+  const counts = (key) => { const s = report.summary[key]; return `${s.total} · P1 ${s.P1} · P2 ${s.P2} · P3 ${s.P3}`; };
+  const empty = title === 'CSS' && report.emptyCssDescriptions?.length
+    ? `<details><summary><strong>Built-in properties with an empty description</strong> <span class="muted">${report.emptyCssDescriptions.length} · the extension adds hover text for these</span></summary>
+       <div class="names">${report.emptyCssDescriptions.map((n) => `<div><code>${esc(n)}</code></div>`).join('')}</div></details>`
+    : '';
+
+  panel.innerHTML = `
+    <h2>${esc(title)} features missing from VS Code</h2>
+    <p class="muted">Gap report generated ${esc(new Date(report.generatedAt).toUTCString())}. Sources: ${Object.entries(report.sources).map(([k, v]) => `${esc(k)} ${esc(v)}`).join(', ')}.</p>
+    <div class="filters">
+      <label>Show <select data-filter="priority">
+        <option value="P1 P2">P1 and P2 (shipping)</option><option value="P1">P1 only</option><option value="P1 P2 P3">All, including P3</option>
+      </select></label>
+      <label>Search <input type="search" data-filter="name" placeholder="name"></label>
+    </div>
+    ${sections.map(([key, label]) => `<details open data-section><summary><strong>${esc(label)}</strong> <span class="muted">${counts(key)}</span> <span class="muted" data-shown></span></summary>${table(report.gaps[key])}</details>`).join('')}
+    ${empty}`;
+
+  const priority = panel.querySelector('[data-filter="priority"]'), name = panel.querySelector('[data-filter="name"]');
+  const apply = () => {
+    const ps = priority.value.split(' '), q = name.value.trim().toLowerCase();
+    for (const d of panel.querySelectorAll('[data-section]')) {
+      let shown = 0;
+      for (const tr of d.querySelectorAll('tbody tr')) shown += !(tr.hidden = !ps.includes(tr.dataset.priority) || !tr.dataset.name.includes(q));
+      d.querySelector('[data-shown]').textContent = `· showing ${shown}`;
+    }
+  };
+  priority.addEventListener('change', apply);
+  name.addEventListener('input', apply);
+  apply();
+}
+
+getJSON('latest.json')
+  .then((report) => { for (const [id, r] of Object.entries(REPORTS)) renderReport(document.getElementById(id), r, report); })
+  .catch((e) => { for (const id of Object.keys(REPORTS)) document.getElementById(id).innerHTML = `<p class="muted">Couldn't load the gap report (${esc(e.message)}).</p>`; });
+</script>
+</body>
+</html>

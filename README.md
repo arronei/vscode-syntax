@@ -32,6 +32,7 @@ Keeps VS Code's HTML and CSS IntelliSense (completions, hovers, validation) curr
 | Produce PRs | [Upstream PRs](docs/upstream-prs.md) | |
 | PR tool | [apply-html](docs/apply-html.md): HTML additions → vscode-custom-data | `npm run apply-html -- <additions> <web-data>` |
 | PR tool | [mdn-data-add-property](docs/mdn-data-add-property.md): CSS property → mdn/data | `npm run mdn-data-add-property -- <mdn-data> <property.json>` |
+| Publish | [GitHub Pages site](docs/site.md): extension download, HTML and CSS reports | `npm run build-site` |
 | Plan | [Next steps](docs/next-steps.md) | |
 
 ## Current state
@@ -51,4 +52,5 @@ Keeps VS Code's HTML and CSS IntelliSense (completions, hovers, validation) curr
 | `reports/` | Gap reports and live VS Code check results |
 | `tools/` | The scripts behind the commands above |
 | `docs/` | One doc per tool and process |
+| `site/`, `.github/workflows/pages.yml` | The GitHub Pages site and the workflow that publishes it |
 | `_to_delete/` | Superseded files, safe to remove |

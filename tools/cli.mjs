@@ -3,6 +3,7 @@
 //   npm run setup     new machine: clone missing sibling repos, install and compile them, then update
 //   npm run update    before a run: latest data sources, fetch upstream in the sibling repos
 //   npm run all       gap-report, build-extension, check-vscode
+//   npm run build-site   the GitHub Pages site, in _site/
 //
 // Also used by the step scripts: `warn` (last update more than STALE_HOURS old) and `archive` (dated copy of the
 // gap report, plus what changed). Uses only Node built-ins, so setup works before npm install.
@@ -97,7 +98,20 @@ function archive() {
   console.log(`\nP1/P2 changes since ${prev}:\n${lines.join('\n') || '  none'}`);
 }
 
-const commands = { setup, update, all, warn, archive };
+// The GitHub Pages site in _site/: site/index.html, the data it reads, and the packaged extension.
+// .github/workflows/pages.yml runs this on every push to main.
+function site() {
+  const out = path.join(root, '_site');
+  fs.rmSync(out, { recursive: true, force: true });
+  fs.mkdirSync(out);
+  fs.copyFileSync(path.join(root, 'site', 'index.html'), path.join(out, 'index.html'));
+  fs.copyFileSync(path.join(root, 'reports', 'latest.json'), path.join(out, 'latest.json'));
+  fs.copyFileSync(path.join(root, 'extension', 'package.json'), path.join(out, 'extension.json'));
+  sh(`npx -y @vscode/vsce@3 package --skip-license --allow-missing-repository --no-rewrite-relative-links --out ${JSON.stringify(path.join(out, 'web-spec-additions.vsix'))}`, path.join(root, 'extension'));
+  console.log(`\nsite written to _site/. Preview: npx -y serve _site`);
+}
+
+const commands = { setup, update, all, warn, archive, site };
 const cmd = commands[process.argv[2]];
 if (!cmd) { console.error(`usage: node tools/cli.mjs ${Object.keys(commands).join(' | ')}`); process.exit(2); }
 cmd();
