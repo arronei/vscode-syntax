@@ -4,3 +4,4 @@ node_modules/
 _to_delete/
 .last-update
 _site/
+.claude/
