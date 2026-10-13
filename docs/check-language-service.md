@@ -2,7 +2,7 @@
 
 Faster than the [live check](check-vscode.md). These run the compiled `vscode-html-languageservice` and `vscode-css-languageservice` from the sibling checkouts directly in Node. Use them to test a language-service branch or regenerated upstream data before opening a PR.
 
-Needs the language services compiled (`lib/esm`), see [setup.md](setup.md#install).
+Needs the language services compiled (`lib/esm`), which `npm run setup` does.
 
 ## HTML
 

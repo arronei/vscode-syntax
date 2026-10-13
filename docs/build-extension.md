@@ -63,7 +63,7 @@ or run **Extensions: Install from VSIX…**, then reload the window. Remove any 
 ## When VS Code catches up
 
 ```powershell
-npm i -D @vscode/web-custom-data@latest
+npm run update                 # installs the latest @vscode/web-custom-data
 npm run build-extension
 ```
 

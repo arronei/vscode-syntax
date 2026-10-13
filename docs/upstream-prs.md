@@ -48,7 +48,7 @@ Background: [data-pipeline.md](data-pipeline.md).
 
 - **mdn/data:** wait for an mdn-data release. Then vscode-custom-data needs its `mdn-data` dependency bumped, data regenerated, and a description added in `mdn-documentation.mjs`. That's usually part of the VS Code team's periodic "update" PR, or it can be a small PR of ours.
 - **vscode-custom-data:** it ships once `@vscode/web-custom-data` is published and the language services run `npm run update-data`.
-- **Here:** [bump `@vscode/web-custom-data` and rebuild](build-extension.md#when-vs-code-catches-up). The item moves to "Dropped" in `CONTENTS.md`.
+- **Here:** [update and rebuild](build-extension.md#when-vs-code-catches-up). The item moves to "Dropped" in `CONTENTS.md`.
 
 ## Status
 

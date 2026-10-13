@@ -7,11 +7,21 @@ Keeps VS Code's HTML and CSS IntelliSense (completions, hovers, validation) curr
 3. **Use it now** through a local extension that works everywhere.
 4. **Fix it upstream** with PRs, so the item ships in VS Code and drops out of the extension.
 
+## Commands
+
+| Command | When | What it does |
+|---|---|---|
+| `npm run setup` | Once, on a new machine | Clones the sibling repos, installs and compiles everything, then updates |
+| `npm run update` | Just before a run | Latest data sources, fetches upstream in the sibling repos |
+| `npm run all` | The full run | Gap report (dated copy + what changed), build the extension, live check in VS Code |
+| `npm run <step> [-- args]` | One step on its own | Any step in the table below |
+
+`all`, `gap-report` and `build-extension` warn if `npm run update` hasn't run in the last 12 hours. Details: [docs/setup.md](docs/setup.md).
+
 ## Docs
 
-| Step | Doc | Command |
+| Purpose | Doc | Command |
 |---|---|---|
-| Set up | [Setup](docs/setup.md) | `npm install` |
 | Background | [Where VS Code's data comes from](docs/data-pipeline.md) | |
 | Get info | [Gap report](docs/gap-report.md) | `npm run gap-report` |
 | Look over results | [Review results](docs/review-results.md) | |

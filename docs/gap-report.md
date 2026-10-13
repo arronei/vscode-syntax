@@ -4,19 +4,14 @@ Compares VS Code's data on `upstream/main` of microsoft/vscode-custom-data with 
 
 ## Run
 
-[Refresh the data sources](setup.md#refresh-the-data-sources) first, then:
-
 ```powershell
-npm run gap-report
+npm run update
+npm run gap-report      # or `npm run all`, which also builds the extension and runs the live check
 ```
 
 That runs `node tools/gap-report.mjs ../vscode-custom-data node_modules reports/latest.json`. It fetches `upstream` first (needs network), and always reads `upstream/main`, whatever branch is checked out.
 
-Keep a dated copy so the next run can be compared with it:
-
-```powershell
-Copy-Item reports\latest.json reports\gap-report-2026-10-13.json
-```
+It then saves a dated copy, such as `reports/gap-report-2026-10-13.json`, and lists the P1/P2 items that are new or gone since the previous dated report.
 
 ## Output
 
