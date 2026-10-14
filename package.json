@@ -10,7 +10,7 @@
     "all": "node tools/cli.mjs all",
     "gap-report": "node tools/cli.mjs warn && node tools/gap-report.mjs ../vscode-custom-data node_modules reports/latest.json && node tools/cli.mjs archive",
     "build-extension": "node tools/cli.mjs warn && node tools/build-extension.mjs",
-    "package-extension": "cd extension && npx -y @vscode/vsce@3 package --allow-missing-repository --no-rewrite-relative-links",
+    "package-extension": "cd extension && npx -y @vscode/vsce@4 package --baseContentUrl https://github.com/arronei/vscode-syntax/blob/main/extension",
     "check-vscode": "node tools/check/vscode-live/run.mjs",
     "check-html": "node tools/check/completion-check.mjs ../vscode-html-languageservice extension/data/html.html-data.json",
     "check-css": "node tools/check/css-check.mjs ../vscode-css-languageservice color-interpolation auto,sRGB,linearRGB extension/data/css.css-data.json",

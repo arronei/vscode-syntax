@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="26" fill="#F4F6F8"/>
+  <path d="M14,20 a8,8 0 0 1 8,-8 H64 L84,32 V108 a8,8 0 0 1 -8,8 H22 a8,8 0 0 1 -8,-8 Z" fill="#1A2B34"/>
+  <path d="M64,12 V26 a6,6 0 0 0 6,6 H84 Z" fill="#4D616E"/>
+  <text x="21" y="47" font-family="Cascadia Code, Consolas, monospace" font-weight="700" font-size="25" fill="#F4F6F8">WSA</text>
+  <g stroke-width="6" stroke-linecap="round">
+    <path d="M24,60 H32 M39,60 H60" stroke="#56B3B4"/>
+    <path d="M30,71 H52" stroke="#F7BA3E"/>
+    <path d="M30,82 H38 M45,82 H52" stroke="#BF85BF"/>
+    <path d="M24,93 H44" stroke="#EA5E5E"/>
+    <path d="M24,104 H36" stroke="#56B3B4"/>
+  </g>
+  <circle cx="92" cy="90" r="27" fill="#EA5E5E" stroke="#F4F6F8" stroke-width="6"/>
+  <path d="M78,90 H106 M92,76 V104" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+</svg>

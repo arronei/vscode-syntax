@@ -5,6 +5,16 @@
   "version": "0.3.0",
   "publisher": "arronei",
   "license": "MIT",
+  "icon": "icon.png",
+  "homepage": "https://arronei.github.io/vscode-syntax/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arronei/vscode-syntax.git",
+    "directory": "extension"
+  },
+  "bugs": {
+    "url": "https://github.com/arronei/vscode-syntax/issues"
+  },
   "engines": {
     "vscode": "^1.75.0"
   },

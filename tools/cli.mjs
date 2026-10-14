@@ -107,7 +107,7 @@ async function site() {
   fs.copyFileSync(path.join(root, 'site', 'index.html'), path.join(out, 'index.html'));
   fs.copyFileSync(path.join(root, 'reports', 'latest.json'), path.join(out, 'latest.json'));
   fs.copyFileSync(path.join(root, 'extension', 'package.json'), path.join(out, 'extension.json'));
-  sh(`npx -y @vscode/vsce@3 package --skip-license --allow-missing-repository --no-rewrite-relative-links --out ${JSON.stringify(path.join(out, 'web-spec-additions.vsix'))}`, path.join(root, 'extension'));
+  sh(`npx -y @vscode/vsce@4 package --skip-license --baseContentUrl https://github.com/arronei/vscode-syntax/blob/main/extension --out ${JSON.stringify(path.join(out, 'web-spec-additions.vsix'))}`, path.join(root, 'extension'));
   await badges(path.join(out, 'badges'));
   console.log(`\nsite written to _site/. Preview: npx -y serve _site`);
 }

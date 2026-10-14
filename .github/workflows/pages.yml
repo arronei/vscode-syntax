@@ -2,8 +2,9 @@
 # and publishes it to GitHub Pages. The daily run keeps the README status badges current, and first rebuilds
 # the extension on the latest data sources: if its data changed, it bumps the build number (x.y.BUILD) and
 # commits that to main. Major and minor are bumped by hand in extension/package.json; set build to 0 then.
-# Any run whose extension version has no GitHub Release yet creates one (tag vX.Y.Z) with the .vsix attached.
-# One-time setup: Settings → Pages → Source: GitHub Actions.
+# Any run whose extension version has no GitHub Release yet publishes the .vsix to the VS Code Marketplace,
+# then creates the release (tag vX.Y.Z) with the .vsix attached.
+# One-time setup: Settings → Pages → Source: GitHub Actions, and a VSCE_PAT repo secret (Marketplace → Manage).
 name: Pages
 
 on:
@@ -53,9 +54,16 @@ jobs:
       - name: Release the extension if its version is new
         env:
           GH_TOKEN: ${{ github.token }}
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
         run: |
           v=v$(node -p "require('./extension/package.json').version")
           gh release view "$v" >/dev/null 2>&1 && exit 0
+          # Marketplace first: if it fails, no release is made and the next run retries
+          if [ -n "$VSCE_PAT" ]; then
+            npx -y @vscode/vsce@4 publish --packagePath _site/web-spec-additions.vsix --skip-duplicate
+          else
+            echo "::warning::VSCE_PAT secret not set, so $v wasn't published to the Marketplace"
+          fi
           cat extension/CONTENTS.md - > notes.md <<'EOF'
 
           ## Install
