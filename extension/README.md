@@ -1,12 +1,43 @@
 # Web Spec Additions (HTML & CSS)
 
-Adds HTML and CSS features that are in current web specs and ship in at least one browser, but are missing from VS Code's built-in data. You get completions, value completions, hovers with browser support and Baseline status, and no false "Unknown property" or "Unknown at rule" warnings. See [CONTENTS.md](CONTENTS.md) for the full list.
+Adds HTML and CSS features that are in current web specs and ship in at least one browser, but are missing from VS Code's built-in data. See [CONTENTS.md](CONTENTS.md) for the full list.
 
+## Features
+
+- Completions and value completions for the added CSS properties, at-rules, pseudo-classes and pseudo-elements, and HTML elements and attributes.
+- Hovers with browser support and Baseline status.
+- No false "Unknown property" or "Unknown at rule" warnings.
+- Descriptions from the spec for built-in CSS properties that VS Code ships with an empty one.
 - Works in every window, with or without a folder open. The CSS data also applies to SCSS and Less.
-- Settings choose how much it adds, separately for CSS and HTML. **Level** (`webSpecAdditions.css.level`, `webSpecAdditions.html.level`) can be Off (VS Code's built-in data only), Baseline, Standardized (spec at Candidate Recommendation or later, or a WHATWG Living Standard), or Editor's Draft (any spec; the default). Each level includes the ones before it. **Proprietary** (`webSpecAdditions.css.proprietary`, `webSpecAdditions.html.proprietary`) also adds vendor-prefixed and non-standard features. A change applies after a window reload. These settings can't hide VS Code's own built-in data.
+
+## Settings
+
+| Setting | Description |
+| --- | --- |
+| `webSpecAdditions.css.level` | How much CSS to add. Each level includes the ones before it. |
+| `webSpecAdditions.html.level` | How much HTML to add. Each level includes the ones before it. |
+| `webSpecAdditions.css.proprietary` | Also add vendor-prefixed and non-standard CSS features. |
+| `webSpecAdditions.html.proprietary` | Also add vendor-prefixed and non-standard HTML features. |
+
+Levels:
+
+- **Off**: VS Code's built-in data only.
+- **Baseline**: features that are newly or widely available across browsers.
+- **Standardized (CR or higher)**: also features in a spec at Candidate Recommendation or later, or a WHATWG Living Standard.
+- **Editor's Draft** (default): also features only in Working Drafts, Editor's Drafts or Community Group drafts.
+
+A change applies after a window reload. These settings can't hide VS Code's own built-in data.
+
+## How it works
+
 - New items are declarative custom data (`html.customData`, `css.customData`).
-- `extension.js` applies the settings, and is a small hover provider. VS Code can't change the description of a CSS property it already knows, so for built-in properties that ship with an empty description, the provider shows one from the spec instead.
+- `extension.js` applies the settings and adds a small hover provider. VS Code can't change the description of a CSS property it already knows, so for built-in properties with an empty description, the provider shows one from the spec instead.
 
-Each item is also sent upstream as a PR. When VS Code ships an item, rebuilding the extension (`npm run build-extension` in `vscode-syntax`) drops it automatically.
+## Data sources
 
-Data sources: CSS syntax and facts from [w3c/webref](https://github.com/w3c/webref) (extracted from the specs). Spec titles come from [browser-specs](https://github.com/w3c/browser-specs), browser versions from [@mdn/browser-compat-data](https://github.com/mdn/browser-compat-data) (CC0), and Baseline from [web-features](https://github.com/web-platform-dx/web-features). Selector descriptions quote the defining spec where noted; other descriptions are original text.
+- CSS syntax and facts: [w3c/webref](https://github.com/w3c/webref) (extracted from the specs).
+- Spec titles: [browser-specs](https://github.com/w3c/browser-specs).
+- Browser versions: [@mdn/browser-compat-data](https://github.com/mdn/browser-compat-data) (CC0).
+- Baseline: [web-features](https://github.com/web-platform-dx/web-features).
+
+Selector descriptions quote the defining spec where noted; other descriptions are original text.
