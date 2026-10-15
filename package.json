@@ -20,11 +20,11 @@
     "build-site": "node tools/cli.mjs site"
   },
   "devDependencies": {
-    "@mdn/browser-compat-data": "^8.1.5",
+    "@mdn/browser-compat-data": "^8.1.6",
     "@vscode/test-electron": "^2.5.2",
     "@vscode/web-custom-data": "^0.6.3",
-    "@webref/css": "^8.7.6",
-    "@webref/elements": "^2.9.1",
+    "@webref/css": "^8.7.7",
+    "@webref/elements": "^2.9.2",
     "browser-specs": "^5.3.0",
     "css-tree": "^3.2.1",
     "mdn-data": "^2.37.2",

@@ -603,6 +603,16 @@
       }
     ]
   },
+  "timeline-trigger-range": {
+    "description": "Defined in *Animation Triggers*.\n\nShorthand property.",
+    "syntax": "[ <'timeline-trigger-range-start'> <'timeline-trigger-range-end'>? ]#",
+    "references": [
+      {
+        "name": "Specification",
+        "url": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-range"
+      }
+    ]
+  },
   "timeline-trigger-source": {
     "description": "Defined in *Animation Triggers*.\n\nInitial value: `auto`. Applies to: all elements. Inherited: no. Animation type: not animatable.",
     "syntax": "<single-animation-timeline>#",

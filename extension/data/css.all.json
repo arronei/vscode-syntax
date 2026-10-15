@@ -1944,6 +1944,10 @@
       },
       "references": [
         {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/rule-overlap"
+        },
+        {
           "name": "Specification",
           "url": "https://drafts.csswg.org/css-gaps-1/#propdef-rule-overlap"
         }
@@ -2644,7 +2648,7 @@
       }
     },
     {
-      "name": "flow-tolerance",
+      "name": "fit-tolerance",
       "level": "draft",
       "syntax": "normal | <length-percentage [0,∞]> | infinite",
       "values": [
@@ -2653,20 +2657,14 @@
           "browsers": [
             "S26.4",
             "SM26.4"
-          ],
-          "baseline": {
-            "status": "false"
-          }
+          ]
         },
         {
           "name": "infinite",
           "browsers": [
             "S26.4",
             "SM26.4"
-          ],
-          "baseline": {
-            "status": "false"
-          }
+          ]
         }
       ],
       "restrictions": [
@@ -2675,17 +2673,10 @@
         "enum"
       ],
       "status": "experimental",
-      "browsers": [
-        "S26.4",
-        "SM26.4"
-      ],
-      "baseline": {
-        "status": "false"
-      },
       "references": [
         {
           "name": "Specification",
-          "url": "https://drafts.csswg.org/css-grid-3/#propdef-flow-tolerance"
+          "url": "https://drafts.csswg.org/css-grid-3/#propdef-fit-tolerance"
         }
       ],
       "description": {
