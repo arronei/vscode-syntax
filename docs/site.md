@@ -36,7 +36,7 @@ The README's Status table. `build-site` writes one [shields.io endpoint](https:/
 | Data packages, one per entry in the report's `sources` | The report used the latest npm release | `used → latest` |
 | Upstream repos, one per sibling repo | No commits on upstream's default branch since the report | Number of new commits |
 
-The daily run is what moves them: the comparisons are made at build time. A lookup that fails gives a grey "unknown" badge and doesn't stop the deploy. shields.io caches each badge for about 5 minutes.
+The daily run is what moves them: it reruns the gap report on the latest data and commits it, then the comparisons are made at build time. So between daily runs a badge only goes yellow when something new comes out. A lookup that fails gives a grey "unknown" badge and doesn't stop the deploy. shields.io caches each badge for about 5 minutes.
 
 ## Changes
 

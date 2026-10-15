@@ -10,6 +10,6 @@
 
 ## Toward a scheduled system
 
-Nothing runs on a schedule yet. The loop is: [gap report](gap-report.md) → [additions file](additions.md) → [build](build-extension.md) and [check in real VS Code](check-vscode.md) → apply upstream → [PR](upstream-prs.md). `npm run update` followed by `npm run all` already runs the gap report, build and check in one go. Picking items and making PRs are still by hand.
+The daily [Pages run](site.md) reruns the gap report and rebuilds the extension on the latest data. The rest isn't scheduled. The loop is: [gap report](gap-report.md) → [additions file](additions.md) → [build](build-extension.md) and [check in real VS Code](check-vscode.md) → apply upstream → [PR](upstream-prs.md). `npm run update` followed by `npm run all` already runs the gap report, build and check in one go. Picking items and making PRs are still by hand.
 
-A scheduled job could run `npm run update && npm run all`, then `additions-from-gap-report` for the new items. A small UI could list new items with "add to extension" and "create PR" actions, each running the scripts above.
+The daily run could also run `additions-from-gap-report` for the new items. A small UI could list new items with "add to extension" and "create PR" actions, each running the scripts above.

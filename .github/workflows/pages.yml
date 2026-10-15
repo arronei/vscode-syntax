@@ -1,7 +1,8 @@
 # Builds the site (npm run build-site: site/index.html, the latest gap report, the packaged extension)
-# and publishes it to GitHub Pages. The daily run keeps the README status badges current, and first rebuilds
-# the extension on the latest data sources: if its data changed, it bumps the build number (x.y.BUILD) and
-# commits that to main. Major and minor are bumped by hand in extension/package.json; set build to 0 then.
+# and publishes it to GitHub Pages. The daily run keeps the README status badges current. It first reruns the
+# gap report on the latest data sources and upstream vscode-custom-data, and rebuilds the extension: the report
+# is committed to main every day, and if the extension's data changed it also bumps the build number
+# (x.y.BUILD). Major and minor are bumped by hand in extension/package.json; set build to 0 then.
 # Any run whose extension version has no GitHub Release yet publishes the .vsix to the VS Code Marketplace,
 # then creates the release (tag vX.Y.Z) with the .vsix attached.
 # One-time setup: Settings → Pages → Source: GitHub Actions, and a VSCE_PAT repo secret (Marketplace → Manage).
@@ -35,18 +36,24 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 22
-      - name: Rebuild the extension on the latest data
+      - name: Rebuild the gap report and the extension on the latest data
         if: github.event_name != 'push'
         run: |
           node tools/cli.mjs update
+          git clone -q --depth 1 --origin upstream https://github.com/microsoft/vscode-custom-data.git ../vscode-custom-data
+          git show HEAD:reports/latest.json > "$RUNNER_TEMP/prev.json"
+          node tools/gap-report.mjs ../vscode-custom-data node_modules reports/latest.json
+          # generatedAt moves on every run, so keep a dated copy only when the findings changed
+          if node -e "const f=(p)=>{const j=require(p);delete j.generatedAt;return JSON.stringify(j)};process.exit(f('$RUNNER_TEMP/prev.json')===f('./reports/latest.json')?1:0)"; then node tools/cli.mjs archive; fi
           node tools/build-extension.mjs
-          # CONTENTS.md carries the build date, so only data/ says whether anything really changed
-          if git diff --quiet -- extension/data; then git checkout -- .; exit 0; fi
-          v=$(cd extension && npm version patch --no-git-tag-version)
+          msg='Gap report: daily refresh'
+          # CONTENTS.md carries the build date, so only data/ says whether the extension really changed
+          if git diff --quiet -- extension/data; then git checkout -- extension
+          else v=$(cd extension && npm version patch --no-git-tag-version); msg="Extension $v: data update"; fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898283+github-actions[bot]@users.noreply.github.com'
-          git add extension package.json package-lock.json
-          git commit -m "Extension $v: data update"
+          git add reports extension package.json package-lock.json
+          git commit -m "$msg"
           git push
       - run: npm run build-site
         env:
