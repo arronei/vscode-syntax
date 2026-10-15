@@ -2799,6 +2799,214 @@
         "kind": "markdown",
         "value": "Defined in *CSS Text Decoration Module Level 4*.\n\nInitial value: `start end`. Applies to: all elements. Inherited: yes. Animation type: discrete."
       }
+    },
+    {
+      "name": "flow-tolerance",
+      "level": "legacy",
+      "syntax": "normal | <length-percentage [0,∞]> | infinite",
+      "values": [
+        {
+          "name": "normal"
+        },
+        {
+          "name": "infinite"
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "obsolete",
+      "browsers": [
+        "S26.4",
+        "SM26.4"
+      ],
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-grid-3/#propdef-fit-tolerance"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Old name for `fit-tolerance`. Some browsers still accept it; use `fit-tolerance` instead.\n\nDefined in *CSS Grid Layout Module Level 3*.\n\nInitial value: `normal`. Applies to: grid lanes containers. Inherited: no. Animation type: as length."
+      }
+    },
+    {
+      "name": "color-adjust",
+      "level": "legacy",
+      "syntax": "economy | exact",
+      "values": [
+        {
+          "name": "economy"
+        },
+        {
+          "name": "exact"
+        }
+      ],
+      "restrictions": [
+        "enum"
+      ],
+      "status": "obsolete",
+      "browsers": [
+        "FF48",
+        "FFA48"
+      ],
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/print-color-adjust"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-color-adjust-1/#propdef-print-color-adjust"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Old name for `print-color-adjust`. Some browsers still accept it; use `print-color-adjust` instead.\n\nDefined in *CSS Color Adjustment Module Level 1*.\n\nInitial value: `economy`. Applies to: all elements. Inherited: yes. Animation type: discrete."
+      }
+    },
+    {
+      "name": "scroll-snap-margin",
+      "level": "legacy",
+      "syntax": "<length>{1,4}",
+      "values": [],
+      "restrictions": [
+        "length"
+      ],
+      "status": "obsolete",
+      "browsers": [
+        "S11",
+        "SM11"
+      ],
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-margin"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-scroll-snap-1/#propdef-scroll-margin"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Old name for `scroll-margin`. Some browsers still accept it; use `scroll-margin` instead.\n\nDefined in *CSS Scroll Snap Module Level 1*.\n\nInitial value: `0`. Applies to: all elements. Inherited: no. Animation type: by computed value type."
+      }
+    },
+    {
+      "name": "scroll-snap-margin-bottom",
+      "level": "legacy",
+      "syntax": "<length>",
+      "values": [],
+      "restrictions": [
+        "length"
+      ],
+      "status": "obsolete",
+      "browsers": [
+        "S11",
+        "SM11"
+      ],
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-margin-bottom"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-scroll-snap-1/#propdef-scroll-margin-bottom"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Old name for `scroll-margin-bottom`. Some browsers still accept it; use `scroll-margin-bottom` instead.\n\nDefined in *CSS Scroll Snap Module Level 1*.\n\nInitial value: `0`. Applies to: all elements. Inherited: no. Animation type: by computed value type."
+      }
+    },
+    {
+      "name": "scroll-snap-margin-left",
+      "level": "legacy",
+      "syntax": "<length>",
+      "values": [],
+      "restrictions": [
+        "length"
+      ],
+      "status": "obsolete",
+      "browsers": [
+        "S11",
+        "SM11"
+      ],
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-margin-left"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-scroll-snap-1/#propdef-scroll-margin-left"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Old name for `scroll-margin-left`. Some browsers still accept it; use `scroll-margin-left` instead.\n\nDefined in *CSS Scroll Snap Module Level 1*.\n\nInitial value: `0`. Applies to: all elements. Inherited: no. Animation type: by computed value type."
+      }
+    },
+    {
+      "name": "scroll-snap-margin-right",
+      "level": "legacy",
+      "syntax": "<length>",
+      "values": [],
+      "restrictions": [
+        "length"
+      ],
+      "status": "obsolete",
+      "browsers": [
+        "S11",
+        "SM11"
+      ],
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-margin-right"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-scroll-snap-1/#propdef-scroll-margin-right"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Old name for `scroll-margin-right`. Some browsers still accept it; use `scroll-margin-right` instead.\n\nDefined in *CSS Scroll Snap Module Level 1*.\n\nInitial value: `0`. Applies to: all elements. Inherited: no. Animation type: by computed value type."
+      }
+    },
+    {
+      "name": "scroll-snap-margin-top",
+      "level": "legacy",
+      "syntax": "<length>",
+      "values": [],
+      "restrictions": [
+        "length"
+      ],
+      "status": "obsolete",
+      "browsers": [
+        "S11",
+        "SM11"
+      ],
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-margin-top"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-scroll-snap-1/#propdef-scroll-margin-top"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Old name for `scroll-margin-top`. Some browsers still accept it; use `scroll-margin-top` instead.\n\nDefined in *CSS Scroll Snap Module Level 1*.\n\nInitial value: `0`. Applies to: all elements. Inherited: no. Animation type: by computed value type."
+      }
     }
   ],
   "atDirectives": [

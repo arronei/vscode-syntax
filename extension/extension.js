@@ -1,7 +1,7 @@
 // Two jobs:
 //
 // 1. Data levels. data/css.all.json and data/html.all.json hold everything the extension can add, each item
-//    tagged baseline, standard, draft or proprietary (tools/levels.mjs). The webSpecAdditions.* settings pick
+//    tagged baseline, standard, draft, proprietary or legacy (tools/levels.mjs). The webSpecAdditions.* settings pick
 //    which of them to use; this writes that subset to the data/*-data.json files package.json contributes.
 //    VS Code reads those when its CSS and HTML language servers start, so a change needs a window reload.
 //
@@ -15,11 +15,12 @@ const path = require('path');
 
 const RANK = { baseline: 1, standard: 2, draft: 3 };
 
-// The data at one setting: items up to `level` (off adds nothing), plus proprietary ones if asked for.
+// The data at one setting: items up to `level` (off adds nothing), plus proprietary and legacy ones if asked for.
 // tools/build-extension.mjs also calls this, to write the defaults, so it must not need `vscode`.
-function filterData(data, level, proprietary) {
+function filterData(data, level, proprietary, legacy) {
   const max = RANK[level] || 0;
-  const keep = (e) => !e.level || (e.level === 'proprietary' ? max > 0 && proprietary : RANK[e.level] <= max);
+  const optIn = { proprietary, legacy };
+  const keep = (e) => !e.level || (e.level in optIn ? max > 0 && !!optIn[e.level] : RANK[e.level] <= max);
   if (!data.tags) {
     return { ...data, properties: data.properties.filter(keep), atDirectives: data.atDirectives.filter(keep), pseudoClasses: data.pseudoClasses.filter(keep), pseudoElements: data.pseudoElements.filter(keep) };
   }
@@ -42,7 +43,7 @@ function activate(context) {
       let reload = false;
       for (const lang of ['css', 'html']) {
         const file = `${lang}.${lang}-data.json`;
-        const wanted = filterData(read(`${lang}.all.json`), setting(lang, 'level'), setting(lang, 'proprietary'));
+        const wanted = filterData(read(`${lang}.all.json`), setting(lang, 'level'), setting(lang, 'proprietary'), setting(lang, 'legacyNames'));
         if (!same(read(file), wanted)) fs.writeFileSync(path.join(dir, file), JSON.stringify(wanted, null, 2) + '\n');
         reload ||= !same(loaded[lang], wanted);
       }

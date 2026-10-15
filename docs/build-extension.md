@@ -33,6 +33,7 @@ Settings choose which items the extension adds, for CSS and HTML separately:
 |---|---|
 | `webSpecAdditions.css.level`, `webSpecAdditions.html.level` | `off`, `baseline`, `standard`, `draft` (default) |
 | `webSpecAdditions.css.proprietary`, `webSpecAdditions.html.proprietary` | `false` (default) or `true` |
+| `webSpecAdditions.css.legacyNames` | `false` (default) or `true` |
 
 Each item's level comes from `tools/levels.mjs`. The gap report uses the same code.
 
@@ -42,6 +43,7 @@ Each item's level comes from `tools/levels.mjs`. The gap report uses the same co
 | `standard` | in a spec at Candidate Recommendation or later, or a WHATWG Living Standard (browser-specs) | Standardized and up |
 | `draft` | in any other spec: Working Draft, Editor's Draft, Community Group draft | Editor's Draft |
 | `proprietary` | vendor-prefixed, non-standard in BCD, or in no spec at all | any level except Off, when `proprietary` is on |
+| `legacy` | CSS only: the old name of a renamed property that browsers still accept, from BCD's `alternative_name` (`flow-tolerance` for `fit-tolerance`). Added by the build, marked obsolete, hover points to the current name | any level except Off, when `legacyNames` is on |
 
 The checks run in that order, except proprietary goes first: a vendor-prefixed item is always proprietary, even if it's Baseline. To override a level that comes out wrong, set `level` on the entry in its additions file.
 

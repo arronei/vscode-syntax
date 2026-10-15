@@ -2,7 +2,7 @@
   "name": "web-spec-additions",
   "displayName": "Web Spec Additions (HTML & CSS)",
   "description": "HTML attributes and CSS properties from current specs that VS Code's built-in data doesn't have yet. Items are dropped once VS Code ships them.",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "publisher": "arronei",
   "license": "MIT",
   "icon": "icon.png",
@@ -80,6 +80,12 @@
           "scope": "application",
           "default": false,
           "markdownDescription": "Also add proprietary CSS features: vendor-prefixed, non-standard, or in no spec. Has no effect when `#webSpecAdditions.css.level#` is `off`."
+        },
+        "webSpecAdditions.css.legacyNames": {
+          "type": "boolean",
+          "scope": "application",
+          "default": false,
+          "markdownDescription": "Also add old names of renamed CSS properties that browsers still accept, such as `flow-tolerance` for `fit-tolerance`. They show as obsolete, and their hover points to the current name. Has no effect when `#webSpecAdditions.css.level#` is `off`."
         },
         "webSpecAdditions.html.level": {
           "type": "string",

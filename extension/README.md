@@ -18,6 +18,7 @@ Adds HTML and CSS features that are in current web specs and ship in at least on
 | `webSpecAdditions.html.level` | How much HTML to add. Each level includes the ones before it. |
 | `webSpecAdditions.css.proprietary` | Also add vendor-prefixed and non-standard CSS features. |
 | `webSpecAdditions.html.proprietary` | Also add vendor-prefixed and non-standard HTML features. |
+| `webSpecAdditions.css.legacyNames` | Also add old names of renamed CSS properties that browsers still accept, such as `flow-tolerance`. They show as obsolete and point to the current name. |
 
 Levels:
 

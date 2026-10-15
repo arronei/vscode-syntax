@@ -198,7 +198,7 @@
           ]
         },
         {
-          "name": "privateToken",
+          "name": "privatetoken",
           "level": "draft",
           "description": {
             "kind": "markdown",

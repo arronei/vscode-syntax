@@ -90,7 +90,7 @@
       "description": "Hides buttons in the browser's built-in media controls, as a space-separated list of `nodownload`, `nofullscreen` and `noremoteplayback`." },
     { "tag": "iframe", "name": "credentialless", "valueSet": "v", "bcd": "html.elements.iframe.credentialless",
       "description": "Loads the iframe's document in a new, ephemeral context without the embedder's cookies or storage. Lets cross-origin-isolated pages embed third-party content that doesn't send CORP or COEP headers." },
-    { "tag": "iframe", "name": "privateToken", "bcd": "html.elements.iframe.privateToken",
+    { "tag": "iframe", "name": "privatetoken", "bcd": "html.elements.iframe.privateToken",
       "description": "JSON-encoded parameters for a Private State Token operation (such as a token redemption) to attach to the iframe's navigation request." },
     { "tag": "a", "name": "attributionsourceid", "bcd": "html.elements.a.attributionsourceid",
       "description": "An 8-bit (0–255) source ID for Private Click Measurement. Used with `attributiondestination` to measure ad click conversions without cross-site tracking." }

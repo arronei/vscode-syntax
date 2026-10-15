@@ -5,9 +5,11 @@
 //   standard     in a spec at Candidate Recommendation or later, or a WHATWG Living Standard
 //   draft        in any other spec: Working Draft, Editor's Draft, Community Group draft, …
 //   proprietary  vendor-prefixed, non-standard in BCD, or in no spec at all
+//   legacy       old name of a renamed property that browsers still accept (BCD alternative_name); set by
+//                tools/build-extension.mjs, not by levelOf
 //
 // The first three are cumulative in the extension (draft includes standard includes baseline).
-// Proprietary is a separate opt-in.
+// Proprietary and legacy are separate opt-ins.
 const STANDARD = /^(Candidate Recommendation|Proposed Recommendation|Recommendation|Living Standard)/;
 
 export function levelFinder({ specs, wf }) {

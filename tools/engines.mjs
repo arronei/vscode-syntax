@@ -1,12 +1,15 @@
-// CSS properties straight from the browser engines' source: what Blink, WebKit and Gecko turn on by default on
-// their main branch, what's in preview, and what sits behind a flag. BCD records a feature once it ships in a
-// release; the engines' own property lists show it the day it lands, and show names BCD files under another key.
+// CSS properties, HTML elements and HTML attributes straight from the browser engines' source: what Blink, WebKit
+// and Gecko turn on by default on their main branch, what's in preview, and what sits behind a flag. BCD records a
+// feature once it ships in a release; the engines' own lists show it the day it lands, and show names BCD files
+// under another key.
 // Usage: node engines.mjs <node_modules dir with latest sources> [out.json]
 //
 //   on       enabled by default on main: in the next release, if not already shipped
 //   preview  Blink "experimental" (Experimental Web Platform features flag), WebKit "preview" (Safari Technology
 //            Preview), Gecko Nightly-only
 //   flag     anything else behind a flag
+//   listed   HTML attributes: the engine has the name. Its attribute list carries no flags or elements, and
+//            Gecko has no such list at all (its names are in the shared atom table), so attributes are Blink and WebKit only.
 import fs from 'fs';
 import path from 'path';
 
@@ -22,9 +25,10 @@ const RAW = {
   webkit: 'https://raw.githubusercontent.com/WebKit/WebKit/main/Source/',
   gecko: 'https://raw.githubusercontent.com/mozilla-firefox/firefox/main/',
 };
-const RANK = { flag: 0, preview: 1, on: 2 };
+const RANK = { flag: 0, preview: 1, on: 2, listed: 2 };
 const min = (...s) => s.reduce((a, b) => (RANK[a] <= RANK[b] ? a : b));
 const max = (...s) => s.filter(Boolean).reduce((a, b) => (RANK[a] >= RANK[b] ? a : b), undefined);
+const listed = (names) => Object.fromEntries(names.map((n) => [n, { state: 'listed' }]));
 
 // ponytail: only the JSON5 Chromium writes (comments, bare keys, trailing commas); the json5 package if that changes
 const STR = '"(?:[^"\\\\]|\\\\.)*"';
@@ -43,13 +47,17 @@ async function blink() {
   };
   const props = json5(await get(RAW.blink + 'core/css/css_properties.json5')).data;
   const byName = new Map(props.map((p) => [p.name, p]));
-  const out = {};
+  const css = {};
   for (const p of props) {
     if (/^-(internal|alternative)-/.test(p.name) || p.is_property === false) continue; // is_property: false = at-rule descriptor only
     const flagsOn = [p.runtime_flag, byName.get(p.alias_for)?.runtime_flag].filter(Boolean);
-    out[p.name] = { state: min('on', ...flagsOn.map(flag)), aliasOf: p.alias_for };
+    css[p.name] = { state: min('on', ...flagsOn.map(flag)), aliasOf: p.alias_for };
   }
-  return out;
+  const tags = json5(await get(RAW.blink + 'core/html/html_tag_names.json5')).data.map((t) => (typeof t === 'string' ? { name: t } : t));
+  // an HTMLUnknownElement interface means the name is only parsed (applet, keygen, …), not implemented: skipped in all three engines
+  const elements = Object.fromEntries(tags.filter((t) => t.interfaceName !== 'HTMLUnknownElement').map((t) => [t.name, { state: t.runtimeEnabled ? flag(t.runtimeEnabled) : 'on' }]));
+  const attributes = listed(json5(await get(RAW.blink + 'core/html/html_attribute_names.json5')).data.map((a) => a.name ?? a));
+  return { css, elements, attributes };
 }
 
 async function webkit() {
@@ -57,21 +65,34 @@ async function webkit() {
   const prefs = {};
   const yaml = await get(RAW.webkit + 'WTF/Scripts/Preferences/UnifiedWebPreferences.yaml');
   for (const [, name, body] of yaml.matchAll(/^(\w+):\n((?:[ \t].*\n|\n)*)/gm)) prefs[name.toLowerCase()] = /^ {2}status: (\w+)/m.exec(body)?.[1];
+  // settings are lowerCamel (cssFooEnabled), preferences UpperCamel (CSSFooEnabled).
+  // ponytail: a Foo_feature_status macro is Stable on the ports that build the feature (WebKit/Shared/WebPreferencesDefaultValues.h),
+  // so it counts as on; evaluate those #ifs if a port-specific feature ever shows up wrongly here
+  const setting = (name) => {
+    const status = prefs[name.toLowerCase()];
+    return { stable: 'on', mature: 'on', preview: 'preview' }[status] ?? (/_feature_status$/.test(status) ? 'on' : 'flag');
+  };
   const props = JSON.parse(await get(RAW.webkit + 'WebCore/css/CSSProperties.json')).properties;
-  const out = {};
+  const css = {};
   for (const [name, p] of Object.entries(props)) {
     const cg = [].concat(p['codegen-properties'] || {});
     if (cg.some((c) => c['internal-only'])) continue;
-    // settings-flag is lowerCamel (cssFooEnabled), the preference UpperCamel (CSSFooEnabled)
-    const setting = cg.find((c) => c['settings-flag'])?.['settings-flag'];
-    // ponytail: a Foo_feature_status macro is Stable on the ports that build the feature (WebKit/Shared/WebPreferencesDefaultValues.h),
-    // so it counts as on; evaluate those #ifs if a port-specific feature ever shows up wrongly here
-    const status = prefs[setting?.toLowerCase()];
-    const state = !setting ? 'on' : { stable: 'on', mature: 'on', preview: 'preview' }[status] ?? (/_feature_status$/.test(status) ? 'on' : 'flag');
-    out[name] = { state };
-    for (const a of cg.flatMap((c) => c.aliases || [])) out[a] = { state, aliasOf: name };
+    const flag = cg.find((c) => c['settings-flag'])?.['settings-flag'];
+    const state = flag ? setting(flag) : 'on';
+    css[name] = { state };
+    for (const a of cg.flatMap((c) => c.aliases || [])) css[a] = { state, aliasOf: name };
   }
-  return out;
+  // HTMLTagNames.in / HTMLAttributeNames.in: `name option=value, option=value`; header lines aren't lowercase names
+  const entries = (text) => [...text.matchAll(/^([a-z][a-z0-9-]*)(?:[ \t]+(.*))?$/gm)].map(([, name, opts]) => [name, Object.fromEntries((opts || '').split(/,\s*/).map((o) => o.split('=')))]);
+  const elements = {};
+  for (const [name, o] of entries(await get(RAW.webkit + 'WebCore/html/HTMLTagNames.in'))) {
+    if (o.interfaceName === 'HTMLUnknownElement') continue;
+    // settingsConditional=a&b&!c needs a and b on (and c off, which is ignored here); deprecated global settings are off by default
+    const needs = (o.settingsConditional || '').split('&').filter((s) => s && !s.startsWith('!'));
+    elements[name] = { state: o.deprecatedGlobalSettingsConditional ? 'flag' : min('on', ...needs.map(setting)) };
+  }
+  const attributes = listed(entries(await get(RAW.webkit + 'WebCore/html/HTMLAttributeNames.in')).map(([n]) => n));
+  return { css, elements, attributes };
 }
 
 async function gecko() {
@@ -80,7 +101,7 @@ async function gecko() {
   for (const [, name, value] of yaml.matchAll(/^- name: (\S+)\n(?: {2}.*\n)*? {2}value: (.*)/gm)) prefs[name] = value.replace(/\s*#.*/, '').trim();
   const state = (pref) => (!pref || prefs[pref] === 'true' ? 'on'
     : /^@IS_(NIGHTLY_BUILD|EARLY_BETA_OR_EARLIER|NOT_RELEASE_OR_BETA)@$/.test(prefs[pref]) ? 'preview' : 'flag');
-  const out = {};
+  const css = {};
   for (const file of ['longhands', 'shorthands']) {
     // ponytail: line-based TOML, just the [property] headers and the one-line keys read here
     const parts = (await get(`${RAW.gecko}servo/components/style/properties/${file}.toml`)).split(/^\[(.+)\]\r?\n/m);
@@ -92,65 +113,105 @@ async function gecko() {
       const where = v('enabled_in') ?? 'content';
       if (v('engine') === 'servo' || where === '' || (where !== 'content' && !v('gecko_pref'))) continue;
       const s = state(v('gecko_pref'));
-      out[name] = { state: s };
+      css[name] = { state: s };
       // aliases and extra_gecko_aliases: "name" or "name:pref"; extra_prefixes: "webkit" or "moz:pref"
       for (const a of [...(v('aliases') || []), ...(v('extra_gecko_aliases') || [])]) {
         const [n, pref] = a.split(':');
-        out[n] = { state: min(s, state(pref)), aliasOf: name };
+        css[n] = { state: min(s, state(pref)), aliasOf: name };
       }
       for (const a of v('extra_prefixes') || []) {
         const [prefix, pref] = a.split(':');
-        out[`-${prefix}-${name}`] = { state: min(s, state(pref)), aliasOf: name };
+        css[`-${prefix}-${name}`] = { state: min(s, state(pref)), aliasOf: name };
       }
     }
   }
-  return out;
+  // nsHTMLTagList.inc: HTML_TAG(name, Interface, …) and HTML_HTMLELEMENT_TAG(name); HTML_OTHER is parser tokens
+  // (text, comment, …), and an Unknown interface is a name that's only parsed
+  const tags = (await get(RAW.gecko + 'parser/htmlparser/nsHTMLTagList.inc')).matchAll(/^HTML_(?:HTMLELEMENT_)?TAG\((\w+)(?!, Unknown)\b/gm);
+  const elements = Object.fromEntries([...tags].map(([, n]) => [n, { state: 'on' }]));
+  return { css, elements, attributes: {} };
 }
 
 const ENGINES = ['blink', 'webkit', 'gecko'];
-const engines = Object.fromEntries(ENGINES.map((e, i) => [e, [blink, webkit, gecko][i]()]));
-for (const e of ENGINES) engines[e] = await engines[e];
+const fetched = await Promise.all([blink(), webkit(), gecko()]);
+const engines = Object.fromEntries(ENGINES.map((e, i) => [e, fetched[i]]));
 
-const vscode = new Set(load(path.join(mods, '@vscode/web-custom-data/data/browsers.css-data.json')).properties.map((p) => p.name));
-const extension = new Set(load(new URL('../extension/data/css.all.json', import.meta.url)).properties.map((p) => p.name));
-const bcd = load(path.join(mods, '@mdn/browser-compat-data/data.json')).css.properties;
-// browsers BCD says ship it unprefixed and unflagged; undefined when BCD has no entry under this name
-const bcdShips = (name) => {
-  const c = bcd[name]?.__compat;
-  return c && ['chrome', 'firefox', 'safari'].filter((b) => [c.support[b]].flat()
-    .some((x) => x?.version_added && x.version_added !== 'preview' && !x.flags && !x.prefix && !x.alternative_name && !x.version_removed));
+// what VS Code's built-in data and the extension already have, and BCD's entries, per category
+const builtinCss = load(path.join(mods, '@vscode/web-custom-data/data/browsers.css-data.json'));
+const builtinHtml = load(path.join(mods, '@vscode/web-custom-data/data/browsers.html-data.json'));
+const extCss = load(new URL('../extension/data/css.all.json', import.meta.url));
+const extHtml = load(new URL('../extension/data/html.all.json', import.meta.url));
+const attrNames = (data) => [...data.tags.flatMap((t) => t.attributes), ...data.globalAttributes].map((a) => a.name);
+const bcd = load(path.join(mods, '@mdn/browser-compat-data/data.json'));
+const CATEGORIES = {
+  css: {
+    title: 'CSS properties',
+    vscode: builtinCss.properties.map((p) => p.name),
+    extension: extCss.properties.map((p) => p.name),
+    bcd: (n) => [bcd.css.properties[n]],
+  },
+  elements: {
+    title: 'HTML elements',
+    vscode: builtinHtml.tags.map((t) => t.name),
+    extension: extHtml.tags.filter((t) => t.level).map((t) => t.name), // tags without a level only add attributes
+    bcd: (n) => [bcd.html.elements[n]],
+  },
+  attributes: {
+    title: 'HTML attributes',
+    vscode: attrNames(builtinHtml),
+    extension: attrNames(extHtml),
+    bcd: (n) => [bcd.html.global_attributes[n], ...Object.values(bcd.html.elements).map((e) => e[n])],
+  },
 };
 
-const names = [...new Set(ENGINES.flatMap((e) => Object.keys(engines[e])))].sort();
-const rows = names.map((name) => {
-  const r = { name };
-  for (const e of ENGINES) r[e] = engines[e][name]?.state;
-  r.aliasOf = ENGINES.map((e) => engines[e][name]?.aliasOf).find(Boolean);
-  r.best = max(...ENGINES.map((e) => r[e]));
-  r.vscode = vscode.has(name);
-  r.extension = extension.has(name);
-  r.bcd = bcdShips(name);
-  return r;
-});
-const unprefixedGap = (r) => !r.name.startsWith('-') && !r.vscode && !r.extension;
-const report = {
-  generatedAt: new Date().toISOString(),
-  counts: Object.fromEntries(ENGINES.map((e) => [e, Object.fromEntries(Object.keys(RANK).map((s) => [s, Object.values(engines[e]).filter((p) => p.state === s).length]))])),
-  // unprefixed, on in at least one engine, neither VS Code nor the extension has it
-  missingOn: rows.filter((r) => unprefixedGap(r) && r.best === 'on'),
-  // the same, but only in preview so far
-  missingPreview: rows.filter((r) => unprefixedGap(r) && r.best === 'preview'),
-  // the extension adds it, but no engine has it on by default
-  extensionNotOn: [...extension].map((n) => rows.find((r) => r.name === n) ?? { name: n }).filter((r) => r.best !== 'on'),
-  properties: rows,
+// browsers BCD says ship it unprefixed and unflagged, under any of its BCD entries; undefined when BCD has none
+const bcdShips = (entries) => {
+  const compats = entries.map((e) => e?.__compat).filter(Boolean);
+  if (!compats.length) return undefined;
+  const ships = ['chrome', 'firefox', 'safari'].filter((b) => compats.some((c) => [c.support[b]].flat()
+    .some((x) => x?.version_added && x.version_added !== 'preview' && !x.flags && !x.prefix && !x.alternative_name && !x.version_removed)));
+  return { ships, deprecated: compats.every((c) => c.status?.deprecated) || undefined };
 };
 
-const fmt = (r) => `  ${r.name.padEnd(34)} ${ENGINES.map((e) => (r[e] ?? '-').padEnd(8)).join('')}${r.aliasOf ? `alias of ${r.aliasOf}; ` : ''}BCD: ${r.bcd ? r.bcd.join(', ') || 'none ship' : 'no entry'}`;
-const head = `  ${'property'.padEnd(34)} ${ENGINES.map((e) => e.padEnd(8)).join('')}`;
-for (const e of ENGINES) console.log(`${e.padEnd(7)} ${Object.entries(report.counts[e]).map(([s, n]) => `${n} ${s}`).join(', ')}`);
-for (const [title, list] of [
-  ['On in an engine, missing from VS Code and the extension', report.missingOn],
-  ['In preview only, missing from VS Code and the extension', report.missingPreview],
-  ['Added by the extension, but on by default in no engine', report.extensionNotOn],
-]) console.log(`\n${title}: ${list.length}\n${list.length ? `${head}\n${list.map(fmt).join('\n')}` : ''}`);
+const report = { generatedAt: new Date().toISOString() };
+for (const [key, cat] of Object.entries(CATEGORIES)) {
+  const vscode = new Set(cat.vscode);
+  const extension = new Set(cat.extension);
+  const names = [...new Set(ENGINES.flatMap((e) => Object.keys(engines[e][key])))].sort();
+  const rows = names.map((name) => {
+    const r = { name };
+    for (const e of ENGINES) r[e] = engines[e][key][name]?.state;
+    r.aliasOf = ENGINES.map((e) => engines[e][key][name]?.aliasOf).find(Boolean);
+    r.best = max(...ENGINES.map((e) => r[e]));
+    r.vscode = vscode.has(name);
+    r.extension = extension.has(name);
+    r.bcd = bcdShips(cat.bcd(name));
+    return r;
+  });
+  // not vendor-specific (-webkit-foo, webkitfoo, onwebkitfoo, x-apple-foo) and not deprecated in BCD
+  const gap = (r) => !/^(-|x-|webkit|onwebkit)/.test(r.name) && !r.bcd?.deprecated && !r.vscode && !r.extension;
+  report[key] = {
+    counts: Object.fromEntries(ENGINES.map((e) => [e, Object.values(engines[e][key]).reduce((c, p) => ({ ...c, [p.state]: (c[p.state] || 0) + 1 }), {})])),
+    // unprefixed, on (or listed) in at least one engine, neither VS Code nor the extension has it
+    missingOn: rows.filter((r) => gap(r) && RANK[r.best] === 2),
+    // the same, but only in preview so far
+    missingPreview: rows.filter((r) => gap(r) && r.best === 'preview'),
+    // the extension adds it, but no engine has it on by default
+    extensionNotOn: [...extension].map((n) => rows.find((r) => r.name === n) ?? { name: n }).filter((r) => RANK[r.best] !== 2),
+    rows,
+  };
+}
+
+const bcdText = (b) => (!b ? 'no entry' : `${b.ships.join(', ') || 'none ship'}${b.deprecated ? ', deprecated' : ''}`);
+const fmt = (r) => `  ${r.name.padEnd(34)} ${ENGINES.map((e) => (r[e] ?? '-').padEnd(8)).join('')}${r.aliasOf ? `alias of ${r.aliasOf}; ` : ''}BCD: ${bcdText(r.bcd)}`;
+const head = `  ${'name'.padEnd(34)} ${ENGINES.map((e) => e.padEnd(8)).join('')}`;
+for (const [key, { title }] of Object.entries(CATEGORIES)) {
+  const r = report[key];
+  console.log(`\n=== ${title}\n${ENGINES.map((e) => `${e.padEnd(7)} ${Object.entries(r.counts[e]).map(([s, n]) => `${n} ${s}`).join(', ') || 'no list'}`).join('\n')}`);
+  for (const [label, list] of [
+    ['On in an engine, missing from VS Code and the extension', r.missingOn],
+    ['In preview only, missing from VS Code and the extension', r.missingPreview],
+    ['Added by the extension, but on by default in no engine', r.extensionNotOn],
+  ]) console.log(`\n${label}: ${list.length}${list.length ? `\n${head}\n${list.map(fmt).join('\n')}` : ''}`);
+}
 if (outFile) fs.writeFileSync(outFile, JSON.stringify(report, null, 2) + '\n');
