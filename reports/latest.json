@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-13T21:33:23.056Z",
+  "generatedAt": "2026-10-15T16:46:07.140Z",
   "sources": {
     "mdn-data": "2.37.2",
-    "@mdn/browser-compat-data": "8.1.5",
-    "@webref/css": "8.7.6",
-    "@webref/elements": "2.9.1",
+    "@mdn/browser-compat-data": "8.1.6",
+    "@webref/css": "8.7.7",
+    "@webref/elements": "2.9.2",
     "web-features": "3.42.0"
   },
   "shipped": {
@@ -17,47 +17,88 @@
   },
   "summary": {
     "cssProperties": {
-      "total": 223,
+      "total": 276,
       "P1": 1,
-      "P2": 54,
-      "P3": 168
+      "P2": 53,
+      "P3": 222,
+      "baseline": 1,
+      "standard": 20,
+      "draft": 199,
+      "proprietary": 56
     },
     "atRules": {
       "total": 36,
       "P1": 0,
       "P2": 1,
-      "P3": 35
+      "P3": 35,
+      "baseline": 0,
+      "standard": 0,
+      "draft": 36,
+      "proprietary": 0
     },
     "selectors": {
-      "total": 41,
+      "total": 44,
       "P1": 0,
-      "P2": 9,
-      "P3": 32
+      "P2": 10,
+      "P3": 34,
+      "baseline": 0,
+      "standard": 0,
+      "draft": 42,
+      "proprietary": 2
     },
     "htmlElements": {
       "total": 33,
       "P1": 0,
       "P2": 5,
-      "P3": 28
+      "P3": 28,
+      "baseline": 0,
+      "standard": 27,
+      "draft": 6,
+      "proprietary": 0
     },
     "htmlAttributes": {
-      "total": 45,
+      "total": 46,
       "P1": 16,
       "P2": 21,
-      "P3": 8
+      "P3": 9,
+      "baseline": 16,
+      "standard": 17,
+      "draft": 6,
+      "proprietary": 7
     },
     "globalAttributes": {
       "total": 7,
       "P1": 0,
       "P2": 2,
-      "P3": 5
+      "P3": 5,
+      "baseline": 0,
+      "standard": 3,
+      "draft": 3,
+      "proprietary": 1
     },
     "emptyCssDescriptions": 61
   },
   "gaps": {
     "cssProperties": [
       {
+        "name": "-webkit-text-security",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-text-security",
+        "shipsIn": [
+          "chrome",
+          "edge",
+          "firefox",
+          "safari"
+        ],
+        "baseline": "All 4 browsers",
+        "mdn": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/-webkit-text-security",
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
         "name": "color-interpolation",
+        "level": "baseline",
         "bcdKey": "css.properties.color-interpolation",
         "shipsIn": [
           "chrome",
@@ -72,7 +113,192 @@
         "priority": "P1"
       },
       {
+        "name": "-webkit-border-horizontal-spacing",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-border-horizontal-spacing",
+        "shipsIn": [
+          "chrome",
+          "edge",
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-border-vertical-spacing",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-border-vertical-spacing",
+        "shipsIn": [
+          "chrome",
+          "edge",
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-locale",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-locale",
+        "shipsIn": [
+          "chrome",
+          "edge",
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-logical-height",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-logical-height",
+        "shipsIn": [
+          "chrome",
+          "edge",
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-logical-width",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-logical-width",
+        "shipsIn": [
+          "chrome",
+          "edge",
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-mask-box-image",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-mask-box-image",
+        "shipsIn": [
+          "chrome",
+          "edge",
+          "safari"
+        ],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-mask-box-image",
+        "mdn": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/-webkit-mask-box-image",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-max-logical-height",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-max-logical-height",
+        "shipsIn": [
+          "chrome",
+          "edge",
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-max-logical-width",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-max-logical-width",
+        "shipsIn": [
+          "chrome",
+          "edge",
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-min-logical-height",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-min-logical-height",
+        "shipsIn": [
+          "chrome",
+          "edge",
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-min-logical-width",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-min-logical-width",
+        "shipsIn": [
+          "chrome",
+          "edge",
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-perspective-origin-x",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-perspective-origin-x",
+        "shipsIn": [
+          "chrome",
+          "edge",
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-perspective-origin-y",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-perspective-origin-y",
+        "shipsIn": [
+          "chrome",
+          "edge",
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-rtl-ordering",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-rtl-ordering",
+        "shipsIn": [
+          "chrome",
+          "edge",
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-text-combine",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-text-combine",
+        "shipsIn": [
+          "chrome",
+          "edge",
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
         "name": "buffered-rendering",
+        "level": "proprietary",
         "deprecated": true,
         "nonStandard": true,
         "bcdKey": "css.properties.buffered-rendering",
@@ -85,7 +311,32 @@
         "priority": "P3"
       },
       {
+        "name": "-webkit-app-region",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-app-region",
+        "shipsIn": [
+          "chrome",
+          "edge"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-text-decorations-in-effect",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-text-decorations-in-effect",
+        "shipsIn": [
+          "chrome",
+          "edge"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
         "name": "border-shape",
+        "level": "draft",
         "bcdKey": "css.properties.border-shape",
         "shipsIn": [
           "chrome",
@@ -99,6 +350,7 @@
       },
       {
         "name": "color-adjust",
+        "level": "standard",
         "deprecated": true,
         "bcdKey": "css.properties.color-adjust",
         "shipsIn": [
@@ -112,6 +364,7 @@
       },
       {
         "name": "color-rendering",
+        "level": "proprietary",
         "deprecated": true,
         "nonStandard": true,
         "bcdKey": "css.properties.color-rendering",
@@ -124,6 +377,7 @@
       },
       {
         "name": "column-rule-break",
+        "level": "draft",
         "bcdKey": "css.properties.column-rule-break",
         "shipsIn": [
           "chrome",
@@ -137,6 +391,7 @@
       },
       {
         "name": "column-rule-inset",
+        "level": "draft",
         "bcdKey": "css.properties.column-rule-inset",
         "shipsIn": [
           "chrome",
@@ -149,6 +404,7 @@
       },
       {
         "name": "column-rule-inset-cap",
+        "level": "draft",
         "bcdKey": "css.properties.column-rule-inset-cap",
         "shipsIn": [
           "chrome",
@@ -162,6 +418,7 @@
       },
       {
         "name": "column-rule-inset-cap-end",
+        "level": "draft",
         "bcdKey": "css.properties.column-rule-inset-cap-end",
         "shipsIn": [
           "chrome",
@@ -175,6 +432,7 @@
       },
       {
         "name": "column-rule-inset-cap-start",
+        "level": "draft",
         "bcdKey": "css.properties.column-rule-inset-cap-start",
         "shipsIn": [
           "chrome",
@@ -188,6 +446,7 @@
       },
       {
         "name": "column-rule-inset-end",
+        "level": "draft",
         "bcdKey": "css.properties.column-rule-inset-end",
         "shipsIn": [
           "chrome",
@@ -200,6 +459,7 @@
       },
       {
         "name": "column-rule-inset-junction",
+        "level": "draft",
         "bcdKey": "css.properties.column-rule-inset-junction",
         "shipsIn": [
           "chrome",
@@ -213,6 +473,7 @@
       },
       {
         "name": "column-rule-inset-junction-end",
+        "level": "draft",
         "bcdKey": "css.properties.column-rule-inset-junction-end",
         "shipsIn": [
           "chrome",
@@ -226,6 +487,7 @@
       },
       {
         "name": "column-rule-inset-junction-start",
+        "level": "draft",
         "bcdKey": "css.properties.column-rule-inset-junction-start",
         "shipsIn": [
           "chrome",
@@ -238,6 +500,7 @@
       },
       {
         "name": "column-rule-inset-start",
+        "level": "draft",
         "bcdKey": "css.properties.column-rule-inset-start",
         "shipsIn": [
           "chrome",
@@ -250,6 +513,7 @@
       },
       {
         "name": "column-rule-visibility-items",
+        "level": "draft",
         "bcdKey": "css.properties.column-rule-visibility-items",
         "shipsIn": [
           "chrome",
@@ -263,6 +527,7 @@
       },
       {
         "name": "flex-line-count",
+        "level": "draft",
         "bcdKey": "css.properties.flex-line-count",
         "shipsIn": [
           "chrome",
@@ -275,6 +540,7 @@
       },
       {
         "name": "frame-sizing",
+        "level": "draft",
         "bcdKey": "css.properties.frame-sizing",
         "shipsIn": [
           "chrome",
@@ -288,6 +554,7 @@
       },
       {
         "name": "row-rule",
+        "level": "draft",
         "bcdKey": "css.properties.row-rule",
         "shipsIn": [
           "chrome",
@@ -301,6 +568,7 @@
       },
       {
         "name": "row-rule-break",
+        "level": "draft",
         "bcdKey": "css.properties.row-rule-break",
         "shipsIn": [
           "chrome",
@@ -314,6 +582,7 @@
       },
       {
         "name": "row-rule-color",
+        "level": "draft",
         "bcdKey": "css.properties.row-rule-color",
         "shipsIn": [
           "chrome",
@@ -327,6 +596,7 @@
       },
       {
         "name": "row-rule-inset",
+        "level": "draft",
         "bcdKey": "css.properties.row-rule-inset",
         "shipsIn": [
           "chrome",
@@ -339,6 +609,7 @@
       },
       {
         "name": "row-rule-inset-cap",
+        "level": "draft",
         "bcdKey": "css.properties.row-rule-inset-cap",
         "shipsIn": [
           "chrome",
@@ -352,6 +623,7 @@
       },
       {
         "name": "row-rule-inset-cap-end",
+        "level": "draft",
         "bcdKey": "css.properties.row-rule-inset-cap-end",
         "shipsIn": [
           "chrome",
@@ -365,6 +637,7 @@
       },
       {
         "name": "row-rule-inset-cap-start",
+        "level": "draft",
         "bcdKey": "css.properties.row-rule-inset-cap-start",
         "shipsIn": [
           "chrome",
@@ -378,6 +651,7 @@
       },
       {
         "name": "row-rule-inset-end",
+        "level": "draft",
         "bcdKey": "css.properties.row-rule-inset-end",
         "shipsIn": [
           "chrome",
@@ -390,6 +664,7 @@
       },
       {
         "name": "row-rule-inset-junction",
+        "level": "draft",
         "bcdKey": "css.properties.row-rule-inset-junction",
         "shipsIn": [
           "chrome",
@@ -403,6 +678,7 @@
       },
       {
         "name": "row-rule-inset-junction-end",
+        "level": "draft",
         "bcdKey": "css.properties.row-rule-inset-junction-end",
         "shipsIn": [
           "chrome",
@@ -415,6 +691,7 @@
       },
       {
         "name": "row-rule-inset-junction-start",
+        "level": "draft",
         "bcdKey": "css.properties.row-rule-inset-junction-start",
         "shipsIn": [
           "chrome",
@@ -427,6 +704,7 @@
       },
       {
         "name": "row-rule-inset-start",
+        "level": "draft",
         "bcdKey": "css.properties.row-rule-inset-start",
         "shipsIn": [
           "chrome",
@@ -439,6 +717,7 @@
       },
       {
         "name": "row-rule-style",
+        "level": "draft",
         "bcdKey": "css.properties.row-rule-style",
         "shipsIn": [
           "chrome",
@@ -452,6 +731,7 @@
       },
       {
         "name": "row-rule-visibility-items",
+        "level": "draft",
         "bcdKey": "css.properties.row-rule-visibility-items",
         "shipsIn": [
           "chrome",
@@ -465,6 +745,7 @@
       },
       {
         "name": "row-rule-width",
+        "level": "draft",
         "bcdKey": "css.properties.row-rule-width",
         "shipsIn": [
           "chrome",
@@ -478,6 +759,7 @@
       },
       {
         "name": "rule",
+        "level": "draft",
         "bcdKey": "css.properties.rule",
         "shipsIn": [
           "chrome",
@@ -491,6 +773,7 @@
       },
       {
         "name": "rule-break",
+        "level": "draft",
         "bcdKey": "css.properties.rule-break",
         "shipsIn": [
           "chrome",
@@ -504,6 +787,7 @@
       },
       {
         "name": "rule-color",
+        "level": "draft",
         "bcdKey": "css.properties.rule-color",
         "shipsIn": [
           "chrome",
@@ -517,6 +801,7 @@
       },
       {
         "name": "rule-inset",
+        "level": "draft",
         "bcdKey": "css.properties.rule-inset",
         "shipsIn": [
           "chrome",
@@ -529,6 +814,7 @@
       },
       {
         "name": "rule-inset-cap",
+        "level": "draft",
         "bcdKey": "css.properties.rule-inset-cap",
         "shipsIn": [
           "chrome",
@@ -542,6 +828,7 @@
       },
       {
         "name": "rule-inset-end",
+        "level": "draft",
         "bcdKey": "css.properties.rule-inset-end",
         "shipsIn": [
           "chrome",
@@ -554,6 +841,7 @@
       },
       {
         "name": "rule-inset-junction",
+        "level": "draft",
         "bcdKey": "css.properties.rule-inset-junction",
         "shipsIn": [
           "chrome",
@@ -567,6 +855,7 @@
       },
       {
         "name": "rule-inset-start",
+        "level": "draft",
         "bcdKey": "css.properties.rule-inset-start",
         "shipsIn": [
           "chrome",
@@ -579,6 +868,7 @@
       },
       {
         "name": "rule-overlap",
+        "level": "draft",
         "bcdKey": "css.properties.rule-overlap",
         "shipsIn": [
           "chrome",
@@ -586,11 +876,13 @@
         ],
         "baseline": "Limited",
         "spec": "https://drafts.csswg.org/css-gaps-1/#propdef-rule-overlap",
+        "mdn": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/rule-overlap",
         "inSpec": true,
         "priority": "P2"
       },
       {
         "name": "rule-style",
+        "level": "draft",
         "bcdKey": "css.properties.rule-style",
         "shipsIn": [
           "chrome",
@@ -604,6 +896,7 @@
       },
       {
         "name": "rule-visibility-items",
+        "level": "draft",
         "bcdKey": "css.properties.rule-visibility-items",
         "shipsIn": [
           "chrome",
@@ -617,6 +910,7 @@
       },
       {
         "name": "rule-width",
+        "level": "draft",
         "bcdKey": "css.properties.rule-width",
         "shipsIn": [
           "chrome",
@@ -630,6 +924,7 @@
       },
       {
         "name": "text-fit",
+        "level": "draft",
         "bcdKey": "css.properties.text-fit",
         "shipsIn": [
           "chrome",
@@ -643,6 +938,7 @@
       },
       {
         "name": "timeline-trigger-activation-range",
+        "level": "draft",
         "bcdKey": "css.properties.timeline-trigger-activation-range",
         "shipsIn": [
           "chrome",
@@ -655,6 +951,7 @@
       },
       {
         "name": "timeline-trigger-activation-range-end",
+        "level": "draft",
         "bcdKey": "css.properties.timeline-trigger-activation-range-end",
         "shipsIn": [
           "chrome",
@@ -667,6 +964,7 @@
       },
       {
         "name": "timeline-trigger-activation-range-start",
+        "level": "draft",
         "bcdKey": "css.properties.timeline-trigger-activation-range-start",
         "shipsIn": [
           "chrome",
@@ -679,6 +977,7 @@
       },
       {
         "name": "timeline-trigger-active-range",
+        "level": "draft",
         "bcdKey": "css.properties.timeline-trigger-active-range",
         "shipsIn": [
           "chrome",
@@ -691,6 +990,7 @@
       },
       {
         "name": "timeline-trigger-active-range-end",
+        "level": "draft",
         "bcdKey": "css.properties.timeline-trigger-active-range-end",
         "shipsIn": [
           "chrome",
@@ -703,6 +1003,7 @@
       },
       {
         "name": "timeline-trigger-active-range-start",
+        "level": "draft",
         "bcdKey": "css.properties.timeline-trigger-active-range-start",
         "shipsIn": [
           "chrome",
@@ -715,6 +1016,7 @@
       },
       {
         "name": "view-transition-group",
+        "level": "draft",
         "bcdKey": "css.properties.view-transition-group",
         "shipsIn": [
           "chrome",
@@ -726,6 +1028,7 @@
       },
       {
         "name": "view-transition-scope",
+        "level": "draft",
         "bcdKey": "css.properties.view-transition-scope",
         "shipsIn": [
           "chrome",
@@ -739,6 +1042,7 @@
       },
       {
         "name": "window-drag",
+        "level": "draft",
         "bcdKey": "css.properties.window-drag",
         "shipsIn": [
           "chrome",
@@ -750,18 +1054,140 @@
         "priority": "P2"
       },
       {
-        "name": "flow-tolerance",
-        "bcdKey": "css.properties.flow-tolerance",
+        "name": "-webkit-column-axis",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-column-axis",
         "shipsIn": [
           "safari"
         ],
-        "baseline": "Limited",
-        "spec": "https://drafts.csswg.org/css-grid-3/#propdef-flow-tolerance",
-        "inSpec": true,
-        "priority": "P2"
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-column-progression",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-column-progression",
+        "shipsIn": [
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-cursor-visibility",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-cursor-visibility",
+        "shipsIn": [
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-hyphenate-limit-after",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-hyphenate-limit-after",
+        "shipsIn": [
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-hyphenate-limit-before",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-hyphenate-limit-before",
+        "shipsIn": [
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-hyphenate-limit-lines",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-hyphenate-limit-lines",
+        "shipsIn": [
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-line-align",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-line-align",
+        "shipsIn": [
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-line-box-contain",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-line-box-contain",
+        "shipsIn": [
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-line-grid",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-line-grid",
+        "shipsIn": [
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-line-snap",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-line-snap",
+        "shipsIn": [
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-mask-source-type",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-mask-source-type",
+        "shipsIn": [
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-text-zoom",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.properties.-webkit-text-zoom",
+        "shipsIn": [
+          "safari"
+        ],
+        "inSpec": false,
+        "priority": "P3"
       },
       {
         "name": "scroll-axis-lock",
+        "level": "draft",
         "bcdKey": "css.properties.scroll-axis-lock",
         "shipsIn": [
           "chrome"
@@ -773,6 +1199,7 @@
       },
       {
         "name": "text-decoration-skip-spaces",
+        "level": "draft",
         "bcdKey": "css.properties.text-decoration-skip-spaces",
         "shipsIn": [
           "chrome"
@@ -783,7 +1210,200 @@
         "priority": "P2"
       },
       {
+        "name": "-webkit-align-content",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-align-content",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-align-items",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-align-items",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-align-self",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-align-self",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-background-size",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-background-size",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-border-bottom-left-radius",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-border-bottom-left-radius",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-border-bottom-right-radius",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-border-bottom-right-radius",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-border-radius",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-border-radius",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-border-top-left-radius",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-border-top-left-radius",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-border-top-right-radius",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-border-top-right-radius",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-box-shadow",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-box-shadow",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-flex",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-flex-propdef",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-flex-basis",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-flex-basis",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-flex-direction",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-flex-direction",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-flex-flow",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-flex-flow",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-flex-grow",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-flex-grow",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-flex-shrink",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-flex-shrink",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-flex-wrap",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-flex-wrap",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-justify-content",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-justify-content",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-mask-box-image-outset",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-mask-box-image-outset",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-mask-box-image-repeat",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-mask-box-image-repeat",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-mask-box-image-slice",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-mask-box-image-slice",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-mask-box-image-source",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-mask-box-image-source",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-mask-box-image-width",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-mask-box-image-width",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "-webkit-order",
+        "level": "proprietary",
+        "shipsIn": [],
+        "spec": "https://compat.spec.whatwg.org/#propdef--webkit-order",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
         "name": "animation-delay-end",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-animations-2/#propdef-animation-delay-end",
         "inSpec": true,
@@ -791,6 +1411,7 @@
       },
       {
         "name": "animation-delay-start",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-animations-2/#propdef-animation-delay-start",
         "inSpec": true,
@@ -798,6 +1419,7 @@
       },
       {
         "name": "animation-range-center",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/pointer-animations-1/#propdef-animation-range-center",
         "inSpec": true,
@@ -805,6 +1427,7 @@
       },
       {
         "name": "background-position-block",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-backgrounds-4/#propdef-background-position-block",
         "inSpec": true,
@@ -812,6 +1435,7 @@
       },
       {
         "name": "background-position-inline",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-backgrounds-4/#propdef-background-position-inline",
         "inSpec": true,
@@ -819,6 +1443,7 @@
       },
       {
         "name": "background-repeat-block",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-backgrounds-4/#propdef-background-repeat-block",
         "inSpec": true,
@@ -826,6 +1451,7 @@
       },
       {
         "name": "background-repeat-inline",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-backgrounds-4/#propdef-background-repeat-inline",
         "inSpec": true,
@@ -833,6 +1459,7 @@
       },
       {
         "name": "background-repeat-x",
+        "level": "draft",
         "bcdKey": "css.properties.background-repeat-x",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-backgrounds-4/#propdef-background-repeat-x",
@@ -842,6 +1469,7 @@
       },
       {
         "name": "background-repeat-y",
+        "level": "draft",
         "bcdKey": "css.properties.background-repeat-y",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-backgrounds-4/#propdef-background-repeat-y",
@@ -851,6 +1479,7 @@
       },
       {
         "name": "background-tbd",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-backgrounds-4/#propdef-background-tbd",
         "inSpec": true,
@@ -858,6 +1487,7 @@
       },
       {
         "name": "block-ellipsis",
+        "level": "draft",
         "bcdKey": "css.properties.block-ellipsis",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-overflow-4/#propdef-block-ellipsis",
@@ -866,6 +1496,7 @@
       },
       {
         "name": "block-step",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-rhythm-1/#propdef-block-step",
         "inSpec": true,
@@ -873,6 +1504,7 @@
       },
       {
         "name": "block-step-align",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-rhythm-1/#propdef-block-step-align",
         "inSpec": true,
@@ -880,6 +1512,7 @@
       },
       {
         "name": "block-step-insert",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-rhythm-1/#propdef-block-step-insert",
         "inSpec": true,
@@ -887,6 +1520,7 @@
       },
       {
         "name": "block-step-round",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-rhythm-1/#propdef-block-step-round",
         "inSpec": true,
@@ -894,6 +1528,7 @@
       },
       {
         "name": "block-step-size",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-rhythm-1/#propdef-block-step-size",
         "inSpec": true,
@@ -901,6 +1536,7 @@
       },
       {
         "name": "bookmark-label",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-content-3/#propdef-bookmark-label",
         "inSpec": true,
@@ -908,6 +1544,7 @@
       },
       {
         "name": "bookmark-level",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-content-3/#propdef-bookmark-level",
         "inSpec": true,
@@ -915,6 +1552,7 @@
       },
       {
         "name": "bookmark-state",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-content-3/#propdef-bookmark-state",
         "inSpec": true,
@@ -922,6 +1560,7 @@
       },
       {
         "name": "border-block-clip",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-block-clip",
         "inSpec": true,
@@ -929,6 +1568,7 @@
       },
       {
         "name": "border-block-end-clip",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-block-end-clip",
         "inSpec": true,
@@ -936,6 +1576,7 @@
       },
       {
         "name": "border-block-end-radius",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-block-end-radius",
         "inSpec": true,
@@ -943,6 +1584,7 @@
       },
       {
         "name": "border-block-start-clip",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-block-start-clip",
         "inSpec": true,
@@ -950,6 +1592,7 @@
       },
       {
         "name": "border-block-start-radius",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-block-start-radius",
         "inSpec": true,
@@ -957,6 +1600,7 @@
       },
       {
         "name": "border-bottom-clip",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-bottom-clip",
         "inSpec": true,
@@ -964,6 +1608,7 @@
       },
       {
         "name": "border-bottom-radius",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-bottom-radius",
         "inSpec": true,
@@ -971,6 +1616,7 @@
       },
       {
         "name": "border-boundary",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-round-display-1/#propdef-border-boundary",
         "inSpec": true,
@@ -978,6 +1624,7 @@
       },
       {
         "name": "border-clip",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-clip",
         "inSpec": true,
@@ -985,6 +1632,7 @@
       },
       {
         "name": "border-inline-clip",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-inline-clip",
         "inSpec": true,
@@ -992,6 +1640,7 @@
       },
       {
         "name": "border-inline-end-clip",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-inline-end-clip",
         "inSpec": true,
@@ -999,6 +1648,7 @@
       },
       {
         "name": "border-inline-end-radius",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-inline-end-radius",
         "inSpec": true,
@@ -1006,6 +1656,7 @@
       },
       {
         "name": "border-inline-start-clip",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-inline-start-clip",
         "inSpec": true,
@@ -1013,6 +1664,7 @@
       },
       {
         "name": "border-inline-start-radius",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-inline-start-radius",
         "inSpec": true,
@@ -1020,6 +1672,7 @@
       },
       {
         "name": "border-left-clip",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-left-clip",
         "inSpec": true,
@@ -1027,6 +1680,7 @@
       },
       {
         "name": "border-left-radius",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-left-radius",
         "inSpec": true,
@@ -1034,6 +1688,7 @@
       },
       {
         "name": "border-limit",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-limit",
         "inSpec": true,
@@ -1041,6 +1696,7 @@
       },
       {
         "name": "border-right-clip",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-right-clip",
         "inSpec": true,
@@ -1048,6 +1704,7 @@
       },
       {
         "name": "border-right-radius",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-right-radius",
         "inSpec": true,
@@ -1055,6 +1712,7 @@
       },
       {
         "name": "border-top-clip",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-top-clip",
         "inSpec": true,
@@ -1062,6 +1720,7 @@
       },
       {
         "name": "border-top-radius",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-top-radius",
         "inSpec": true,
@@ -1069,6 +1728,7 @@
       },
       {
         "name": "box-shadow-blur",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-box-shadow-blur",
         "inSpec": true,
@@ -1076,6 +1736,7 @@
       },
       {
         "name": "box-shadow-color",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-box-shadow-color",
         "inSpec": true,
@@ -1083,6 +1744,7 @@
       },
       {
         "name": "box-shadow-offset",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-box-shadow-offset",
         "inSpec": true,
@@ -1090,6 +1752,7 @@
       },
       {
         "name": "box-shadow-position",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-box-shadow-position",
         "inSpec": true,
@@ -1097,6 +1760,7 @@
       },
       {
         "name": "box-shadow-spread",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-box-shadow-spread",
         "inSpec": true,
@@ -1104,6 +1768,7 @@
       },
       {
         "name": "box-snap",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-line-grid-1/#propdef-box-snap",
         "inSpec": true,
@@ -1111,6 +1776,7 @@
       },
       {
         "name": "continue",
+        "level": "draft",
         "bcdKey": "css.properties.continue",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-overflow-4/#propdef-continue",
@@ -1119,6 +1785,7 @@
       },
       {
         "name": "copy-into",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-gcpm-4/#propdef-copy-into",
         "inSpec": true,
@@ -1126,6 +1793,7 @@
       },
       {
         "name": "corner",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner",
         "inSpec": true,
@@ -1133,6 +1801,7 @@
       },
       {
         "name": "corner-block-end",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-block-end",
         "inSpec": true,
@@ -1140,6 +1809,7 @@
       },
       {
         "name": "corner-block-start",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-block-start",
         "inSpec": true,
@@ -1147,6 +1817,7 @@
       },
       {
         "name": "corner-bottom",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-bottom",
         "inSpec": true,
@@ -1154,6 +1825,7 @@
       },
       {
         "name": "corner-bottom-left",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-bottom-left",
         "inSpec": true,
@@ -1161,6 +1833,7 @@
       },
       {
         "name": "corner-bottom-right",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-bottom-right",
         "inSpec": true,
@@ -1168,6 +1841,7 @@
       },
       {
         "name": "corner-end-end",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-end-end",
         "inSpec": true,
@@ -1175,6 +1849,7 @@
       },
       {
         "name": "corner-end-start",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-end-start",
         "inSpec": true,
@@ -1182,6 +1857,7 @@
       },
       {
         "name": "corner-inline-end",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-inline-end",
         "inSpec": true,
@@ -1189,6 +1865,7 @@
       },
       {
         "name": "corner-inline-start",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-inline-start",
         "inSpec": true,
@@ -1196,6 +1873,7 @@
       },
       {
         "name": "corner-left",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-left",
         "inSpec": true,
@@ -1203,6 +1881,7 @@
       },
       {
         "name": "corner-right",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-right",
         "inSpec": true,
@@ -1210,6 +1889,7 @@
       },
       {
         "name": "corner-start-end",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-start-end",
         "inSpec": true,
@@ -1217,6 +1897,7 @@
       },
       {
         "name": "corner-start-start",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-start-start",
         "inSpec": true,
@@ -1224,6 +1905,7 @@
       },
       {
         "name": "corner-top",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-top",
         "inSpec": true,
@@ -1231,6 +1913,7 @@
       },
       {
         "name": "corner-top-left",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-top-left",
         "inSpec": true,
@@ -1238,6 +1921,7 @@
       },
       {
         "name": "corner-top-right",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-top-right",
         "inSpec": true,
@@ -1245,6 +1929,7 @@
       },
       {
         "name": "cue",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-speech-1/#propdef-cue",
         "inSpec": true,
@@ -1252,6 +1937,7 @@
       },
       {
         "name": "cue-after",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-speech-1/#propdef-cue-after",
         "inSpec": true,
@@ -1259,6 +1945,7 @@
       },
       {
         "name": "cue-before",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-speech-1/#propdef-cue-before",
         "inSpec": true,
@@ -1266,6 +1953,7 @@
       },
       {
         "name": "event-trigger",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/animation-triggers-1/#propdef-event-trigger",
         "inSpec": true,
@@ -1273,6 +1961,7 @@
       },
       {
         "name": "event-trigger-name",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/animation-triggers-1/#propdef-event-trigger-name",
         "inSpec": true,
@@ -1280,6 +1969,7 @@
       },
       {
         "name": "event-trigger-source",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/animation-triggers-1/#propdef-event-trigger-source",
         "inSpec": true,
@@ -1287,6 +1977,7 @@
       },
       {
         "name": "fill-break",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/fill-stroke-3/#propdef-fill-break",
         "inSpec": true,
@@ -1294,6 +1985,7 @@
       },
       {
         "name": "fill-color",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/fill-stroke-3/#propdef-fill-color",
         "inSpec": true,
@@ -1301,6 +1993,7 @@
       },
       {
         "name": "fill-image",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/fill-stroke-3/#propdef-fill-image",
         "inSpec": true,
@@ -1308,6 +2001,7 @@
       },
       {
         "name": "fill-origin",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/fill-stroke-3/#propdef-fill-origin",
         "inSpec": true,
@@ -1315,6 +2009,7 @@
       },
       {
         "name": "fill-position",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/fill-stroke-3/#propdef-fill-position",
         "inSpec": true,
@@ -1322,6 +2017,7 @@
       },
       {
         "name": "fill-repeat",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/fill-stroke-3/#propdef-fill-repeat",
         "inSpec": true,
@@ -1329,13 +2025,24 @@
       },
       {
         "name": "fill-size",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/fill-stroke-3/#propdef-fill-size",
         "inSpec": true,
         "priority": "P3"
       },
       {
+        "name": "fit-tolerance",
+        "level": "draft",
+        "bcdKey": "css.properties.fit-tolerance",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-grid-3/#propdef-fit-tolerance",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
         "name": "float-defer",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-page-floats-3/#propdef-float-defer",
         "inSpec": true,
@@ -1343,6 +2050,7 @@
       },
       {
         "name": "float-offset",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-page-floats-3/#propdef-float-offset",
         "inSpec": true,
@@ -1350,6 +2058,7 @@
       },
       {
         "name": "float-reference",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-page-floats-3/#propdef-float-reference",
         "inSpec": true,
@@ -1357,6 +2066,7 @@
       },
       {
         "name": "flow-from",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-regions-1/#propdef-flow-from",
         "inSpec": true,
@@ -1364,6 +2074,7 @@
       },
       {
         "name": "flow-into",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-regions-1/#propdef-flow-into",
         "inSpec": true,
@@ -1371,6 +2082,7 @@
       },
       {
         "name": "footnote-display",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-gcpm-3/#propdef-footnote-display",
         "inSpec": true,
@@ -1378,6 +2090,7 @@
       },
       {
         "name": "footnote-policy",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-gcpm-3/#propdef-footnote-policy",
         "inSpec": true,
@@ -1385,6 +2098,7 @@
       },
       {
         "name": "hyphenate-limit-last",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-text-4/#propdef-hyphenate-limit-last",
         "inSpec": true,
@@ -1392,6 +2106,7 @@
       },
       {
         "name": "hyphenate-limit-lines",
+        "level": "draft",
         "bcdKey": "css.properties.hyphenate-limit-lines",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-text-4/#propdef-hyphenate-limit-lines",
@@ -1400,6 +2115,7 @@
       },
       {
         "name": "hyphenate-limit-zone",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-text-4/#propdef-hyphenate-limit-zone",
         "inSpec": true,
@@ -1407,6 +2123,7 @@
       },
       {
         "name": "image-animation",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-image-animation-1/#propdef-image-animation",
         "inSpec": true,
@@ -1414,6 +2131,7 @@
       },
       {
         "name": "initial-letter-wrap",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-inline-3/#propdef-initial-letter-wrap",
         "inSpec": true,
@@ -1421,6 +2139,7 @@
       },
       {
         "name": "inline-sizing",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-inline-3/#propdef-inline-sizing",
         "inSpec": true,
@@ -1428,6 +2147,7 @@
       },
       {
         "name": "input-security",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-forms-1/#propdef-input-security",
         "inSpec": true,
@@ -1435,6 +2155,7 @@
       },
       {
         "name": "line-fit-edge",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-inline-3/#propdef-line-fit-edge",
         "inSpec": true,
@@ -1442,6 +2163,7 @@
       },
       {
         "name": "line-grid",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-line-grid-1/#propdef-line-grid",
         "inSpec": true,
@@ -1449,6 +2171,7 @@
       },
       {
         "name": "line-padding",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-text-4/#propdef-line-padding",
         "inSpec": true,
@@ -1456,6 +2179,7 @@
       },
       {
         "name": "line-snap",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-line-grid-1/#propdef-line-snap",
         "inSpec": true,
@@ -1463,6 +2187,7 @@
       },
       {
         "name": "link-parameters",
+        "level": "draft",
         "bcdKey": "css.properties.link-parameters",
         "shipsIn": [],
         "baseline": "Limited",
@@ -1473,6 +2198,7 @@
       },
       {
         "name": "margin-break",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-break-4/#propdef-margin-break",
         "inSpec": true,
@@ -1480,6 +2206,7 @@
       },
       {
         "name": "marker-side",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-lists-3/#propdef-marker-side",
         "inSpec": true,
@@ -1487,6 +2214,8 @@
       },
       {
         "name": "max-size",
+        "level": "draft",
+        "bcdKey": "css.properties.max-size",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-sizing-4/#propdef-max-size",
         "inSpec": true,
@@ -1494,6 +2223,7 @@
       },
       {
         "name": "min-intrinsic-sizing",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-sizing-4/#propdef-min-intrinsic-sizing",
         "inSpec": true,
@@ -1501,6 +2231,8 @@
       },
       {
         "name": "min-size",
+        "level": "draft",
+        "bcdKey": "css.properties.min-size",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-sizing-4/#propdef-min-size",
         "inSpec": true,
@@ -1508,6 +2240,7 @@
       },
       {
         "name": "overflow-clip-margin-block",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-overflow-4/#propdef-overflow-clip-margin-block",
         "inSpec": true,
@@ -1515,6 +2248,7 @@
       },
       {
         "name": "overflow-clip-margin-block-end",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-overflow-4/#propdef-overflow-clip-margin-block-end",
         "inSpec": true,
@@ -1522,6 +2256,7 @@
       },
       {
         "name": "overflow-clip-margin-block-start",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-overflow-4/#propdef-overflow-clip-margin-block-start",
         "inSpec": true,
@@ -1529,6 +2264,7 @@
       },
       {
         "name": "overflow-clip-margin-bottom",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-overflow-4/#propdef-overflow-clip-margin-bottom",
         "inSpec": true,
@@ -1536,6 +2272,7 @@
       },
       {
         "name": "overflow-clip-margin-inline",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-overflow-4/#propdef-overflow-clip-margin-inline",
         "inSpec": true,
@@ -1543,6 +2280,7 @@
       },
       {
         "name": "overflow-clip-margin-inline-end",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-overflow-4/#propdef-overflow-clip-margin-inline-end",
         "inSpec": true,
@@ -1550,6 +2288,7 @@
       },
       {
         "name": "overflow-clip-margin-inline-start",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-overflow-4/#propdef-overflow-clip-margin-inline-start",
         "inSpec": true,
@@ -1557,6 +2296,7 @@
       },
       {
         "name": "overflow-clip-margin-left",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-overflow-4/#propdef-overflow-clip-margin-left",
         "inSpec": true,
@@ -1564,6 +2304,7 @@
       },
       {
         "name": "overflow-clip-margin-right",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-overflow-4/#propdef-overflow-clip-margin-right",
         "inSpec": true,
@@ -1571,6 +2312,7 @@
       },
       {
         "name": "overflow-clip-margin-top",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-overflow-4/#propdef-overflow-clip-margin-top",
         "inSpec": true,
@@ -1578,6 +2320,7 @@
       },
       {
         "name": "path-length",
+        "level": "standard",
         "bcdKey": "css.properties.path-length",
         "shipsIn": [],
         "spec": "https://w3c.github.io/svgwg/svg2-draft/paths.html#PathLengthCSSProperty",
@@ -1587,6 +2330,7 @@
       },
       {
         "name": "pause",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-speech-1/#propdef-pause",
         "inSpec": true,
@@ -1594,6 +2338,7 @@
       },
       {
         "name": "pause-after",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-speech-1/#propdef-pause-after",
         "inSpec": true,
@@ -1601,6 +2346,7 @@
       },
       {
         "name": "pause-before",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-speech-1/#propdef-pause-before",
         "inSpec": true,
@@ -1608,6 +2354,7 @@
       },
       {
         "name": "pointer-timeline",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/pointer-animations-1/#propdef-pointer-timeline",
         "inSpec": true,
@@ -1615,6 +2362,7 @@
       },
       {
         "name": "pointer-timeline-axis",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/pointer-animations-1/#propdef-pointer-timeline-axis",
         "inSpec": true,
@@ -1622,6 +2370,7 @@
       },
       {
         "name": "pointer-timeline-name",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/pointer-animations-1/#propdef-pointer-timeline-name",
         "inSpec": true,
@@ -1629,6 +2378,7 @@
       },
       {
         "name": "region-fragment",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-regions-1/#propdef-region-fragment",
         "inSpec": true,
@@ -1636,6 +2386,7 @@
       },
       {
         "name": "rest",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-speech-1/#propdef-rest",
         "inSpec": true,
@@ -1643,6 +2394,7 @@
       },
       {
         "name": "rest-after",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-speech-1/#propdef-rest-after",
         "inSpec": true,
@@ -1650,6 +2402,7 @@
       },
       {
         "name": "rest-before",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-speech-1/#propdef-rest-before",
         "inSpec": true,
@@ -1657,6 +2410,7 @@
       },
       {
         "name": "shape-inside",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-shapes-2/#propdef-shape-inside",
         "inSpec": true,
@@ -1664,6 +2418,7 @@
       },
       {
         "name": "shape-padding",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-shapes-2/#propdef-shape-padding",
         "inSpec": true,
@@ -1671,6 +2426,7 @@
       },
       {
         "name": "slider-orientation",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-forms-1/#propdef-slider-orientation",
         "inSpec": true,
@@ -1678,6 +2434,7 @@
       },
       {
         "name": "spatial-navigation-action",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-spatial-nav-1/#propdef-spatial-navigation-action",
         "inSpec": true,
@@ -1685,6 +2442,7 @@
       },
       {
         "name": "spatial-navigation-contain",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-spatial-nav-1/#propdef-spatial-navigation-contain",
         "inSpec": true,
@@ -1692,6 +2450,7 @@
       },
       {
         "name": "spatial-navigation-function",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-spatial-nav-1/#propdef-spatial-navigation-function",
         "inSpec": true,
@@ -1699,6 +2458,7 @@
       },
       {
         "name": "speak",
+        "level": "standard",
         "bcdKey": "css.properties.speak",
         "shipsIn": [],
         "baseline": "Limited",
@@ -1708,6 +2468,7 @@
       },
       {
         "name": "string-set",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-content-3/#propdef-string-set",
         "inSpec": true,
@@ -1715,6 +2476,7 @@
       },
       {
         "name": "stroke-align",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/fill-stroke-3/#propdef-stroke-align",
         "inSpec": true,
@@ -1722,6 +2484,7 @@
       },
       {
         "name": "stroke-alignment",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://svgwg.org/specs/strokes/#StrokeAlignmentProperty",
         "inSpec": true,
@@ -1729,6 +2492,7 @@
       },
       {
         "name": "stroke-break",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/fill-stroke-3/#propdef-stroke-break",
         "inSpec": true,
@@ -1736,6 +2500,7 @@
       },
       {
         "name": "stroke-dash-corner",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/fill-stroke-3/#propdef-stroke-dash-corner",
         "inSpec": true,
@@ -1743,6 +2508,7 @@
       },
       {
         "name": "stroke-dash-justify",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/fill-stroke-3/#propdef-stroke-dash-justify",
         "inSpec": true,
@@ -1750,6 +2516,7 @@
       },
       {
         "name": "stroke-dashadjust",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://svgwg.org/specs/strokes/#StrokeDashadjustProperty",
         "inSpec": true,
@@ -1757,6 +2524,7 @@
       },
       {
         "name": "stroke-dashcorner",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://svgwg.org/specs/strokes/#StrokeDashcornerProperty",
         "inSpec": true,
@@ -1764,6 +2532,7 @@
       },
       {
         "name": "stroke-image",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/fill-stroke-3/#propdef-stroke-image",
         "inSpec": true,
@@ -1771,6 +2540,7 @@
       },
       {
         "name": "stroke-origin",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/fill-stroke-3/#propdef-stroke-origin",
         "inSpec": true,
@@ -1778,6 +2548,7 @@
       },
       {
         "name": "stroke-position",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/fill-stroke-3/#propdef-stroke-position",
         "inSpec": true,
@@ -1785,6 +2556,7 @@
       },
       {
         "name": "stroke-repeat",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/fill-stroke-3/#propdef-stroke-repeat",
         "inSpec": true,
@@ -1792,6 +2564,7 @@
       },
       {
         "name": "stroke-size",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/fill-stroke-3/#propdef-stroke-size",
         "inSpec": true,
@@ -1799,6 +2572,7 @@
       },
       {
         "name": "text-align-all",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-text-4/#propdef-text-align-all",
         "inSpec": true,
@@ -1806,6 +2580,7 @@
       },
       {
         "name": "text-decoration-skip-box",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-text-decor-4/#propdef-text-decoration-skip-box",
         "inSpec": true,
@@ -1813,6 +2588,7 @@
       },
       {
         "name": "text-decoration-skip-self",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-text-decor-4/#propdef-text-decoration-skip-self",
         "inSpec": true,
@@ -1820,6 +2596,7 @@
       },
       {
         "name": "text-emphasis-skip",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-text-decor-4/#propdef-text-emphasis-skip",
         "inSpec": true,
@@ -1827,6 +2604,7 @@
       },
       {
         "name": "text-group-align",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-text-4/#propdef-text-group-align",
         "inSpec": true,
@@ -1834,6 +2612,7 @@
       },
       {
         "name": "text-spacing",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-text-4/#propdef-text-spacing",
         "inSpec": true,
@@ -1841,6 +2620,7 @@
       },
       {
         "name": "user-modify",
+        "level": "proprietary",
         "deprecated": true,
         "nonStandard": true,
         "bcdKey": "css.properties.user-modify",
@@ -1851,6 +2631,7 @@
       },
       {
         "name": "voice-balance",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-speech-1/#propdef-voice-balance",
         "inSpec": true,
@@ -1858,6 +2639,7 @@
       },
       {
         "name": "voice-duration",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-speech-1/#propdef-voice-duration",
         "inSpec": true,
@@ -1865,6 +2647,7 @@
       },
       {
         "name": "voice-family",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-speech-1/#propdef-voice-family",
         "inSpec": true,
@@ -1872,6 +2655,7 @@
       },
       {
         "name": "voice-pitch",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-speech-1/#propdef-voice-pitch",
         "inSpec": true,
@@ -1879,6 +2663,7 @@
       },
       {
         "name": "voice-range",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-speech-1/#propdef-voice-range",
         "inSpec": true,
@@ -1886,6 +2671,7 @@
       },
       {
         "name": "voice-rate",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-speech-1/#propdef-voice-rate",
         "inSpec": true,
@@ -1893,6 +2679,7 @@
       },
       {
         "name": "voice-stress",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-speech-1/#propdef-voice-stress",
         "inSpec": true,
@@ -1900,6 +2687,7 @@
       },
       {
         "name": "voice-volume",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-speech-1/#propdef-voice-volume",
         "inSpec": true,
@@ -1907,6 +2695,7 @@
       },
       {
         "name": "white-space-trim",
+        "level": "draft",
         "bcdKey": "css.properties.white-space-trim",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-text-4/#propdef-white-space-trim",
@@ -1915,6 +2704,7 @@
       },
       {
         "name": "word-space-transform",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-text-4/#propdef-word-space-transform",
         "inSpec": true,
@@ -1922,6 +2712,7 @@
       },
       {
         "name": "wrap-after",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-text-4/#propdef-wrap-after",
         "inSpec": true,
@@ -1929,6 +2720,7 @@
       },
       {
         "name": "wrap-before",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-text-4/#propdef-wrap-before",
         "inSpec": true,
@@ -1936,6 +2728,7 @@
       },
       {
         "name": "wrap-flow",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-exclusions-1/#propdef-wrap-flow",
         "inSpec": true,
@@ -1943,6 +2736,7 @@
       },
       {
         "name": "wrap-inside",
+        "level": "draft",
         "bcdKey": "css.properties.wrap-inside",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-text-4/#propdef-wrap-inside",
@@ -1951,6 +2745,7 @@
       },
       {
         "name": "wrap-through",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-exclusions-1/#propdef-wrap-through",
         "inSpec": true,
@@ -1960,6 +2755,7 @@
     "atRules": [
       {
         "name": "@function",
+        "level": "draft",
         "bcdKey": "css.at-rules.function",
         "shipsIn": [
           "chrome",
@@ -1972,66 +2768,77 @@
       },
       {
         "name": "@annotation",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-fonts-4/#at-ruledef-font-feature-values-annotation",
         "priority": "P3"
       },
       {
         "name": "@apply",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-mixins-1/#at-ruledef-apply",
         "priority": "P3"
       },
       {
         "name": "@bottom-center",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-page-3/#at-ruledef-bottom-center",
         "priority": "P3"
       },
       {
         "name": "@bottom-left",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-page-3/#at-ruledef-bottom-left",
         "priority": "P3"
       },
       {
         "name": "@bottom-left-corner",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-page-3/#at-ruledef-bottom-left-corner",
         "priority": "P3"
       },
       {
         "name": "@bottom-right",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-page-3/#at-ruledef-bottom-right",
         "priority": "P3"
       },
       {
         "name": "@bottom-right-corner",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-page-3/#at-ruledef-bottom-right-corner",
         "priority": "P3"
       },
       {
         "name": "@character-variant",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-fonts-4/#at-ruledef-font-feature-values-character-variant",
         "priority": "P3"
       },
       {
         "name": "@color-profile",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-color-5/#at-ruledef-profile",
         "priority": "P3"
       },
       {
         "name": "@contents",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-mixins-1/#at-ruledef-contents",
         "priority": "P3"
       },
       {
         "name": "@custom-media",
+        "level": "draft",
         "bcdKey": "css.at-rules.custom-media",
         "shipsIn": [],
         "baseline": "Limited",
@@ -2041,144 +2848,168 @@
       },
       {
         "name": "@custom-selector",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-extensions-1/#at-ruledef-custom-selector",
         "priority": "P3"
       },
       {
         "name": "@else",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-conditional-5/#at-ruledef-else",
         "priority": "P3"
       },
       {
         "name": "@historical-forms",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-fonts-4/#at-ruledef-font-feature-values-historical-forms",
         "priority": "P3"
       },
       {
         "name": "@left-bottom",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-page-3/#at-ruledef-left-bottom",
         "priority": "P3"
       },
       {
         "name": "@left-middle",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-page-3/#at-ruledef-left-middle",
         "priority": "P3"
       },
       {
         "name": "@left-top",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-page-3/#at-ruledef-left-top",
         "priority": "P3"
       },
       {
         "name": "@location",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-navigation-1/#at-ruledef-location",
         "priority": "P3"
       },
       {
         "name": "@mixin",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-mixins-1/#at-ruledef-mixin",
         "priority": "P3"
       },
       {
         "name": "@navigation",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-navigation-1/#at-ruledef-navigation",
         "priority": "P3"
       },
       {
         "name": "@ornaments",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-fonts-4/#at-ruledef-font-feature-values-ornaments",
         "priority": "P3"
       },
       {
         "name": "@private",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-mixins-1/#private",
         "priority": "P3"
       },
       {
         "name": "@right-bottom",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-page-3/#at-ruledef-right-bottom",
         "priority": "P3"
       },
       {
         "name": "@right-middle",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-page-3/#at-ruledef-right-middle",
         "priority": "P3"
       },
       {
         "name": "@right-top",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-page-3/#at-ruledef-right-top",
         "priority": "P3"
       },
       {
         "name": "@styleset",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-fonts-4/#at-ruledef-font-feature-values-styleset",
         "priority": "P3"
       },
       {
         "name": "@stylistic",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-fonts-4/#at-ruledef-font-feature-values-stylistic",
         "priority": "P3"
       },
       {
         "name": "@supports-condition",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-conditional-5/#at-ruledef-supports-condition",
         "priority": "P3"
       },
       {
         "name": "@swash",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-fonts-4/#at-ruledef-font-feature-values-swash",
         "priority": "P3"
       },
       {
         "name": "@top-center",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-page-3/#at-ruledef-top-center",
         "priority": "P3"
       },
       {
         "name": "@top-left",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-page-3/#at-ruledef-top-left",
         "priority": "P3"
       },
       {
         "name": "@top-left-corner",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-page-3/#at-ruledef-top-left-corner",
         "priority": "P3"
       },
       {
         "name": "@top-right",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-page-3/#at-ruledef-top-right",
         "priority": "P3"
       },
       {
         "name": "@top-right-corner",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-page-3/#at-ruledef-top-right-corner",
         "priority": "P3"
       },
       {
         "name": "@when",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-conditional-5/#at-ruledef-when",
         "priority": "P3"
@@ -2186,7 +3017,21 @@
     ],
     "selectors": [
       {
+        "name": "::-webkit-meter-inner-element",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.selectors.-webkit-meter-inner-element",
+        "shipsIn": [
+          "chrome",
+          "edge",
+          "safari"
+        ],
+        "mdn": "https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/::-webkit-meter-inner-element",
+        "priority": "P3"
+      },
+      {
         "name": "::scroll-button",
+        "level": "draft",
         "bcdKey": "css.selectors.scroll-button",
         "shipsIn": [
           "chrome",
@@ -2199,6 +3044,7 @@
       },
       {
         "name": "::search-text",
+        "level": "draft",
         "bcdKey": "css.selectors.search-text",
         "shipsIn": [
           "chrome",
@@ -2210,6 +3056,7 @@
       },
       {
         "name": "::view-transition-group-children",
+        "level": "draft",
         "bcdKey": "css.selectors.view-transition-group-children",
         "shipsIn": [
           "chrome",
@@ -2220,6 +3067,7 @@
       },
       {
         "name": ":interest-source",
+        "level": "draft",
         "bcdKey": "css.selectors.interest-source",
         "shipsIn": [
           "chrome",
@@ -2232,6 +3080,7 @@
       },
       {
         "name": ":interest-target",
+        "level": "draft",
         "bcdKey": "css.selectors.interest-target",
         "shipsIn": [
           "chrome",
@@ -2244,6 +3093,7 @@
       },
       {
         "name": ":navigation-source",
+        "level": "draft",
         "bcdKey": "css.selectors.navigation-source",
         "shipsIn": [
           "chrome",
@@ -2254,6 +3104,7 @@
       },
       {
         "name": ":target-after",
+        "level": "draft",
         "bcdKey": "css.selectors.target-after",
         "shipsIn": [
           "chrome",
@@ -2266,6 +3117,7 @@
       },
       {
         "name": ":target-before",
+        "level": "draft",
         "bcdKey": "css.selectors.target-before",
         "shipsIn": [
           "chrome",
@@ -2277,7 +3129,29 @@
         "priority": "P2"
       },
       {
+        "name": "::-moz-color-swatch",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.selectors.-moz-color-swatch",
+        "shipsIn": [
+          "firefox"
+        ],
+        "mdn": "https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/::-moz-color-swatch",
+        "priority": "P3"
+      },
+      {
+        "name": "::field-content",
+        "level": "draft",
+        "bcdKey": "css.selectors.field-content",
+        "shipsIn": [
+          "safari"
+        ],
+        "spec": "https://drafts.csswg.org/css-forms-1/#selectordef-field-content",
+        "priority": "P2"
+      },
+      {
         "name": ":heading",
+        "level": "draft",
         "bcdKey": "css.selectors.heading",
         "shipsIn": [
           "safari"
@@ -2289,96 +3163,112 @@
       },
       {
         "name": "::clear-icon",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-forms-1/#selectordef-clear-icon",
         "priority": "P3"
       },
       {
         "name": "::color-swatch",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-forms-1/#selectordef-color-swatch",
         "priority": "P3"
       },
       {
         "name": "::field-component",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-forms-1/#selectordef-field-component",
         "priority": "P3"
       },
       {
-        "name": "::field-content",
-        "shipsIn": [],
-        "spec": "https://drafts.csswg.org/css-forms-1/#selectordef-field-content",
-        "priority": "P3"
-      },
-      {
         "name": "::field-separator",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-forms-1/#selectordef-field-separator",
         "priority": "P3"
       },
       {
+        "name": "::interest-button",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-pseudo-4/#selectordef-interest-button",
+        "priority": "P3"
+      },
+      {
         "name": "::nth-fragment",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-overflow-5/#selectordef-nth-fragment",
         "priority": "P3"
       },
       {
         "name": "::reveal-icon",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-forms-1/#selectordef-reveal-icon",
         "priority": "P3"
       },
       {
         "name": "::slider-fill",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-forms-1/#selectordef-slider-fill",
         "priority": "P3"
       },
       {
         "name": "::slider-thumb",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-forms-1/#selectordef-slider-thumb",
         "priority": "P3"
       },
       {
         "name": "::slider-track",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-forms-1/#selectordef-slider-track",
         "priority": "P3"
       },
       {
         "name": "::step-control",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-forms-1/#selectordef-step-control",
         "priority": "P3"
       },
       {
         "name": "::step-down",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-forms-1/#selectordef-step-down",
         "priority": "P3"
       },
       {
         "name": "::step-up",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-forms-1/#selectordef-step-up",
         "priority": "P3"
       },
       {
         "name": ":animated-image",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-image-animation-1/#selectordef-animated-image",
         "priority": "P3"
       },
       {
         "name": ":first-of-page",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-gcpm-4/#selectordef-first-of-page",
         "priority": "P3"
       },
       {
         "name": ":heading",
+        "level": "draft",
         "bcdKey": "css.selectors.headingfunction",
         "shipsIn": [],
         "baseline": "Limited",
@@ -2387,96 +3277,112 @@
       },
       {
         "name": ":high-value",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-forms-1/#selectordef-high-value",
         "priority": "P3"
       },
       {
         "name": ":last-of-page",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-gcpm-4/#selectordef-last-of-page",
         "priority": "P3"
       },
       {
         "name": ":link-to",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-navigation-1/#link-to-pseudo",
         "priority": "P3"
       },
       {
         "name": ":low-value",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-forms-1/#selectordef-low-value",
         "priority": "P3"
       },
       {
         "name": ":nth",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-gcpm-3/#selectordef-nth",
         "priority": "P3"
       },
       {
         "name": ":nth-col",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/selectors-5/#nth-col-pseudo",
         "priority": "P3"
       },
       {
         "name": ":nth-last-col",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/selectors-5/#nth-last-col-pseudo",
         "priority": "P3"
       },
       {
         "name": ":nth-of-page",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-gcpm-4/#selectordef-nth-of-page-n",
         "priority": "P3"
       },
       {
         "name": ":optimal-value",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-forms-1/#selectordef-optimal-value",
         "priority": "P3"
       },
       {
         "name": ":snapped",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-scroll-snap-2/#selectordef-snapped",
         "priority": "P3"
       },
       {
         "name": ":snapped-block",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-scroll-snap-2/#selectordef-snapped-block",
         "priority": "P3"
       },
       {
         "name": ":snapped-inline",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-scroll-snap-2/#selectordef-snapped-inline",
         "priority": "P3"
       },
       {
         "name": ":snapped-x",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-scroll-snap-2/#selectordef-snapped-x",
         "priority": "P3"
       },
       {
         "name": ":snapped-y",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-scroll-snap-2/#selectordef-snapped-y",
         "priority": "P3"
       },
       {
         "name": ":start-of-page",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-gcpm-4/#selectordef-start-of-page",
         "priority": "P3"
       },
       {
         "name": ":unchecked",
+        "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/selectors-4/#unchecked-pseudo",
         "priority": "P3"
@@ -2485,6 +3391,7 @@
     "htmlElements": [
       {
         "name": "<acronym>",
+        "level": "standard",
         "deprecated": true,
         "bcdKey": "html.elements.acronym",
         "shipsIn": [
@@ -2500,6 +3407,7 @@
       },
       {
         "name": "<big>",
+        "level": "standard",
         "deprecated": true,
         "bcdKey": "html.elements.big",
         "shipsIn": [
@@ -2515,6 +3423,7 @@
       },
       {
         "name": "<center>",
+        "level": "standard",
         "deprecated": true,
         "bcdKey": "html.elements.center",
         "shipsIn": [
@@ -2530,6 +3439,7 @@
       },
       {
         "name": "<dir>",
+        "level": "standard",
         "deprecated": true,
         "bcdKey": "html.elements.dir",
         "shipsIn": [
@@ -2545,6 +3455,7 @@
       },
       {
         "name": "<font>",
+        "level": "standard",
         "deprecated": true,
         "bcdKey": "html.elements.font",
         "shipsIn": [
@@ -2560,6 +3471,7 @@
       },
       {
         "name": "<frame>",
+        "level": "standard",
         "deprecated": true,
         "bcdKey": "html.elements.frame",
         "shipsIn": [
@@ -2575,6 +3487,7 @@
       },
       {
         "name": "<frameset>",
+        "level": "standard",
         "deprecated": true,
         "bcdKey": "html.elements.frameset",
         "shipsIn": [
@@ -2590,6 +3503,7 @@
       },
       {
         "name": "<marquee>",
+        "level": "standard",
         "deprecated": true,
         "bcdKey": "html.elements.marquee",
         "shipsIn": [
@@ -2605,6 +3519,7 @@
       },
       {
         "name": "<nobr>",
+        "level": "standard",
         "deprecated": true,
         "bcdKey": "html.elements.nobr",
         "shipsIn": [
@@ -2620,6 +3535,7 @@
       },
       {
         "name": "<noembed>",
+        "level": "standard",
         "deprecated": true,
         "bcdKey": "html.elements.noembed",
         "shipsIn": [
@@ -2635,6 +3551,7 @@
       },
       {
         "name": "<noframes>",
+        "level": "standard",
         "deprecated": true,
         "bcdKey": "html.elements.noframes",
         "shipsIn": [
@@ -2650,6 +3567,7 @@
       },
       {
         "name": "<plaintext>",
+        "level": "standard",
         "deprecated": true,
         "bcdKey": "html.elements.plaintext",
         "shipsIn": [
@@ -2665,6 +3583,7 @@
       },
       {
         "name": "<rtc>",
+        "level": "standard",
         "deprecated": true,
         "bcdKey": "html.elements.rtc",
         "shipsIn": [
@@ -2680,6 +3599,7 @@
       },
       {
         "name": "<strike>",
+        "level": "standard",
         "deprecated": true,
         "bcdKey": "html.elements.strike",
         "shipsIn": [
@@ -2695,6 +3615,7 @@
       },
       {
         "name": "<tt>",
+        "level": "standard",
         "deprecated": true,
         "bcdKey": "html.elements.tt",
         "shipsIn": [
@@ -2710,6 +3631,7 @@
       },
       {
         "name": "<xmp>",
+        "level": "standard",
         "deprecated": true,
         "bcdKey": "html.elements.xmp",
         "shipsIn": [
@@ -2725,6 +3647,7 @@
       },
       {
         "name": "<camera>",
+        "level": "draft",
         "bcdKey": "html.elements.camera",
         "shipsIn": [
           "chrome",
@@ -2735,6 +3658,7 @@
       },
       {
         "name": "<geolocation>",
+        "level": "draft",
         "bcdKey": "html.elements.geolocation",
         "shipsIn": [
           "chrome",
@@ -2747,6 +3671,7 @@
       },
       {
         "name": "<microphone>",
+        "level": "draft",
         "bcdKey": "html.elements.microphone",
         "shipsIn": [
           "chrome",
@@ -2757,6 +3682,7 @@
       },
       {
         "name": "<usermedia>",
+        "level": "draft",
         "bcdKey": "html.elements.usermedia",
         "shipsIn": [
           "chrome",
@@ -2767,6 +3693,7 @@
       },
       {
         "name": "<model>",
+        "level": "draft",
         "bcdKey": "html.elements.model",
         "shipsIn": [
           "safari"
@@ -2776,30 +3703,35 @@
       },
       {
         "name": "<applet>",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://html.spec.whatwg.org/multipage/obsolete.html#applet",
         "priority": "P3"
       },
       {
         "name": "<basefont>",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://html.spec.whatwg.org/multipage/obsolete.html#basefont",
         "priority": "P3"
       },
       {
         "name": "<bgsound>",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://html.spec.whatwg.org/multipage/obsolete.html#bgsound",
         "priority": "P3"
       },
       {
         "name": "<blink>",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://html.spec.whatwg.org/multipage/obsolete.html#blink",
         "priority": "P3"
       },
       {
         "name": "<install>",
+        "level": "draft",
         "bcdKey": "html.elements.install",
         "shipsIn": [],
         "spec": "https://wicg.github.io/install-element/#dfn-install",
@@ -2807,42 +3739,49 @@
       },
       {
         "name": "<isindex>",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://html.spec.whatwg.org/multipage/obsolete.html#isindex",
         "priority": "P3"
       },
       {
         "name": "<keygen>",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://html.spec.whatwg.org/multipage/obsolete.html#keygen",
         "priority": "P3"
       },
       {
         "name": "<listing>",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://html.spec.whatwg.org/multipage/obsolete.html#listing",
         "priority": "P3"
       },
       {
         "name": "<menuitem>",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://html.spec.whatwg.org/multipage/obsolete.html#menuitem",
         "priority": "P3"
       },
       {
         "name": "<multicol>",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://html.spec.whatwg.org/multipage/obsolete.html#multicol",
         "priority": "P3"
       },
       {
         "name": "<nextid>",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://html.spec.whatwg.org/multipage/obsolete.html#nextid",
         "priority": "P3"
       },
       {
         "name": "<spacer>",
+        "level": "standard",
         "shipsIn": [],
         "spec": "https://html.spec.whatwg.org/multipage/obsolete.html#spacer",
         "priority": "P3"
@@ -2851,6 +3790,7 @@
     "htmlAttributes": [
       {
         "name": "<area referrerpolicy>",
+        "level": "baseline",
         "bcdKey": "html.elements.area.referrerpolicy",
         "shipsIn": [
           "chrome",
@@ -2864,6 +3804,7 @@
       },
       {
         "name": "<button command>",
+        "level": "baseline",
         "bcdKey": "html.elements.button.command",
         "shipsIn": [
           "chrome",
@@ -2877,6 +3818,7 @@
       },
       {
         "name": "<button commandfor>",
+        "level": "baseline",
         "bcdKey": "html.elements.button.commandfor",
         "shipsIn": [
           "chrome",
@@ -2890,6 +3832,7 @@
       },
       {
         "name": "<form rel>",
+        "level": "baseline",
         "bcdKey": "html.elements.form.rel",
         "shipsIn": [
           "chrome",
@@ -2904,6 +3847,7 @@
       },
       {
         "name": "<iframe cross-origin-top-navigation-by-user-activation>",
+        "level": "proprietary",
         "nonStandard": true,
         "bcdKey": "html.elements.iframe.cross-origin-top-navigation-by-user-activation",
         "shipsIn": [
@@ -2917,6 +3861,7 @@
       },
       {
         "name": "<iframe loading>",
+        "level": "baseline",
         "bcdKey": "html.elements.iframe.loading",
         "shipsIn": [
           "chrome",
@@ -2930,6 +3875,7 @@
       },
       {
         "name": "<input webkitdirectory>",
+        "level": "baseline",
         "bcdKey": "html.elements.input.webkitdirectory",
         "shipsIn": [
           "chrome",
@@ -2943,6 +3889,7 @@
       },
       {
         "name": "<link disabled>",
+        "level": "baseline",
         "bcdKey": "html.elements.link.disabled",
         "shipsIn": [
           "chrome",
@@ -2956,6 +3903,7 @@
       },
       {
         "name": "<link fetchpriority>",
+        "level": "baseline",
         "bcdKey": "html.elements.link.fetchpriority",
         "shipsIn": [
           "chrome",
@@ -2970,6 +3918,7 @@
       },
       {
         "name": "<link imagesizes>",
+        "level": "baseline",
         "bcdKey": "html.elements.link.imagesizes",
         "shipsIn": [
           "chrome",
@@ -2983,6 +3932,7 @@
       },
       {
         "name": "<link imagesrcset>",
+        "level": "baseline",
         "bcdKey": "html.elements.link.imagesrcset",
         "shipsIn": [
           "chrome",
@@ -2996,6 +3946,7 @@
       },
       {
         "name": "<script fetchpriority>",
+        "level": "baseline",
         "bcdKey": "html.elements.script.fetchpriority",
         "shipsIn": [
           "chrome",
@@ -3010,6 +3961,7 @@
       },
       {
         "name": "<source height>",
+        "level": "baseline",
         "bcdKey": "html.elements.source.height",
         "shipsIn": [
           "chrome",
@@ -3023,6 +3975,7 @@
       },
       {
         "name": "<source width>",
+        "level": "baseline",
         "bcdKey": "html.elements.source.width",
         "shipsIn": [
           "chrome",
@@ -3036,6 +3989,7 @@
       },
       {
         "name": "<template shadowrootclonable>",
+        "level": "baseline",
         "bcdKey": "html.elements.template.shadowrootclonable",
         "shipsIn": [
           "chrome",
@@ -3050,6 +4004,7 @@
       },
       {
         "name": "<template shadowrootdelegatesfocus>",
+        "level": "baseline",
         "bcdKey": "html.elements.template.shadowrootdelegatesfocus",
         "shipsIn": [
           "chrome",
@@ -3064,6 +4019,7 @@
       },
       {
         "name": "<template shadowrootmode>",
+        "level": "baseline",
         "bcdKey": "html.elements.template.shadowrootmode",
         "shipsIn": [
           "chrome",
@@ -3078,6 +4034,7 @@
       },
       {
         "name": "<audio disableremoteplayback>",
+        "level": "standard",
         "bcdKey": "html.elements.audio.disableremoteplayback",
         "shipsIn": [
           "chrome",
@@ -3090,6 +4047,7 @@
       },
       {
         "name": "<dialog closedby>",
+        "level": "standard",
         "bcdKey": "html.elements.dialog.closedby",
         "shipsIn": [
           "chrome",
@@ -3102,6 +4060,7 @@
       },
       {
         "name": "<link blocking>",
+        "level": "standard",
         "bcdKey": "html.elements.link.blocking",
         "shipsIn": [
           "chrome",
@@ -3114,6 +4073,7 @@
       },
       {
         "name": "<script blocking>",
+        "level": "standard",
         "bcdKey": "html.elements.script.blocking",
         "shipsIn": [
           "chrome",
@@ -3126,6 +4086,7 @@
       },
       {
         "name": "<style blocking>",
+        "level": "standard",
         "bcdKey": "html.elements.style.blocking",
         "shipsIn": [
           "chrome",
@@ -3138,6 +4099,7 @@
       },
       {
         "name": "<template shadowrootcustomelementregistry>",
+        "level": "standard",
         "bcdKey": "html.elements.template.shadowrootcustomelementregistry",
         "shipsIn": [
           "chrome",
@@ -3150,6 +4112,7 @@
       },
       {
         "name": "<template shadowrootserializable>",
+        "level": "standard",
         "bcdKey": "html.elements.template.shadowrootserializable",
         "shipsIn": [
           "chrome",
@@ -3163,6 +4126,7 @@
       },
       {
         "name": "<video disablepictureinpicture>",
+        "level": "draft",
         "bcdKey": "html.elements.video.disablepictureinpicture",
         "shipsIn": [
           "chrome",
@@ -3175,6 +4139,7 @@
       },
       {
         "name": "<video disableremoteplayback>",
+        "level": "standard",
         "bcdKey": "html.elements.video.disableremoteplayback",
         "shipsIn": [
           "chrome",
@@ -3187,6 +4152,7 @@
       },
       {
         "name": "<video playsinline>",
+        "level": "standard",
         "bcdKey": "html.elements.video.playsinline",
         "shipsIn": [
           "chrome",
@@ -3199,6 +4165,7 @@
       },
       {
         "name": "<a interestfor>",
+        "level": "proprietary",
         "nonStandard": true,
         "bcdKey": "html.elements.a.interestfor",
         "shipsIn": [
@@ -3210,6 +4177,7 @@
       },
       {
         "name": "<area interestfor>",
+        "level": "proprietary",
         "nonStandard": true,
         "bcdKey": "html.elements.area.interestfor",
         "shipsIn": [
@@ -3221,6 +4189,7 @@
       },
       {
         "name": "<audio controlslist>",
+        "level": "draft",
         "bcdKey": "html.elements.audio.controlslist",
         "shipsIn": [
           "chrome",
@@ -3232,6 +4201,7 @@
       },
       {
         "name": "<audio loading>",
+        "level": "standard",
         "bcdKey": "html.elements.audio.loading",
         "shipsIn": [
           "chrome",
@@ -3243,6 +4213,7 @@
       },
       {
         "name": "<button interestfor>",
+        "level": "proprietary",
         "nonStandard": true,
         "bcdKey": "html.elements.button.interestfor",
         "shipsIn": [
@@ -3254,6 +4225,7 @@
       },
       {
         "name": "<iframe credentialless>",
+        "level": "draft",
         "bcdKey": "html.elements.iframe.credentialless",
         "shipsIn": [
           "chrome",
@@ -3266,6 +4238,7 @@
       },
       {
         "name": "<iframe privateToken>",
+        "level": "draft",
         "bcdKey": "html.elements.iframe.privateToken",
         "shipsIn": [
           "chrome",
@@ -3276,6 +4249,7 @@
       },
       {
         "name": "<template for>",
+        "level": "standard",
         "bcdKey": "html.elements.template.for",
         "shipsIn": [
           "chrome",
@@ -3288,6 +4262,7 @@
       },
       {
         "name": "<template shadowrootreferencetarget>",
+        "level": "proprietary",
         "nonStandard": true,
         "bcdKey": "html.elements.template.shadowrootreferencetarget",
         "shipsIn": [
@@ -3300,6 +4275,7 @@
       },
       {
         "name": "<video controlslist>",
+        "level": "draft",
         "bcdKey": "html.elements.video.controlslist",
         "shipsIn": [
           "chrome",
@@ -3311,6 +4287,7 @@
       },
       {
         "name": "<video loading>",
+        "level": "standard",
         "bcdKey": "html.elements.video.loading",
         "shipsIn": [
           "chrome",
@@ -3322,6 +4299,7 @@
       },
       {
         "name": "<a attributionsourceid>",
+        "level": "draft",
         "bcdKey": "html.elements.a.attributionsourceid",
         "shipsIn": [
           "safari"
@@ -3332,6 +4310,7 @@
       },
       {
         "name": "<a hreftranslate>",
+        "level": "proprietary",
         "nonStandard": true,
         "bcdKey": "html.elements.a.hreftranslate",
         "shipsIn": [
@@ -3341,6 +4320,7 @@
       },
       {
         "name": "<input alpha>",
+        "level": "standard",
         "bcdKey": "html.elements.input.alpha",
         "shipsIn": [
           "safari"
@@ -3351,6 +4331,7 @@
       },
       {
         "name": "<input colorspace>",
+        "level": "standard",
         "bcdKey": "html.elements.input.colorspace",
         "shipsIn": [
           "safari"
@@ -3362,6 +4343,7 @@
       },
       {
         "name": "<input switch>",
+        "level": "proprietary",
         "nonStandard": true,
         "bcdKey": "html.elements.input.switch",
         "shipsIn": [
@@ -3373,6 +4355,7 @@
       },
       {
         "name": "<template shadowrootslotassignment>",
+        "level": "standard",
         "bcdKey": "html.elements.template.shadowrootslotassignment",
         "shipsIn": [
           "firefox"
@@ -3381,7 +4364,16 @@
         "priority": "P2"
       },
       {
+        "name": "<img controls>",
+        "level": "standard",
+        "bcdKey": "html.elements.img.controls",
+        "shipsIn": [],
+        "spec": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-controls",
+        "priority": "P3"
+      },
+      {
         "name": "<input capture>",
+        "level": "standard",
         "bcdKey": "html.elements.input.capture",
         "shipsIn": [],
         "baseline": "Limited",
@@ -3393,6 +4385,7 @@
     "globalAttributes": [
       {
         "name": "writingsuggestions",
+        "level": "standard",
         "bcdKey": "html.global_attributes.writingsuggestions",
         "shipsIn": [
           "chrome",
@@ -3406,6 +4399,7 @@
       },
       {
         "name": "elementtiming",
+        "level": "draft",
         "bcdKey": "html.global_attributes.elementtiming",
         "shipsIn": [
           "chrome",
@@ -3416,6 +4410,7 @@
       },
       {
         "name": "anchor",
+        "level": "proprietary",
         "nonStandard": true,
         "bcdKey": "html.global_attributes.anchor",
         "shipsIn": [],
@@ -3424,22 +4419,25 @@
       },
       {
         "name": "containertiming",
+        "level": "draft",
         "bcdKey": "html.global_attributes.containertiming",
         "shipsIn": [],
         "baseline": "Limited",
-        "spec": "https://wicg.github.io/container-timing/#dom-htmlelement-containertiming",
+        "spec": "https://w3c.github.io/container-timing/#dom-htmlelement-containertiming",
         "priority": "P3"
       },
       {
         "name": "containertimingignore",
+        "level": "draft",
         "bcdKey": "html.global_attributes.containertimingignore",
         "shipsIn": [],
         "baseline": "Limited",
-        "spec": "https://wicg.github.io/container-timing/#dom-htmlelement-containertimingignore",
+        "spec": "https://w3c.github.io/container-timing/#dom-htmlelement-containertimingignore",
         "priority": "P3"
       },
       {
         "name": "headingoffset",
+        "level": "standard",
         "bcdKey": "html.global_attributes.headingoffset",
         "shipsIn": [],
         "baseline": "Limited",
@@ -3449,6 +4447,7 @@
       },
       {
         "name": "headingreset",
+        "level": "standard",
         "bcdKey": "html.global_attributes.headingreset",
         "shipsIn": [],
         "baseline": "Limited",
