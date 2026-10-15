@@ -163,7 +163,7 @@
       "name": "window-drag"
     },
     {
-      "name": "flow-tolerance"
+      "name": "fit-tolerance"
     },
     {
       "name": "scroll-axis-lock"

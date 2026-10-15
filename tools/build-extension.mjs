@@ -55,7 +55,7 @@ function browserStrings(compat) {
   for (const [id, abbr] of BROWSERS) {
     let s = compat.support[id];
     if (!s) continue;
-    s = Array.isArray(s) ? s.find((x) => !x.flags && !x.prefix && !x.alternative_name) : s;
+    s = [s].flat().find((x) => !x.flags && !x.prefix && !x.alternative_name);
     if (!s || !s.version_added || s.flags || s.version_removed || s.version_added === 'preview') continue;
     out.push(typeof s.version_added === 'string' ? abbr + s.version_added.replace(/^≤/, '') : abbr);
   }
