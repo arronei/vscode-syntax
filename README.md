@@ -34,6 +34,7 @@ Yellow means something newer is out: `npm run update`, `npm run all`, commit the
 |---|---|---|
 | Background | [Where VS Code's data comes from](docs/data-pipeline.md) | |
 | Get info | [Gap report](docs/gap-report.md) | `npm run gap-report` |
+| Get info | [Engine source check](tools/engines.mjs): CSS properties Blink, WebKit and Gecko turn on, read from their source | `npm run engines -- [out.json]` |
 | Look over results | [Review results](docs/review-results.md) | |
 | Interim fix | [Additions files](docs/additions.md) | `npm run additions-from-gap-report -- <report> <out>` |
 | Interim fix | [Build, package, install the extension](docs/build-extension.md) | `npm run build-extension`, `npm run package-extension` |

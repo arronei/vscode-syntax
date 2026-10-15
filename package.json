@@ -9,6 +9,7 @@
     "update": "node tools/cli.mjs update",
     "all": "node tools/cli.mjs all",
     "gap-report": "node tools/cli.mjs warn && node tools/gap-report.mjs ../vscode-custom-data node_modules reports/latest.json && node tools/cli.mjs archive",
+    "engines": "node tools/cli.mjs warn && node tools/engines.mjs node_modules",
     "build-extension": "node tools/cli.mjs warn && node tools/build-extension.mjs",
     "package-extension": "cd extension && npx -y @vscode/vsce@4 package --baseContentUrl https://github.com/arronei/vscode-syntax/blob/main/extension",
     "check-vscode": "node tools/check/vscode-live/run.mjs",
