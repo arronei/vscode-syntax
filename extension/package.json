@@ -2,7 +2,7 @@
   "name": "web-spec-additions",
   "displayName": "Web Spec Additions (HTML & CSS)",
   "description": "HTML attributes and CSS properties from current specs that VS Code's built-in data doesn't have yet. Items are dropped once VS Code ships them.",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "publisher": "arronei",
   "license": "MIT",
   "icon": "icon.png",
