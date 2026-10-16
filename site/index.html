@@ -37,6 +37,8 @@
   table { border-collapse: collapse; width: 100%; }
   th, td { text-align: left; padding: 4px 12px; border-top: 1px solid var(--line); vertical-align: top; }
   th { font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+  th button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+  th[aria-sort="ascending"] button::after { content: " ▲"; } th[aria-sort="descending"] button::after { content: " ▼"; }
   .P1 { color: var(--p1); font-weight: 600; } .P2 { color: var(--p2); font-weight: 600; } .P3 { color: var(--p3); }
   .tag { font-size: 0.8rem; color: var(--muted); border: 1px solid var(--line); border-radius: 10px; padding: 0 6px; margin-left: 4px; }
   .names { padding: 8px 12px; columns: 16rem; }
@@ -162,9 +164,28 @@ getJSON('extension.json').then((pkg) => {
 }).catch((e) => (document.getElementById('settings').innerHTML = `<p class="muted">Couldn't load the settings (${esc(e.message)}).</p>`));
 
 // ---------- report tabs ----------
+// Column sorts. Name: alphabetical, vendor-prefixed names last (as in tools/gap-report.mjs). Other columns
+// break ties by name. Ships in: most browsers first, then browser names. Empty cells always sort last.
+const prefixed = (n) => /^[@:]*-/.test(n);
+const byName = (a, b) => prefixed(a.name) - prefixed(b.name) || a.name.localeCompare(b.name);
+const rank = (order, v) => (v ? String(order.indexOf(v)).padStart(2, '0') : undefined);
+const SORT_KEYS = {
+  Priority: (e) => e.priority,
+  Level: (e) => rank(Object.keys(DEFS.Level), e.level),
+  'Ships in': (e) => (e.shipsIn?.length ? `${9 - e.shipsIn.length} ${e.shipsIn.join(', ')}` : undefined),
+  Baseline: (e) => rank(['Widely available', 'Newly available', 'All 4 browsers', 'Limited'], e.baseline),
+  Spec: (e) => e.spec && new URL(e.spec).hostname,
+};
+const sorter = (col, dir) => (a, b) => {
+  if (col === 'Name') return dir * byName(a, b);
+  const x = SORT_KEYS[col](a), y = SORT_KEYS[col](b);
+  return (x == null) - (y == null) || dir * String(x ?? '').localeCompare(y ?? '') || byName(a, b);
+};
+
 function renderReport(panel, { title, sections }, report) {
   const hasLevel = sections.some(([key]) => report.gaps[key].some((e) => e.level));
-  const table = (list) => `<div class="scroll"><table><thead><tr><th>Name</th><th>Priority</th>${hasLevel ? '<th>Level</th>' : ''}<th>Ships in</th><th>Baseline</th><th>Spec</th></tr></thead><tbody>${list.map((e) => `
+  const cols = ['Name', 'Priority', ...(hasLevel ? ['Level'] : []), 'Ships in', 'Baseline', 'Spec'];
+  const row = (e) => `
     <tr data-priority="${esc(e.priority)}" data-name="${esc(e.name.toLowerCase())}">
       <td><code>${link(e.mdn, e.name)}</code>${e.deprecated ? tag('deprecated') : ''}${e.nonStandard ? tag('non-standard') : ''}</td>
       <td class="${esc(e.priority)}"${tip('Priority', e.priority)}>${esc(e.priority)}</td>
@@ -172,7 +193,8 @@ function renderReport(panel, { title, sections }, report) {
       <td>${esc(e.shipsIn?.join(', ') || '—')}</td>
       <td>${esc(e.baseline || '—')}</td>
       <td>${e.spec ? link(e.spec, new URL(e.spec).hostname) : '—'}</td>
-    </tr>`).join('')}</tbody></table></div>`;
+    </tr>`;
+  const table = (key) => `<div class="scroll"><table data-key="${key}"><thead><tr>${cols.map((c) => `<th${c === 'Name' ? ' aria-sort="ascending"' : ''}><button type="button" data-sort="${c}">${c}</button></th>`).join('')}</tr></thead><tbody>${report.gaps[key].map(row).join('')}</tbody></table></div>`;
 
   const counts = (key) => { const s = report.summary[key]; return `${s.total} · P1 ${s.P1} · P2 ${s.P2} · P3 ${s.P3}`; };
   const empty = title === 'CSS' && report.emptyCssDescriptions?.length
@@ -189,7 +211,7 @@ function renderReport(panel, { title, sections }, report) {
       </select></label>
       <label>Search <input type="search" data-filter="name" placeholder="name"></label>
     </div>
-    ${sections.map(([key, label]) => `<details open data-section><summary><strong>${esc(label)}</strong> <span class="muted">${counts(key)}</span> <span class="muted" data-shown></span></summary>${table(report.gaps[key])}</details>`).join('')}
+    ${sections.map(([key, label]) => `<details open data-section><summary><strong>${esc(label)}</strong> <span class="muted">${counts(key)}</span> <span class="muted" data-shown></span></summary>${table(key)}</details>`).join('')}
     ${empty}
     <h2>Definitions</h2>
     ${Object.entries(DEFS).filter(([group]) => hasLevel || group !== 'Level').map(([group, d]) => `<h3>${esc(group)}</h3>
@@ -206,6 +228,17 @@ function renderReport(panel, { title, sections }, report) {
   };
   priority.addEventListener('change', apply);
   name.addEventListener('input', apply);
+  // Click a header to sort by it, again to reverse
+  panel.addEventListener('click', (ev) => {
+    const b = ev.target.closest('[data-sort]');
+    if (!b) return;
+    const th = b.parentElement, table = th.closest('table');
+    const asc = th.getAttribute('aria-sort') !== 'ascending';
+    for (const h of table.querySelectorAll('th')) h.removeAttribute('aria-sort');
+    th.setAttribute('aria-sort', asc ? 'ascending' : 'descending');
+    table.tBodies[0].innerHTML = [...report.gaps[table.dataset.key]].sort(sorter(b.dataset.sort, asc ? 1 : -1)).map(row).join('');
+    apply();
+  });
   apply();
 }
 

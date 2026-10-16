@@ -60,7 +60,9 @@ function entry(name, bcdKey, compat, specHref) {
 
 // P1 = standards-track, not deprecated, shipping in all four engines; P2 = shipping somewhere; P3 = not shipping / proprietary
 const priority = (e) => (e.deprecated || e.level === 'proprietary' ? 'P3' : e.shipsIn.length === 4 ? 'P1' : e.shipsIn.length >= 1 ? 'P2' : 'P3');
-const sortGaps = (arr) => arr.sort((a, b) => b.shipsIn.length - a.shipsIn.length || a.name.localeCompare(b.name));
+// Alphabetical, vendor-prefixed names (-webkit-*, ::-moz-*, @-ms-*) last
+const prefixed = (n) => /^[@:]*-/.test(n);
+const sortGaps = (arr) => arr.sort((a, b) => prefixed(a.name) - prefixed(b.name) || a.name.localeCompare(b.name));
 
 // ---------- CSS properties ----------
 const haveProps = new Set(css.properties.map((p) => p.name));
@@ -78,7 +80,7 @@ for (const name of candidateProps) {
 sortGaps(cssPropGaps);
 
 // Properties shipped with empty descriptions
-const emptyDesc = css.properties.filter((p) => !p.description || (typeof p.description === 'string' && !p.description.trim())).map((p) => p.name);
+const emptyDesc = css.properties.filter((p) => !p.description || (typeof p.description === 'string' && !p.description.trim())).map((p) => p.name).sort();
 
 // ---------- CSS at-rules ----------
 const haveAt = new Set(css.atDirectives.map((a) => a.name));
