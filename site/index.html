@@ -165,7 +165,7 @@ getJSON('extension.json').then((pkg) => {
 
 // ---------- report tabs ----------
 // Column sorts. Name: alphabetical, vendor-prefixed names last (as in tools/gap-report.mjs). Other columns
-// break ties by name. Ships in: most browsers first, then browser names. Empty cells always sort last.
+// break ties by name. Ships in (the default): most browsers first, then browser names. Empty cells always sort last.
 const prefixed = (n) => /^[@:]*-/.test(n);
 const byName = (a, b) => prefixed(a.name) - prefixed(b.name) || a.name.localeCompare(b.name);
 const rank = (order, v) => (v ? String(order.indexOf(v)).padStart(2, '0') : undefined);
@@ -194,7 +194,7 @@ function renderReport(panel, { title, sections }, report) {
       <td>${esc(e.baseline || '—')}</td>
       <td>${e.spec ? link(e.spec, new URL(e.spec).hostname) : '—'}</td>
     </tr>`;
-  const table = (key) => `<div class="scroll"><table data-key="${key}"><thead><tr>${cols.map((c) => `<th${c === 'Name' ? ' aria-sort="ascending"' : ''}><button type="button" data-sort="${c}">${c}</button></th>`).join('')}</tr></thead><tbody>${report.gaps[key].map(row).join('')}</tbody></table></div>`;
+  const table = (key) => `<div class="scroll"><table data-key="${key}"><thead><tr>${cols.map((c) => `<th${c === 'Ships in' ? ' aria-sort="ascending"' : ''}><button type="button" data-sort="${c}">${c}</button></th>`).join('')}</tr></thead><tbody>${[...report.gaps[key]].sort(sorter('Ships in', 1)).map(row).join('')}</tbody></table></div>`;
 
   const counts = (key) => { const s = report.summary[key]; return `${s.total} · P1 ${s.P1} · P2 ${s.P2} · P3 ${s.P3}`; };
   const empty = title === 'CSS' && report.emptyCssDescriptions?.length
