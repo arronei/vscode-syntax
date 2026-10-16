@@ -40,6 +40,10 @@
   .P1 { color: var(--p1); font-weight: 600; } .P2 { color: var(--p2); font-weight: 600; } .P3 { color: var(--p3); }
   .tag { font-size: 0.8rem; color: var(--muted); border: 1px solid var(--line); border-radius: 10px; padding: 0 6px; margin-left: 4px; }
   .names { padding: 8px 12px; columns: 16rem; }
+  [title] { cursor: help; }
+  .defs { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; margin: 8px 0 16px; }
+  .defs dd { margin: 0; }
+  h3 { margin: 16px 0 4px; font-size: 1rem; }
 </style>
 </head>
 <body>
@@ -96,7 +100,29 @@ const REPORTS = {
   css: { title: 'CSS', sections: [['cssProperties', 'Properties'], ['atRules', 'At-rules'], ['selectors', 'Selectors']] },
 };
 
+// Report terms: tooltips on the table cells and name tags, and the Definitions list under each report.
+// Keep in step with priority() in tools/gap-report.mjs and the levels in tools/levels.mjs.
+const DEFS = {
+  Priority: {
+    P1: 'Ships in Chrome, Edge, Firefox and Safari.',
+    P2: 'Ships in one to three of Chrome, Edge, Firefox and Safari.',
+    P3: 'Ships in none of them, or is deprecated or proprietary.',
+  },
+  Level: {
+    baseline: 'Baseline in web-features: works across the major browsers.',
+    standard: 'In a spec at Candidate Recommendation or later, or a WHATWG Living Standard.',
+    draft: "In a spec that hasn't reached Candidate Recommendation: Working Draft, Editor's Draft or Community Group draft.",
+    proprietary: 'Vendor-prefixed, non-standard, or in no spec.',
+  },
+  'Name tags': {
+    deprecated: 'Marked deprecated in browser-compat-data. Avoid in new code.',
+    'non-standard': "Not on a standards track in browser-compat-data; usually one browser's own feature.",
+  },
+};
+
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+const tip = (group, key) => (DEFS[group][key] ? ` title="${esc(DEFS[group][key])}"` : '');
+const tag = (t) => `<span class="tag"${tip('Name tags', t)}>${t}</span>`;
 const link = (href, text) => (href ? `<a href="${esc(href)}">${esc(text)}</a>` : esc(text));
 const getJSON = (url) => fetch(url).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`${url}: ${r.status}`))));
 
@@ -140,9 +166,9 @@ function renderReport(panel, { title, sections }, report) {
   const hasLevel = sections.some(([key]) => report.gaps[key].some((e) => e.level));
   const table = (list) => `<div class="scroll"><table><thead><tr><th>Name</th><th>Priority</th>${hasLevel ? '<th>Level</th>' : ''}<th>Ships in</th><th>Baseline</th><th>Spec</th></tr></thead><tbody>${list.map((e) => `
     <tr data-priority="${esc(e.priority)}" data-name="${esc(e.name.toLowerCase())}">
-      <td><code>${link(e.mdn, e.name)}</code>${e.deprecated ? '<span class="tag">deprecated</span>' : ''}${e.nonStandard ? '<span class="tag">non-standard</span>' : ''}</td>
-      <td class="${esc(e.priority)}">${esc(e.priority)}</td>
-      ${hasLevel ? `<td>${esc(e.level)}</td>` : ''}
+      <td><code>${link(e.mdn, e.name)}</code>${e.deprecated ? tag('deprecated') : ''}${e.nonStandard ? tag('non-standard') : ''}</td>
+      <td class="${esc(e.priority)}"${tip('Priority', e.priority)}>${esc(e.priority)}</td>
+      ${hasLevel ? `<td${tip('Level', e.level)}>${esc(e.level)}</td>` : ''}
       <td>${esc(e.shipsIn?.join(', ') || '—')}</td>
       <td>${esc(e.baseline || '—')}</td>
       <td>${e.spec ? link(e.spec, new URL(e.spec).hostname) : '—'}</td>
@@ -164,7 +190,10 @@ function renderReport(panel, { title, sections }, report) {
       <label>Search <input type="search" data-filter="name" placeholder="name"></label>
     </div>
     ${sections.map(([key, label]) => `<details open data-section><summary><strong>${esc(label)}</strong> <span class="muted">${counts(key)}</span> <span class="muted" data-shown></span></summary>${table(report.gaps[key])}</details>`).join('')}
-    ${empty}`;
+    ${empty}
+    <h2>Definitions</h2>
+    ${Object.entries(DEFS).filter(([group]) => hasLevel || group !== 'Level').map(([group, d]) => `<h3>${esc(group)}</h3>
+      <dl class="defs">${Object.entries(d).map(([k, v]) => `<dt><code>${esc(k)}</code></dt><dd>${esc(v)}</dd>`).join('')}</dl>`).join('')}`;
 
   const priority = panel.querySelector('[data-filter="priority"]'), name = panel.querySelector('[data-filter="name"]');
   const apply = () => {
