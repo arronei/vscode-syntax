@@ -159,7 +159,7 @@ function renderReport(panel, { title, sections }, report) {
     <p class="muted">Gap report generated ${esc(new Date(report.generatedAt).toUTCString())}. Sources: ${Object.entries(report.sources).map(([k, v]) => `${esc(k)} ${esc(v)}`).join(', ')}.</p>
     <div class="filters">
       <label>Show <select data-filter="priority">
-        <option value="P1 P2">P1 and P2 (shipping)</option><option value="P1">P1 only</option><option value="P1 P2 P3">All, including P3</option>
+        <option value="P1 P2">P1 and P2 (shipping)</option><option value="P1">P1 only</option><option value="P2">P2 only</option><option value="P3">P3 only</option><option value="P1 P2 P3">All</option>
       </select></label>
       <label>Search <input type="search" data-filter="name" placeholder="name"></label>
     </div>

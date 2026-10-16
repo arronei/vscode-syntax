@@ -8,7 +8,7 @@
 | HTML report | Elements, attributes and global attributes VS Code is missing | `latest.json` (copy of `reports/latest.json`) |
 | CSS report | Properties, at-rules, selectors, and built-in properties with an empty description | `latest.json` |
 
-Both report tabs show P1 and P2 by default, with a filter for P3 and a name search.
+Both report tabs show P1 and P2 by default, with a priority filter (P1, P2 or P3 alone, or all) and a name search.
 
 ## Build and preview
 
