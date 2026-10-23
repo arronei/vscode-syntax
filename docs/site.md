@@ -1,12 +1,13 @@
 # GitHub Pages site
 
-`site/index.html` is a single static page with three tabs:
+`site/index.html` is a single static page with four tabs:
 
 | Tab | Shows | Reads |
 |---|---|---|
 | Extension | What the extension does, the `.vsix` download, install steps, its settings | `extension.json` (copy of `extension/package.json`) |
 | HTML report | Elements, attributes and global attributes VS Code is missing | `latest.json` (copy of `reports/latest.json`) |
 | CSS report | Properties, at-rules, selectors, and built-in properties with an empty description | `latest.json` |
+| What's changed | Each extension version, newest first: the items it added, updated (level or browser support) and removed compared with the version before | `changes.json`, built from `extension/CONTENTS.md` at each `v*` tag, plus the working tree when its version isn't tagged yet |
 
 Both report tabs show P1 and P2 by default, with a priority filter (P1, P2 or P3 alone, or all) and a name search.
 
@@ -17,7 +18,7 @@ npm run build-site
 npx -y serve _site
 ```
 
-`build-site` writes `_site/` (not committed): the page, the two JSON files, and `web-spec-additions.vsix` packaged from `extension/` as it is now. Run `npm run build-extension` first if the additions changed. Opening `site/index.html` straight from disk doesn't work, because the page fetches its data.
+`build-site` writes `_site/` (not committed): the page, the three JSON files, and `web-spec-additions.vsix` packaged from `extension/` as it is now. Run `npm run build-extension` first if the additions changed. Opening `site/index.html` straight from disk doesn't work, because the page fetches its data.
 
 ## Publish
 

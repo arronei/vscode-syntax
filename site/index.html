@@ -46,6 +46,7 @@
   .defs { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; margin: 8px 0 16px; }
   .defs dd { margin: 0; }
   h3 { margin: 16px 0 4px; font-size: 1rem; }
+  .version { padding: 0 12px 8px; }
 </style>
 </head>
 <body>
@@ -56,6 +57,7 @@
     <button role="tab" id="tab-extension" aria-controls="extension">Extension</button>
     <button role="tab" id="tab-html" aria-controls="html">HTML report</button>
     <button role="tab" id="tab-css" aria-controls="css">CSS report</button>
+    <button role="tab" id="tab-changes" aria-controls="changes">What's changed</button>
   </div>
 </header>
 
@@ -93,6 +95,7 @@
 
   <section role="tabpanel" id="html" aria-labelledby="tab-html" hidden></section>
   <section role="tabpanel" id="css" aria-labelledby="tab-css" hidden></section>
+  <section role="tabpanel" id="changes" aria-labelledby="tab-changes" hidden></section>
 </main>
 
 <script>
@@ -245,6 +248,30 @@ function renderReport(panel, { title, sections }, report) {
 getJSON('latest.json')
   .then((report) => { for (const [id, r] of Object.entries(REPORTS)) renderReport(document.getElementById(id), r, report); })
   .catch((e) => { for (const id of Object.keys(REPORTS)) document.getElementById(id).innerHTML = `<p class="muted">Couldn't load the gap report (${esc(e.message)}).</p>`; });
+
+// ---------- what's changed tab ----------
+// changes.json (changes() in tools/cli.mjs): newest version first, each change { name, from, to }
+const CHANGES = ['Added', 'Updated', 'Removed'];
+const kind = (e) => (!e.from ? 'Added' : !e.to ? 'Removed' : 'Updated');
+const changeCell = (e, c) => esc(kind(e) !== 'Updated' || e.from[c] === e.to[c] ? (e.to || e.from)[c] : `${e.from[c]} → ${e.to[c]}`);
+const changeTable = (changes) => {
+  const cols = Object.keys(changes[0].to || changes[0].from);
+  const rows = [...changes].sort((a, b) => CHANGES.indexOf(kind(a)) - CHANGES.indexOf(kind(b)))
+    .map((e) => `<tr><td>${kind(e)}</td><td><code>${esc(e.name)}</code></td>${cols.map((c) => `<td>${changeCell(e, c)}</td>`).join('')}</tr>`);
+  return `<div class="scroll"><table><thead><tr><th>Change</th><th>Name</th>${cols.map((c) => `<th>${esc(c)}</th>`).join('')}</tr></thead><tbody>${rows.join('')}</tbody></table></div>`;
+};
+getJSON('changes.json').then((versions) => {
+  document.getElementById('changes').innerHTML = `
+    <h2>What's changed</h2>
+    <p>What each version of the extension added, updated and removed compared with the version before. Updated is a new level or browser support. An item is removed once VS Code's built-in data has it.</p>
+    ${versions.map((v, i) => {
+      const first = i === versions.length - 1, all = v.sections.flatMap((s) => s.changes);
+      const counts = CHANGES.map((k) => [k, all.filter((e) => kind(e) === k).length]).filter(([, n]) => n).map(([k, n]) => `${n} ${k.toLowerCase()}`).join(' · ');
+      return `<details${i ? '' : ' open'}><summary><strong>v${esc(v.version)}</strong> <span class="muted">${esc(v.date)} · ${counts || 'no item changes'}</span></summary><div class="version">
+        <p>${first ? 'First release.' : esc(v.notes)}</p>
+        ${v.sections.map((s) => `<h3>${esc(s.section)}</h3>${changeTable(s.changes)}`).join('')}</div></details>`;
+    }).join('')}`;
+}).catch((e) => (document.getElementById('changes').innerHTML = `<p class="muted">Couldn't load the version history (${esc(e.message)}).</p>`));
 </script>
 </body>
 </html>

@@ -9,7 +9,7 @@
 // gap report, plus what changed). Uses only Node built-ins, so setup works before npm install.
 import fs from 'fs';
 import path from 'path';
-import { execSync } from 'child_process';
+import { execSync, execFileSync } from 'child_process';
 import { fileURLToPath } from 'url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -107,9 +107,47 @@ async function site() {
   fs.copyFileSync(path.join(root, 'site', 'index.html'), path.join(out, 'index.html'));
   fs.copyFileSync(path.join(root, 'reports', 'latest.json'), path.join(out, 'latest.json'));
   fs.copyFileSync(path.join(root, 'extension', 'package.json'), path.join(out, 'extension.json'));
+  fs.writeFileSync(path.join(out, 'changes.json'), JSON.stringify(changes()) + '\n');
   sh(`npx -y @vscode/vsce@4 package --skip-license --baseContentUrl https://github.com/arronei/vscode-syntax/blob/main/extension --out ${JSON.stringify(path.join(out, 'web-spec-additions.vsix'))}`, path.join(root, 'extension'));
   await badges(path.join(out, 'badges'));
   console.log(`\nsite written to _site/. Preview: npx -y serve _site`);
+}
+
+// The What's changed tab: each extension version against the one before, from the item tables in extension/CONTENTS.md
+// at its v* tag. The release step tags a new version after this runs, so an untagged version comes from the working
+// tree. Needs the tags, so the workflow checks out with fetch-depth 0.
+function changes() {
+  const git = (...args) => execFileSync('git', args, { cwd: root, encoding: 'utf8' }).trim();
+  // { section: { name: { column: value } } }. Leaves out Source: moving an item to another additions file isn't a change.
+  const items = (md) => {
+    const out = {};
+    let section, cols;
+    for (const line of md.split(/\r?\n/)) {
+      const cells = line.split('|').slice(1, -1).map((c) => c.trim());
+      if (line.startsWith('## ')) out[(section = line.slice(3))] = {};
+      else if (section && cells[0] === 'Name') cols = cells;
+      else if (section && cells[0]?.startsWith('`')) out[section][cells[0].slice(1, -1)] = Object.fromEntries(cols.map((c, i) => [c, cells[i]]).slice(1).filter(([c]) => c !== 'Source'));
+    }
+    return out;
+  };
+  const versions = git('tag', '-l', 'v*', '--sort=v:refname').split('\n').filter(Boolean)
+    .map((tag) => ({ version: tag.slice(1), date: git('log', '-1', '--format=%cs', tag), notes: git('log', '-1', '--format=%s', tag), md: git('show', `${tag}:extension/CONTENTS.md`) }));
+  const { version } = readJSON(path.join(root, 'extension', 'package.json'));
+  if (!versions.some((v) => v.version === version)) {
+    versions.push({ version, date: new Date().toISOString().slice(0, 10), notes: git('log', '-1', '--format=%s'), md: fs.readFileSync(path.join(root, 'extension', 'CONTENTS.md'), 'utf8') });
+  }
+  // Each change is { name, from, to }: no from is added, no to is removed
+  let was = {};
+  return versions.map(({ md, notes, ...v }) => {
+    const now = items(md);
+    const sections = [...new Set([...Object.keys(now), ...Object.keys(was)])].map((section) => {
+      const a = was[section] || {}, b = now[section] || {};
+      const changes = [...new Set([...Object.keys(b), ...Object.keys(a)])].filter((n) => JSON.stringify(a[n]) !== JSON.stringify(b[n])).map((name) => ({ name, from: a[name], to: b[name] }));
+      return { section, changes };
+    }).filter((s) => s.changes.length);
+    was = now;
+    return { ...v, notes: notes.replace(/^Extension v?[\d.]+:\s*/, ''), sections };
+  }).reverse();
 }
 
 // shields.io endpoint badges (https://shields.io/badges/endpoint-badge) for the README: how the published gap report
