@@ -547,15 +547,15 @@
             "E124",
             "FF125",
             "FFA125",
-            "S17.5",
-            "SM17.5",
+            "S18",
+            "SM18",
             "C124",
             "CA124",
             "O110"
           ],
           "status": {
             "baseline": "low",
-            "baseline_low_date": "2024-05-13"
+            "baseline_low_date": "2024-09-16"
           },
           "references": [
             {
@@ -580,16 +580,15 @@
             "E123",
             "FF123",
             "FFA123",
-            "S16.4",
-            "SM16.4",
+            "S18",
+            "SM18",
             "C123",
             "CA123",
             "O109"
           ],
           "status": {
-            "baseline": "high",
-            "baseline_low_date": "2024-03-22",
-            "baseline_high_date": "2026-09-22"
+            "baseline": "low",
+            "baseline_low_date": "2024-09-16"
           },
           "references": [
             {
@@ -604,7 +603,7 @@
         },
         {
           "name": "shadowrootserializable",
-          "level": "standard",
+          "level": "baseline",
           "valueSet": "v",
           "description": {
             "kind": "markdown",
@@ -612,6 +611,8 @@
           },
           "browsers": [
             "E125",
+            "FF128",
+            "FFA128",
             "S18",
             "SM18",
             "C125",
@@ -619,7 +620,8 @@
             "O111"
           ],
           "status": {
-            "baseline": false
+            "baseline": "low",
+            "baseline_low_date": "2024-09-16"
           },
           "references": [
             {
@@ -688,6 +690,8 @@
           },
           "browsers": [
             "E146",
+            "FF159",
+            "FFA159",
             "S26",
             "SM26",
             "C146",
@@ -1354,7 +1358,7 @@
       "references": [
         {
           "name": "Specification",
-          "url": "https://immersive-web.github.io/model-element/#dfn-model"
+          "url": "https://immersive-web.github.io/model-element/#elementdef-model"
         }
       ]
     }
