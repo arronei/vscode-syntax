@@ -2,7 +2,7 @@
   "name": "web-spec-additions",
   "displayName": "Web Spec Additions (HTML & CSS)",
   "description": "HTML attributes and CSS properties from current specs that VS Code's built-in data doesn't have yet. Items are dropped once VS Code ships them.",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "publisher": "arronei",
   "license": "MIT",
   "icon": "icon.png",
@@ -48,6 +48,24 @@
         "./data/css.css-data.json"
       ]
     },
+    "grammars": [
+      {
+        "scopeName": "web-spec-additions.css-properties",
+        "path": "./data/css-properties.tmLanguage.json",
+        "injectTo": [
+          "source.css",
+          "text.html"
+        ]
+      },
+      {
+        "scopeName": "web-spec-additions.css-selectors",
+        "path": "./data/css-selectors.tmLanguage.json",
+        "injectTo": [
+          "source.css",
+          "text.html"
+        ]
+      }
+    ],
     "configuration": {
       "title": "Web Spec Additions",
       "properties": {

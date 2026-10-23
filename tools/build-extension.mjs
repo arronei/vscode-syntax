@@ -14,7 +14,9 @@
 //   Baseline status ................. web-features
 //   HTML descriptions ............... the additions files (written by us)
 //
-// Also writes extension/data/css-hover.json for the hover provider in extension/extension.js.
+// Also writes extension/data/css-hover.json for the hover provider in extension/extension.js, and
+// extension/data/css-{properties,selectors}.tmLanguage.json, which color property names, pseudo-classes and
+// pseudo-elements that VS Code's CSS grammar doesn't know.
 //
 // Every item gets a data level (tools/levels.mjs). The full data goes to extension/data/{css,html}.all.json.
 // The extension filters it to the levels its settings ask for, into the {css,html}.*-data.json files that
@@ -433,6 +435,34 @@ write('css.css-data.json', atDefaults('css', cssData));
 write('html.all.json', htmlData);
 write('html.html-data.json', atDefaults('html', htmlData));
 write('css-hover.json', cssHover);
+
+// Injection grammars: VS Code's CSS grammar colors only the names on its own lists, so newer properties
+// (contain-intrinsic-size) come out plain and newer pseudo-classes (:popover-open) as custom-element tags. These mark
+// every name VS Code's data or ours has. Vendor-prefixed names are left out: the grammar colors those by pattern.
+// ponytail: one static list for all levels, so the level settings don't change colors.
+const alternation = (names) => {
+  const list = [...new Set(names)].filter((n) => !n.startsWith('-')).sort();
+  const odd = list.find((n) => !/^[a-z][a-z0-9-]*$/.test(n));
+  if (odd) throw new Error(`CSS name "${odd}" can't go in a grammar regex as is`);
+  return list.join('|');
+};
+const pseudoNames = (list) => list.map((p) => p.name.replace(/^::?/, ''));
+// Property names, where a colon follows and no `{` comes before the next `;` or `}` (so a nested `marker:hover {`
+// stays a selector). L: puts it ahead of the grammar's own rule for unknown names, which matches at the same spot.
+write('css-properties.tmLanguage.json', {
+  scopeName: 'web-spec-additions.css-properties',
+  injectionSelector: 'L:meta.property-list.css -meta.property-value.css -comment',
+  patterns: [{ match: `(?i)(?<![\\w-])(?:${alternation([...builtinCss.properties, ...cssProperties].map((p) => p.name))})(?![\\w-])(?=\\s*:(?![^;{}]*\\{))`, name: 'meta.property-name.css support.type.property-name.css' }],
+});
+// Pseudo-classes and pseudo-elements. No L:, so the grammar's own rules win where they match (:has() and
+// :nth-child() keep their argument coloring) and this only fills the gaps. ponytail: arguments of functional ones
+// the grammar doesn't know, like ::scroll-button(up), stay plain; add begin/end rules if that matters.
+const pseudoRule = (colons, names, kind) => ({ match: `(?i)(?<!:)(${colons})(?:${alternation(pseudoNames(names))})(?![\\w-])`, captures: { 1: { name: 'punctuation.definition.entity.css' } }, name: `entity.other.attribute-name.pseudo-${kind}.css` });
+write('css-selectors.tmLanguage.json', {
+  scopeName: 'web-spec-additions.css-selectors',
+  injectionSelector: 'meta.selector.css -comment',
+  patterns: [pseudoRule('::', [...builtinCss.pseudoElements, ...pseudoElements], 'element'), pseudoRule(':', [...builtinCss.pseudoClasses, ...pseudoClasses], 'class')],
+});
 
 // CONTENTS.md: what the extension adds, and where each item came from
 const short = (b) => (b ? b.filter((x) => /^(C|FF|S)\d/.test(x)).join(' ') : '—');

@@ -16,6 +16,7 @@ Reads `additions/`, fills in syntax and values from `@webref/css` (falling back 
 | `extension/data/css.css-data.json` | `contributes.css.customData`. The build writes it at the default settings; the extension rewrites it when they change. |
 | `extension/data/html.html-data.json` | `contributes.html.customData`. Same. |
 | `extension/data/css-hover.json` | the hover provider in `extension/extension.js` |
+| `extension/data/css-properties.tmLanguage.json`, `css-selectors.tmLanguage.json` | `contributes.grammars`: color the CSS property names, pseudo-classes and pseudo-elements VS Code's grammar doesn't know |
 | `extension/CONTENTS.md` | you ([how to read it](review-results.md#read-extensioncontentsmd)) |
 
 It prints counts per level and anything dropped.
@@ -80,6 +81,11 @@ or run **Extensions: Install from VSIX…**, then reload the window. Remove any 
 ## How it works
 
 - Almost everything is declarative custom data, listed under `contributes` in `extension/package.json`.
+- Colors come from TextMate grammars, not custom data. VS Code's CSS grammar has its own fixed lists of names: it leaves other property names plain (`contain-intrinsic-size`) and colors other pseudo-classes and pseudo-elements as custom-element tags (`:popover-open`). The build writes two injection grammars from every non-prefixed name in VS Code's data or ours:
+  - `css-properties`: property names get `support.type.property-name.css`, where a colon follows and no `{` comes before the next `;` or `}`, so a nested selector like `marker:hover {` stays a selector.
+  - `css-selectors`: pseudo-classes and pseudo-elements get `entity.other.attribute-name.pseudo-class.css` / `pseudo-element.css`. It has lower priority than the grammar's own rules, so `:has()` and `:nth-child()` keep their argument coloring.
+
+  Both inject into `source.css` and `text.html`. VS Code matches `injectTo` by prefix, so that covers CSS files, `<style>` in HTML (`text.html.derivative`), PHP and the like, and CSS code blocks in Markdown (`text.html.markdown`). They also work on top of other extensions that replace the `source.css` grammar.
 - `extension.js` does two things. It keeps the contributed data files in line with the [level settings](#data-levels). It's also a small hover provider for CSS, SCSS and Less, which shows a description for built-in properties that VS Code ships with an empty one, only on property names followed by `:`. The hover is off when the CSS level is `off`.
 
 ## Limits
@@ -88,6 +94,8 @@ or run **Extensions: Install from VSIX…**, then reload the window. Remove any 
 - Switching levels writes into the extension's own folder. That works for a local install, but not in a remote or web window. In a development window (`--extensionDevelopmentPath`), it changes `extension/data/` in this repo. `npm run build-extension` puts it back.
 - Values follow their property's level. Custom data can't add proprietary values (such as `-webkit-box`) to built-in properties.
 - VS Code's CSS service keeps the *first* definition of each property, and the built-in data loads first. Custom data can add new CSS properties but can't change existing ones (missing values, empty descriptions). The hover provider covers empty descriptions. Missing values on existing properties can only be fixed upstream.
+- The colors ignore the level settings: every name the build knows is colored. SCSS and Less have their own grammars and aren't covered. Arguments of functional pseudos the grammar doesn't know (`::scroll-button(up)`) stay plain; only the name is colored.
+- New HTML elements need no grammar. VS Code's HTML grammar for `.html`, Markdown and PHP colors any tag name as a tag. Only bare `text.html.basic` marks unknown tags invalid, and no language uses it as its root.
 - HTML tags the extension extends (`button`, `link`, …) appear twice in tag-name completion. Attribute and value completion are unaffected.
 
 ## When VS Code catches up

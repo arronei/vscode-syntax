@@ -14,10 +14,12 @@ npm run check-vscode
 - Runs VS Code twice, with separate throwaway profiles, so your own VS Code and settings aren't touched:
   1. **without**: a dummy extension, so built-in data only
   2. **with**: `extension/` loaded as a development extension
-- Each run opens `tools/check/vscode-live/ws/test.css` and `test.html` and runs the checks in `ws/checks.json` through VS Code's own completion, hover and diagnostics commands.
+- Each run opens `tools/check/vscode-live/ws/test.css` and `test.html` and runs the checks in `ws/checks.json` through VS Code's own completion, hover, diagnostics and syntax-token commands.
 - Prints a before/after table. Exit code is 1 if any check fails with the extension.
 
 On Linux without a display, run `xvfb-run -a node tools/check/vscode-live/run.mjs`.
+
+From VS Code's own terminal, `ELECTRON_RUN_AS_NODE` is set and the test VS Code starts as plain Node (`Cannot find module …\ws`). Clear it first: `env -u ELECTRON_RUN_AS_NODE npm run check-vscode` in Git Bash, or `$env:ELECTRON_RUN_AS_NODE = $null` in PowerShell.
 
 Save the table as `reports/vscode-<version>-live-check.txt`, with a first line saying the date and extension version (see `reports/vscode-1.141-live-check.txt`). [How to read it](review-results.md#read-a-live-check).
 
@@ -37,10 +39,11 @@ Save the table as `reports/vscode-<version>-live-check.txt`, with a first line s
 | `line` | 0-based line number in that file |
 | `find` | Text on that line. The cursor goes to its start… |
 | `offset` | …plus this many characters |
-| `op` | `complete`, `hover`, `diagnostics`, `count` or `level` |
+| `op` | `complete`, `hover`, `diagnostics`, `scope`, `count` or `level` |
 | `expect` | `complete`: labels that must all be offered |
 | `contains` | `hover`: text the hover must include |
 | `absent` | `diagnostics`: regex no diagnostic in the file may match. Needs no `line`. |
+| `scope` | `scope`: TextMate scope the first token whose text equals `find` must have. Needs no `line`. |
 | `label_equals` | `count`: label to count. Always passes; it tracks a known quirk. |
 | `setting`, `value`, `data`, `levels` | `level`: set `setting` to `value`, then check the extension rewrote `extension/data/<data>` with only items at `levels`. An empty `levels` means no items. The setting is reset afterwards. Needs no `file`. |
 

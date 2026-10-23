@@ -8,6 +8,7 @@ Adds HTML and CSS features that are in current web specs and ship in at least on
 - Hovers with browser support and Baseline status.
 - No false "Unknown property" or "Unknown at rule" warnings.
 - Descriptions from the spec for built-in CSS properties that VS Code ships with an empty one.
+- Syntax coloring for CSS properties, pseudo-classes and pseudo-elements VS Code's grammar doesn't know yet, such as `contain-intrinsic-size` and `:popover-open`, in CSS files, HTML `<style>` blocks and Markdown CSS code blocks.
 - Works in every window, with or without a folder open. The CSS data also applies to SCSS and Less.
 
 ## Settings
@@ -32,6 +33,7 @@ A change applies after a window reload. These settings can't hide VS Code's own 
 ## How it works
 
 - New items are declarative custom data (`html.customData`, `css.customData`).
+- Grammar injections color the property names VS Code's CSS grammar leaves plain, and the pseudo-classes and pseudo-elements it colors as tags. They color every name they know, whatever the level setting.
 - `extension.js` applies the settings and adds a small hover provider. VS Code can't change the description of a CSS property it already knows, so for built-in properties with an empty description, the provider shows one from the spec instead.
 
 ## Data sources

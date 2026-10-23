@@ -71,6 +71,12 @@ exports.run = async function () {
       const bad = vscode.languages.getDiagnostics(uri).map((d) => d.message).filter((m) => new RegExp(c.absent).test(m));
       r.ok = bad.length === 0;
       r.detail = bad.length ? bad.join('; ') : 'none';
+    } else if (c.op === 'scope') {
+      // VS Code's own grammar-test command: every token in the file with its TextMate scopes
+      const tokens = await vscode.commands.executeCommand('_workbench.captureSyntaxTokens', uri);
+      const t = tokens.find((t) => t.c === c.find);
+      r.ok = !!t?.t.split(' ').includes(c.scope);
+      r.detail = t ? t.t.split(' ').at(-1) : '(no token)';
     }
     out.results.push(r);
   }

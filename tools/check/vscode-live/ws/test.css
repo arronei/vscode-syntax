@@ -1,7 +1,7 @@
 svg { color-interpolation: sRGB; }
 .a { rule-color: red; text-fit: grow; window-drag: move; rule-break: intersection; }
 .a { animation-trigger: none; }
-.a { display: flex; }
+.a:target-after { display: flex; contain-intrinsic-size: auto 300px; }
 @function --double(--x) { result: calc(var(--x) * 2); }
 .b { rule-co: x; }
 p::sea { color: red; }
