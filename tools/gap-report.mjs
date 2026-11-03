@@ -20,15 +20,16 @@ const { levelOf } = levelFinder({ specs: load(path.join(mods, 'browser-specs/ind
 
 const BROWSERS = ['chrome', 'edge', 'firefox', 'safari'];
 
-// Which of the four major desktop browsers ship this BCD feature unflagged?
-function shippingIn(compat) {
+// Which of the four major desktop browsers ship this BCD feature unflagged? With preview, which have it only in
+// their preview build (Safari Technology Preview, Chrome Canary), unflagged.
+function shippingIn(compat, preview = false) {
   if (!compat?.support) return [];
   const out = [];
   for (const b of BROWSERS) {
     let s = compat.support[b];
     if (!s) continue;
     if (!Array.isArray(s)) s = [s];
-    const ok = s.some((x) => x.version_added && x.version_added !== 'preview' && !x.flags && !x.partial_implementation && !x.prefix && !x.alternative_name && !x.version_removed);
+    const ok = s.some((x) => x.version_added && (x.version_added === 'preview') === preview && !x.flags && !x.partial_implementation && !x.prefix && !x.alternative_name && !x.version_removed);
     if (ok) out.push(b);
   }
   return out;
@@ -44,6 +45,7 @@ const baselineLabel = (b) => (b === 'high' ? 'Widely available' : b === 'low' ? 
 
 function entry(name, bcdKey, compat, specHref) {
   const ships = shippingIn(compat);
+  const preview = shippingIn(compat, true);
   const bl = baselineByKey[bcdKey];
   return {
     name,
@@ -52,6 +54,7 @@ function entry(name, bcdKey, compat, specHref) {
     nonStandard: compat && compat.status && !compat.status.standard_track ? true : undefined,
     bcdKey: compat ? bcdKey : undefined,
     shipsIn: ships,
+    previewIn: preview.length ? preview : undefined,
     baseline: bl ? baselineLabel(bl.baseline) : (ships.length === 4 ? 'All 4 browsers' : undefined),
     spec: specHref || compat?.__compat?.spec_url || compat?.spec_url,
     mdn: compat?.mdn_url,

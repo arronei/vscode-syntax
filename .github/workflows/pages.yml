@@ -47,6 +47,8 @@ jobs:
           node tools/gap-report.mjs ../vscode-custom-data node_modules reports/latest.json
           # generatedAt moves on every run, so keep a dated copy only when the findings changed
           if node -e "const f=(p)=>{const j=require(p);delete j.generatedAt;return JSON.stringify(j)};process.exit(f('$RUNNER_TEMP/prev.json')===f('./reports/latest.json')?1:0)"; then node tools/cli.mjs archive; fi
+          # newly shipping CSS from the report goes into the additions file, so the extension picks it up
+          npm run -s refresh-additions
           node tools/build-extension.mjs
           msg='Gap report: daily refresh'
           # CONTENTS.md carries the build date, so only data/ says whether the extension really changed
@@ -54,7 +56,7 @@ jobs:
           else v=$(cd extension && npm version patch --no-git-tag-version); msg="Extension $v: data update"; fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898283+github-actions[bot]@users.noreply.github.com'
-          git add reports extension package.json package-lock.json
+          git add reports additions extension package.json package-lock.json
           git commit -m "$msg"
           git push
       - run: npm run build-site

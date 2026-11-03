@@ -2,7 +2,7 @@
 //
 //   npm run setup     new machine: clone missing sibling repos, install and compile them, then update
 //   npm run update    before a run: latest data sources, fetch upstream in the sibling repos
-//   npm run all       gap-report, build-extension, check-vscode
+//   npm run all       gap-report, refresh-additions, build-extension, check-vscode
 //   npm run build-site   the GitHub Pages site, in _site/
 //
 // Also used by the step scripts: `warn` (last update more than STALE_HOURS old) and `archive` (dated copy of the
@@ -29,7 +29,7 @@ const SIBLINGS = [
   { dir: 'vscode-html-languageservice', fork: 'arronei/vscode-html-languageservice', upstream: 'microsoft/vscode-html-languageservice', npm: '.', compile: true },
 ];
 const DATA = ['@mdn/browser-compat-data', '@vscode/web-custom-data', '@webref/css', '@webref/elements', 'browser-specs', 'mdn-data', 'web-features'];
-const PIPELINE = ['gap-report', 'build-extension', 'check-vscode'];
+const PIPELINE = ['gap-report', 'refresh-additions', 'build-extension', 'check-vscode'];
 const STAMP = path.join(root, '.last-update');
 const STALE_HOURS = 12;
 const github = (repo) => `https://github.com/${repo}.git`;

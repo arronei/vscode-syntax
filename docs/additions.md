@@ -8,10 +8,11 @@
 npm run additions-from-gap-report -- reports/latest.json additions/css/2026-11-shipping-from-specs.json
 ```
 
-- Optional third argument: priorities and/or [levels](build-extension.md#data-levels) to keep, default `P1,P2`. An item is kept if it matches any of them, so `P1,P2,proprietary` adds proprietary items too.
+- Optional third argument: priorities and/or [levels](build-extension.md#data-levels) to keep, default `P1,P2`. An item is kept if it matches any of them, so `P1,P2,proprietary` adds proprietary items too. `preview` adds items that ship unflagged only in a browser preview, such as `block-ellipsis` in Safari Technology Preview.
+- `npm run refresh-additions` regenerates `additions/css/2026-10-shipping-from-specs.json` from `reports/latest.json` with `P1,P2,preview`. `npm run all` and the daily Pages run do this before the build, so newly shipping CSS gets in on its own. An item that drops out of those picks also drops out of that file: to keep one anyway, put it in its own file (see `2026-11-fit-tolerance.json`).
 - Skips names already in other CSS additions files.
 - If the output file exists, entries keep their hand-written fields (`description`, `values`, `syntax`).
-- Prints the HTML items it found. Those need a written description, so add them to an HTML file by hand.
+- Prints the HTML items that aren't in `additions/html/` yet (a warning annotation in the daily run). Those need a written description, so add them to an HTML file by hand.
 
 Then [build the extension](build-extension.md).
 

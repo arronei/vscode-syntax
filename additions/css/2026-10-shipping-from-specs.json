@@ -1,14 +1,17 @@
 {
   "title": "CSS features in the specs that ship in browsers but are missing from VS Code",
-  "generatedFrom": "gr.json (2026-10-09), priorities P1+P2",
+  "generatedFrom": "latest.json (2026-11-03), kept P1+P2+preview",
   "sources": {
     "mdn-data": "2.37.2",
-    "@mdn/browser-compat-data": "8.1.5",
-    "@webref/css": "8.7.6",
-    "@webref/elements": "2.9.1",
-    "web-features": "3.42.0"
+    "@mdn/browser-compat-data": "8.1.8",
+    "@webref/css": "8.7.8",
+    "@webref/elements": "2.9.2",
+    "web-features": "3.45.0"
   },
   "properties": [
+    {
+      "name": "block-ellipsis"
+    },
     {
       "name": "border-shape"
     },
@@ -46,10 +49,25 @@
       "name": "column-rule-visibility-items"
     },
     {
+      "name": "continue"
+    },
+    {
       "name": "flex-line-count"
     },
     {
       "name": "frame-sizing"
+    },
+    {
+      "name": "hyphenate-limit-lines"
+    },
+    {
+      "name": "link-parameters"
+    },
+    {
+      "name": "max-size"
+    },
+    {
+      "name": "min-size"
     },
     {
       "name": "row-rule"
@@ -133,6 +151,12 @@
       "name": "rule-width"
     },
     {
+      "name": "scroll-axis-lock"
+    },
+    {
+      "name": "text-decoration-skip-spaces"
+    },
+    {
       "name": "text-fit"
     },
     {
@@ -160,16 +184,13 @@
       "name": "view-transition-scope"
     },
     {
+      "name": "white-space-trim"
+    },
+    {
       "name": "window-drag"
     },
     {
-      "name": "fit-tolerance"
-    },
-    {
-      "name": "scroll-axis-lock"
-    },
-    {
-      "name": "text-decoration-skip-spaces"
+      "name": "wrap-inside"
     }
   ],
   "atRules": [
@@ -179,6 +200,12 @@
     }
   ],
   "selectors": [
+    {
+      "name": "::field-content"
+    },
+    {
+      "name": "::interest-button"
+    },
     {
       "name": "::scroll-button",
       "description": "A browser-generated button that scrolls its scroll container. The argument picks the direction (`up`, `down`, `left`, `right`, `block-start`, `block-end`, `inline-start`, `inline-end`, or `*` for all); the button appears once it has a `content` value."
@@ -190,6 +217,10 @@
     {
       "name": "::view-transition-group-children",
       "description": "Wraps the nested view transition groups of a captured element when `view-transition-group` nests them, so they can be clipped or styled together. Takes a view transition name."
+    },
+    {
+      "name": ":heading",
+      "description": "Matches elements that have a heading level, such as `<h1>`–`<h6>`. The functional form `:heading(2, 3)` matches only the listed levels."
     },
     {
       "name": ":interest-source",
@@ -210,10 +241,6 @@
     {
       "name": ":target-before",
       "description": "Matches scroll markers that come before the active one (the marker matching `:target-current`) in their scroll marker group."
-    },
-    {
-      "name": ":heading",
-      "description": "Matches elements that have a heading level, such as `<h1>`–`<h6>`. The functional form `:heading(2, 3)` matches only the listed levels."
     }
   ]
 }

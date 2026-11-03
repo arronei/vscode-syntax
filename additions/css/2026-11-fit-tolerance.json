@@ -1,0 +1,9 @@
+{
+  "title": "fit-tolerance",
+  "why": "Spec name of a property Safari 26.4 ships only under its old name flow-tolerance, so the gap report counts it as shipping nowhere. Kept by hand so refresh-additions doesn't drop it; delete once a browser ships the new name.",
+  "properties": [
+    {
+      "name": "fit-tolerance"
+    }
+  ]
+}

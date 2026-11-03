@@ -3,7 +3,7 @@
   "injectionSelector": "meta.selector.css -comment",
   "patterns": [
     {
-      "match": "(?i)(?<!:)(::)(?:after|backdrop|before|checkmark|content|cue|cue-region|details-content|file-selector-button|first-letter|first-line|grammar-error|highlight|marker|part|picker|picker-icon|placeholder|scroll-button|scroll-marker|scroll-marker-group|search-text|selection|shadow|slotted|spelling-error|target-text|view-transition|view-transition-group|view-transition-group-children|view-transition-image-pair|view-transition-new|view-transition-old)(?![\\w-])",
+      "match": "(?i)(?<!:)(::)(?:after|backdrop|before|checkmark|content|cue|cue-region|details-content|field-content|file-selector-button|first-letter|first-line|grammar-error|highlight|interest-button|marker|part|picker|picker-icon|placeholder|scroll-button|scroll-marker|scroll-marker-group|search-text|selection|shadow|slotted|spelling-error|target-text|view-transition|view-transition-group|view-transition-group-children|view-transition-image-pair|view-transition-new|view-transition-old)(?![\\w-])",
       "captures": {
         "1": {
           "name": "punctuation.definition.entity.css"

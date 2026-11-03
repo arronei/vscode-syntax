@@ -18,6 +18,7 @@
     "apply-html": "node tools/apply-html-additions.mjs",
     "mdn-data-add-property": "node tools/mdn-data/add-property.mjs",
     "additions-from-gap-report": "node tools/additions-from-gap-report.mjs",
+    "refresh-additions": "node tools/additions-from-gap-report.mjs reports/latest.json additions/css/2026-10-shipping-from-specs.json P1,P2,preview",
     "build-site": "node tools/cli.mjs site"
   },
   "devDependencies": {

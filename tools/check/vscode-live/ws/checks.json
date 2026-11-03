@@ -5,7 +5,7 @@
   { "label": "CSS: display values (built-in, regression guard)", "file": "test.css", "line": 3, "find": "flex", "offset": 0, "op": "complete", "expect": ["block", "flex", "grid"] },
   { "label": "CSS: hover text-fit", "file": "test.css", "line": 1, "find": "text-fit", "offset": 2, "op": "hover", "contains": "CSS Text Module Level 5" },
   { "label": "CSS: hover animation-trigger (filled description)", "file": "test.css", "line": 2, "find": "animation-trigger", "offset": 2, "op": "hover", "contains": "Animation Triggers" },
-  { "label": "CSS: no unknown-property warnings", "file": "test.css", "op": "diagnostics", "absent": "Unknown property: '(color-interpolation|rule-color|text-fit|window-drag|rule-break)'" },
+  { "label": "CSS: no unknown-property warnings", "file": "test.css", "op": "diagnostics", "absent": "Unknown property: '(color-interpolation|rule-color|text-fit|window-drag|rule-break|block-ellipsis|continue|fit-tolerance)'" },
   { "label": "CSS: no unknown-at-rule warning for @function", "file": "test.css", "op": "diagnostics", "absent": "Unknown at rule @function" },
   { "label": "CSS: ::sea| completes ::search-text", "file": "test.css", "line": 6, "find": "::sea", "offset": 5, "op": "complete", "prefix": "::", "expect": ["::search-text"] },
   { "label": "CSS: :hea| completes :heading", "file": "test.css", "line": 7, "find": ":hea", "offset": 4, "op": "complete", "prefix": ":h", "expect": [":heading"] },

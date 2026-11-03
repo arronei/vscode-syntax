@@ -95,6 +95,34 @@
       "description": "Specifies the color space used for gradient interpolation, color animation and alpha compositing in SVG."
     },
     {
+      "name": "block-ellipsis",
+      "level": "draft",
+      "syntax": "no-ellipsis | ellipsis | <string>",
+      "values": [
+        {
+          "name": "no-ellipsis"
+        },
+        {
+          "name": "ellipsis"
+        }
+      ],
+      "restrictions": [
+        "string",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-overflow-4/#propdef-block-ellipsis"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Overflow Module Level 4*.\n\nInitial value: `no-ellipsis`. Applies to: block containers. Inherited: yes. Animation type: discrete."
+      }
+    },
+    {
       "name": "border-shape",
       "level": "draft",
       "syntax": "none | [ <basic-shape> <geometry-box>?]{1,2}",
@@ -711,6 +739,48 @@
       }
     },
     {
+      "name": "continue",
+      "level": "draft",
+      "syntax": "normal | discard | collapse | -webkit-legacy | overflow | paginate | fragments",
+      "values": [
+        {
+          "name": "normal"
+        },
+        {
+          "name": "discard"
+        },
+        {
+          "name": "collapse"
+        },
+        {
+          "name": "-webkit-legacy"
+        },
+        {
+          "name": "overflow"
+        },
+        {
+          "name": "paginate"
+        },
+        {
+          "name": "fragments"
+        }
+      ],
+      "restrictions": [
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-overflow-4/#propdef-continue"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Overflow Module Level 4*.\n\nInitial value: `normal`. Applies to: block containers and multicol containers. Inherited: no. Animation type: discrete."
+      }
+    },
+    {
       "name": "flex-line-count",
       "level": "draft",
       "syntax": "<integer [1,∞]>",
@@ -832,6 +902,147 @@
       "description": {
         "kind": "markdown",
         "value": "Defined in *CSS Box Sizing Module Level 4*.\n\nInitial value: `auto`. Applies to: replaced elements (but see below for details). Inherited: no. Animation type: discrete."
+      }
+    },
+    {
+      "name": "hyphenate-limit-lines",
+      "level": "draft",
+      "syntax": "no-limit | <integer [0,∞]>",
+      "values": [
+        {
+          "name": "no-limit"
+        }
+      ],
+      "restrictions": [
+        "integer",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-text-4/#propdef-hyphenate-limit-lines"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Text Module Level 4*.\n\nInitial value: `no-limit`. Applies to: block containers. Inherited: yes. Animation type: by computed value type."
+      }
+    },
+    {
+      "name": "link-parameters",
+      "level": "draft",
+      "syntax": "none | <param()>#",
+      "values": [
+        {
+          "name": "none",
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "enum"
+      ],
+      "status": "experimental",
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/link-parameters"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-link-params-1/#propdef-link-parameters"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Linked Parameters Module Level 1*.\n\nInitial value: `none`. Applies to: all elements and pseudo-elements. Inherited: no. Animation type: discrete."
+      }
+    },
+    {
+      "name": "max-size",
+      "level": "draft",
+      "syntax": "<'max-width'> <'max-height'>?",
+      "values": [
+        {
+          "name": "none"
+        },
+        {
+          "name": "fit-content"
+        },
+        {
+          "name": "max-content"
+        },
+        {
+          "name": "min-content"
+        },
+        {
+          "name": "stretch"
+        },
+        {
+          "name": "contain"
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-sizing-4/#propdef-max-size"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Box Sizing Module Level 4*.\n\nInitial value: `none`. Applies to: all elements. Inherited: see individual properties. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "min-size",
+      "level": "draft",
+      "syntax": "<'min-width'> <'min-height'>?",
+      "values": [
+        {
+          "name": "auto"
+        },
+        {
+          "name": "fit-content"
+        },
+        {
+          "name": "max-content"
+        },
+        {
+          "name": "min-content"
+        },
+        {
+          "name": "stretch"
+        },
+        {
+          "name": "contain"
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-sizing-4/#propdef-min-size"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Box Sizing Module Level 4*.\n\nInitial value: `auto`. Applies to: all elements. Inherited: see individual properties. Animation type: see individual properties."
       }
     },
     {
@@ -2107,6 +2318,122 @@
       }
     },
     {
+      "name": "scroll-axis-lock",
+      "level": "draft",
+      "syntax": "auto | none",
+      "values": [
+        {
+          "name": "auto",
+          "browsers": [
+            "C153",
+            "O137"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "none",
+          "browsers": [
+            "C153",
+            "O137"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "C153",
+        "O137"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-overflow-5/#propdef-scroll-axis-lock"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Overflow Module Level 5*.\n\nInitial value: `auto`. Applies to: scroll container elements. Inherited: no. Animation type: discrete."
+      }
+    },
+    {
+      "name": "text-decoration-skip-spaces",
+      "level": "draft",
+      "syntax": "none | all | [ start || end ]",
+      "values": [
+        {
+          "name": "none",
+          "browsers": [
+            "C155",
+            "O139"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "all",
+          "browsers": [
+            "C155",
+            "O139"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "start",
+          "browsers": [
+            "C155",
+            "O139"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        },
+        {
+          "name": "end",
+          "browsers": [
+            "C155",
+            "O139"
+          ],
+          "baseline": {
+            "status": "false"
+          }
+        }
+      ],
+      "restrictions": [
+        "enum"
+      ],
+      "status": "experimental",
+      "browsers": [
+        "C155",
+        "O139"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-text-decor-4/#propdef-text-decoration-skip-spaces"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Text Decoration Module Level 4*.\n\nInitial value: `start end`. Applies to: all elements. Inherited: yes. Animation type: discrete."
+      }
+    },
+    {
       "name": "text-fit",
       "level": "draft",
       "syntax": "[ none | grow | shrink ] [consistent | per-line | per-line-all]? <percentage>?",
@@ -2642,6 +2969,39 @@
       }
     },
     {
+      "name": "white-space-trim",
+      "level": "draft",
+      "syntax": "none | discard-before || discard-after || discard-inner",
+      "values": [
+        {
+          "name": "none"
+        },
+        {
+          "name": "discard-before"
+        },
+        {
+          "name": "discard-after"
+        },
+        {
+          "name": "discard-inner"
+        }
+      ],
+      "restrictions": [
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-text-4/#propdef-white-space-trim"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Text Module Level 4*.\n\nInitial value: `none`. Applies to: inline boxes and block containers. Inherited: no. Animation type: discrete."
+      }
+    },
+    {
       "name": "window-drag",
       "level": "draft",
       "syntax": "none | move",
@@ -2693,6 +3053,33 @@
       }
     },
     {
+      "name": "wrap-inside",
+      "level": "draft",
+      "syntax": "auto | avoid",
+      "values": [
+        {
+          "name": "auto"
+        },
+        {
+          "name": "avoid"
+        }
+      ],
+      "restrictions": [
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-text-4/#propdef-wrap-inside"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Text Module Level 4*.\n\nInitial value: `auto`. Applies to: inline boxes. Inherited: no. Animation type: discrete."
+      }
+    },
+    {
       "name": "fit-tolerance",
       "level": "draft",
       "syntax": "normal | <length-percentage [0,∞]> | infinite",
@@ -2736,122 +3123,6 @@
       "description": {
         "kind": "markdown",
         "value": "Defined in *CSS Grid Layout Module Level 3*.\n\nInitial value: `normal`. Applies to: grid lanes containers. Inherited: no. Animation type: as length."
-      }
-    },
-    {
-      "name": "scroll-axis-lock",
-      "level": "draft",
-      "syntax": "auto | none",
-      "values": [
-        {
-          "name": "auto",
-          "browsers": [
-            "C153",
-            "O137"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        },
-        {
-          "name": "none",
-          "browsers": [
-            "C153",
-            "O137"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        }
-      ],
-      "restrictions": [
-        "enum"
-      ],
-      "status": "experimental",
-      "browsers": [
-        "C153",
-        "O137"
-      ],
-      "baseline": {
-        "status": "false"
-      },
-      "references": [
-        {
-          "name": "Specification",
-          "url": "https://drafts.csswg.org/css-overflow-5/#propdef-scroll-axis-lock"
-        }
-      ],
-      "description": {
-        "kind": "markdown",
-        "value": "Defined in *CSS Overflow Module Level 5*.\n\nInitial value: `auto`. Applies to: scroll container elements. Inherited: no. Animation type: discrete."
-      }
-    },
-    {
-      "name": "text-decoration-skip-spaces",
-      "level": "draft",
-      "syntax": "none | all | [ start || end ]",
-      "values": [
-        {
-          "name": "none",
-          "browsers": [
-            "C155",
-            "O139"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        },
-        {
-          "name": "all",
-          "browsers": [
-            "C155",
-            "O139"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        },
-        {
-          "name": "start",
-          "browsers": [
-            "C155",
-            "O139"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        },
-        {
-          "name": "end",
-          "browsers": [
-            "C155",
-            "O139"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        }
-      ],
-      "restrictions": [
-        "enum"
-      ],
-      "status": "experimental",
-      "browsers": [
-        "C155",
-        "O139"
-      ],
-      "baseline": {
-        "status": "false"
-      },
-      "references": [
-        {
-          "name": "Specification",
-          "url": "https://drafts.csswg.org/css-text-decor-4/#propdef-text-decoration-skip-spaces"
-        }
-      ],
-      "description": {
-        "kind": "markdown",
-        "value": "Defined in *CSS Text Decoration Module Level 4*.\n\nInitial value: `start end`. Applies to: all elements. Inherited: yes. Animation type: discrete."
       }
     },
     {
@@ -3095,6 +3366,32 @@
   ],
   "pseudoClasses": [
     {
+      "name": ":heading",
+      "level": "draft",
+      "description": {
+        "kind": "markdown",
+        "value": "Matches elements that have a heading level, such as `<h1>`–`<h6>`. The functional form `:heading(2, 3)` matches only the listed levels."
+      },
+      "status": "experimental",
+      "browsers": [
+        "S27",
+        "SM27"
+      ],
+      "baseline": {
+        "status": "false"
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:heading"
+        },
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/selectors-5/#heading-pseudo"
+        }
+      ]
+    },
+    {
       "name": ":interest-source",
       "level": "draft",
       "description": {
@@ -3226,35 +3523,51 @@
           "url": "https://drafts.csswg.org/css-overflow-5/#selectordef-target-before"
         }
       ]
-    },
+    }
+  ],
+  "pseudoElements": [
     {
-      "name": ":heading",
+      "name": "::field-content",
       "level": "draft",
       "description": {
         "kind": "markdown",
-        "value": "Matches elements that have a heading level, such as `<h1>`–`<h6>`. The functional form `:heading(2, 3)` matches only the listed levels."
+        "value": "The ::field-content pseudo-element represents the portion of the input that contains the editable text.\n\n— *CSS Form Control Styling Level 1*"
       },
       "status": "experimental",
       "browsers": [
-        "S27",
-        "SM27"
+        "S27.2"
+      ],
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-forms-1/#selectordef-field-content"
+        }
+      ]
+    },
+    {
+      "name": "::interest-button",
+      "level": "draft",
+      "description": {
+        "kind": "markdown",
+        "value": "The ::interest-button pseudo-element represents a button which, when pressed, shows interest in the originating element. This pseudo-element only exists on valid interest sources. (See interest-delay, :interest-source, and :interest-target for more discussion of this feature, and the HTML interestfor attribute.)\n\n— *CSS Pseudo-Elements Module Level 4*"
+      },
+      "status": "experimental",
+      "browsers": [
+        "E149",
+        "C149",
+        "CA149",
+        "O133"
       ],
       "baseline": {
         "status": "false"
       },
       "references": [
         {
-          "name": "MDN Reference",
-          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:heading"
-        },
-        {
           "name": "Specification",
-          "url": "https://drafts.csswg.org/selectors-5/#heading-pseudo"
+          "url": "https://drafts.csswg.org/css-pseudo-4/#selectordef-interest-button"
         }
       ]
-    }
-  ],
-  "pseudoElements": [
+    },
     {
       "name": "::scroll-button",
       "level": "draft",
