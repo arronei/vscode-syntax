@@ -10,6 +10,6 @@
 
 ## Toward a scheduled system
 
-The daily [Pages run](site.md) reruns the gap report, refreshes the CSS additions from it and rebuilds the extension on the latest data. The rest isn't scheduled. The loop is: [gap report](gap-report.md) → [additions file](additions.md) → [build](build-extension.md) and [check in real VS Code](check-vscode.md) → apply upstream → [PR](upstream-prs.md). `npm run update` followed by `npm run all` already runs the gap report, build and check in one go. HTML items (they need written descriptions) and PRs are still by hand.
+The daily [Pages run](site.md) reruns the gap report, refreshes the CSS and HTML additions from it and rebuilds the extension on the latest data. The rest isn't scheduled. The loop is: [gap report](gap-report.md) → [additions file](additions.md) → [build](build-extension.md) and [check in real VS Code](check-vscode.md) → apply upstream → [PR](upstream-prs.md). `npm run update` followed by `npm run all` already runs the gap report, build and check in one go. PRs are still by hand, as are HTML descriptions the specs have nothing for (flagged `review`).
 
 A small UI could list new items with "add to extension" and "create PR" actions, each running the scripts above.
