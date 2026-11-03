@@ -8,6 +8,7 @@ import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+delete process.env.ELECTRON_RUN_AS_NODE; // inherited when launched from a VS Code extension host; makes Code.exe run as plain node
 const here = path.dirname(fileURLToPath(import.meta.url));
 const ws = path.join(here, 'ws');
 const vscodeExecutablePath = await downloadAndUnzipVSCode('stable');
