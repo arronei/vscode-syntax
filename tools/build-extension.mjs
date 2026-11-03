@@ -15,8 +15,8 @@
 //   HTML descriptions ............... the additions files (written by us)
 //
 // Also writes extension/data/css-hover.json for the hover provider in extension/extension.js, and
-// extension/data/css-{properties,selectors}.tmLanguage.json, which color property names, pseudo-classes and
-// pseudo-elements that VS Code's CSS grammar doesn't know.
+// extension/data/css-{properties,selectors,functions}.tmLanguage.json, which color property names, pseudo-classes,
+// pseudo-elements and value functions that VS Code's CSS grammar doesn't know.
 //
 // Every item gets a data level (tools/levels.mjs). The full data goes to extension/data/{css,html}.all.json.
 // The extension filters it to the levels its settings ask for, into the {css,html}.*-data.json files that
@@ -462,6 +462,26 @@ write('css-selectors.tmLanguage.json', {
   scopeName: 'web-spec-additions.css-selectors',
   injectionSelector: 'meta.selector.css -comment',
   patterns: [pseudoRule('::', [...builtinCss.pseudoElements, ...pseudoElements], 'element'), pseudoRule(':', [...builtinCss.pseudoClasses, ...pseudoClasses], 'class')],
+});
+// Value functions the grammar has no rule for, like light-dark(). Left plain, their `)` ends the grammar's value
+// early, so a following !important comes out as a property name. A begin/end rule keeps the parentheses balanced.
+// L: so a function named like a keyword (round(), scroll()) isn't taken as the keyword; names the grammar has
+// rules for are left out, so calc() and the gradients keep their own coloring.
+// ponytail: copied from VS Code 1.144's extensions/css/syntaxes/css.tmLanguage.json. A name it adds later just gets
+// our plainer coloring until it's added here.
+const builtinFunction = /^(calc|rgba?|hsla?|hwb|lab|oklab|lch|oklch|color|(repeating-)?(linear|radial|conic)-gradient|annotation|attr|blur|brightness|character-variant|clamp|contrast|counters?|cross-fade|drop-shadow|element|fit-content|format|grayscale|hue-rotate|color-mix|image-set|invert|local|max|min|minmax|opacity|ornaments|repeat|saturate|sepia|styleset|stylistic|swash|symbols|cos|sin|tan|acos|asin|atan|atan2|hypot|sqrt|pow|log|exp|abs|sign|if|style|circle|ellipse|inset|polygon|rect|cubic-bezier|steps|(translate|scale|rotate)([xyz]|3d)?|matrix(3d)?|skew[xy]?|perspective|url|var)$/i;
+const fn = (name) => `source.css#${name}`;
+write('css-functions.tmLanguage.json', {
+  scopeName: 'web-spec-additions.css-functions',
+  injectionSelector: 'L:meta.property-value.css -comment -string',
+  patterns: [{
+    begin: `(?i)(?<![\\w-])(${alternation(webrefCss.functions.map((f) => f.name.replace(/\(\)$/, '').toLowerCase()).filter((n) => !builtinFunction.test(n)))})(\\()`,
+    beginCaptures: { 1: { name: 'support.function.misc.css' }, 2: { name: 'punctuation.section.function.begin.bracket.round.css' } },
+    end: '\\)',
+    endCaptures: { 0: { name: 'punctuation.section.function.end.bracket.round.css' } },
+    name: 'meta.function.misc.css',
+    patterns: [{ include: fn('arithmetic-operators') }, { include: fn('property-values') }, { include: fn('function-nesting') }],
+  }],
 });
 
 // CONTENTS.md: what the extension adds, and where each item came from

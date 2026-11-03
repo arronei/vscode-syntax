@@ -1,0 +1,35 @@
+{
+  "scopeName": "web-spec-additions.css-functions",
+  "injectionSelector": "L:meta.property-value.css -comment -string",
+  "patterns": [
+    {
+      "begin": "(?i)(?<![\\w-])(alpha|anchor|anchor-size|calc-interpolate|calc-mix|calc-size|change|click|color-interpolate|color-layers|content|contrast-color|control-value|cross-origin|cycle|dblclick|device-cmyk|dynamic-range-limit-mix|env|fade|filter|first-valid|focusin|focusout|hdr-color|ictcp|ident|image|inherit|input|integrity|interpolate|jzazbz|jzczhz|keypress|leader|light-dark|linear|media|mod|paint|palette-mix|param|path|pointer|pointerdown|pointerenter|pointerleave|pointerup|progress|random|random-item|ray|referrer-policy|rem|round|running|scroll|shape|sibling-count|sibling-index|snap-block|snap-inline|src|string|stripes|superellipse|supports|target-counter|target-counters|target-text|transform-interpolate|transform-mix|type|url-pattern|view|wcag2|xywh)(\\()",
+      "beginCaptures": {
+        "1": {
+          "name": "support.function.misc.css"
+        },
+        "2": {
+          "name": "punctuation.section.function.begin.bracket.round.css"
+        }
+      },
+      "end": "\\)",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.function.end.bracket.round.css"
+        }
+      },
+      "name": "meta.function.misc.css",
+      "patterns": [
+        {
+          "include": "source.css#arithmetic-operators"
+        },
+        {
+          "include": "source.css#property-values"
+        },
+        {
+          "include": "source.css#function-nesting"
+        }
+      ]
+    }
+  ]
+}

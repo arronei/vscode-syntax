@@ -1,6 +1,6 @@
 svg { color-interpolation: sRGB; }
 .a { rule-color: red; text-fit: grow; window-drag: move; rule-break: intersection; block-ellipsis: ellipsis; continue: discard; fit-tolerance: 1em; }
-.a { animation-trigger: none; }
+.a { animation-trigger: none; color: light-dark(hsl(200 100% 40%), hsl(200 100% 60%)) !important; }
 .a:target-after { display: flex; contain-intrinsic-size: auto 300px; }
 @function --double(--x) { result: calc(var(--x) * 2); }
 .b { rule-co: x; }

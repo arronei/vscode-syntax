@@ -33,7 +33,7 @@ A change applies after a window reload. These settings can't hide VS Code's own 
 ## How it works
 
 - New items are declarative custom data (`html.customData`, `css.customData`).
-- Grammar injections color the property names VS Code's CSS grammar leaves plain, and the pseudo-classes and pseudo-elements it colors as tags. They color every name they know, whatever the level setting.
+- Grammar injections color the property names VS Code's CSS grammar leaves plain, the pseudo-classes and pseudo-elements it colors as tags, and value functions it doesn't know, like `light-dark()` (which otherwise also breaks the coloring of a following `!important`). They color every name they know, whatever the level setting.
 - `extension.js` applies the settings and adds a small hover provider. VS Code can't change the description of a CSS property it already knows, so for built-in properties with an empty description, the provider shows one from the spec instead.
 
 ## Data sources

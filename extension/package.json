@@ -64,6 +64,14 @@
           "source.css",
           "text.html"
         ]
+      },
+      {
+        "scopeName": "web-spec-additions.css-functions",
+        "path": "./data/css-functions.tmLanguage.json",
+        "injectTo": [
+          "source.css",
+          "text.html"
+        ]
       }
     ],
     "configuration": {
