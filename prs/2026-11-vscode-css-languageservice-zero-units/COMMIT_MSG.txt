@@ -1,0 +1,34 @@
+Lint zeros in math functions by their type
+
+Inside a math function a number token is always a <number>, never a
+"unitless 0" <length> (css-values-4, Type Checking). So a zero length
+there needs its unit, and a unitless 0 where a length is needed makes
+the declaration invalid.
+
+zeroUnits: stop suggesting to drop the unit there. The rule only
+skipped a zero whose nearest enclosing function is `calc`
+(vscode#46997), so it still flagged:
+
+- a var() fallback inside calc: calc(var(--h, 0px) / 2)
+- zeros in min(), max(), clamp() and the other math functions
+- CALC() in another case
+
+Now any enclosing math function counts, compared case-insensitively.
+
+unitlessZeroInMath (new, warning): flag a unitless 0 that has to be a
+dimension:
+
+- next to a dimension in + or -, or in min(), max(), clamp(), hypot(),
+  round(), mod(), rem() or abs(): calc(0 + 5px), max(0, 10vw)
+- in a math function that is the whole value of a property that takes
+  a length or percentage but not a number:
+  margin-block: calc(var(--h, 0) / -2)
+
+var() fallbacks count, because var() substitutes them. A zero that is
+a multiplier, a divisor or an argument of a number function stays a
+<number> and isn't flagged. Expressions with Sass or Less variables are
+skipped, because their math lets unitless numbers mix with lengths.
+
+The property's type comes from its restrictions. Newer properties such
+as margin-block, inset and gap have none, so it falls back to their MDN
+syntax.

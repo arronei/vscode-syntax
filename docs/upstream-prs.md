@@ -28,7 +28,8 @@ Background: [data-pipeline.md](data-pipeline.md).
    - vscode-custom-data HTML: `cd ../vscode-custom-data/web-data; node html/generateData.mjs`
    - vscode-custom-data CSS: `node css/generateData.mjs`. It prints entries that still need a description.
    - mdn-data: `npm test` (lint)
-   - language services: `npm test`
+   - language services: `npm test`. On Windows it compiles and lints but runs 0 tests: cmd.exe passes the
+     single-quoted glob through as is. Then run `node --enable-source-maps --test "lib/esm/test/**/*.test.js"`.
 4. **Verify** with the [language service checks](check-language-service.md), passing the regenerated data file.
 5. **Write the PR folder** `prs/<YYYY-MM>-<slug>/`:
    - `COMMIT_MSG.txt`: the commit message
@@ -57,3 +58,4 @@ Background: [data-pipeline.md](data-pipeline.md).
 | 17 HTML attributes | microsoft/vscode-custom-data | `arronei/vscode-custom-data:html/baseline-attributes` (pushed) | `prs/2026-10-baseline-html-attributes` |
 | `color-interpolation` | mdn/data | `arronei/mdn-data:css/color-interpolation` (pushed) | `prs/2026-10-mdn-data-color-interpolation` |
 | MDN description lookup fix | microsoft/vscode-custom-data | `arronei/vscode-custom-data:css/fix-mdn-doc-paths` (pushed) | `prs/2026-10-vscode-custom-data-mdn-doc-paths` |
+| Zeros in math functions (`zeroUnits` fix, new `unitlessZeroInMath`) | microsoft/vscode-css-languageservice | `arronei/vscode-css-languageservice:css/zero-units-math-functions` (pushed) | `prs/2026-11-vscode-css-languageservice-zero-units` |
