@@ -1,8 +1,20 @@
 {
   "title": "HTML features in the specs that ship in browsers but are missing from VS Code",
-  "generatedFrom": "latest.json (2026-11-12), kept P1+P2+preview",
+  "generatedFrom": "latest.json (2026-11-13), kept P1+P2+preview",
   "elements": [],
   "attributes": [],
-  "globalAttributes": [],
+  "globalAttributes": [
+    {
+      "name": "headingoffset",
+      "bcd": "html.global_attributes.headingoffset",
+      "description": "Offsets heading levels for descendants. Value: valid non-negative integer between 0 and 8. The `headingoffset` content attribute allows authors to offset heading levels for descendants."
+    },
+    {
+      "name": "headingreset",
+      "bcd": "html.global_attributes.headingreset",
+      "valueSet": "v",
+      "description": "Prevents a heading offset computation from traversing beyond the element with the attribute. It allows authors to prevent a heading offset computation from traversing beyond the element with the attribute."
+    }
+  ],
   "valueSets": []
 }

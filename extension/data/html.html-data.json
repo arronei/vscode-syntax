@@ -682,7 +682,7 @@
         },
         {
           "name": "shadowrootcustomelementregistry",
-          "level": "standard",
+          "level": "baseline",
           "valueSet": "v",
           "description": {
             "kind": "markdown",
@@ -698,6 +698,10 @@
             "CA146",
             "O130"
           ],
+          "status": {
+            "baseline": "low",
+            "baseline_low_date": "2026-10-27"
+          },
           "references": [
             {
               "name": "MDN Reference",
@@ -941,6 +945,8 @@
             "E134",
             "FF141",
             "FFA141",
+            "S27.3",
+            "SM27.3",
             "C134",
             "CA134",
             "O119"
@@ -1411,6 +1417,57 @@
         {
           "name": "Specification",
           "url": "https://w3c.github.io/element-timing/#dom-element-elementtiming"
+        }
+      ]
+    },
+    {
+      "name": "headingoffset",
+      "level": "standard",
+      "description": {
+        "kind": "markdown",
+        "value": "Offsets heading levels for descendants. Value: valid non-negative integer between 0 and 8. The `headingoffset` content attribute allows authors to offset heading levels for descendants."
+      },
+      "browsers": [
+        "S27.3",
+        "SM27.3"
+      ],
+      "status": {
+        "baseline": false
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/headingoffset"
+        },
+        {
+          "name": "Specification",
+          "url": "https://html.spec.whatwg.org/multipage/sections.html#heading-levels-&-offsets"
+        }
+      ]
+    },
+    {
+      "name": "headingreset",
+      "level": "standard",
+      "valueSet": "v",
+      "description": {
+        "kind": "markdown",
+        "value": "Prevents a heading offset computation from traversing beyond the element with the attribute. It allows authors to prevent a heading offset computation from traversing beyond the element with the attribute."
+      },
+      "browsers": [
+        "S27.3",
+        "SM27.3"
+      ],
+      "status": {
+        "baseline": false
+      },
+      "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/headingreset"
+        },
+        {
+          "name": "Specification",
+          "url": "https://html.spec.whatwg.org/multipage/sections.html#heading-levels-&-offsets"
         }
       ]
     }

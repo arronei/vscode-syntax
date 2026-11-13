@@ -123,51 +123,171 @@
       }
     },
     {
-      "name": "border-shape",
+      "name": "border-block-end-radius",
       "level": "draft",
-      "syntax": "none | [ <basic-shape> <geometry-box>?]{1,2}",
-      "values": [
-        {
-          "name": "none",
-          "browsers": [
-            "E147",
-            "C147",
-            "CA147",
-            "O131"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        }
-      ],
+      "syntax": "<length-percentage [0,∞]>{1,2} [ / <length-percentage [0,∞]>{1,2} ]?",
+      "values": [],
       "restrictions": [
-        "shape",
-        "geometry-box",
-        "enum"
+        "length",
+        "percentage"
       ],
       "status": "experimental",
-      "browsers": [
-        "E147",
-        "C147",
-        "CA147",
-        "O131"
-      ],
-      "baseline": {
-        "status": "false"
-      },
       "references": [
         {
-          "name": "MDN Reference",
-          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-shape"
-        },
-        {
           "name": "Specification",
-          "url": "https://drafts.csswg.org/css-borders-4/#propdef-border-shape"
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-border-block-end-radius"
         }
       ],
       "description": {
         "kind": "markdown",
-        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `none`. Applies to: all elements. Inherited: no. Animation type: by computed value."
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "border-block-start-radius",
+      "level": "draft",
+      "syntax": "<length-percentage [0,∞]>{1,2} [ / <length-percentage [0,∞]>{1,2} ]?",
+      "values": [],
+      "restrictions": [
+        "length",
+        "percentage"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-border-block-start-radius"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "border-bottom-radius",
+      "level": "draft",
+      "syntax": "<length-percentage [0,∞]>{1,2} [ / <length-percentage [0,∞]>{1,2} ]?",
+      "values": [],
+      "restrictions": [
+        "length",
+        "percentage"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-border-bottom-radius"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "border-inline-end-radius",
+      "level": "draft",
+      "syntax": "<length-percentage [0,∞]>{1,2} [ / <length-percentage [0,∞]>{1,2} ]?",
+      "values": [],
+      "restrictions": [
+        "length",
+        "percentage"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-border-inline-end-radius"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "border-inline-start-radius",
+      "level": "draft",
+      "syntax": "<length-percentage [0,∞]>{1,2} [ / <length-percentage [0,∞]>{1,2} ]?",
+      "values": [],
+      "restrictions": [
+        "length",
+        "percentage"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-border-inline-start-radius"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "border-left-radius",
+      "level": "draft",
+      "syntax": "<length-percentage [0,∞]>{1,2} [ / <length-percentage [0,∞]>{1,2} ]?",
+      "values": [],
+      "restrictions": [
+        "length",
+        "percentage"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-border-left-radius"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "border-right-radius",
+      "level": "draft",
+      "syntax": "<length-percentage [0,∞]>{1,2} [ / <length-percentage [0,∞]>{1,2} ]?",
+      "values": [],
+      "restrictions": [
+        "length",
+        "percentage"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-border-right-radius"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "border-top-radius",
+      "level": "draft",
+      "syntax": "<length-percentage [0,∞]>{1,2} [ / <length-percentage [0,∞]>{1,2} ]?",
+      "values": [],
+      "restrictions": [
+        "length",
+        "percentage"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-border-top-radius"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
       }
     },
     {
@@ -603,6 +723,10 @@
       },
       "references": [
         {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-rule-inset-junction-start"
+        },
+        {
           "name": "Specification",
           "url": "https://drafts.csswg.org/css-gaps-1/#propdef-column-rule-inset-junction-start"
         }
@@ -781,136 +905,16 @@
       }
     },
     {
-      "name": "flex-line-count",
-      "level": "draft",
-      "syntax": "<integer [1,∞]>",
-      "values": [],
-      "restrictions": [
-        "integer"
-      ],
-      "status": "experimental",
-      "browsers": [
-        "E150",
-        "C150",
-        "CA150",
-        "O134"
-      ],
-      "references": [
-        {
-          "name": "MDN Reference",
-          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/flex-line-count"
-        },
-        {
-          "name": "Specification",
-          "url": "https://drafts.csswg.org/css-flexbox-2/#propdef-flex-line-count"
-        }
-      ],
-      "description": {
-        "kind": "markdown",
-        "value": "Defined in *CSS Flexible Box Layout Module Level 2*.\n\nInitial value: `1`. Applies to: multi-line flex containers. Inherited: no. Animation type: as integer."
-      }
-    },
-    {
-      "name": "frame-sizing",
-      "level": "draft",
-      "syntax": "auto | content-width | content-height | content-block-size | content-inline-size",
-      "values": [
-        {
-          "name": "auto",
-          "browsers": [
-            "E154",
-            "C154",
-            "CA154",
-            "O138"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        },
-        {
-          "name": "content-width",
-          "browsers": [
-            "E154",
-            "C154",
-            "CA154",
-            "O138"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        },
-        {
-          "name": "content-height",
-          "browsers": [
-            "E154",
-            "C154",
-            "CA154",
-            "O138"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        },
-        {
-          "name": "content-block-size",
-          "browsers": [
-            "E154",
-            "C154",
-            "CA154",
-            "O138"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        },
-        {
-          "name": "content-inline-size",
-          "browsers": [
-            "E154",
-            "C154",
-            "CA154",
-            "O138"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        }
-      ],
-      "restrictions": [
-        "enum"
-      ],
-      "status": "experimental",
-      "browsers": [
-        "E154",
-        "C154",
-        "CA154",
-        "O138"
-      ],
-      "baseline": {
-        "status": "false"
-      },
-      "references": [
-        {
-          "name": "MDN Reference",
-          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/frame-sizing"
-        },
-        {
-          "name": "Specification",
-          "url": "https://drafts.csswg.org/css-sizing-4/#propdef-frame-sizing"
-        }
-      ],
-      "description": {
-        "kind": "markdown",
-        "value": "Defined in *CSS Box Sizing Module Level 4*.\n\nInitial value: `auto`. Applies to: replaced elements (but see below for details). Inherited: no. Animation type: discrete."
-      }
-    },
-    {
       "name": "hyphenate-limit-lines",
       "level": "draft",
       "syntax": "no-limit | <integer [0,∞]>",
       "values": [
         {
-          "name": "no-limit"
+          "name": "no-limit",
+          "browsers": [
+            "S27.3",
+            "SM27.3"
+          ]
         }
       ],
       "restrictions": [
@@ -918,6 +922,10 @@
         "enum"
       ],
       "status": "experimental",
+      "browsers": [
+        "S27.3",
+        "SM27.3"
+      ],
       "references": [
         {
           "name": "Specification",
@@ -927,40 +935,6 @@
       "description": {
         "kind": "markdown",
         "value": "Defined in *CSS Text Module Level 4*.\n\nInitial value: `no-limit`. Applies to: block containers. Inherited: yes. Animation type: by computed value type."
-      }
-    },
-    {
-      "name": "link-parameters",
-      "level": "draft",
-      "syntax": "none | <param()>#",
-      "values": [
-        {
-          "name": "none",
-          "baseline": {
-            "status": "false"
-          }
-        }
-      ],
-      "restrictions": [
-        "enum"
-      ],
-      "status": "experimental",
-      "baseline": {
-        "status": "false"
-      },
-      "references": [
-        {
-          "name": "MDN Reference",
-          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/link-parameters"
-        },
-        {
-          "name": "Specification",
-          "url": "https://drafts.csswg.org/css-link-params-1/#propdef-link-parameters"
-        }
-      ],
-      "description": {
-        "kind": "markdown",
-        "value": "Defined in *CSS Linked Parameters Module Level 1*.\n\nInitial value: `none`. Applies to: all elements and pseudo-elements. Inherited: no. Animation type: discrete."
       }
     },
     {
@@ -1498,6 +1472,10 @@
       },
       "references": [
         {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/row-rule-inset-junction-end"
+        },
+        {
           "name": "Specification",
           "url": "https://drafts.csswg.org/css-gaps-1/#propdef-row-rule-inset-junction-end"
         }
@@ -1541,6 +1519,10 @@
         "status": "false"
       },
       "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/row-rule-inset-junction-start"
+        },
         {
           "name": "Specification",
           "url": "https://drafts.csswg.org/css-gaps-1/#propdef-row-rule-inset-junction-start"
@@ -2318,54 +2300,6 @@
       }
     },
     {
-      "name": "scroll-axis-lock",
-      "level": "draft",
-      "syntax": "auto | none",
-      "values": [
-        {
-          "name": "auto",
-          "browsers": [
-            "C153",
-            "O137"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        },
-        {
-          "name": "none",
-          "browsers": [
-            "C153",
-            "O137"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        }
-      ],
-      "restrictions": [
-        "enum"
-      ],
-      "status": "experimental",
-      "browsers": [
-        "C153",
-        "O137"
-      ],
-      "baseline": {
-        "status": "false"
-      },
-      "references": [
-        {
-          "name": "Specification",
-          "url": "https://drafts.csswg.org/css-overflow-5/#propdef-scroll-axis-lock"
-        }
-      ],
-      "description": {
-        "kind": "markdown",
-        "value": "Defined in *CSS Overflow Module Level 5*.\n\nInitial value: `auto`. Applies to: scroll container elements. Inherited: no. Animation type: discrete."
-      }
-    },
-    {
       "name": "text-decoration-skip-spaces",
       "level": "draft",
       "syntax": "none | all | [ start || end ]",
@@ -2434,428 +2368,6 @@
       }
     },
     {
-      "name": "text-fit",
-      "level": "draft",
-      "syntax": "[ none | grow | shrink ] [consistent | per-line | per-line-all]? <percentage>?",
-      "values": [
-        {
-          "name": "none",
-          "browsers": [
-            "E150",
-            "C150",
-            "CA150",
-            "O134"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        },
-        {
-          "name": "grow",
-          "browsers": [
-            "E150",
-            "C150",
-            "CA150",
-            "O134"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        },
-        {
-          "name": "shrink",
-          "browsers": [
-            "E150",
-            "C150",
-            "CA150",
-            "O134"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        },
-        {
-          "name": "consistent",
-          "browsers": [
-            "E150",
-            "C150",
-            "CA150",
-            "O134"
-          ]
-        },
-        {
-          "name": "per-line",
-          "browsers": [
-            "E150",
-            "C150",
-            "CA150",
-            "O134"
-          ]
-        },
-        {
-          "name": "per-line-all",
-          "browsers": [
-            "E150",
-            "C150",
-            "CA150",
-            "O134"
-          ]
-        }
-      ],
-      "restrictions": [
-        "percentage",
-        "enum"
-      ],
-      "status": "experimental",
-      "browsers": [
-        "E150",
-        "C150",
-        "CA150",
-        "O134"
-      ],
-      "baseline": {
-        "status": "false"
-      },
-      "references": [
-        {
-          "name": "MDN Reference",
-          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-fit"
-        },
-        {
-          "name": "Specification",
-          "url": "https://drafts.csswg.org/css-text-5/#propdef-text-fit"
-        }
-      ],
-      "description": {
-        "kind": "markdown",
-        "value": "Defined in *CSS Text Module Level 5*.\n\nInitial value: `none`. Applies to: block containers. Inherited: yes. Animation type: discrete."
-      }
-    },
-    {
-      "name": "timeline-trigger-activation-range",
-      "level": "draft",
-      "syntax": "[ <'timeline-trigger-activation-range-start'> <'timeline-trigger-activation-range-end'>? ]#",
-      "values": [
-        {
-          "name": "normal",
-          "browsers": [
-            "E146",
-            "C146",
-            "CA146",
-            "O130"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        }
-      ],
-      "restrictions": [
-        "length",
-        "percentage",
-        "enum"
-      ],
-      "status": "experimental",
-      "browsers": [
-        "E146",
-        "C146",
-        "CA146",
-        "O130"
-      ],
-      "baseline": {
-        "status": "false"
-      },
-      "references": [
-        {
-          "name": "MDN Reference",
-          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-activation-range"
-        },
-        {
-          "name": "Specification",
-          "url": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-activation-range"
-        }
-      ],
-      "description": {
-        "kind": "markdown",
-        "value": "Defined in *Animation Triggers*.\n\nShorthand property."
-      }
-    },
-    {
-      "name": "timeline-trigger-activation-range-end",
-      "level": "draft",
-      "syntax": "[ normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#",
-      "values": [
-        {
-          "name": "normal",
-          "browsers": [
-            "E146",
-            "C146",
-            "CA146",
-            "O130"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        }
-      ],
-      "restrictions": [
-        "length",
-        "percentage",
-        "enum"
-      ],
-      "status": "experimental",
-      "browsers": [
-        "E146",
-        "C146",
-        "CA146",
-        "O130"
-      ],
-      "baseline": {
-        "status": "false"
-      },
-      "references": [
-        {
-          "name": "MDN Reference",
-          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-activation-range-end"
-        },
-        {
-          "name": "Specification",
-          "url": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-activation-range-end"
-        }
-      ],
-      "description": {
-        "kind": "markdown",
-        "value": "Defined in *Animation Triggers*.\n\nInitial value: `normal`. Applies to: all elements. Inherited: no. Animation type: not animatable."
-      }
-    },
-    {
-      "name": "timeline-trigger-activation-range-start",
-      "level": "draft",
-      "syntax": "[ normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#",
-      "values": [
-        {
-          "name": "normal",
-          "browsers": [
-            "E146",
-            "C146",
-            "CA146",
-            "O130"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        }
-      ],
-      "restrictions": [
-        "length",
-        "percentage",
-        "enum"
-      ],
-      "status": "experimental",
-      "browsers": [
-        "E146",
-        "C146",
-        "CA146",
-        "O130"
-      ],
-      "baseline": {
-        "status": "false"
-      },
-      "references": [
-        {
-          "name": "MDN Reference",
-          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-activation-range-start"
-        },
-        {
-          "name": "Specification",
-          "url": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-activation-range-start"
-        }
-      ],
-      "description": {
-        "kind": "markdown",
-        "value": "Defined in *Animation Triggers*.\n\nInitial value: `normal`. Applies to: all elements. Inherited: no. Animation type: not animatable."
-      }
-    },
-    {
-      "name": "timeline-trigger-active-range",
-      "level": "draft",
-      "syntax": "[ <'timeline-trigger-active-range-start'> <'timeline-trigger-active-range-end'>? ]#",
-      "values": [
-        {
-          "name": "auto",
-          "browsers": [
-            "E146",
-            "C146",
-            "CA146",
-            "O130"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        },
-        {
-          "name": "normal",
-          "browsers": [
-            "E146",
-            "C146",
-            "CA146",
-            "O130"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        }
-      ],
-      "restrictions": [
-        "length",
-        "percentage",
-        "enum"
-      ],
-      "status": "experimental",
-      "browsers": [
-        "E146",
-        "C146",
-        "CA146",
-        "O130"
-      ],
-      "baseline": {
-        "status": "false"
-      },
-      "references": [
-        {
-          "name": "MDN Reference",
-          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-active-range"
-        },
-        {
-          "name": "Specification",
-          "url": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-active-range"
-        }
-      ],
-      "description": {
-        "kind": "markdown",
-        "value": "Defined in *Animation Triggers*.\n\nShorthand property."
-      }
-    },
-    {
-      "name": "timeline-trigger-active-range-end",
-      "level": "draft",
-      "syntax": "[ auto | normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#",
-      "values": [
-        {
-          "name": "auto",
-          "browsers": [
-            "E146",
-            "C146",
-            "CA146",
-            "O130"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        },
-        {
-          "name": "normal",
-          "browsers": [
-            "E146",
-            "C146",
-            "CA146",
-            "O130"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        }
-      ],
-      "restrictions": [
-        "length",
-        "percentage",
-        "enum"
-      ],
-      "status": "experimental",
-      "browsers": [
-        "E146",
-        "C146",
-        "CA146",
-        "O130"
-      ],
-      "baseline": {
-        "status": "false"
-      },
-      "references": [
-        {
-          "name": "MDN Reference",
-          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-active-range-end"
-        },
-        {
-          "name": "Specification",
-          "url": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-active-range-end"
-        }
-      ],
-      "description": {
-        "kind": "markdown",
-        "value": "Defined in *Animation Triggers*.\n\nInitial value: `auto`. Applies to: all elements. Inherited: no. Animation type: not animatable."
-      }
-    },
-    {
-      "name": "timeline-trigger-active-range-start",
-      "level": "draft",
-      "syntax": "[ auto | normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#",
-      "values": [
-        {
-          "name": "auto",
-          "browsers": [
-            "E146",
-            "C146",
-            "CA146",
-            "O130"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        },
-        {
-          "name": "normal",
-          "browsers": [
-            "E146",
-            "C146",
-            "CA146",
-            "O130"
-          ],
-          "baseline": {
-            "status": "false"
-          }
-        }
-      ],
-      "restrictions": [
-        "length",
-        "percentage",
-        "enum"
-      ],
-      "status": "experimental",
-      "browsers": [
-        "E146",
-        "C146",
-        "CA146",
-        "O130"
-      ],
-      "baseline": {
-        "status": "false"
-      },
-      "references": [
-        {
-          "name": "MDN Reference",
-          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-active-range-start"
-        },
-        {
-          "name": "Specification",
-          "url": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-active-range-start"
-        }
-      ],
-      "description": {
-        "kind": "markdown",
-        "value": "Defined in *Animation Triggers*.\n\nInitial value: `auto`. Applies to: all elements. Inherited: no. Animation type: not animatable."
-      }
-    },
-    {
       "name": "view-transition-group",
       "level": "draft",
       "syntax": "normal | contain | nearest | <custom-ident>",
@@ -2911,33 +2423,33 @@
       }
     },
     {
-      "name": "view-transition-scope",
+      "name": "white-space-trim",
       "level": "draft",
-      "syntax": "none | all",
+      "syntax": "none | discard-before || discard-after || discard-inner",
       "values": [
         {
           "name": "none",
           "browsers": [
-            "E147",
-            "C147",
-            "CA147",
-            "O131"
-          ],
-          "baseline": {
-            "status": "false"
-          }
+            "S27.3"
+          ]
         },
         {
-          "name": "all",
+          "name": "discard-before",
           "browsers": [
-            "E147",
-            "C147",
-            "CA147",
-            "O131"
-          ],
-          "baseline": {
-            "status": "false"
-          }
+            "S27.3"
+          ]
+        },
+        {
+          "name": "discard-after",
+          "browsers": [
+            "S27.3"
+          ]
+        },
+        {
+          "name": "discard-inner",
+          "browsers": [
+            "S27.3"
+          ]
         }
       ],
       "restrictions": [
@@ -2945,51 +2457,8 @@
       ],
       "status": "experimental",
       "browsers": [
-        "E147",
-        "C147",
-        "CA147",
-        "O131"
+        "S27.3"
       ],
-      "baseline": {
-        "status": "false"
-      },
-      "references": [
-        {
-          "name": "MDN Reference",
-          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/view-transition-scope"
-        },
-        {
-          "name": "Specification",
-          "url": "https://drafts.csswg.org/css-view-transitions-2/#propdef-view-transition-scope"
-        }
-      ],
-      "description": {
-        "kind": "markdown",
-        "value": "Defined in *CSS View Transitions Module Level 2*.\n\nInitial value: `none`. Applies to: all elements. Inherited: no. Animation type: discrete."
-      }
-    },
-    {
-      "name": "white-space-trim",
-      "level": "draft",
-      "syntax": "none | discard-before || discard-after || discard-inner",
-      "values": [
-        {
-          "name": "none"
-        },
-        {
-          "name": "discard-before"
-        },
-        {
-          "name": "discard-after"
-        },
-        {
-          "name": "discard-inner"
-        }
-      ],
-      "restrictions": [
-        "enum"
-      ],
-      "status": "experimental",
       "references": [
         {
           "name": "Specification",
@@ -3002,31 +2471,21 @@
       }
     },
     {
-      "name": "window-drag",
+      "name": "wrap-inside",
       "level": "draft",
-      "syntax": "none | move",
+      "syntax": "auto | avoid",
       "values": [
         {
-          "name": "none",
+          "name": "auto",
           "browsers": [
-            "E152",
-            "C152",
-            "O136"
-          ],
-          "baseline": {
-            "status": "false"
-          }
+            "S27.3"
+          ]
         },
         {
-          "name": "move",
+          "name": "avoid",
           "browsers": [
-            "E152",
-            "C152",
-            "O136"
-          ],
-          "baseline": {
-            "status": "false"
-          }
+            "S27.3"
+          ]
         }
       ],
       "restrictions": [
@@ -3034,40 +2493,8 @@
       ],
       "status": "experimental",
       "browsers": [
-        "E152",
-        "C152",
-        "O136"
+        "S27.3"
       ],
-      "baseline": {
-        "status": "false"
-      },
-      "references": [
-        {
-          "name": "Specification",
-          "url": "https://drafts.csswg.org/css-ui-4/#propdef-window-drag"
-        }
-      ],
-      "description": {
-        "kind": "markdown",
-        "value": "Defined in *CSS Basic User Interface Module Level 4*.\n\nInitial value: `none`. Applies to: all elements. Inherited: yes. Animation type: discrete."
-      }
-    },
-    {
-      "name": "wrap-inside",
-      "level": "draft",
-      "syntax": "auto | avoid",
-      "values": [
-        {
-          "name": "auto"
-        },
-        {
-          "name": "avoid"
-        }
-      ],
-      "restrictions": [
-        "enum"
-      ],
-      "status": "experimental",
       "references": [
         {
           "name": "Specification",
@@ -3111,6 +2538,10 @@
         "enum"
       ],
       "status": "experimental",
+      "browsers": [
+        "S27.2",
+        "SM27.2"
+      ],
       "baseline": {
         "status": "false"
       },
@@ -3134,9 +2565,10 @@
         "kind": "markdown",
         "value": "Defines a custom CSS function, called like a built-in one as `--name(arguments)`. Its body can declare local custom properties and returns the value of its `result` descriptor.\n\n— *CSS Functions and Mixins Module*\n\nSyntax: `@function <function-token> <function-parameter>#? ) [ returns <css-type> ]? { <declaration-rule-list> }`"
       },
-      "status": "experimental",
       "browsers": [
         "E139",
+        "S27.3",
+        "SM27.3",
         "C139",
         "CA139",
         "O123"
@@ -3253,6 +2685,9 @@
         "CA156",
         "O140"
       ],
+      "baseline": {
+        "status": "false"
+      },
       "references": [
         {
           "name": "Specification",

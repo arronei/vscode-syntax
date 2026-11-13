@@ -1,19 +1,40 @@
 {
   "title": "CSS features in the specs that ship in browsers but are missing from VS Code",
-  "generatedFrom": "latest.json (2026-11-12), kept P1+P2+preview",
+  "generatedFrom": "latest.json (2026-11-13), kept P1+P2+preview",
   "sources": {
     "mdn-data": "2.37.2",
-    "@mdn/browser-compat-data": "8.1.8",
+    "@mdn/browser-compat-data": "8.1.9",
     "@webref/css": "8.7.8",
     "@webref/elements": "2.9.2",
-    "web-features": "3.45.0"
+    "web-features": "3.46.0"
   },
   "properties": [
     {
       "name": "block-ellipsis"
     },
     {
-      "name": "border-shape"
+      "name": "border-block-end-radius"
+    },
+    {
+      "name": "border-block-start-radius"
+    },
+    {
+      "name": "border-bottom-radius"
+    },
+    {
+      "name": "border-inline-end-radius"
+    },
+    {
+      "name": "border-inline-start-radius"
+    },
+    {
+      "name": "border-left-radius"
+    },
+    {
+      "name": "border-right-radius"
+    },
+    {
+      "name": "border-top-radius"
     },
     {
       "name": "column-rule-break"
@@ -52,16 +73,7 @@
       "name": "continue"
     },
     {
-      "name": "flex-line-count"
-    },
-    {
-      "name": "frame-sizing"
-    },
-    {
       "name": "hyphenate-limit-lines"
-    },
-    {
-      "name": "link-parameters"
     },
     {
       "name": "max-size"
@@ -151,43 +163,13 @@
       "name": "rule-width"
     },
     {
-      "name": "scroll-axis-lock"
-    },
-    {
       "name": "text-decoration-skip-spaces"
-    },
-    {
-      "name": "text-fit"
-    },
-    {
-      "name": "timeline-trigger-activation-range"
-    },
-    {
-      "name": "timeline-trigger-activation-range-end"
-    },
-    {
-      "name": "timeline-trigger-activation-range-start"
-    },
-    {
-      "name": "timeline-trigger-active-range"
-    },
-    {
-      "name": "timeline-trigger-active-range-end"
-    },
-    {
-      "name": "timeline-trigger-active-range-start"
     },
     {
       "name": "view-transition-group"
     },
     {
-      "name": "view-transition-scope"
-    },
-    {
       "name": "white-space-trim"
-    },
-    {
-      "name": "window-drag"
     },
     {
       "name": "wrap-inside"
