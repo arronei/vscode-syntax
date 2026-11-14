@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-13T06:33:09.593Z",
+  "generatedAt": "2026-11-14T06:30:28.677Z",
   "sources": {
     "mdn-data": "2.37.2",
     "@mdn/browser-compat-data": "8.1.9",
-    "@webref/css": "8.7.8",
+    "@webref/css": "8.7.9",
     "@webref/elements": "2.9.2",
     "web-features": "3.46.0"
   },

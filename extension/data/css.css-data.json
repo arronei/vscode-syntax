@@ -4,7 +4,7 @@
     {
       "name": "color-interpolation",
       "level": "baseline",
-      "syntax": "auto | sRGB | linearRGB",
+      "syntax": "auto | sRGB | linearRGB | <color-interpolation-method>",
       "values": [
         {
           "name": "auto",
@@ -62,9 +62,76 @@
             "baseline_low_date": "2020-01-15",
             "baseline_high_date": "2022-07-15"
           }
+        },
+        {
+          "name": "in"
+        },
+        {
+          "name": "srgb"
+        },
+        {
+          "name": "srgb-linear"
+        },
+        {
+          "name": "display-p3"
+        },
+        {
+          "name": "display-p3-linear"
+        },
+        {
+          "name": "a98-rgb"
+        },
+        {
+          "name": "prophoto-rgb"
+        },
+        {
+          "name": "rec2020"
+        },
+        {
+          "name": "lab"
+        },
+        {
+          "name": "oklab"
+        },
+        {
+          "name": "xyz"
+        },
+        {
+          "name": "xyz-d50"
+        },
+        {
+          "name": "xyz-d65"
+        },
+        {
+          "name": "hsl"
+        },
+        {
+          "name": "hwb"
+        },
+        {
+          "name": "lch"
+        },
+        {
+          "name": "oklch"
+        },
+        {
+          "name": "shorter"
+        },
+        {
+          "name": "longer"
+        },
+        {
+          "name": "increasing"
+        },
+        {
+          "name": "decreasing"
+        },
+        {
+          "name": "hue"
         }
       ],
       "restrictions": [
+        "identifier",
         "enum"
       ],
       "browsers": [
@@ -2563,7 +2630,7 @@
       "level": "draft",
       "description": {
         "kind": "markdown",
-        "value": "Defines a custom CSS function, called like a built-in one as `--name(arguments)`. Its body can declare local custom properties and returns the value of its `result` descriptor.\n\n— *CSS Functions and Mixins Module*\n\nSyntax: `@function <function-token> <function-parameter>#? ) [ returns <css-type> ]? { <declaration-rule-list> }`"
+        "value": "Defines a custom CSS function, called like a built-in one as `--name(arguments)`. Its body can declare local custom properties and returns the value of its `result` descriptor.\n\n— *CSS Functions and Mixins Module*\n\nSyntax: `@function <function-token> <function-parameter>#? ','? ) [ returns <css-type> ]? { <declaration-rule-list> }`"
       },
       "browsers": [
         "E139",
