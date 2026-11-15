@@ -1,7 +1,7 @@
 // Setup, update and the full run. The single steps are the other package.json scripts.
 //
 //   npm run setup     new machine: clone missing sibling repos, install and compile them, then update
-//   npm run update    before a run: latest data sources, fetch upstream in the sibling repos
+//   npm run update    before a run: latest data sources, fetch upstream in the sibling repos and level their mains
 //   npm run all       gap-report, refresh-additions, build-extension, check-vscode
 //   npm run build-site   the GitHub Pages site, in _site/
 //
@@ -49,8 +49,13 @@ function setup() {
 function update() {
   for (const s of SIBLINGS) {
     const dir = path.join(parent, s.dir);
-    if (fs.existsSync(dir)) sh('git fetch -q upstream', dir);
-    else console.warn(yellow(`missing ../${s.dir}: run "npm run setup"`));
+    if (!fs.existsSync(dir)) { console.warn(yellow(`missing ../${s.dir}: run "npm run setup"`)); continue; }
+    sh('git fetch -q upstream', dir);
+    // the fork's main mirrors upstream, on GitHub and here; our work lives on PR branches rebased onto it.
+    // Fast-forward only, so a main with commits of its own stops the update instead of being overwritten.
+    sh('git push -q origin upstream/main:refs/heads/main', dir);
+    const onMain = execFileSync('git', ['branch', '--show-current'], { cwd: dir, encoding: 'utf8' }).trim() === 'main';
+    sh(onMain ? 'git merge -q --ff-only upstream/main' : 'git fetch -q . upstream/main:main', dir);
   }
   const versions = () => Object.fromEntries(DATA.map((p) => [p, fs.existsSync(path.join(root, 'node_modules', p)) ? readJSON(path.join(root, 'node_modules', p, 'package.json')).version : undefined]));
   const before = versions();

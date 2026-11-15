@@ -41,7 +41,7 @@ Open `vscode-syntax.code-workspace` to get all five in one window.
 npm run update
 ```
 
-1. `git fetch upstream` in each sibling repo, so the gap report and new PR branches see the latest `upstream/main`.
+1. `git fetch upstream` in each sibling repo, so the gap report and new PR branches see the latest `upstream/main`. Then it fast-forwards each fork's `main` to `upstream/main`, on GitHub and locally, so the forks are never behind. A fork's `main` holds none of our work: each PR has its own branch, rebased onto `upstream/main`. If a `main` has commits of its own, the fast-forward fails and the update stops, so you can move those commits to a branch.
 2. Installs the latest version of every data source: `@mdn/browser-compat-data`, `@webref/css`, `@webref/elements`, `browser-specs`, `mdn-data`, `web-features`. It lists what changed and flags major versions, since those can change the data format.
 3. Writes the time to `.last-update`, which isn't committed.
 

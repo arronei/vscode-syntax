@@ -1,5 +1,5 @@
 diff --git a/web-data/css/mdn/mdn-documentation.mjs b/web-data/css/mdn/mdn-documentation.mjs
-index a516e35..56551f8 100644
+index 6f44b09..9217b9b 100644
 --- a/web-data/css/mdn/mdn-documentation.mjs
 +++ b/web-data/css/mdn/mdn-documentation.mjs
 @@ -13,10 +13,29 @@ import * as util from '../utils.mjs';
