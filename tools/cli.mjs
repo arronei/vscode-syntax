@@ -28,7 +28,7 @@ const SIBLINGS = [
   { dir: 'vscode-css-languageservice', fork: 'arronei/vscode-css-languageservice', upstream: 'microsoft/vscode-css-languageservice', npm: '.', compile: true },
   { dir: 'vscode-html-languageservice', fork: 'arronei/vscode-html-languageservice', upstream: 'microsoft/vscode-html-languageservice', npm: '.', compile: true },
 ];
-const DATA = ['@mdn/browser-compat-data', '@vscode/web-custom-data', '@webref/css', '@webref/elements', 'browser-specs', 'mdn-data', 'web-features'];
+const DATA = ['@mdn/browser-compat-data', '@webref/css', '@webref/elements', 'browser-specs', 'mdn-data', 'web-features'];
 const PIPELINE = ['gap-report', 'refresh-additions', 'build-extension', 'check-vscode'];
 const STAMP = path.join(root, '.last-update');
 const STALE_HOURS = 12;

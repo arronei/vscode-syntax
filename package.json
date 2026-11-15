@@ -8,7 +8,7 @@
     "setup": "node tools/cli.mjs setup",
     "update": "node tools/cli.mjs update",
     "all": "node tools/cli.mjs all",
-    "gap-report": "node tools/cli.mjs warn && node tools/gap-report.mjs ../vscode-custom-data node_modules reports/latest.json && node tools/cli.mjs archive",
+    "gap-report": "node tools/cli.mjs warn && node tools/gap-report.mjs node_modules reports/latest.json && node tools/cli.mjs archive",
     "engines": "node tools/cli.mjs warn && node tools/engines.mjs node_modules",
     "build-extension": "node tools/cli.mjs warn && node tools/build-extension.mjs",
     "package-extension": "cd extension && npx -y @vscode/vsce@4 package --baseContentUrl https://github.com/arronei/vscode-syntax/blob/main/extension",
@@ -24,7 +24,6 @@
   "devDependencies": {
     "@mdn/browser-compat-data": "^8.1.9",
     "@vscode/test-electron": "^3.1.0",
-    "@vscode/web-custom-data": "^0.6.4",
     "@webref/css": "^8.7.9",
     "@webref/elements": "^2.9.2",
     "browser-specs": "^5.3.0",

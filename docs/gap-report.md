@@ -1,6 +1,6 @@
 # Gap report: find what VS Code is missing
 
-Compares VS Code's data on `upstream/main` of microsoft/vscode-custom-data with browser-compat-data, `@webref/css`, `@webref/elements` and web-features. Lists the CSS properties, at-rules, selectors, HTML elements, attributes and global attributes VS Code doesn't have, plus built-in CSS properties with an empty description.
+Compares VS Code's data, what vscode-css-languageservice and vscode-html-languageservice bundle on their `upstream/main` (`tools/vscode-data.mjs`), with browser-compat-data, `@webref/css`, `@webref/elements` and web-features. Lists the CSS properties, at-rules, selectors, HTML elements, attributes and global attributes VS Code doesn't have, plus built-in CSS properties with an empty description.
 
 ## Run
 
@@ -9,7 +9,7 @@ npm run update
 npm run gap-report      # or `npm run all`, which also builds the extension and runs the live check
 ```
 
-That runs `node tools/gap-report.mjs ../vscode-custom-data node_modules reports/latest.json`. It fetches `upstream` first (needs network), and always reads `upstream/main`, whatever branch is checked out.
+That runs `node tools/gap-report.mjs node_modules reports/latest.json`. It reads the language services' `upstream/main` as of the last `npm run update`, whatever branch is checked out.
 
 It then saves a dated copy, such as `reports/gap-report-2026-10-13.json`, and lists the P1/P2 items that are new or gone since the previous dated report.
 
@@ -54,7 +54,8 @@ node -e "const [a,b]=['./reports/gap-report-2026-10-09.json','./reports/latest.j
 
 ## Limits
 
-- It compares against `upstream/main`, not the published npm package and not the extension. Items already in the extension stay in the report until VS Code's data has them. Items merged upstream drop out before they're published.
+- It compares against the language services, not vscode-custom-data `main` or the `@vscode/web-custom-data` npm package. Both of those run ahead of VS Code: on 2026-11-12 custom data 0.6.4 added `text-fit` and 27 more names the language services didn't have yet, and reading it made extension 0.6.1 drop them while VS Code still flagged them as unknown. Items already in the extension stay in the report until the language services have them.
+- The language services' `main` can still be a release ahead of VS Code stable, so an item can drop out a little before VS Code ships it.
 - HTML attribute keys containing `_` are skipped (BCD uses those for sub-features), and so are deprecated attributes. Vendor-prefixed names are listed as `proprietary`, P3.
 - For selectors found only in BCD, `:` vs `::` is inferred from the spec and MDN URLs and can occasionally be wrong.
 

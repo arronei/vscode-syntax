@@ -8,7 +8,7 @@
 npm run build-extension
 ```
 
-Reads `additions/`, fills in syntax and values from `@webref/css` (falling back to `mdn-data`), spec titles from browser-specs, browser versions from BCD and Baseline from web-features. Tags every item with a [data level](#data-levels). It drops anything the installed `@vscode/web-custom-data` already has, then writes:
+Reads `additions/`, fills in syntax and values from `@webref/css` (falling back to `mdn-data`), spec titles from browser-specs, browser versions from BCD and Baseline from web-features. Tags every item with a [data level](#data-levels). It drops anything VS Code's built-in data already has (vscode-css-languageservice and vscode-html-languageservice bundle on their `upstream/main` (`tools/vscode-data.mjs`)), then writes:
 
 | File | Used by |
 |---|---|
@@ -102,7 +102,7 @@ or run **Extensions: Install from VSIX…**, then reload the window. Remove any 
 ## When VS Code catches up
 
 ```powershell
-npm run update                 # installs the latest @vscode/web-custom-data
+npm run update                 # fetches the language services' upstream/main
 npm run build-extension
 ```
 

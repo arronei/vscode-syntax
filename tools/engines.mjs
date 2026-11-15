@@ -12,6 +12,7 @@
 //            Gecko has no such list at all (its names are in the shared atom table), so attributes are Blink and WebKit only.
 import fs from 'fs';
 import path from 'path';
+import * as vscodeData from './vscode-data.mjs';
 
 const [mods, outFile] = process.argv.slice(2);
 const load = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -137,8 +138,8 @@ const fetched = await Promise.all([blink(), webkit(), gecko()]);
 const engines = Object.fromEntries(ENGINES.map((e, i) => [e, fetched[i]]));
 
 // what VS Code's built-in data and the extension already have, and BCD's entries, per category
-const builtinCss = load(path.join(mods, '@vscode/web-custom-data/data/browsers.css-data.json'));
-const builtinHtml = load(path.join(mods, '@vscode/web-custom-data/data/browsers.html-data.json'));
+const builtinCss = vscodeData.builtinCss();
+const builtinHtml = vscodeData.builtinHtml();
 const extCss = load(new URL('../extension/data/css.all.json', import.meta.url));
 const extHtml = load(new URL('../extension/data/html.all.json', import.meta.url));
 const attrNames = (data) => [...data.tags.flatMap((t) => t.attributes), ...data.globalAttributes].map((a) => a.name);

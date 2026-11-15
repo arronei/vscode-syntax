@@ -11,8 +11,8 @@
 // additions/html/<same file name>, described from the specs by tools/html-from-specs.mjs.
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import { htmlDescriber } from './html-from-specs.mjs';
+import * as vscodeData from './vscode-data.mjs';
 
 const [reportFile, outFile, pickArg = 'P1,P2'] = process.argv.slice(2);
 if (!reportFile || !outFile) {
@@ -68,7 +68,7 @@ const prevHtml = fs.existsSync(htmlOut) ? JSON.parse(fs.readFileSync(htmlOut, 'u
 const prevEntry = new Map(['elements', 'attributes', 'globalAttributes'].flatMap((k) => (prevHtml[k] || []).map((x) => [keyOf(k, x), x])));
 
 // Value sets to reuse when the keywords match: our own, then VS Code's (which come with value descriptions)
-const builtinHtml = JSON.parse(fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'node_modules', '@vscode', 'web-custom-data', 'data', 'browsers.html-data.json'), 'utf8'));
+const builtinHtml = vscodeData.builtinHtml();
 const { describe, newValueSets } = htmlDescriber({ knownSets: [...otherHtmlSets, ...builtinHtml.valueSets] });
 
 const htmlFile = { title: prevHtml.title || 'HTML features in the specs that ship in browsers but are missing from VS Code', generatedFrom: out.generatedFrom };

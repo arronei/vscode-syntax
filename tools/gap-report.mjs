@@ -1,17 +1,15 @@
 // Compare VS Code's shipped HTML/CSS custom data against current web data sources.
-// Usage: node gap-report.mjs <vscode-custom-data checkout> <node_modules dir with latest sources> [out.json]
-// Always reads upstream/main of the checkout (fetched first), whatever branch is checked out.
+// Usage: node gap-report.mjs <node_modules dir with latest sources> [out.json]
+// VS Code's data is what the language services bundle on upstream/main (tools/vscode-data.mjs).
 import fs from 'fs';
 import path from 'path';
-import { execFileSync } from 'child_process';
 import { levelFinder } from './levels.mjs';
+import { builtinCss, builtinHtml } from './vscode-data.mjs';
 
-const [customData, mods, outFile] = process.argv.slice(2);
+const [mods, outFile] = process.argv.slice(2);
 const load = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
-execFileSync('git', ['-C', customData, 'fetch', '-q', 'upstream'], { stdio: 'inherit' });
-const fromMain = (p) => JSON.parse(execFileSync('git', ['-C', customData, 'show', `upstream/main:${p}`], { encoding: 'utf8', maxBuffer: 1 << 28 }));
-const css = fromMain('web-data/data/browsers.css-data.json');
-const html = fromMain('web-data/data/browsers.html-data.json');
+const css = builtinCss();
+const html = builtinHtml();
 const webrefCss = load(path.join(mods, '@webref/css/css.json'));
 const webrefHtml = load(path.join(mods, '@webref/elements/html.json'));
 const bcd = load(path.join(mods, '@mdn/browser-compat-data/data.json'));

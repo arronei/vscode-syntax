@@ -28,10 +28,10 @@ It's safe to run again. Existing checkouts and their branches aren't touched bey
 | Folder | What it's for | Remotes |
 |---|---|---|
 | `vscode-syntax` | This repo: tools, additions, extension, PR drafts, reports | `origin` = arronei/vscode-syntax (private) |
-| `vscode-custom-data` | Where VS Code's HTML/CSS data is generated. Target of HTML and description PRs. The gap report reads it. | `origin` = arronei fork, `upstream` = microsoft |
+| `vscode-custom-data` | Where VS Code's HTML/CSS data is generated. Target of HTML and description PRs. | `origin` = arronei fork, `upstream` = microsoft |
 | `mdn-data` | Target of PRs for missing CSS properties | `origin` = arronei/mdn-data, `upstream` = mdn/data |
-| `vscode-css-languageservice` | Used by `check-css`. Target of CSS language-service PRs. | `origin` = arronei fork, `upstream` = microsoft |
-| `vscode-html-languageservice` | Used by `check-html`. Target of HTML language-service PRs. | `origin` = arronei fork, `upstream` = microsoft |
+| `vscode-css-languageservice` | VS Code's built-in CSS data for the gap report and the extension build (`upstream/main`). Used by `check-css`. Target of CSS language-service PRs. | `origin` = arronei fork, `upstream` = microsoft |
+| `vscode-html-languageservice` | VS Code's built-in HTML data, as for CSS. Used by `check-html`. Target of HTML language-service PRs. | `origin` = arronei fork, `upstream` = microsoft |
 
 Open `vscode-syntax.code-workspace` to get all five in one window.
 
@@ -42,7 +42,7 @@ npm run update
 ```
 
 1. `git fetch upstream` in each sibling repo, so the gap report and new PR branches see the latest `upstream/main`.
-2. Installs the latest version of every data source: `@mdn/browser-compat-data`, `@vscode/web-custom-data`, `@webref/css`, `@webref/elements`, `browser-specs`, `mdn-data`, `web-features`. It lists what changed and flags major versions, since those can change the data format.
+2. Installs the latest version of every data source: `@mdn/browser-compat-data`, `@webref/css`, `@webref/elements`, `browser-specs`, `mdn-data`, `web-features`. It lists what changed and flags major versions, since those can change the data format.
 3. Writes the time to `.last-update`, which isn't committed.
 
 `npm run all`, `npm run gap-report` and `npm run build-extension` print a warning if the last update is more than 12 hours old, or if this machine has never run one. It's only a warning; the run still goes ahead.
