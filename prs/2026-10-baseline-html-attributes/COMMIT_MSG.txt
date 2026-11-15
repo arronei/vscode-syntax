@@ -26,6 +26,3 @@ show-popover, hide-popover, toggle-popover) and `shadowrootmode`
 "resource" instead of "image" because <iframe> shares the set.
 
 Regenerated data/browsers.html-data.json with `node html/generateData.mjs`.
-
-Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
-Claude-Session: https://claude.ai/code/session_014fSnD1PNptV3WyQLkbSVcM

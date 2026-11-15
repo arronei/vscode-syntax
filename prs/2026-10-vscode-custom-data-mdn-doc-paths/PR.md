@@ -9,7 +9,7 @@ When a property, selector or at-rule has no description, `css/generateData.mjs` 
 1. **Path.** MDN moved the CSS reference from `files/en-us/web/css/<name>` to `web/css/reference/properties/<name>`, `reference/at-rules/<rule>[/<descriptor>]` and `reference/selectors/<_colon_name>`. The old paths now return 404.
 2. **Page format.** Current pages put `sidebar: cssref` in the front matter instead of a `{{CSSRef}}` macro line, so `extractFirstSentence` doesn't match even when the page is found.
 
-As a result, regenerating with the current `mdn-data` (2.37.2) lists 28 entries that need a description, and all 28 come back empty. Among them are `text-fit`, `border-shape`, `flex-line-count` and the `timeline-trigger-*` properties.
+So every lookup comes back empty. #146 filled in 25 of the missing descriptions by hand (`text-fit`, `border-shape`, `flex-line-count`, the `timeline-trigger-*` and `-webkit-border-*` properties), but on `main`, `fetchDocFromMDN('text-fit')` still returns `undefined`. Each new property will need the same hand work until the lookup is fixed.
 
 **Change** (`css/mdn/mdn-documentation.mjs` only):
 - Try the new reference location first and fall back to the old flat path.
@@ -26,7 +26,3 @@ As a result, regenerating with the current `mdn-data` (2.37.2) lists 28 entries 
 | `window-drag`, `scroll-axis-lock`, `page-margin-safety`, 12 × `-webkit-border-*` (no MDN page yet) | empty | empty |
 
 No generated data changes in this PR. Descriptions still go into `mdn-documentation.mjs` through the existing copy-from-output step.
-
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-
-https://claude.ai/code/session_014fSnD1PNptV3WyQLkbSVcM

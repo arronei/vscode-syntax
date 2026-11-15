@@ -51,7 +51,7 @@ The daily Pages run reruns the gap report and commits it, so yellow means someth
 - **Extension:** [Web Spec Additions (HTML & CSS)](https://marketplace.visualstudio.com/items?itemName=arronei.web-spec-additions) on the Marketplace: search for it in the Extensions view, or `code --install-extension arronei.web-spec-additions`. Each version's `.vsix` is also on its [GitHub release](https://github.com/arronei/vscode-syntax/releases/latest). Contents: [extension/CONTENTS.md](extension/CONTENTS.md)
 - **Latest gap report:** [reports/latest.json](reports/latest.json)
 - **Latest live check:** [reports/vscode-1.141-live-check.txt](reports/vscode-1.141-live-check.txt) (21/21)
-- **Upstream PRs:** three branches pushed, see [status](docs/upstream-prs.md#status)
+- **Upstream PRs:** four open as drafts, see [status](docs/upstream-prs.md#status)
 
 ## Layout
 

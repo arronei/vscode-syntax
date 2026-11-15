@@ -22,6 +22,3 @@ page-margin-safety and 12 -webkit-border-* aliases.
 Lookups for selectors (_colon_hover, _doublecolon_before), at-rules
 (@container) and descriptors (@font-face/font-display) work too.
 No data files change.
-
-Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
-Claude-Session: https://claude.ai/code/session_014fSnD1PNptV3WyQLkbSVcM

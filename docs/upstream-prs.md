@@ -53,9 +53,9 @@ Background: [data-pipeline.md](data-pipeline.md).
 
 ## Status
 
-| Batch | Repo | Branch (on your fork) | Folder |
+| Batch | Repo | Branch (on your fork), PR | Folder |
 |---|---|---|---|
-| 17 HTML attributes | microsoft/vscode-custom-data | `arronei/vscode-custom-data:html/baseline-attributes` (pushed) | `prs/2026-10-baseline-html-attributes` |
-| `color-interpolation` | mdn/data | `arronei/mdn-data:css/color-interpolation` (pushed) | `prs/2026-10-mdn-data-color-interpolation` |
-| MDN description lookup fix | microsoft/vscode-custom-data | `arronei/vscode-custom-data:css/fix-mdn-doc-paths` (pushed) | `prs/2026-10-vscode-custom-data-mdn-doc-paths` |
-| Zeros in math functions (`zeroUnits` fix, new `unitlessZeroInMath`) | microsoft/vscode-css-languageservice | `arronei/vscode-css-languageservice:css/zero-units-math-functions` (pushed) | `prs/2026-11-vscode-css-languageservice-zero-units` |
+| 17 HTML attributes | microsoft/vscode-custom-data | `arronei/vscode-custom-data:html/baseline-attributes`, draft [#147](https://github.com/microsoft/vscode-custom-data/pull/147) | `prs/2026-10-baseline-html-attributes` |
+| `color-interpolation` | mdn/data | `arronei/mdn-data:css/color-interpolation`, draft [#1121](https://github.com/mdn/data/pull/1121) | `prs/2026-10-mdn-data-color-interpolation` |
+| MDN description lookup fix | microsoft/vscode-custom-data | `arronei/vscode-custom-data:css/fix-mdn-doc-paths`, draft [#148](https://github.com/microsoft/vscode-custom-data/pull/148) | `prs/2026-10-vscode-custom-data-mdn-doc-paths` |
+| Zeros in math functions (`zeroUnits` fix, new `unitlessZeroInMath`) | microsoft/vscode-css-languageservice | `arronei/vscode-css-languageservice:css/zero-units-math-functions`, draft [#547](https://github.com/microsoft/vscode-css-languageservice/pull/547) | `prs/2026-11-vscode-css-languageservice-zero-units` |

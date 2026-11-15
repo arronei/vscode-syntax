@@ -26,7 +26,3 @@ The entry follows the SVG 2 definition ([Painting § color-interpolation](https:
 **Testing**
 - `npm test` passes. I also checked that the lint fails if `appliesto` points to an undefined key.
 - Regenerated VS Code's CSS data with this branch and ran it through `vscode-css-languageservice`. The property now completes, its values `auto`/`sRGB`/`linearRGB` complete, the hover shows Baseline, and the *Unknown property* warning is gone. The language service's test suite still passes (359/359).
-
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-
-https://claude.ai/code/session_014fSnD1PNptV3WyQLkbSVcM

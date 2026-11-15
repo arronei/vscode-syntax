@@ -38,7 +38,3 @@ Baseline status comes from the regenerated data (compute-baseline / web-features
   - `<template shadowroot|` offers all four `shadowroot*` attributes; `shadowrootmode="|"` offers `open`, `closed`
   - `<iframe loading="|"` → `eager`, `lazy`; `<link fetch|`, `<link image|`, `<script fetchpriority="|"`, `<source wi|`, `<form re|`, `<area referrer|`, `<video plays|` all complete
 - Hovers show the description and the Baseline badge, e.g. `commandfor`: *Newly available across major browsers (Baseline since 2025)*.
-
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-
-https://claude.ai/code/session_014fSnD1PNptV3WyQLkbSVcM
