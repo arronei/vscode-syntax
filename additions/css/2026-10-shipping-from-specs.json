@@ -34,6 +34,9 @@
       "name": "border-right-radius"
     },
     {
+      "name": "border-shape"
+    },
+    {
       "name": "border-top-radius"
     },
     {
@@ -73,7 +76,16 @@
       "name": "continue"
     },
     {
+      "name": "flex-line-count"
+    },
+    {
+      "name": "frame-sizing"
+    },
+    {
       "name": "hyphenate-limit-lines"
+    },
+    {
+      "name": "link-parameters"
     },
     {
       "name": "max-size"
@@ -163,13 +175,43 @@
       "name": "rule-width"
     },
     {
+      "name": "scroll-axis-lock"
+    },
+    {
       "name": "text-decoration-skip-spaces"
+    },
+    {
+      "name": "text-fit"
+    },
+    {
+      "name": "timeline-trigger-activation-range"
+    },
+    {
+      "name": "timeline-trigger-activation-range-end"
+    },
+    {
+      "name": "timeline-trigger-activation-range-start"
+    },
+    {
+      "name": "timeline-trigger-active-range"
+    },
+    {
+      "name": "timeline-trigger-active-range-end"
+    },
+    {
+      "name": "timeline-trigger-active-range-start"
     },
     {
       "name": "view-transition-group"
     },
     {
+      "name": "view-transition-scope"
+    },
+    {
       "name": "white-space-trim"
+    },
+    {
+      "name": "window-drag"
     },
     {
       "name": "wrap-inside"

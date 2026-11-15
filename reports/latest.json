@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T06:31:39.166Z",
+  "generatedAt": "2026-11-15T23:21:58.061Z",
   "sources": {
     "mdn-data": "2.37.2",
     "@mdn/browser-compat-data": "8.1.9",
@@ -8,7 +8,7 @@
     "web-features": "3.46.0"
   },
   "shipped": {
-    "cssProperties": 910,
+    "cssProperties": 888,
     "atRules": 25,
     "pseudoClasses": 111,
     "pseudoElements": 90,
@@ -17,13 +17,13 @@
   },
   "summary": {
     "cssProperties": {
-      "total": 262,
+      "total": 276,
       "P1": 1,
-      "P2": 44,
-      "P3": 217,
+      "P2": 57,
+      "P3": 218,
       "baseline": 1,
-      "standard": 19,
-      "draft": 186,
+      "standard": 20,
+      "draft": 199,
       "proprietary": 56
     },
     "atRules": {
@@ -76,7 +76,7 @@
       "draft": 3,
       "proprietary": 4
     },
-    "emptyCssDescriptions": 16
+    "emptyCssDescriptions": 61
   },
   "gaps": {
     "cssProperties": [
@@ -419,6 +419,20 @@
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-right-radius",
         "inSpec": true,
         "priority": "P3"
+      },
+      {
+        "name": "border-shape",
+        "level": "draft",
+        "bcdKey": "css.properties.border-shape",
+        "shipsIn": [
+          "chrome",
+          "edge"
+        ],
+        "baseline": "Limited",
+        "spec": "https://drafts.csswg.org/css-borders-4/#propdef-border-shape",
+        "mdn": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-shape",
+        "inSpec": true,
+        "priority": "P2"
       },
       {
         "name": "border-top-clip",
@@ -972,6 +986,19 @@
         "priority": "P2"
       },
       {
+        "name": "flex-line-count",
+        "level": "draft",
+        "bcdKey": "css.properties.flex-line-count",
+        "shipsIn": [
+          "chrome",
+          "edge"
+        ],
+        "spec": "https://drafts.csswg.org/css-flexbox-2/#propdef-flex-line-count",
+        "mdn": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/flex-line-count",
+        "inSpec": true,
+        "priority": "P2"
+      },
+      {
         "name": "float-defer",
         "level": "draft",
         "shipsIn": [],
@@ -1026,6 +1053,20 @@
         "spec": "https://drafts.csswg.org/css-gcpm-3/#propdef-footnote-policy",
         "inSpec": true,
         "priority": "P3"
+      },
+      {
+        "name": "frame-sizing",
+        "level": "draft",
+        "bcdKey": "css.properties.frame-sizing",
+        "shipsIn": [
+          "chrome",
+          "edge"
+        ],
+        "baseline": "Limited",
+        "spec": "https://drafts.csswg.org/css-sizing-4/#propdef-frame-sizing",
+        "mdn": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/frame-sizing",
+        "inSpec": true,
+        "priority": "P2"
       },
       {
         "name": "hyphenate-limit-last",
@@ -1115,6 +1156,21 @@
         "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-line-grid-1/#propdef-line-snap",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "link-parameters",
+        "level": "draft",
+        "bcdKey": "css.properties.link-parameters",
+        "shipsIn": [],
+        "previewIn": [
+          "firefox",
+          "safari"
+        ],
+        "baseline": "Limited",
+        "spec": "https://drafts.csswg.org/css-link-params-1/#propdef-link-parameters",
+        "mdn": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/link-parameters",
         "inSpec": true,
         "priority": "P3"
       },
@@ -1243,6 +1299,16 @@
         "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-overflow-4/#propdef-overflow-clip-margin-top",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "path-length",
+        "level": "standard",
+        "bcdKey": "css.properties.path-length",
+        "shipsIn": [],
+        "spec": "https://w3c.github.io/svgwg/svg2-draft/paths.html#PathLengthCSSProperty",
+        "mdn": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/path-length",
         "inSpec": true,
         "priority": "P3"
       },
@@ -1699,6 +1765,18 @@
         "priority": "P2"
       },
       {
+        "name": "scroll-axis-lock",
+        "level": "draft",
+        "bcdKey": "css.properties.scroll-axis-lock",
+        "shipsIn": [
+          "chrome"
+        ],
+        "baseline": "Limited",
+        "spec": "https://drafts.csswg.org/css-overflow-5/#propdef-scroll-axis-lock",
+        "inSpec": true,
+        "priority": "P2"
+      },
+      {
         "name": "shape-inside",
         "level": "draft",
         "shipsIn": [],
@@ -1905,6 +1983,20 @@
         "priority": "P3"
       },
       {
+        "name": "text-fit",
+        "level": "draft",
+        "bcdKey": "css.properties.text-fit",
+        "shipsIn": [
+          "chrome",
+          "edge"
+        ],
+        "baseline": "Limited",
+        "spec": "https://drafts.csswg.org/css-text-5/#propdef-text-fit",
+        "mdn": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-fit",
+        "inSpec": true,
+        "priority": "P2"
+      },
+      {
         "name": "text-group-align",
         "level": "draft",
         "shipsIn": [],
@@ -1921,12 +2013,88 @@
         "priority": "P3"
       },
       {
-        "name": "timeline-trigger-range",
+        "name": "timeline-trigger-activation-range",
         "level": "draft",
-        "shipsIn": [],
-        "spec": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-range",
+        "bcdKey": "css.properties.timeline-trigger-activation-range",
+        "shipsIn": [
+          "chrome",
+          "edge"
+        ],
+        "baseline": "Limited",
+        "spec": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-activation-range",
+        "mdn": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-activation-range",
         "inSpec": true,
-        "priority": "P3"
+        "priority": "P2"
+      },
+      {
+        "name": "timeline-trigger-activation-range-end",
+        "level": "draft",
+        "bcdKey": "css.properties.timeline-trigger-activation-range-end",
+        "shipsIn": [
+          "chrome",
+          "edge"
+        ],
+        "baseline": "Limited",
+        "spec": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-activation-range-end",
+        "mdn": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-activation-range-end",
+        "inSpec": true,
+        "priority": "P2"
+      },
+      {
+        "name": "timeline-trigger-activation-range-start",
+        "level": "draft",
+        "bcdKey": "css.properties.timeline-trigger-activation-range-start",
+        "shipsIn": [
+          "chrome",
+          "edge"
+        ],
+        "baseline": "Limited",
+        "spec": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-activation-range-start",
+        "mdn": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-activation-range-start",
+        "inSpec": true,
+        "priority": "P2"
+      },
+      {
+        "name": "timeline-trigger-active-range",
+        "level": "draft",
+        "bcdKey": "css.properties.timeline-trigger-active-range",
+        "shipsIn": [
+          "chrome",
+          "edge"
+        ],
+        "baseline": "Limited",
+        "spec": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-active-range",
+        "mdn": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-active-range",
+        "inSpec": true,
+        "priority": "P2"
+      },
+      {
+        "name": "timeline-trigger-active-range-end",
+        "level": "draft",
+        "bcdKey": "css.properties.timeline-trigger-active-range-end",
+        "shipsIn": [
+          "chrome",
+          "edge"
+        ],
+        "baseline": "Limited",
+        "spec": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-active-range-end",
+        "mdn": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-active-range-end",
+        "inSpec": true,
+        "priority": "P2"
+      },
+      {
+        "name": "timeline-trigger-active-range-start",
+        "level": "draft",
+        "bcdKey": "css.properties.timeline-trigger-active-range-start",
+        "shipsIn": [
+          "chrome",
+          "edge"
+        ],
+        "baseline": "Limited",
+        "spec": "https://drafts.csswg.org/animation-triggers-1/#propdef-timeline-trigger-active-range-start",
+        "mdn": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-active-range-start",
+        "inSpec": true,
+        "priority": "P2"
       },
       {
         "name": "user-modify",
@@ -1948,6 +2116,20 @@
           "edge"
         ],
         "spec": "https://drafts.csswg.org/css-view-transitions-2/#propdef-view-transition-group",
+        "inSpec": true,
+        "priority": "P2"
+      },
+      {
+        "name": "view-transition-scope",
+        "level": "draft",
+        "bcdKey": "css.properties.view-transition-scope",
+        "shipsIn": [
+          "chrome",
+          "edge"
+        ],
+        "baseline": "Limited",
+        "spec": "https://drafts.csswg.org/css-view-transitions-2/#propdef-view-transition-scope",
+        "mdn": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/view-transition-scope",
         "inSpec": true,
         "priority": "P2"
       },
@@ -2023,6 +2205,19 @@
           "safari"
         ],
         "spec": "https://drafts.csswg.org/css-text-4/#propdef-white-space-trim",
+        "inSpec": true,
+        "priority": "P2"
+      },
+      {
+        "name": "window-drag",
+        "level": "draft",
+        "bcdKey": "css.properties.window-drag",
+        "shipsIn": [
+          "chrome",
+          "edge"
+        ],
+        "baseline": "Limited",
+        "spec": "https://drafts.csswg.org/css-ui-4/#propdef-window-drag",
         "inSpec": true,
         "priority": "P2"
       },
@@ -4425,8 +4620,53 @@
     "-webkit-text-stroke-width",
     "-webkit-touch-callout",
     "-webkit-user-drag",
-    "page-margin-safety",
-    "scroll-axis-lock",
-    "window-drag"
+    "animation-trigger",
+    "baseline-source",
+    "caret-animation",
+    "column-height",
+    "column-wrap",
+    "corner-block-end-shape",
+    "corner-block-start-shape",
+    "corner-bottom-left-shape",
+    "corner-bottom-right-shape",
+    "corner-bottom-shape",
+    "corner-end-end-shape",
+    "corner-end-start-shape",
+    "corner-inline-end-shape",
+    "corner-inline-start-shape",
+    "corner-left-shape",
+    "corner-right-shape",
+    "corner-shape",
+    "corner-start-end-shape",
+    "corner-start-start-shape",
+    "corner-top-left-shape",
+    "corner-top-right-shape",
+    "corner-top-shape",
+    "dynamic-range-limit",
+    "font-width",
+    "interactivity",
+    "interest-delay",
+    "interest-delay-end",
+    "interest-delay-start",
+    "navigation",
+    "reading-flow",
+    "reading-order",
+    "scroll-initial-target",
+    "scroll-marker-group",
+    "scroll-target-group",
+    "stroke-color",
+    "text-autospace",
+    "text-decoration-inset",
+    "timeline-trigger",
+    "timeline-trigger-exit-range",
+    "timeline-trigger-exit-range-end",
+    "timeline-trigger-exit-range-start",
+    "timeline-trigger-name",
+    "timeline-trigger-range",
+    "timeline-trigger-range-end",
+    "timeline-trigger-range-start",
+    "timeline-trigger-source",
+    "trigger-scope",
+    "types"
   ]
 }
