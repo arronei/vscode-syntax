@@ -38,7 +38,7 @@ index 1156c94..af812bb 100644
          "limitedSVGElementsEllipseRect",
          "limitedSVGElementsFilterPrimitives",
 diff --git a/l10n/css.json b/l10n/css.json
-index 70507d6..37b78ea 100644
+index 70507d6..659890d 100644
 --- a/l10n/css.json
 +++ b/l10n/css.json
 @@ -1056,6 +1056,10 @@
@@ -47,7 +47,7 @@ index 70507d6..37b78ea 100644
    },
 +  "limitedSVGElementsContainerGraphicsGradientUseAnimate": {
 +    "en-US": "Container elements, graphics elements, gradient elements, {{SVGElement(\"use\")}}, and {{SVGElement(\"animate\")}} in {{SVGElement(\"svg\")}}",
-+    "fr": "Éléments conteneurs, éléments graphiques, éléments de dégradé, {{SVGElement(\"use\")}} et {{SVGElement(\"animate\")}} dans {{SVGElement(\"svg\")}}"
++    "fr": "éléments conteneurs, éléments graphiques, éléments de dégradé, {{SVGElement(\"use\")}} et {{SVGElement(\"animate\")}} dans {{SVGElement(\"svg\")}}"
 +  },
    "limitedSVGElementsEllipse": {
      "en-US": "{{SVGElement(\"ellipse\")}} and {{SVGElement(\"circle\")}} elements in {{SVGElement(\"svg\")}}",
