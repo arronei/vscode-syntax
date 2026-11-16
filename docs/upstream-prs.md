@@ -55,9 +55,9 @@ Background: [data-pipeline.md](data-pipeline.md).
 
 | Batch | Repo | Branch (on your fork), PR | Folder |
 |---|---|---|---|
-| 17 HTML attributes | microsoft/vscode-custom-data | `arronei/vscode-custom-data:html/baseline-attributes`, draft [#147](https://github.com/microsoft/vscode-custom-data/pull/147) | `prs/2026-10-baseline-html-attributes` |
+| 17 HTML attributes | microsoft/vscode-custom-data | `arronei/vscode-custom-data:html/baseline-attributes`, [#147](https://github.com/microsoft/vscode-custom-data/pull/147) (ready for review) | `prs/2026-10-baseline-html-attributes` |
 | `color-interpolation` | mdn/data | `arronei/mdn-data:css/color-interpolation`, [#1121](https://github.com/mdn/data/pull/1121) (ready for review) | `prs/2026-10-mdn-data-color-interpolation` |
-| MDN description lookup fix | microsoft/vscode-custom-data | `arronei/vscode-custom-data:css/fix-mdn-doc-paths`, draft [#148](https://github.com/microsoft/vscode-custom-data/pull/148) | `prs/2026-10-vscode-custom-data-mdn-doc-paths` |
-| Zeros in math functions (`zeroUnits` fix, new `unitlessZeroInMath`) | microsoft/vscode-css-languageservice | `arronei/vscode-css-languageservice:css/zero-units-math-functions`, draft [#547](https://github.com/microsoft/vscode-css-languageservice/pull/547) | `prs/2026-11-vscode-css-languageservice-zero-units` |
+| MDN description lookup fix | microsoft/vscode-custom-data | `arronei/vscode-custom-data:css/fix-mdn-doc-paths`, [#148](https://github.com/microsoft/vscode-custom-data/pull/148) (ready for review) | `prs/2026-10-vscode-custom-data-mdn-doc-paths` |
+| Zeros in math functions (`zeroUnits` fix, new `unitlessZeroInMath`) | microsoft/vscode-css-languageservice | `arronei/vscode-css-languageservice:css/zero-units-math-functions`, [#547](https://github.com/microsoft/vscode-css-languageservice/pull/547) (ready for review) | `prs/2026-11-vscode-css-languageservice-zero-units` |
 | `color-interpolation` keyword completions (turns on the disabled `css-schema.json` entry) | microsoft/vscode-custom-data | `arronei/vscode-custom-data:css/color-interpolation`, not opened yet | `prs/2026-11-vscode-custom-data-color-interpolation` |
 | `color-interpolation` page: `{{CSSInfo}}` instead of the wrong hand-written table. Waits for the mdn-data release with #1121 | mdn/content | `arronei/mdn-content:css/color-interpolation-cssinfo`, not opened yet | `prs/2026-11-mdn-content-color-interpolation-cssinfo` |
