@@ -1,0 +1,22 @@
+Turn on the color-interpolation entry in css-schema.json
+
+css-schema.json already has an entry for color-interpolation with
+values and descriptions, but it is marked "browsers": "none", so the
+generator skips it. The property has shipped in all major browsers for
+years (css.properties.color-interpolation in BCD, Baseline widely
+available), and VS Code flags it as an unknown property.
+
+- Drop "browsers": "none". Browser data and Baseline come from BCD.
+- Drop "alpha compositing" from the description. SVG 2 removed it,
+  because no browser implemented it; the property now covers gradient
+  stops and color animations.
+- Point "ref" at the SVG 2 editor's draft.
+
+The entry also matters once mdn/data#1121 is released. SVG 2's syntax
+is now `auto | sRGB | linearRGB | <color-interpolation-method>`, and
+getValuesFromSytax only collects values from keyword-only syntaxes,
+so mdn-data alone would give no keyword completions. Hand-written
+values take precedence, so the keywords keep completing.
+
+Regenerated web-data/data/browsers.css-data.json: the only change is
+the new color-interpolation entry.

@@ -1,5 +1,5 @@
 diff --git a/css/properties.json b/css/properties.json
-index bcb26b8..f060ca1 100644
+index bcb26b8..d62ec42 100644
 --- a/css/properties.json
 +++ b/css/properties.json
 @@ -4429,6 +4429,22 @@
@@ -7,7 +7,7 @@ index bcb26b8..f060ca1 100644
      "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/color"
    },
 +  "color-interpolation": {
-+    "syntax": "auto | sRGB | linearRGB",
++    "syntax": "auto | sRGB | linearRGB | <color-interpolation-method>",
 +    "media": "visual",
 +    "inherited": true,
 +    "animationType": "discrete",
@@ -38,15 +38,16 @@ index 1156c94..af812bb 100644
          "limitedSVGElementsEllipseRect",
          "limitedSVGElementsFilterPrimitives",
 diff --git a/l10n/css.json b/l10n/css.json
-index 70507d6..bd6dad6 100644
+index 70507d6..37b78ea 100644
 --- a/l10n/css.json
 +++ b/l10n/css.json
-@@ -1056,6 +1056,9 @@
+@@ -1056,6 +1056,10 @@
      "en-US": "{{SVGElement(\"circle\")}} element in {{SVGElement(\"svg\")}}",
      "fr": "élément {{SVGElement(\"circle\")}} dans {{SVGElement(\"svg\")}}"
    },
 +  "limitedSVGElementsContainerGraphicsGradientUseAnimate": {
-+    "en-US": "Container elements, graphics elements, gradient elements, {{SVGElement(\"use\")}}, and {{SVGElement(\"animate\")}} in {{SVGElement(\"svg\")}}"
++    "en-US": "Container elements, graphics elements, gradient elements, {{SVGElement(\"use\")}}, and {{SVGElement(\"animate\")}} in {{SVGElement(\"svg\")}}",
++    "fr": "Éléments conteneurs, éléments graphiques, éléments de dégradé, {{SVGElement(\"use\")}} et {{SVGElement(\"animate\")}} dans {{SVGElement(\"svg\")}}"
 +  },
    "limitedSVGElementsEllipse": {
      "en-US": "{{SVGElement(\"ellipse\")}} and {{SVGElement(\"circle\")}} elements in {{SVGElement(\"svg\")}}",

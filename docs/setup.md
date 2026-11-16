@@ -32,8 +32,9 @@ It's safe to run again. Existing checkouts and their branches aren't touched bey
 | `mdn-data` | Target of PRs for missing CSS properties | `origin` = arronei/mdn-data, `upstream` = mdn/data |
 | `vscode-css-languageservice` | VS Code's built-in CSS data for the gap report and the extension build (`upstream/main`). Used by `check-css`. Target of CSS language-service PRs. | `origin` = arronei fork, `upstream` = microsoft |
 | `vscode-html-languageservice` | VS Code's built-in HTML data, as for CSS. Used by `check-html`. Target of HTML language-service PRs. | `origin` = arronei fork, `upstream` = microsoft |
+| `mdn-content` | Target of MDN page PRs (for example the `{{CSSInfo}}` data for a new property). Partial clone, no `npm install`. | `origin` = arronei/mdn-content, `upstream` = mdn/content |
 
-Open `vscode-syntax.code-workspace` to get all five in one window.
+Open `vscode-syntax.code-workspace` to get all six in one window.
 
 ## Before each run: `npm run update`
 

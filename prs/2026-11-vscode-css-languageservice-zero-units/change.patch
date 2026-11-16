@@ -1,5 +1,5 @@
 diff --git a/src/services/lint.ts b/src/services/lint.ts
-index 765d273..0e363d7 100644
+index 765d273..c56e238 100644
 --- a/src/services/lint.ts
 +++ b/src/services/lint.ts
 @@ -13,6 +13,106 @@ import { union } from '../utils/arrays.js';
@@ -19,7 +19,7 @@ index 765d273..0e363d7 100644
 +// Functions whose arguments have the type of their result. var() passes it on to its fallback.
 +const sameTypeFunctions = new Set(['calc', '-webkit-calc', '-moz-calc', 'min', 'max', 'clamp', 'hypot', 'round', 'mod', 'rem', 'abs', 'random', 'var']);
 +
-+// ponytail: the CSS data lists these as length-only, but they also take a <number>. Drop once the data is fixed.
++// TODO: The CSS data lists these as length-only, but they also take a <number>. Remove once the data is fixed.
 +const lengthOrNumberProperties = new Set(['stroke-width', 'stroke-dashoffset']);
 +
 +type MathType = 'number' | 'dimension' | undefined;

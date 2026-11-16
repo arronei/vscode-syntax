@@ -27,7 +27,7 @@
         },
         {
           "name": "toggle-popover",
-          "description": "Toggles the target popover between showing and hidden."
+          "description": "Toggles the target popover between shown and hidden."
         }
       ]
     },

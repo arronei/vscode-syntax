@@ -27,7 +27,7 @@
         },
         {
           "name": "sRGB",
-          "description": "Interpolate in the sRGB color space. This is the initial value.",
+          "description": "Interpolate in the gamma-encoded sRGB color space, the same as `in srgb`. This is the initial value.",
           "browsers": [
             "E79",
             "FF3",
@@ -46,7 +46,7 @@
         },
         {
           "name": "linearRGB",
-          "description": "Interpolate in the linearized RGB color space.",
+          "description": "Interpolate in the linear-light sRGB color space, the same as `in srgb-linear`.",
           "browsers": [
             "E79",
             "FF3",
@@ -159,7 +159,7 @@
           "url": "https://w3c.github.io/svgwg/svg2-draft/painting.html#ColorInterpolationProperty"
         }
       ],
-      "description": "Specifies the color space used for gradient interpolation, color animation and alpha compositing in SVG."
+      "description": "Specifies the color space used to interpolate between gradient stops and in color animations in SVG."
     },
     {
       "name": "block-ellipsis",

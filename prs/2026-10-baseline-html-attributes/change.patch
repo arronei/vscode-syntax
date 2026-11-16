@@ -1,5 +1,5 @@
 diff --git a/web-data/data/browsers.html-data.json b/web-data/data/browsers.html-data.json
-index 71d469d..fd7a6bd 100644
+index 71d469d..12f11c5 100644
 --- a/web-data/data/browsers.html-data.json
 +++ b/web-data/data/browsers.html-data.json
 @@ -361,6 +361,89 @@
@@ -482,7 +482,7 @@ index 71d469d..fd7a6bd 100644
 +          "name": "toggle-popover",
 +          "description": {
 +            "kind": "markdown",
-+            "value": "Toggles the target popover between showing and hidden."
++            "value": "Toggles the target popover between shown and hidden."
 +          }
 +        }
 +      ]
@@ -780,7 +780,7 @@ index a9f6ea1..91bc974 100644
      ]
    },
 diff --git a/web-data/html/valueSets.json b/web-data/html/valueSets.json
-index d2a57e2..9eb8612 100644
+index d2a57e2..542f96f 100644
 --- a/web-data/html/valueSets.json
 +++ b/web-data/html/valueSets.json
 @@ -1225,14 +1225,14 @@
@@ -847,7 +847,7 @@ index d2a57e2..9eb8612 100644
 +        "name": "toggle-popover",
 +        "description": {
 +          "kind": "markdown",
-+          "value": "Toggles the target popover between showing and hidden."
++          "value": "Toggles the target popover between shown and hidden."
 +        }
 +      }
 +    ]

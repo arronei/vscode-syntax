@@ -1,0 +1,7 @@
+CSS: use {{CSSInfo}} for color-interpolation
+
+Replace the hand-written formal-definition table with {{CSSInfo}}, now
+that mdn-data has the property (mdn/data#1121). The table was wrong:
+it gave the initial value as `auto` (the spec, and Chromium, Gecko and
+WebKit, all use `sRGB`) and listed only <linearGradient> and
+<radialGradient> under "Applies to".

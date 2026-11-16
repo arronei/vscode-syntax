@@ -27,6 +27,8 @@ const SIBLINGS = [
   { dir: 'mdn-data', fork: 'arronei/mdn-data', upstream: 'mdn/data', npm: '.' },
   { dir: 'vscode-css-languageservice', fork: 'arronei/vscode-css-languageservice', upstream: 'microsoft/vscode-css-languageservice', npm: '.', compile: true },
   { dir: 'vscode-html-languageservice', fork: 'arronei/vscode-html-languageservice', upstream: 'microsoft/vscode-html-languageservice', npm: '.', compile: true },
+  // ponytail: no npm install, nothing here runs mdn/content's tooling. Partial clone, the full history is GBs.
+  { dir: 'mdn-content', fork: 'arronei/mdn-content', upstream: 'mdn/content', clone: '--filter=blob:none' },
 ];
 const DATA = ['@mdn/browser-compat-data', '@webref/css', '@webref/elements', 'browser-specs', 'mdn-data', 'web-features'];
 const PIPELINE = ['gap-report', 'refresh-additions', 'build-extension', 'check-vscode'];
@@ -37,9 +39,9 @@ const github = (repo) => `https://github.com/${repo}.git`;
 function setup() {
   for (const s of SIBLINGS) {
     const dir = path.join(parent, s.dir);
-    if (!fs.existsSync(dir)) sh(`git clone ${github(s.fork)} ${s.dir}`, parent);
+    if (!fs.existsSync(dir)) sh(`git clone ${s.clone ? s.clone + ' ' : ''}${github(s.fork)} ${s.dir}`, parent);
     if (!execSync('git remote', { cwd: dir, encoding: 'utf8' }).split(/\s+/).includes('upstream')) sh(`git remote add upstream ${github(s.upstream)}`, dir);
-    sh('npm install', path.join(dir, s.npm));
+    if (s.npm) sh('npm install', path.join(dir, s.npm));
     if (s.compile) sh('npx tsc -p ./src', dir); // just the build the checks need; the repo's `compile` also lints
   }
   sh('npm install');

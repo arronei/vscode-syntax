@@ -1,0 +1,116 @@
+diff --git a/web-data/css/css-schema.json b/web-data/css/css-schema.json
+index 42428fd..ebee260 100644
+--- a/web-data/css/css-schema.json
++++ b/web-data/css/css-schema.json
+@@ -5212,10 +5212,9 @@
+             "name": "color-interpolation",
+             "restriction": "enum",
+             "version": "3.0",
+-            "browsers": "none",
+-            "ref": "http://www.w3.org/TR/SVG2/painting.html#ColorInterpolationProperty"
++            "ref": "https://w3c.github.io/svgwg/svg2-draft/painting.html#ColorInterpolationProperty"
+           },
+-          "desc": "Specifies the color space for gradient interpolations, color animations and alpha compositing.",
++          "desc": "Specifies the color space for gradient interpolations and color animations.",
+           "values": {
+             "value": [
+               {
+diff --git a/web-data/data/browsers.css-data.json b/web-data/data/browsers.css-data.json
+index e248704..a77493d 100644
+--- a/web-data/data/browsers.css-data.json
++++ b/web-data/data/browsers.css-data.json
+@@ -5277,6 +5277,94 @@
+         "color"
+       ]
+     },
++    {
++      "name": "color-interpolation",
++      "browsers": [
++        "E79",
++        "FF3",
++        "FFA4",
++        "S4",
++        "SM3.2",
++        "C1",
++        "CA18",
++        "O15"
++      ],
++      "values": [
++        {
++          "name": "auto",
++          "browsers": [
++            "E79",
++            "FF3",
++            "FFA4",
++            "S4",
++            "SM3.2",
++            "C1",
++            "CA18",
++            "O15"
++          ],
++          "baseline": {
++            "status": "high",
++            "baseline_low_date": "2020-01-15",
++            "baseline_high_date": "2022-07-15"
++          },
++          "description": "Color operations are not required to occur in a particular color space."
++        },
++        {
++          "name": "linearRGB",
++          "browsers": [
++            "E79",
++            "FF3",
++            "FFA4",
++            "S4",
++            "SM3.2",
++            "C31",
++            "CA31",
++            "O18"
++          ],
++          "baseline": {
++            "status": "high",
++            "baseline_low_date": "2020-01-15",
++            "baseline_high_date": "2022-07-15"
++          },
++          "description": "Color operations should occur in the linearized RGB color space."
++        },
++        {
++          "name": "sRGB",
++          "browsers": [
++            "E79",
++            "FF3",
++            "FFA4",
++            "S4",
++            "SM3.2",
++            "C1",
++            "CA18",
++            "O15"
++          ],
++          "baseline": {
++            "status": "high",
++            "baseline_low_date": "2020-01-15",
++            "baseline_high_date": "2022-07-15"
++          },
++          "description": "Color operations should occur in the sRGB color space."
++        }
++      ],
++      "relevance": 50,
++      "references": [
++        {
++          "name": "MDN Reference",
++          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/color-interpolation"
++        }
++      ],
++      "baseline": {
++        "status": "high",
++        "baseline_low_date": "2020-01-15",
++        "baseline_high_date": "2022-07-15"
++      },
++      "description": "Specifies the color space for gradient interpolations and color animations.",
++      "restrictions": [
++        "enum"
++      ]
++    },
+     {
+       "name": "color-interpolation-filters",
+       "browsers": [

@@ -2,7 +2,7 @@
   "name": "color-interpolation",
   "source": "https://w3c.github.io/svgwg/svg2-draft/painting.html#ColorInterpolationProperty",
   "entry": {
-    "syntax": "auto | sRGB | linearRGB",
+    "syntax": "auto | sRGB | linearRGB | <color-interpolation-method>",
     "media": "visual",
     "inherited": true,
     "animationType": "discrete",
