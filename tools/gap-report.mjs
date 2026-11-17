@@ -33,11 +33,12 @@ function shippingIn(compat, preview = false) {
   return out;
 }
 
-// web-features: map BCD key -> baseline status
+// web-features: map BCD key -> that key's own baseline status (as tools/levels.mjs and the extension build do),
+// not the whole feature's, which a sibling key can hold back
 const baselineByKey = {};
-for (const [id, f] of Object.entries(wf.features)) {
+for (const f of Object.values(wf.features)) {
   if (f.kind !== 'feature') continue;
-  for (const key of f.compat_features || []) baselineByKey[key] = { feature: id, baseline: f.status?.baseline };
+  for (const [key, st] of Object.entries(f.status?.by_compat_key || {})) baselineByKey[key] = { baseline: st.baseline };
 }
 const baselineLabel = (b) => (b === 'high' ? 'Widely available' : b === 'low' ? 'Newly available' : 'Limited');
 

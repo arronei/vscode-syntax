@@ -106,7 +106,7 @@ const REPORTS = {
 };
 
 // Report terms: tooltips on the table cells and name tags, and the Definitions list under each report.
-// Keep in step with priority() in tools/gap-report.mjs and the levels in tools/levels.mjs.
+// Keep in step with priority() and baselineLabel() in tools/gap-report.mjs and the levels in tools/levels.mjs.
 const DEFS = {
   Priority: {
     P1: 'Ships in Chrome, Edge, Firefox and Safari.',
@@ -118,6 +118,14 @@ const DEFS = {
     standard: 'In a spec at Candidate Recommendation or later, or a WHATWG Living Standard.',
     draft: "In a spec that hasn't reached Candidate Recommendation: Working Draft, Editor's Draft or Community Group draft.",
     proprietary: 'Vendor-prefixed, non-standard, or in no spec.',
+  },
+  // Status of the whole web-features feature, so a sibling BCD key can make an item Limited.
+  Baseline: {
+    'Widely available': 'Baseline high in web-features: has worked across the major browsers for about 30 months.',
+    'Newly available': 'Baseline low in web-features: recently started working across the major browsers.',
+    'All 4 browsers': 'Not in web-features, but browser-compat-data shows it shipping in Chrome, Edge, Firefox and Safari.',
+    Limited: "Not Baseline in web-features: at least one major browser doesn't support the feature yet. It may ship in some of them, or none.",
+    '—': "Not in web-features, so it has no Baseline status. Doesn't ship in all four browsers; see Ships in for which, if any.",
   },
   'Name tags': {
     deprecated: 'Marked deprecated in browser-compat-data. Avoid in new code.',
@@ -176,7 +184,7 @@ const SORT_KEYS = {
   Priority: (e) => e.priority,
   Level: (e) => rank(Object.keys(DEFS.Level), e.level),
   'Ships in': (e) => (e.shipsIn?.length ? `${9 - e.shipsIn.length} ${e.shipsIn.join(', ')}` : undefined),
-  Baseline: (e) => rank(['Widely available', 'Newly available', 'All 4 browsers', 'Limited'], e.baseline),
+  Baseline: (e) => rank(Object.keys(DEFS.Baseline), e.baseline),
   Spec: (e) => e.spec && new URL(e.spec).hostname,
 };
 const sorter = (col, dir) => (a, b) => {
@@ -194,7 +202,7 @@ function renderReport(panel, { title, sections }, report) {
       <td class="${esc(e.priority)}"${tip('Priority', e.priority)}>${esc(e.priority)}</td>
       ${hasLevel ? `<td${tip('Level', e.level)}>${esc(e.level)}</td>` : ''}
       <td>${esc(e.shipsIn?.join(', ') || '—')}</td>
-      <td>${esc(e.baseline || '—')}</td>
+      <td${tip('Baseline', e.baseline || '—')}>${esc(e.baseline || '—')}</td>
       <td>${e.spec ? link(e.spec, new URL(e.spec).hostname) : '—'}</td>
     </tr>`;
   const table = (key) => `<div class="scroll"><table data-key="${key}"><thead><tr>${cols.map((c) => `<th${c === 'Ships in' ? ' aria-sort="ascending"' : ''}><button type="button" data-sort="${c}">${c}</button></th>`).join('')}</tr></thead><tbody>${[...report.gaps[key]].sort(sorter('Ships in', 1)).map(row).join('')}</tbody></table></div>`;
