@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-17T06:34:48.454Z",
+  "generatedAt": "2026-11-18T06:34:21.470Z",
   "sources": {
-    "mdn-data": "2.37.2",
+    "mdn-data": "2.38.0",
     "@mdn/browser-compat-data": "8.1.9",
     "@webref/css": "8.7.9",
     "@webref/elements": "2.9.2",
@@ -4337,7 +4337,7 @@
           "firefox",
           "safari"
         ],
-        "baseline": "Widely available",
+        "baseline": "Newly available",
         "spec": "https://html.spec.whatwg.org/multipage/scripting.html#attr-template-shadowrootclonable",
         "mdn": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/template#shadowrootclonable",
         "priority": "P1"
@@ -4367,7 +4367,7 @@
           "firefox",
           "safari"
         ],
-        "baseline": "Widely available",
+        "baseline": "Newly available",
         "spec": "https://html.spec.whatwg.org/multipage/scripting.html#attr-template-shadowrootdelegatesfocus",
         "mdn": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/template#shadowrootdelegatesfocus",
         "priority": "P1"
@@ -4410,7 +4410,7 @@
           "firefox",
           "safari"
         ],
-        "baseline": "Widely available",
+        "baseline": "Newly available",
         "spec": "https://html.spec.whatwg.org/multipage/scripting.html#attr-template-shadowrootserializable",
         "mdn": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/template#shadowrootserializable",
         "priority": "P1"
@@ -4484,7 +4484,7 @@
           "edge",
           "safari"
         ],
-        "baseline": "Widely available",
+        "baseline": "Limited",
         "spec": "https://html.spec.whatwg.org/multipage/media.html#attr-video-playsinline",
         "priority": "P2"
       }
