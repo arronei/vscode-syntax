@@ -1153,7 +1153,10 @@
           "browsers": [
             "S27.3",
             "SM27.3"
-          ]
+          ],
+          "baseline": {
+            "status": "false"
+          }
         }
       ],
       "restrictions": [
@@ -1165,6 +1168,9 @@
         "S27.3",
         "SM27.3"
       ],
+      "baseline": {
+        "status": "false"
+      },
       "references": [
         {
           "name": "Specification",
@@ -3232,25 +3238,37 @@
           "name": "none",
           "browsers": [
             "S27.3"
-          ]
+          ],
+          "baseline": {
+            "status": "false"
+          }
         },
         {
           "name": "discard-before",
           "browsers": [
             "S27.3"
-          ]
+          ],
+          "baseline": {
+            "status": "false"
+          }
         },
         {
           "name": "discard-after",
           "browsers": [
             "S27.3"
-          ]
+          ],
+          "baseline": {
+            "status": "false"
+          }
         },
         {
           "name": "discard-inner",
           "browsers": [
             "S27.3"
-          ]
+          ],
+          "baseline": {
+            "status": "false"
+          }
         }
       ],
       "restrictions": [
@@ -3260,6 +3278,9 @@
       "browsers": [
         "S27.3"
       ],
+      "baseline": {
+        "status": "false"
+      },
       "references": [
         {
           "name": "Specification",
@@ -3331,13 +3352,19 @@
           "name": "auto",
           "browsers": [
             "S27.3"
-          ]
+          ],
+          "baseline": {
+            "status": "false"
+          }
         },
         {
           "name": "avoid",
           "browsers": [
             "S27.3"
-          ]
+          ],
+          "baseline": {
+            "status": "false"
+          }
         }
       ],
       "restrictions": [
@@ -3347,6 +3374,9 @@
       "browsers": [
         "S27.3"
       ],
+      "baseline": {
+        "status": "false"
+      },
       "references": [
         {
           "name": "Specification",
@@ -3824,6 +3854,9 @@
       "browsers": [
         "S27.2"
       ],
+      "baseline": {
+        "status": "false"
+      },
       "references": [
         {
           "name": "Specification",

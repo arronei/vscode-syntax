@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-19T06:35:06.809Z",
+  "generatedAt": "2026-11-20T06:34:17.301Z",
   "sources": {
     "mdn-data": "2.38.0",
-    "@mdn/browser-compat-data": "8.1.9",
+    "@mdn/browser-compat-data": "8.1.10",
     "@webref/css": "8.7.9",
     "@webref/elements": "2.9.2",
-    "web-features": "3.46.0"
+    "web-features": "3.47.0"
   },
   "shipped": {
     "cssProperties": 888,
@@ -17,14 +17,14 @@
   },
   "summary": {
     "cssProperties": {
-      "total": 276,
+      "total": 275,
       "P1": 1,
       "P2": 57,
-      "P3": 218,
+      "P3": 217,
       "baseline": 1,
       "standard": 20,
       "draft": 199,
-      "proprietary": 56
+      "proprietary": 55
     },
     "atRules": {
       "total": 36,
@@ -1083,6 +1083,7 @@
         "shipsIn": [
           "safari"
         ],
+        "baseline": "Limited",
         "spec": "https://drafts.csswg.org/css-text-4/#propdef-hyphenate-limit-lines",
         "inSpec": true,
         "priority": "P2"
@@ -2204,6 +2205,7 @@
         "shipsIn": [
           "safari"
         ],
+        "baseline": "Limited",
         "spec": "https://drafts.csswg.org/css-text-4/#propdef-white-space-trim",
         "inSpec": true,
         "priority": "P2"
@@ -2260,6 +2262,7 @@
         "shipsIn": [
           "safari"
         ],
+        "baseline": "Limited",
         "spec": "https://drafts.csswg.org/css-text-4/#propdef-wrap-inside",
         "inSpec": true,
         "priority": "P2"
@@ -2495,17 +2498,6 @@
         "level": "proprietary",
         "nonStandard": true,
         "bcdKey": "css.properties.-webkit-hyphenate-limit-before",
-        "shipsIn": [
-          "safari"
-        ],
-        "inSpec": false,
-        "priority": "P3"
-      },
-      {
-        "name": "-webkit-hyphenate-limit-lines",
-        "level": "proprietary",
-        "nonStandard": true,
-        "bcdKey": "css.properties.-webkit-hyphenate-limit-lines",
         "shipsIn": [
           "safari"
         ],
@@ -2832,6 +2824,7 @@
       {
         "name": "@apply",
         "level": "draft",
+        "bcdKey": "css.at-rules.apply",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-mixins-1/#at-ruledef-apply",
         "priority": "P3"
@@ -2888,6 +2881,7 @@
       {
         "name": "@contents",
         "level": "draft",
+        "bcdKey": "css.at-rules.contents",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-mixins-1/#at-ruledef-contents",
         "priority": "P3"
@@ -2968,6 +2962,7 @@
       {
         "name": "@mixin",
         "level": "draft",
+        "bcdKey": "css.at-rules.mixin",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-mixins-1/#at-ruledef-mixin",
         "priority": "P3"
@@ -2989,6 +2984,7 @@
       {
         "name": "@private",
         "level": "draft",
+        "bcdKey": "css.at-rules.private",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-mixins-1/#private",
         "priority": "P3"
@@ -3114,6 +3110,7 @@
         "shipsIn": [
           "safari"
         ],
+        "baseline": "Limited",
         "spec": "https://drafts.csswg.org/css-forms-1/#selectordef-field-content",
         "priority": "P2"
       },
