@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-20T06:34:17.301Z",
+  "generatedAt": "2026-11-21T06:32:07.843Z",
   "sources": {
-    "mdn-data": "2.38.0",
+    "mdn-data": "2.38.1",
     "@mdn/browser-compat-data": "8.1.10",
-    "@webref/css": "8.7.9",
+    "@webref/css": "8.7.10",
     "@webref/elements": "2.9.2",
     "web-features": "3.47.0"
   },
@@ -17,13 +17,13 @@
   },
   "summary": {
     "cssProperties": {
-      "total": 275,
+      "total": 276,
       "P1": 1,
       "P2": 57,
-      "P3": 217,
+      "P3": 218,
       "baseline": 1,
       "standard": 20,
-      "draft": 199,
+      "draft": 200,
       "proprietary": 55
     },
     "atRules": {
@@ -1944,6 +1944,14 @@
         "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-text-4/#propdef-text-align-all",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "text-autospace-size",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-text-4/#propdef-text-autospace-size",
         "inSpec": true,
         "priority": "P3"
       },

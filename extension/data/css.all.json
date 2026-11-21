@@ -974,7 +974,7 @@
       ],
       "description": {
         "kind": "markdown",
-        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nInitial value: `normal`. Applies to: grid containers and multicol containers. Inherited: no. Animation type: discrete."
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nInitial value: `normal`. Applies to: grid containers, multicol containers, and grid lanes containers. Inherited: no. Animation type: discrete."
       }
     },
     {
@@ -1968,7 +1968,7 @@
       ],
       "description": {
         "kind": "markdown",
-        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nInitial value: `normal`. Applies to: grid containers and multicol containers. Inherited: no. Animation type: discrete."
+        "value": "Defined in *CSS Gap Decorations Module Level 1*.\n\nInitial value: `normal`. Applies to: grid containers, multicol containers, and grid lanes containers. Inherited: no. Animation type: discrete."
       }
     },
     {

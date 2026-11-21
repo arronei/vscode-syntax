@@ -1,10 +1,10 @@
 {
   "title": "CSS features in the specs that ship in browsers but are missing from VS Code",
-  "generatedFrom": "latest.json (2026-11-20), kept P1+P2+preview",
+  "generatedFrom": "latest.json (2026-11-21), kept P1+P2+preview",
   "sources": {
-    "mdn-data": "2.38.0",
+    "mdn-data": "2.38.1",
     "@mdn/browser-compat-data": "8.1.10",
-    "@webref/css": "8.7.9",
+    "@webref/css": "8.7.10",
     "@webref/elements": "2.9.2",
     "web-features": "3.47.0"
   },
