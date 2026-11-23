@@ -9,7 +9,7 @@ npm run update
 npm run gap-report      # or `npm run all`, which also builds the extension and runs the live check
 ```
 
-That runs `node tools/gap-report.mjs node_modules reports/latest.json`. It fetches VS Code stable's data on each run (`tools/vscode-data.mjs`), so it needs the network. The other sources are the `node_modules` from the last `npm run update`.
+That runs `node tools/gap-report.mjs node_modules reports/latest.json`. It looks up VS Code stable's data on each run (`tools/vscode-data.mjs`), so it needs the network: the language-service versions in VS Code's lockfile, and those releases' tarballs from the npm registry, which must match the lockfile's sha512. The report records what it compared against in `vscode`, and `refresh-additions` and `build-extension` stop if VS Code stable has moved on since. The other sources are the `node_modules` from the last `npm run update`.
 
 It then saves a dated copy, such as `reports/gap-report-2026-10-13.json`, and lists the P1/P2 items that are new or gone since the previous dated report.
 

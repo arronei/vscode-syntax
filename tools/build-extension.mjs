@@ -95,6 +95,11 @@ function loadAdditions(kind) {
   if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir).filter((f) => f.endsWith('.json')).sort().map((f) => ({ file: `additions/${kind}/${f}`, ...readJSON(path.join(dir, f)) }));
 }
+// Files generated from a gap report (generatedFrom) list what the report found missing from VS Code. If the report was
+// made against other VS Code data, this build would drop or keep the wrong items, so stop instead.
+for (const a of [...loadAdditions('css'), ...loadAdditions('html')]) {
+  if (a.generatedFrom) vscodeData.assertBaseline(a.vscode, a.file, '"npm run gap-report" and "npm run refresh-additions"');
+}
 const included = { css: [], html: [] };
 const pruned = [];
 

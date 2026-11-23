@@ -4,7 +4,7 @@
 import fs from 'fs';
 import path from 'path';
 import { levelFinder } from './levels.mjs';
-import { builtinCss, builtinHtml } from './vscode-data.mjs';
+import { builtinCss, builtinHtml, baseline } from './vscode-data.mjs';
 
 const [mods, outFile] = process.argv.slice(2);
 const load = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -172,6 +172,7 @@ const count = (arr) => Object.fromEntries([['total', arr.length], ...['P1', 'P2'
 const report = {
   generatedAt: new Date().toISOString(),
   sources: Object.fromEntries(['mdn-data', '@mdn/browser-compat-data', '@webref/css', '@webref/elements', 'web-features'].map((p) => [p, load(path.join(mods, p, 'package.json')).version])),
+  vscode: baseline, // the VS Code data compared against; the steps after this one check it (assertBaseline)
   shipped: { cssProperties: css.properties.length, atRules: css.atDirectives.length, pseudoClasses: css.pseudoClasses.length, pseudoElements: css.pseudoElements.length, htmlTags: html.tags.length, globalAttributes: html.globalAttributes.length },
   summary: { cssProperties: count(cssPropGaps), atRules: count(atGaps), selectors: count(selGaps), htmlElements: count(tagGaps), htmlAttributes: count(attrGaps), globalAttributes: count(globalGaps), emptyCssDescriptions: emptyDesc.length },
   gaps: { cssProperties: cssPropGaps, atRules: atGaps, selectors: selGaps, htmlElements: tagGaps, htmlAttributes: attrGaps, globalAttributes: globalGaps },

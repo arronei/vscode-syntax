@@ -8,7 +8,7 @@
 npm run build-extension
 ```
 
-Reads `additions/`, fills in syntax and values from `@webref/css` (falling back to `mdn-data`), spec titles from browser-specs, browser versions from BCD and Baseline from web-features. Tags every item with a [data level](#data-levels). It drops anything VS Code's built-in data already has (the data in the vscode-css-languageservice and vscode-html-languageservice releases VS Code stable installs, `tools/vscode-data.mjs`), then writes:
+Reads `additions/`, fills in syntax and values from `@webref/css` (falling back to `mdn-data`), spec titles from browser-specs, browser versions from BCD and Baseline from web-features. Tags every item with a [data level](#data-levels). It drops anything VS Code's built-in data already has (the data in the vscode-css-languageservice and vscode-html-languageservice releases VS Code stable installs, `tools/vscode-data.mjs`), then writes the files below. It stops instead if a generated additions file was made against other VS Code data: rerun `npm run gap-report` and `npm run refresh-additions`.
 
 | File | Used by |
 |---|---|

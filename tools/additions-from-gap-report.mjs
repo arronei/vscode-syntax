@@ -21,6 +21,8 @@ if (!reportFile || !outFile) {
 }
 const picks = new Set(pickArg.split(','));
 const report = JSON.parse(fs.readFileSync(reportFile, 'utf8'));
+// a report made against other VS Code data would add or drop the wrong items
+vscodeData.assertBaseline(report.vscode, reportFile, 'npm run gap-report');
 const keep = (list) => (list || []).filter((e) => picks.has(e.priority) || picks.has(e.level) || (picks.has('preview') && e.previewIn));
 
 const cssDir = path.dirname(path.resolve(outFile));
@@ -40,6 +42,7 @@ const out = {
   title: previous.title || 'CSS features in the specs that ship in browsers but are missing from VS Code',
   generatedFrom: `${path.basename(reportFile)} (${report.generatedAt?.slice(0, 10) ?? 'unknown date'}), kept ${[...picks].join('+')}`,
   sources: report.sources,
+  vscode: report.vscode,
   properties: merge('properties', keep(report.gaps.cssProperties).map((e) => e.name)),
   atRules: merge('atRules', keep(report.gaps.atRules).map((e) => e.name)),
   selectors: merge('selectors', keep(report.gaps.selectors).map((e) => e.name)),
@@ -71,7 +74,7 @@ const prevEntry = new Map(['elements', 'attributes', 'globalAttributes'].flatMap
 const builtinHtml = vscodeData.builtinHtml();
 const { describe, newValueSets } = htmlDescriber({ knownSets: [...otherHtmlSets, ...builtinHtml.valueSets] });
 
-const htmlFile = { title: prevHtml.title || 'HTML features in the specs that ship in browsers but are missing from VS Code', generatedFrom: out.generatedFrom };
+const htmlFile = { title: prevHtml.title || 'HTML features in the specs that ship in browsers but are missing from VS Code', generatedFrom: out.generatedFrom, vscode: report.vscode };
 const skipped = [];
 for (const [kind, list] of [['elements', report.gaps.htmlElements], ['attributes', report.gaps.htmlAttributes], ['globalAttributes', report.gaps.globalAttributes]]) {
   htmlFile[kind] = [];
