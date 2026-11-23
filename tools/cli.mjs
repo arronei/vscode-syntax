@@ -21,13 +21,13 @@ function sh(cmd, cwd = root) {
   try { execSync(cmd, { cwd, stdio: 'inherit' }); } catch (e) { console.error(`\nfailed: ${cmd}`); process.exit(e.status || 1); }
 }
 
-// ponytail: fork owner hard-coded, this is a personal repo. Make it an argument if someone else sets it up.
+// TODO: arronei: fork owner hard-coded, this is a personal repo. Make it an argument if someone else sets it up.
 const SIBLINGS = [
   { dir: 'vscode-custom-data', fork: 'arronei/vscode-custom-data', upstream: 'microsoft/vscode-custom-data', npm: 'web-data' },
   { dir: 'mdn-data', fork: 'arronei/mdn-data', upstream: 'mdn/data', npm: '.' },
   { dir: 'vscode-css-languageservice', fork: 'arronei/vscode-css-languageservice', upstream: 'microsoft/vscode-css-languageservice', npm: '.', compile: true },
   { dir: 'vscode-html-languageservice', fork: 'arronei/vscode-html-languageservice', upstream: 'microsoft/vscode-html-languageservice', npm: '.', compile: true },
-  // ponytail: no npm install, nothing here runs mdn/content's tooling. Partial clone, the full history is GBs.
+  // TODO: arronei: no npm install, nothing here runs mdn/content's tooling. Partial clone, the full history is GBs.
   { dir: 'mdn-content', fork: 'arronei/mdn-content', upstream: 'mdn/content', clone: '--filter=blob:none' },
 ];
 const DATA = ['@mdn/browser-compat-data', '@webref/css', '@webref/elements', 'browser-specs', 'mdn-data', 'web-features'];

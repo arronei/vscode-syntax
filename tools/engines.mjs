@@ -31,7 +31,7 @@ const min = (...s) => s.reduce((a, b) => (RANK[a] <= RANK[b] ? a : b));
 const max = (...s) => s.filter(Boolean).reduce((a, b) => (RANK[a] >= RANK[b] ? a : b), undefined);
 const listed = (names) => Object.fromEntries(names.map((n) => [n, { state: 'listed' }]));
 
-// ponytail: only the JSON5 Chromium writes (comments, bare keys, trailing commas); the json5 package if that changes
+// TODO: arronei: only the JSON5 Chromium writes (comments, bare keys, trailing commas); the json5 package if that changes
 const STR = '"(?:[^"\\\\]|\\\\.)*"';
 const json5 = (s) => JSON.parse(s
   .replace(new RegExp(`${STR}|//.*|/\\*[\\s\\S]*?\\*/`, 'g'), (m) => (m[0] === '"' ? m : ''))
@@ -67,7 +67,7 @@ async function webkit() {
   const yaml = await get(RAW.webkit + 'WTF/Scripts/Preferences/UnifiedWebPreferences.yaml');
   for (const [, name, body] of yaml.matchAll(/^(\w+):\n((?:[ \t].*\n|\n)*)/gm)) prefs[name.toLowerCase()] = /^ {2}status: (\w+)/m.exec(body)?.[1];
   // settings are lowerCamel (cssFooEnabled), preferences UpperCamel (CSSFooEnabled).
-  // ponytail: a Foo_feature_status macro is Stable on the ports that build the feature (WebKit/Shared/WebPreferencesDefaultValues.h),
+  // TODO: arronei: a Foo_feature_status macro is Stable on the ports that build the feature (WebKit/Shared/WebPreferencesDefaultValues.h),
   // so it counts as on; evaluate those #ifs if a port-specific feature ever shows up wrongly here
   const setting = (name) => {
     const status = prefs[name.toLowerCase()];
@@ -104,7 +104,7 @@ async function gecko() {
     : /^@IS_(NIGHTLY_BUILD|EARLY_BETA_OR_EARLIER|NOT_RELEASE_OR_BETA)@$/.test(prefs[pref]) ? 'preview' : 'flag');
   const css = {};
   for (const file of ['longhands', 'shorthands']) {
-    // ponytail: line-based TOML, just the [property] headers and the one-line keys read here
+    // TODO: arronei: line-based TOML, just the [property] headers and the one-line keys read here
     const parts = (await get(`${RAW.gecko}servo/components/style/properties/${file}.toml`)).split(/^\[(.+)\]\r?\n/m);
     for (let i = 1; i < parts.length; i += 2) {
       const [name, body] = [parts[i], parts[i + 1]];

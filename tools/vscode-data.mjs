@@ -3,7 +3,7 @@
 // Not vscode-custom-data main or the @vscode/web-custom-data npm package: both run ahead of VS Code. On 2026-11-12
 // custom data 0.6.4 added text-fit and 27 more names the language services didn't have yet, the gap report counted
 // them as shipped, and extension 0.6.1 dropped them while VS Code still flagged them as unknown properties.
-// ponytail: language-service main can still be a release ahead of VS Code stable. If that gap bites, read the
+// TODO: arronei: language-service main can still be a release ahead of VS Code stable. If that gap bites, read the
 // version vscode's extensions/{css,html}-language-features/server/package.json pins instead.
 import path from 'path';
 import { execFileSync } from 'child_process';

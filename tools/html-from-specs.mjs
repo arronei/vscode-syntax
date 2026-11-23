@@ -40,7 +40,7 @@ const firstSentences = (s, max = 320) => {
   const end = cut.lastIndexOf('. ');
   return end > 80 ? cut.slice(0, end + 1) : cut.replace(/\s+\S*$/, '') + '…';
 };
-// ponytail: regex over spec HTML, not a parser. Ceiling: a block ends at the next block tag, which is right for the
+// TODO: arronei: regex over spec HTML, not a parser. Ceiling: a block ends at the next block tag, which is right for the
 // p/dd/li paragraphs specs use. Add parse5 if a spec's markup defeats it.
 const BOUNDARY = /<\/?(?:p|dd|dt|li|div|dl|ul|ol|table|pre|h[1-6]|section|blockquote)\b/gi;
 const blockText = (html, at) => {

@@ -52,7 +52,7 @@ function activate(context) {
           .then((pick) => pick && vscode.commands.executeCommand('workbench.action.reloadWindow'));
       }
     } catch (e) {
-      // ponytail: writes into the extension folder, which works for local installs. Remote/web would need the
+      // Writes into the extension folder, which works for local installs. Remote/web would need the
       // language servers to read data from globalStorage instead.
       vscode.window.showWarningMessage(`Web Spec Additions couldn't switch data level: ${e.message}`);
     }

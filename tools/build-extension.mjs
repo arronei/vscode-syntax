@@ -326,7 +326,7 @@ for (const [target, data] of Object.entries(bcd.css.properties)) {
     }
   }
 }
-// ponytail: BCD says Chrome still accepts these, but Blink's source has no such alias (npm run engines). Drop once
+// TODO: arronei: BCD says Chrome still accepts these, but Blink's source has no such alias (npm run engines). Drop once
 // BCD records their version_removed.
 const deadLegacyNames = new Set(['motion-distance', 'offset-rotation']);
 for (const [name, { target, support }] of Object.entries(legacyNames)) {
@@ -440,7 +440,7 @@ write('css-hover.json', cssHover);
 // Injection grammars: VS Code's CSS grammar colors only the names on its own lists, so newer properties
 // (contain-intrinsic-size) come out plain and newer pseudo-classes (:popover-open) as custom-element tags. These mark
 // every name VS Code's data or ours has. Vendor-prefixed names are left out: the grammar colors those by pattern.
-// ponytail: one static list for all levels, so the level settings don't change colors.
+// TODO: arronei: one static list for all levels, so the level settings don't change colors.
 const alternation = (names) => {
   const list = [...new Set(names)].filter((n) => !n.startsWith('-')).sort();
   const odd = list.find((n) => !/^[a-z][a-z0-9-]*$/.test(n));
@@ -456,7 +456,7 @@ write('css-properties.tmLanguage.json', {
   patterns: [{ match: `(?i)(?<![\\w-])(?:${alternation([...builtinCss.properties, ...cssProperties].map((p) => p.name))})(?![\\w-])(?=\\s*:(?![^;{}]*\\{))`, name: 'meta.property-name.css support.type.property-name.css' }],
 });
 // Pseudo-classes and pseudo-elements. No L:, so the grammar's own rules win where they match (:has() and
-// :nth-child() keep their argument coloring) and this only fills the gaps. ponytail: arguments of functional ones
+// :nth-child() keep their argument coloring) and this only fills the gaps. TODO: arronei: arguments of functional ones
 // the grammar doesn't know, like ::scroll-button(up), stay plain; add begin/end rules if that matters.
 const pseudoRule = (colons, names, kind) => ({ match: `(?i)(?<!:)(${colons})(?:${alternation(pseudoNames(names))})(?![\\w-])`, captures: { 1: { name: 'punctuation.definition.entity.css' } }, name: `entity.other.attribute-name.pseudo-${kind}.css` });
 write('css-selectors.tmLanguage.json', {
@@ -468,7 +468,7 @@ write('css-selectors.tmLanguage.json', {
 // early, so a following !important comes out as a property name. A begin/end rule keeps the parentheses balanced.
 // L: so a function named like a keyword (round(), scroll()) isn't taken as the keyword; names the grammar has
 // rules for are left out, so calc() and the gradients keep their own coloring.
-// ponytail: copied from VS Code 1.144's extensions/css/syntaxes/css.tmLanguage.json. A name it adds later just gets
+// TODO: arronei: copied from VS Code 1.144's extensions/css/syntaxes/css.tmLanguage.json. A name it adds later just gets
 // our plainer coloring until it's added here.
 const builtinFunction = /^(calc|rgba?|hsla?|hwb|lab|oklab|lch|oklch|color|(repeating-)?(linear|radial|conic)-gradient|annotation|attr|blur|brightness|character-variant|clamp|contrast|counters?|cross-fade|drop-shadow|element|fit-content|format|grayscale|hue-rotate|color-mix|image-set|invert|local|max|min|minmax|opacity|ornaments|repeat|saturate|sepia|styleset|stylistic|swash|symbols|cos|sin|tan|acos|asin|atan|atan2|hypot|sqrt|pow|log|exp|abs|sign|if|style|circle|ellipse|inset|polygon|rect|cubic-bezier|steps|(translate|scale|rotate)([xyz]|3d)?|matrix(3d)?|skew[xy]?|perspective|url|var)$/i;
 const fn = (name) => `source.css#${name}`;
