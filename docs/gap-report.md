@@ -1,6 +1,6 @@
 # Gap report: find what VS Code is missing
 
-Compares VS Code's data, what vscode-css-languageservice and vscode-html-languageservice bundle on their `upstream/main` (`tools/vscode-data.mjs`), with browser-compat-data, `@webref/css`, `@webref/elements` and web-features. Lists the CSS properties, at-rules, selectors, HTML elements, attributes and global attributes VS Code doesn't have, plus built-in CSS properties with an empty description.
+Compares VS Code's data, the data in the vscode-css-languageservice and vscode-html-languageservice releases VS Code stable installs (`tools/vscode-data.mjs`), with browser-compat-data, `@webref/css`, `@webref/elements` and web-features. Lists the CSS properties, at-rules, selectors, HTML elements, attributes and global attributes VS Code doesn't have, plus built-in CSS properties with an empty description.
 
 ## Run
 
@@ -9,7 +9,7 @@ npm run update
 npm run gap-report      # or `npm run all`, which also builds the extension and runs the live check
 ```
 
-That runs `node tools/gap-report.mjs node_modules reports/latest.json`. It reads the language services' `upstream/main` as of the last `npm run update`, whatever branch is checked out.
+That runs `node tools/gap-report.mjs node_modules reports/latest.json`. It fetches VS Code stable's data on each run (`tools/vscode-data.mjs`), so it needs the network. The other sources are the `node_modules` from the last `npm run update`.
 
 It then saves a dated copy, such as `reports/gap-report-2026-10-13.json`, and lists the P1/P2 items that are new or gone since the previous dated report.
 

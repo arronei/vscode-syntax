@@ -1,6 +1,6 @@
 // Compare VS Code's shipped HTML/CSS custom data against current web data sources.
 // Usage: node gap-report.mjs <node_modules dir with latest sources> [out.json]
-// VS Code's data is what the language services bundle on upstream/main (tools/vscode-data.mjs).
+// VS Code's data is what the language services bundle in the releases VS Code stable installs (tools/vscode-data.mjs).
 import fs from 'fs';
 import path from 'path';
 import { levelFinder } from './levels.mjs';

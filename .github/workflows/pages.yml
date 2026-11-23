@@ -1,6 +1,6 @@
 # Builds the site (npm run build-site: site/index.html, the latest gap report, the packaged extension)
 # and publishes it to GitHub Pages. The daily run keeps the README status badges current. It first reruns the
-# gap report on the latest data sources and the language services' upstream data, and rebuilds the extension: the report
+# gap report on the latest data sources and the data VS Code stable ships, and rebuilds the extension: the report
 # is committed to main every day, and if the extension's data changed it also bumps the build number
 # (x.y.BUILD). Major and minor are bumped by hand in extension/package.json; set build to 0 then.
 # Any run whose extension version has no GitHub Release yet publishes the .vsix to the VS Code Marketplace,
@@ -39,7 +39,6 @@ jobs:
         if: github.event_name != 'push'
         run: |
           node tools/cli.mjs update
-          for r in vscode-css-languageservice vscode-html-languageservice; do git clone -q --depth 1 --origin upstream https://github.com/microsoft/$r.git ../$r; done
           git show HEAD:reports/latest.json > "$RUNNER_TEMP/prev.json"
           node tools/gap-report.mjs node_modules reports/latest.json
           # generatedAt moves on every run, so keep a dated copy only when the findings changed

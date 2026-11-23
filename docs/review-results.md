@@ -43,4 +43,4 @@ Columns: check, result without the extension, result with it.
 
 ## Why the report and the extension overlap
 
-The gap report and the extension build both compare against what vscode-css-languageservice and vscode-html-languageservice bundle on their `upstream/main` (`tools/vscode-data.mjs`). So everything in the extension also shows up in the gap report, until VS Code's own data has it.
+The gap report and the extension build both compare against the data in the vscode-css-languageservice and vscode-html-languageservice releases VS Code stable installs (`tools/vscode-data.mjs`). So everything in the extension also shows up in the gap report, until VS Code's own data has it.
