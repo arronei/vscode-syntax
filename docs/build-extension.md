@@ -17,6 +17,7 @@ Reads `additions/`, fills in syntax and values from `@webref/css` (falling back 
 | `extension/data/html.html-data.json` | `contributes.html.customData`. Same. |
 | `extension/data/css-hover.json` | the hover provider in `extension/extension.js` |
 | `extension/data/css-properties.tmLanguage.json`, `css-selectors.tmLanguage.json`, `css-functions.tmLanguage.json` | `contributes.grammars`: color the CSS property names, pseudo-classes, pseudo-elements and value functions VS Code's grammar doesn't know |
+| `extension/package.json` (`engines.vscode` only) | the Marketplace: the oldest VS Code this data is right for ([below](#when-vs-code-catches-up)) |
 | `extension/CONTENTS.md` | you ([how to read it](review-results.md#read-extensioncontentsmd)) |
 
 It prints counts per level and anything dropped.
@@ -102,8 +103,11 @@ or run **Extensions: Install from VSIX…**, then reload the window. Remove any 
 ## When VS Code catches up
 
 ```powershell
-npm run update                 # fetches the language services' upstream/main
+npm run gap-report             # looks up what VS Code stable installs on every run
+npm run refresh-additions
 npm run build-extension
 ```
 
-Items VS Code now has move to **Dropped because VS Code now has them** in `CONTENTS.md`. Then bump the version, package and reinstall.
+Items VS Code now has move to **Dropped because VS Code now has them** in `CONTENTS.md`. Then bump the version, package and reinstall. The daily workflow does all of this on its own.
+
+Dropping items is only right for a VS Code that has them, so the build also sets `engines.vscode`. The minimum stays while every VS Code release from it through stable installs the same language-service versions. When they differ, it rises to the current stable, and the Marketplace gives an older VS Code the last release built for its own data. A new VS Code release that keeps the same language services raises nothing.

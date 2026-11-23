@@ -25,6 +25,7 @@
   { "label": "CSS: light-dark() colored as a function", "file": "test.css", "find": "light-dark", "op": "scope", "scope": "support.function.misc.css" },
   { "label": "CSS: !important after light-dark() stays a keyword", "file": "test.css", "find": "!important", "op": "scope", "scope": "keyword.other.important.css" },
   { "label": "HTML: <style> contain-intrinsic-size colored as a property", "file": "test.html", "find": "contain-intrinsic-size", "op": "scope", "scope": "support.type.property-name.css" },
+  { "label": "CSS: every property is known (built-in + extension)", "file": "all-properties.css", "op": "diagnostics", "absent": "Unknown property" },
   { "label": "Setting: HTML level baseline → Baseline items only", "op": "level", "setting": "webSpecAdditions.html.level", "value": "baseline", "data": "html.html-data.json", "levels": ["baseline"] },
   { "label": "Setting: CSS level off → no items", "op": "level", "setting": "webSpecAdditions.css.level", "value": "off", "data": "css.css-data.json", "levels": [] }
 ]

@@ -11,21 +11,29 @@
 import crypto from 'crypto';
 import zlib from 'zlib';
 
+// Three tries, so one dropped connection doesn't fail the daily run. A 404 is an answer, not a hiccup: no retry.
 const get = async (url) => {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`${url}: HTTP ${res.status}`);
-  return Buffer.from(await res.arrayBuffer());
+  for (let i = 1; ; i++) {
+    const res = await fetch(url).catch((e) => (i < 3 ? undefined : Promise.reject(e)));
+    if (res?.ok) return Buffer.from(await res.arrayBuffer());
+    if (res && (res.status === 404 || i === 3)) throw Object.assign(new Error(`${url}: HTTP ${res.status}`), { status: res.status });
+    await new Promise((r) => setTimeout(r, 2000 * i));
+  }
 };
-const stable = JSON.parse(await get('https://update.code.visualstudio.com/api/releases/stable'))[0];
-const lock = (await get(`https://raw.githubusercontent.com/microsoft/vscode/${stable}/pnpm-lock.yaml`)).toString();
+const releases = JSON.parse(await get('https://update.code.visualstudio.com/api/releases/stable')); // newest first
+const stable = releases[0];
+const lockAt = async (version) => (await get(`https://raw.githubusercontent.com/microsoft/vscode/${version}/pnpm-lock.yaml`)).toString();
+const lock = await lockAt(stable);
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const fail = (msg) => { throw new Error(`VS Code ${stable}'s pnpm-lock.yaml: ${msg}`); };
 
 // the version pnpm resolved for one dependency of one of VS Code's packages (its `importers:` entry)
-const pinned = (importer, pkg) => {
+const pinned = (lock, importer, pkg) => {
   const entry = lock.slice(lock.indexOf(`\n  ${importer}:\n`)).match(/^\n.*\n(?:(?: {4}.*)?\n)*/)?.[0] ?? '';
-  return entry.match(new RegExp(`\\n {6}${esc(pkg)}:\\n {8}specifier: .*\\n {8}version: ([^\\s(]+)`))?.[1] ?? fail(`no ${pkg} under ${importer}`);
+  return entry.match(new RegExp(`\\n {6}${esc(pkg)}:\\n {8}specifier: .*\\n {8}version: ([^\\s(]+)`))?.[1];
 };
+const SERVICES = { 'vscode-css-languageservice': 'extensions/css-language-features/server', 'vscode-html-languageservice': 'extensions/html-language-features/server' };
+const servicesIn = (lock) => Object.fromEntries(Object.entries(SERVICES).map(([pkg, importer]) => [pkg, pinned(lock, importer, pkg)]));
 
 // one file of the npm release, from the registry tarball the lockfile's integrity hash vouches for
 const fromRelease = async (pkg, version, file) => {
@@ -46,11 +54,8 @@ const fromRelease = async (pkg, version, file) => {
 // the generated file: `export const cssData = { ...JSON... };`
 const data = (js) => js.slice(js.indexOf(' = {') + 3, js.lastIndexOf('}') + 1);
 
-export const baseline = {
-  version: stable,
-  'vscode-css-languageservice': pinned('extensions/css-language-features/server', 'vscode-css-languageservice'),
-  'vscode-html-languageservice': pinned('extensions/html-language-features/server', 'vscode-html-languageservice'),
-};
+export const baseline = { version: stable, ...servicesIn(lock) };
+for (const pkg of Object.keys(SERVICES)) if (!baseline[pkg]) fail(`no ${pkg} under ${SERVICES[pkg]}`);
 const [css, html] = (await Promise.all([
   fromRelease('vscode-css-languageservice', baseline['vscode-css-languageservice'], 'lib/esm/data/webCustomData.js'),
   fromRelease('vscode-html-languageservice', baseline['vscode-html-languageservice'], 'lib/esm/languageFacts/data/webCustomData.js'),
@@ -65,9 +70,23 @@ export const builtinVersion = () =>
 // releases VS Code stable installs now, so no step builds on another step's older or newer idea of VS Code's data.
 // The VS Code version may differ: a release that keeps the same language services has the same data.
 export function assertBaseline(recorded, file, rerun) {
-  for (const pkg of ['vscode-css-languageservice', 'vscode-html-languageservice']) {
+  for (const pkg of Object.keys(SERVICES)) {
     if (recorded?.[pkg] !== baseline[pkg]) {
       throw new Error(`${file} was made against ${pkg} ${recorded?.[pkg] ?? '(not recorded)'}, but VS Code ${stable} installs ${baseline[pkg]}. Run ${rerun} first.`);
     }
   }
+}
+
+// The oldest VS Code an extension built on this data is right for, for its engines.vscode. `floor` is the minimum the
+// extension claims now. It stays while every VS Code release from it through stable installs the same language
+// services as stable (the same data), so a new VS Code release alone doesn't lock anyone out. Otherwise it rises to
+// stable, and an older VS Code installs the last extension release built for its data. A release whose lockfile can't
+// say (404, or releases before 1.147, which kept the language features out of the pnpm workspace) counts as different.
+export async function enginesFloor(floor) {
+  const span = releases.slice(0, releases.indexOf(floor) + 1); // stable down to floor; empty if floor isn't a release
+  for (const version of span) {
+    const at = version === stable ? baseline : await lockAt(version).then(servicesIn, (e) => (e.status === 404 ? {} : Promise.reject(e)));
+    if (Object.keys(SERVICES).some((pkg) => at[pkg] !== baseline[pkg])) return stable;
+  }
+  return span.length ? floor : stable;
 }

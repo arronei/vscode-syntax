@@ -2,7 +2,8 @@
 # and publishes it to GitHub Pages. The daily run keeps the README status badges current. It first reruns the
 # gap report on the latest data sources and the data VS Code stable ships, and rebuilds the extension: the report
 # is committed to main every day, and if the extension's data changed it also bumps the build number
-# (x.y.BUILD). Major and minor are bumped by hand in extension/package.json; set build to 0 then.
+# (x.y.BUILD). Major and minor are bumped by hand in extension/package.json; set build to 0 then. Every run checks the
+# extension in real VS Code stable (npm run check-vscode) before committing or releasing anything.
 # Any run whose extension version has no GitHub Release yet publishes the .vsix to the VS Code Marketplace,
 # then creates the release (tag vX.Y.Z) with the .vsix attached.
 # One-time setup: Settings → Pages → Source: GitHub Actions, and a VSCE_PAT repo secret (Marketplace → Manage).
@@ -46,6 +47,16 @@ jobs:
           # newly shipping CSS from the report goes into the additions file, so the extension picks it up
           npm run -s refresh-additions
           node tools/build-extension.mjs
+      # The extension in real VS Code stable, before anything is committed, packaged or released: a failed check stops
+      # the run, so a broken build never ships. Push runs check too, since they release a new version.
+      - name: Check the extension in VS Code
+        run: |
+          [ -d node_modules ] || npm ci --no-audit --no-fund
+          command -v xvfb-run >/dev/null || sudo apt-get install -y -qq xvfb
+          xvfb-run -a node tools/check/vscode-live/run.mjs
+      - name: Commit the report, and the extension if its data changed
+        if: github.event_name != 'push'
+        run: |
           msg='Gap report: daily refresh'
           # CONTENTS.md carries the build date, so only data/ says whether the extension really changed
           if git diff --quiet -- extension/data; then git checkout -- extension

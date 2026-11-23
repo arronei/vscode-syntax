@@ -177,8 +177,16 @@ async function badges(dir) {
       return v === latest ? [v, 'brightgreen'] : [`${v} → ${latest}`, 'yellow'];
     });
   }
+  // the VS Code data the report compared against, against what VS Code stable installs now (tools/vscode-data.mjs)
+  await badge('vscode', 'VS Code data', async () => {
+    const { baseline } = await import('./vscode-data.mjs');
+    const used = report.vscode ?? {};
+    const same = ['vscode-css-languageservice', 'vscode-html-languageservice'].every((p) => used[p] === baseline[p]);
+    return same ? [used.version, 'brightgreen'] : [`${used.version ?? 'unknown'} → ${baseline.version}`, 'yellow'];
+  });
   const auth = process.env.GITHUB_TOKEN ? { authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {};
-  for (const s of SIBLINGS) {
+  // not the language services: their main doesn't feed the report, the releases VS Code stable installs do (above)
+  for (const s of SIBLINGS.filter((s) => !s.dir.endsWith('-languageservice'))) {
     await badge(`repo-${s.dir}`, s.upstream, async () => {
       const n = (await get(`https://api.github.com/repos/${s.upstream}/commits?since=${report.generatedAt}&per_page=100`, auth)).length;
       return n ? [`${n < 100 ? n : '100+'} new commits`, 'yellow'] : ['no new commits', 'brightgreen'];

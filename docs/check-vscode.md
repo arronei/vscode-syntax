@@ -13,9 +13,12 @@ npm run check-vscode
 - Downloads the latest stable VS Code into `.vscode-test/` in the folder you run it from (first run only).
 - Runs VS Code twice, with separate throwaway profiles, so your own VS Code and settings aren't touched:
   1. **without**: a dummy extension, so built-in data only
-  2. **with**: `extension/` loaded as a development extension
-- Each run opens `tools/check/vscode-live/ws/test.css` and `test.html` and runs the checks in `ws/checks.json` through VS Code's own completion, hover, diagnostics and syntax-token commands.
+  2. **with**: a temporary copy of `extension/` loaded as a development extension. A copy, because the `level` checks make the extension rewrite its data files.
+- Each run opens `tools/check/vscode-live/ws/test.css` and `test.html` (also copied) and runs the checks in `ws/checks.json` through VS Code's own completion, hover, diagnostics and syntax-token commands.
+- Also writes `all-properties.css`: every CSS property in VS Code's built-in data (`tools/vscode-data.mjs`) plus every one the extension adds. With the extension, real VS Code must flag none of them as unknown. If `tools/vscode-data.mjs` ever claims VS Code has a property it doesn't, the build drops it and this check fails.
 - Prints a before/after table. Exit code is 1 if any check fails with the extension.
+
+The daily workflow runs this after building the extension and before it commits, packages or releases anything, so a failed check means no release.
 
 On Linux without a display, run `xvfb-run -a node tools/check/vscode-live/run.mjs`.
 
@@ -35,7 +38,7 @@ Save the table as `reports/vscode-<version>-live-check.txt`, with a first line s
 | Field | Meaning |
 |---|---|
 | `label` | Text in the results table |
-| `file` | `test.css` or `test.html` |
+| `file` | `test.css`, `test.html` or the generated `all-properties.css` |
 | `line` | 0-based line number in that file |
 | `find` | Text on that line. The cursor goes to its start… |
 | `offset` | …plus this many characters |

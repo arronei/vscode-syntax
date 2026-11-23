@@ -8,12 +8,24 @@ import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+import { builtinCss } from '../../vscode-data.mjs';
+
 delete process.env.ELECTRON_RUN_AS_NODE; // inherited when launched from a VS Code extension host; makes Code.exe run as plain node
 const here = path.dirname(fileURLToPath(import.meta.url));
-const ws = path.join(here, 'ws');
+// Copies of the workspace and the extension: the level checks make the extension rewrite its data files, and in CI a
+// changed extension/data means a new release.
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'vscode-live-'));
+const ws = path.join(tmp, 'ws');
+const extension = path.join(tmp, 'extension');
+fs.cpSync(path.join(here, 'ws'), ws, { recursive: true });
+fs.cpSync(path.resolve(here, '../../../extension'), extension, { recursive: true });
+// every CSS property VS Code's data has plus every one the extension adds: with the extension, real VS Code must know
+// them all (the "every property is known" check). Catches built-in data that isn't what VS Code really has.
+const names = new Set([...builtinCss().properties, ...JSON.parse(fs.readFileSync(path.join(extension, 'data', 'css.css-data.json'), 'utf8')).properties].map((p) => p.name));
+fs.writeFileSync(path.join(ws, 'all-properties.css'), `a {\n${[...names].map((n) => `  ${n}: initial;`).join('\n')}\n}\n`);
 const vscodeExecutablePath = await downloadAndUnzipVSCode('stable');
 const results = {};
-for (const [name, ext] of [['without', path.join(here, 'no-extension')], ['with', path.resolve(here, '../../../extension')]]) {
+for (const [name, ext] of [['without', path.join(here, 'no-extension')], ['with', extension]]) {
   const out = path.join(os.tmpdir(), `vscode-live-${name}.json`);
   const userData = path.join(os.tmpdir(), `vsud-${name}`); // keep short: the IPC socket path has a length limit
   fs.rmSync(userData, { recursive: true, force: true });
