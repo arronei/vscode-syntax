@@ -1,6 +1,6 @@
 {
   "title": "HTML features in the specs that ship in browsers but are missing from VS Code",
-  "generatedFrom": "latest.json (2026-11-24), kept P1+P2+preview",
+  "generatedFrom": "latest.json (2026-11-25), kept P1+P2+preview",
   "vscode": {
     "version": "1.147.0",
     "vscode-css-languageservice": "7.0.0-next.2",
