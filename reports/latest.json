@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-26T06:36:18.537Z",
+  "generatedAt": "2026-11-27T06:36:23.401Z",
   "sources": {
     "mdn-data": "2.38.1",
-    "@mdn/browser-compat-data": "8.1.10",
+    "@mdn/browser-compat-data": "8.1.11",
     "@webref/css": "8.7.10",
     "@webref/elements": "2.9.2",
-    "web-features": "3.47.0"
+    "web-features": "3.48.0"
   },
   "vscode": {
     "version": "1.148.0",
@@ -42,20 +42,20 @@
       "proprietary": 0
     },
     "selectors": {
-      "total": 44,
+      "total": 45,
       "P1": 0,
       "P2": 11,
-      "P3": 33,
+      "P3": 34,
       "baseline": 0,
       "standard": 0,
       "draft": 42,
-      "proprietary": 2
+      "proprietary": 3
     },
     "htmlElements": {
       "total": 33,
       "P1": 0,
-      "P2": 5,
-      "P3": 28,
+      "P2": 6,
+      "P3": 27,
       "baseline": 0,
       "standard": 27,
       "draft": 6,
@@ -63,8 +63,8 @@
     },
     "htmlAttributes": {
       "total": 47,
-      "P1": 19,
-      "P2": 18,
+      "P1": 22,
+      "P2": 15,
       "P3": 10,
       "baseline": 18,
       "standard": 15,
@@ -738,7 +738,11 @@
       {
         "name": "corner",
         "level": "draft",
+        "bcdKey": "css.properties.corner",
         "shipsIn": [],
+        "previewIn": [
+          "chrome"
+        ],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner",
         "inSpec": true,
         "priority": "P3"
@@ -746,7 +750,11 @@
       {
         "name": "corner-block-end",
         "level": "draft",
+        "bcdKey": "css.properties.corner-block-end",
         "shipsIn": [],
+        "previewIn": [
+          "chrome"
+        ],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-block-end",
         "inSpec": true,
         "priority": "P3"
@@ -754,7 +762,11 @@
       {
         "name": "corner-block-start",
         "level": "draft",
+        "bcdKey": "css.properties.corner-block-start",
         "shipsIn": [],
+        "previewIn": [
+          "chrome"
+        ],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-block-start",
         "inSpec": true,
         "priority": "P3"
@@ -762,7 +774,11 @@
       {
         "name": "corner-bottom",
         "level": "draft",
+        "bcdKey": "css.properties.corner-bottom",
         "shipsIn": [],
+        "previewIn": [
+          "chrome"
+        ],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-bottom",
         "inSpec": true,
         "priority": "P3"
@@ -770,7 +786,11 @@
       {
         "name": "corner-bottom-left",
         "level": "draft",
+        "bcdKey": "css.properties.corner-bottom-left",
         "shipsIn": [],
+        "previewIn": [
+          "chrome"
+        ],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-bottom-left",
         "inSpec": true,
         "priority": "P3"
@@ -778,7 +798,11 @@
       {
         "name": "corner-bottom-right",
         "level": "draft",
+        "bcdKey": "css.properties.corner-bottom-right",
         "shipsIn": [],
+        "previewIn": [
+          "chrome"
+        ],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-bottom-right",
         "inSpec": true,
         "priority": "P3"
@@ -786,7 +810,11 @@
       {
         "name": "corner-end-end",
         "level": "draft",
+        "bcdKey": "css.properties.corner-end-end",
         "shipsIn": [],
+        "previewIn": [
+          "chrome"
+        ],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-end-end",
         "inSpec": true,
         "priority": "P3"
@@ -794,7 +822,11 @@
       {
         "name": "corner-end-start",
         "level": "draft",
+        "bcdKey": "css.properties.corner-end-start",
         "shipsIn": [],
+        "previewIn": [
+          "chrome"
+        ],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-end-start",
         "inSpec": true,
         "priority": "P3"
@@ -802,7 +834,11 @@
       {
         "name": "corner-inline-end",
         "level": "draft",
+        "bcdKey": "css.properties.corner-inline-end",
         "shipsIn": [],
+        "previewIn": [
+          "chrome"
+        ],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-inline-end",
         "inSpec": true,
         "priority": "P3"
@@ -810,7 +846,11 @@
       {
         "name": "corner-inline-start",
         "level": "draft",
+        "bcdKey": "css.properties.corner-inline-start",
         "shipsIn": [],
+        "previewIn": [
+          "chrome"
+        ],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-inline-start",
         "inSpec": true,
         "priority": "P3"
@@ -818,7 +858,11 @@
       {
         "name": "corner-left",
         "level": "draft",
+        "bcdKey": "css.properties.corner-left",
         "shipsIn": [],
+        "previewIn": [
+          "chrome"
+        ],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-left",
         "inSpec": true,
         "priority": "P3"
@@ -826,7 +870,11 @@
       {
         "name": "corner-right",
         "level": "draft",
+        "bcdKey": "css.properties.corner-right",
         "shipsIn": [],
+        "previewIn": [
+          "chrome"
+        ],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-right",
         "inSpec": true,
         "priority": "P3"
@@ -834,7 +882,11 @@
       {
         "name": "corner-start-end",
         "level": "draft",
+        "bcdKey": "css.properties.corner-start-end",
         "shipsIn": [],
+        "previewIn": [
+          "chrome"
+        ],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-start-end",
         "inSpec": true,
         "priority": "P3"
@@ -842,7 +894,11 @@
       {
         "name": "corner-start-start",
         "level": "draft",
+        "bcdKey": "css.properties.corner-start-start",
         "shipsIn": [],
+        "previewIn": [
+          "chrome"
+        ],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-start-start",
         "inSpec": true,
         "priority": "P3"
@@ -850,7 +906,11 @@
       {
         "name": "corner-top",
         "level": "draft",
+        "bcdKey": "css.properties.corner-top",
         "shipsIn": [],
+        "previewIn": [
+          "chrome"
+        ],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-top",
         "inSpec": true,
         "priority": "P3"
@@ -858,7 +918,11 @@
       {
         "name": "corner-top-left",
         "level": "draft",
+        "bcdKey": "css.properties.corner-top-left",
         "shipsIn": [],
+        "previewIn": [
+          "chrome"
+        ],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-top-left",
         "inSpec": true,
         "priority": "P3"
@@ -866,7 +930,11 @@
       {
         "name": "corner-top-right",
         "level": "draft",
+        "bcdKey": "css.properties.corner-top-right",
         "shipsIn": [],
+        "previewIn": [
+          "chrome"
+        ],
         "spec": "https://drafts.csswg.org/css-borders-4/#propdef-corner-top-right",
         "inSpec": true,
         "priority": "P3"
@@ -1090,6 +1158,7 @@
         ],
         "baseline": "Limited",
         "spec": "https://drafts.csswg.org/css-text-4/#propdef-hyphenate-limit-lines",
+        "mdn": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/hyphenate-limit-lines",
         "inSpec": true,
         "priority": "P2"
       },
@@ -1775,7 +1844,8 @@
         "level": "draft",
         "bcdKey": "css.properties.scroll-axis-lock",
         "shipsIn": [
-          "chrome"
+          "chrome",
+          "edge"
         ],
         "baseline": "Limited",
         "spec": "https://drafts.csswg.org/css-overflow-5/#propdef-scroll-axis-lock",
@@ -1955,7 +2025,11 @@
       {
         "name": "text-autospace-size",
         "level": "draft",
+        "bcdKey": "css.properties.text-autospace-size",
         "shipsIn": [],
+        "previewIn": [
+          "firefox"
+        ],
         "spec": "https://drafts.csswg.org/css-text-4/#propdef-text-autospace-size",
         "inSpec": true,
         "priority": "P3"
@@ -2839,6 +2913,7 @@
         "level": "draft",
         "bcdKey": "css.at-rules.apply",
         "shipsIn": [],
+        "baseline": "Limited",
         "spec": "https://drafts.csswg.org/css-mixins-1/#at-ruledef-apply",
         "priority": "P3"
       },
@@ -2896,6 +2971,7 @@
         "level": "draft",
         "bcdKey": "css.at-rules.contents",
         "shipsIn": [],
+        "baseline": "Limited",
         "spec": "https://drafts.csswg.org/css-mixins-1/#at-ruledef-contents",
         "priority": "P3"
       },
@@ -2977,6 +3053,7 @@
         "level": "draft",
         "bcdKey": "css.at-rules.mixin",
         "shipsIn": [],
+        "baseline": "Limited",
         "spec": "https://drafts.csswg.org/css-mixins-1/#at-ruledef-mixin",
         "priority": "P3"
       },
@@ -2999,6 +3076,7 @@
         "level": "draft",
         "bcdKey": "css.at-rules.private",
         "shipsIn": [],
+        "baseline": "Limited",
         "spec": "https://drafts.csswg.org/css-mixins-1/#private",
         "priority": "P3"
       },
@@ -3461,6 +3539,17 @@
         "priority": "P3"
       },
       {
+        "name": "::-moz-meter-bar",
+        "level": "proprietary",
+        "nonStandard": true,
+        "bcdKey": "css.selectors.-moz-meter-bar",
+        "shipsIn": [
+          "firefox"
+        ],
+        "mdn": "https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/::-moz-meter-bar",
+        "priority": "P3"
+      },
+      {
         "name": "::-webkit-meter-inner-element",
         "level": "proprietary",
         "nonStandard": true,
@@ -3643,9 +3732,12 @@
         "name": "<install>",
         "level": "draft",
         "bcdKey": "html.elements.install",
-        "shipsIn": [],
+        "shipsIn": [
+          "chrome",
+          "edge"
+        ],
         "spec": "https://wicg.github.io/install-element/#dfn-install",
-        "priority": "P3"
+        "priority": "P2"
       },
       {
         "name": "<isindex>",
@@ -4183,14 +4275,12 @@
         "shipsIn": [
           "chrome",
           "edge",
+          "firefox",
           "safari"
-        ],
-        "previewIn": [
-          "firefox"
         ],
         "baseline": "Limited",
         "spec": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-blocking",
-        "priority": "P2"
+        "priority": "P1"
       },
       {
         "name": "<link disabled>",
@@ -4256,14 +4346,12 @@
         "shipsIn": [
           "chrome",
           "edge",
+          "firefox",
           "safari"
-        ],
-        "previewIn": [
-          "firefox"
         ],
         "baseline": "Limited",
         "spec": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-blocking",
-        "priority": "P2"
+        "priority": "P1"
       },
       {
         "name": "<script fetchpriority>",
@@ -4315,14 +4403,12 @@
         "shipsIn": [
           "chrome",
           "edge",
+          "firefox",
           "safari"
-        ],
-        "previewIn": [
-          "firefox"
         ],
         "baseline": "Limited",
         "spec": "https://html.spec.whatwg.org/multipage/semantics.html#attr-style-blocking",
-        "priority": "P2"
+        "priority": "P1"
       },
       {
         "name": "<template for>",
@@ -4581,6 +4667,7 @@
         "level": "standard",
         "bcdKey": "html.global_attributes.headingoffset",
         "shipsIn": [
+          "firefox",
           "safari"
         ],
         "baseline": "Limited",
@@ -4593,6 +4680,7 @@
         "level": "standard",
         "bcdKey": "html.global_attributes.headingreset",
         "shipsIn": [
+          "firefox",
           "safari"
         ],
         "baseline": "Limited",

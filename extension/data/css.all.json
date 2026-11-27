@@ -1020,6 +1020,703 @@
       }
     },
     {
+      "name": "corner",
+      "level": "draft",
+      "syntax": "<'corner-shape'> || <'border-radius'>",
+      "values": [
+        {
+          "name": "round"
+        },
+        {
+          "name": "scoop"
+        },
+        {
+          "name": "bevel"
+        },
+        {
+          "name": "notch"
+        },
+        {
+          "name": "square"
+        },
+        {
+          "name": "squircle"
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "corner-block-end",
+      "level": "draft",
+      "syntax": "<'corner-top-shape'> || <'border-top-radius'>",
+      "values": [
+        {
+          "name": "round"
+        },
+        {
+          "name": "scoop"
+        },
+        {
+          "name": "bevel"
+        },
+        {
+          "name": "notch"
+        },
+        {
+          "name": "square"
+        },
+        {
+          "name": "squircle"
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-block-end"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "corner-block-start",
+      "level": "draft",
+      "syntax": "<'corner-top-shape'> || <'border-top-radius'>",
+      "values": [
+        {
+          "name": "round"
+        },
+        {
+          "name": "scoop"
+        },
+        {
+          "name": "bevel"
+        },
+        {
+          "name": "notch"
+        },
+        {
+          "name": "square"
+        },
+        {
+          "name": "squircle"
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-block-start"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "corner-bottom",
+      "level": "draft",
+      "syntax": "<'corner-top-shape'> || <'border-top-radius'>",
+      "values": [
+        {
+          "name": "round"
+        },
+        {
+          "name": "scoop"
+        },
+        {
+          "name": "bevel"
+        },
+        {
+          "name": "notch"
+        },
+        {
+          "name": "square"
+        },
+        {
+          "name": "squircle"
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-bottom"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "corner-bottom-left",
+      "level": "draft",
+      "syntax": "<'corner-top-left-shape'> || <'border-top-left-radius'>",
+      "values": [
+        {
+          "name": "round"
+        },
+        {
+          "name": "scoop"
+        },
+        {
+          "name": "bevel"
+        },
+        {
+          "name": "notch"
+        },
+        {
+          "name": "square"
+        },
+        {
+          "name": "squircle"
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-bottom-left"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "corner-bottom-right",
+      "level": "draft",
+      "syntax": "<'corner-top-left-shape'> || <'border-top-left-radius'>",
+      "values": [
+        {
+          "name": "round"
+        },
+        {
+          "name": "scoop"
+        },
+        {
+          "name": "bevel"
+        },
+        {
+          "name": "notch"
+        },
+        {
+          "name": "square"
+        },
+        {
+          "name": "squircle"
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-bottom-right"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "corner-end-end",
+      "level": "draft",
+      "syntax": "<'corner-top-left-shape'> || <'border-top-left-radius'>",
+      "values": [
+        {
+          "name": "round"
+        },
+        {
+          "name": "scoop"
+        },
+        {
+          "name": "bevel"
+        },
+        {
+          "name": "notch"
+        },
+        {
+          "name": "square"
+        },
+        {
+          "name": "squircle"
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-end-end"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "corner-end-start",
+      "level": "draft",
+      "syntax": "<'corner-top-left-shape'> || <'border-top-left-radius'>",
+      "values": [
+        {
+          "name": "round"
+        },
+        {
+          "name": "scoop"
+        },
+        {
+          "name": "bevel"
+        },
+        {
+          "name": "notch"
+        },
+        {
+          "name": "square"
+        },
+        {
+          "name": "squircle"
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-end-start"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "corner-inline-end",
+      "level": "draft",
+      "syntax": "<'corner-top-shape'> || <'border-top-radius'>",
+      "values": [
+        {
+          "name": "round"
+        },
+        {
+          "name": "scoop"
+        },
+        {
+          "name": "bevel"
+        },
+        {
+          "name": "notch"
+        },
+        {
+          "name": "square"
+        },
+        {
+          "name": "squircle"
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-inline-end"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "corner-inline-start",
+      "level": "draft",
+      "syntax": "<'corner-top-shape'> || <'border-top-radius'>",
+      "values": [
+        {
+          "name": "round"
+        },
+        {
+          "name": "scoop"
+        },
+        {
+          "name": "bevel"
+        },
+        {
+          "name": "notch"
+        },
+        {
+          "name": "square"
+        },
+        {
+          "name": "squircle"
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-inline-start"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "corner-left",
+      "level": "draft",
+      "syntax": "<'corner-top-shape'> || <'border-top-radius'>",
+      "values": [
+        {
+          "name": "round"
+        },
+        {
+          "name": "scoop"
+        },
+        {
+          "name": "bevel"
+        },
+        {
+          "name": "notch"
+        },
+        {
+          "name": "square"
+        },
+        {
+          "name": "squircle"
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-left"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "corner-right",
+      "level": "draft",
+      "syntax": "<'corner-top-shape'> || <'border-top-radius'>",
+      "values": [
+        {
+          "name": "round"
+        },
+        {
+          "name": "scoop"
+        },
+        {
+          "name": "bevel"
+        },
+        {
+          "name": "notch"
+        },
+        {
+          "name": "square"
+        },
+        {
+          "name": "squircle"
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-right"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "corner-start-end",
+      "level": "draft",
+      "syntax": "<'corner-top-left-shape'> || <'border-top-left-radius'>",
+      "values": [
+        {
+          "name": "round"
+        },
+        {
+          "name": "scoop"
+        },
+        {
+          "name": "bevel"
+        },
+        {
+          "name": "notch"
+        },
+        {
+          "name": "square"
+        },
+        {
+          "name": "squircle"
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-start-end"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "corner-start-start",
+      "level": "draft",
+      "syntax": "<'corner-top-left-shape'> || <'border-top-left-radius'>",
+      "values": [
+        {
+          "name": "round"
+        },
+        {
+          "name": "scoop"
+        },
+        {
+          "name": "bevel"
+        },
+        {
+          "name": "notch"
+        },
+        {
+          "name": "square"
+        },
+        {
+          "name": "squircle"
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-start-start"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "corner-top",
+      "level": "draft",
+      "syntax": "<'corner-top-shape'> || <'border-top-radius'>",
+      "values": [
+        {
+          "name": "round"
+        },
+        {
+          "name": "scoop"
+        },
+        {
+          "name": "bevel"
+        },
+        {
+          "name": "notch"
+        },
+        {
+          "name": "square"
+        },
+        {
+          "name": "squircle"
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-top"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "corner-top-left",
+      "level": "draft",
+      "syntax": "<'corner-top-left-shape'> || <'border-top-left-radius'>",
+      "values": [
+        {
+          "name": "round"
+        },
+        {
+          "name": "scoop"
+        },
+        {
+          "name": "bevel"
+        },
+        {
+          "name": "notch"
+        },
+        {
+          "name": "square"
+        },
+        {
+          "name": "squircle"
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-top-left"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
+      "name": "corner-top-right",
+      "level": "draft",
+      "syntax": "<'corner-top-left-shape'> || <'border-top-left-radius'>",
+      "values": [
+        {
+          "name": "round"
+        },
+        {
+          "name": "scoop"
+        },
+        {
+          "name": "bevel"
+        },
+        {
+          "name": "notch"
+        },
+        {
+          "name": "square"
+        },
+        {
+          "name": "squircle"
+        }
+      ],
+      "restrictions": [
+        "length",
+        "percentage",
+        "enum"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-borders-4/#propdef-corner-top-right"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Borders and Box Decorations Module Level 4*.\n\nInitial value: `0`. Applies to: all elements (but see prose). Inherited: no. Animation type: see individual properties."
+      }
+    },
+    {
       "name": "flex-line-count",
       "level": "draft",
       "syntax": "<integer [1,∞]>",
@@ -1172,6 +1869,10 @@
         "status": "false"
       },
       "references": [
+        {
+          "name": "MDN Reference",
+          "url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/hyphenate-limit-lines"
+        },
         {
           "name": "Specification",
           "url": "https://drafts.csswg.org/css-text-4/#propdef-hyphenate-limit-lines"
@@ -2586,7 +3287,9 @@
         {
           "name": "auto",
           "browsers": [
+            "E153",
             "C153",
+            "CA153",
             "O137"
           ],
           "baseline": {
@@ -2596,7 +3299,9 @@
         {
           "name": "none",
           "browsers": [
+            "E153",
             "C153",
+            "CA153",
             "O137"
           ],
           "baseline": {
@@ -2609,7 +3314,9 @@
       ],
       "status": "experimental",
       "browsers": [
+        "E153",
         "C153",
+        "CA153",
         "O137"
       ],
       "baseline": {
@@ -2624,6 +3331,26 @@
       "description": {
         "kind": "markdown",
         "value": "Defined in *CSS Overflow Module Level 5*.\n\nInitial value: `auto`. Applies to: scroll container elements. Inherited: no. Animation type: discrete."
+      }
+    },
+    {
+      "name": "text-autospace-size",
+      "level": "draft",
+      "syntax": "<number [0,∞]>",
+      "values": [],
+      "restrictions": [
+        "number"
+      ],
+      "status": "experimental",
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://drafts.csswg.org/css-text-4/#propdef-text-autospace-size"
+        }
+      ],
+      "description": {
+        "kind": "markdown",
+        "value": "Defined in *CSS Text Module Level 4*.\n\nInitial value: `0.125`. Applies to: text. Inherited: yes. Animation type: by computed value type."
       }
     },
     {

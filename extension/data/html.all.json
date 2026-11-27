@@ -353,6 +353,8 @@
           },
           "browsers": [
             "E105",
+            "FF162",
+            "FFA162",
             "S18.2",
             "SM18.2",
             "C105",
@@ -417,6 +419,8 @@
           },
           "browsers": [
             "E105",
+            "FF162",
+            "FFA162",
             "S18.2",
             "SM18.2",
             "C105",
@@ -976,6 +980,8 @@
           },
           "browsers": [
             "E105",
+            "FF162",
+            "FFA162",
             "S18.2",
             "SM18.2",
             "C105",
@@ -1367,6 +1373,55 @@
           "url": "https://immersive-web.github.io/model-element/#elementdef-model"
         }
       ]
+    },
+    {
+      "name": "install",
+      "attributes": [
+        {
+          "name": "manifest",
+          "description": {
+            "kind": "markdown",
+            "value": "The `manifest` content attribute gives the URL of the target application manifest."
+          },
+          "browsers": [
+            "E158",
+            "C158",
+            "CA158",
+            "O141"
+          ],
+          "references": [
+            {
+              "name": "Specification",
+              "url": "https://wicg.github.io/install-element/#dfn-manifest-0"
+            }
+          ]
+        },
+        {
+          "name": "manifestid",
+          "level": "proprietary",
+          "description": {
+            "kind": "markdown",
+            "value": "The `manifestid` content attribute gives an optional manifest ID assertion. Relative values are resolved against the element's node document's document base URL."
+          }
+        }
+      ],
+      "level": "draft",
+      "description": {
+        "kind": "markdown",
+        "value": "The HTML `<install>` element represents a user-agent-rendered control that lets the user initiate a Web Install request."
+      },
+      "browsers": [
+        "E158",
+        "C158",
+        "CA158",
+        "O141"
+      ],
+      "references": [
+        {
+          "name": "Specification",
+          "url": "https://wicg.github.io/install-element/#dfn-install"
+        }
+      ]
     }
   ],
   "globalAttributes": [
@@ -1428,6 +1483,8 @@
         "value": "Offsets heading levels for descendants. Value: valid non-negative integer between 0 and 8. The `headingoffset` content attribute allows authors to offset heading levels for descendants."
       },
       "browsers": [
+        "FF162",
+        "FFA162",
         "S27.3",
         "SM27.3"
       ],
@@ -1454,6 +1511,8 @@
         "value": "Prevents a heading offset computation from traversing beyond the element with the attribute. It allows authors to prevent a heading offset computation from traversing beyond the element with the attribute."
       },
       "browsers": [
+        "FF162",
+        "FFA162",
         "S27.3",
         "SM27.3"
       ],

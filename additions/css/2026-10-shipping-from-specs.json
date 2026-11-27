@@ -1,12 +1,12 @@
 {
   "title": "CSS features in the specs that ship in browsers but are missing from VS Code",
-  "generatedFrom": "latest.json (2026-11-26), kept P1+P2+preview",
+  "generatedFrom": "latest.json (2026-11-27), kept P1+P2+preview",
   "sources": {
     "mdn-data": "2.38.1",
-    "@mdn/browser-compat-data": "8.1.10",
+    "@mdn/browser-compat-data": "8.1.11",
     "@webref/css": "8.7.10",
     "@webref/elements": "2.9.2",
-    "web-features": "3.47.0"
+    "web-features": "3.48.0"
   },
   "vscode": {
     "version": "1.148.0",
@@ -79,6 +79,57 @@
     },
     {
       "name": "continue"
+    },
+    {
+      "name": "corner"
+    },
+    {
+      "name": "corner-block-end"
+    },
+    {
+      "name": "corner-block-start"
+    },
+    {
+      "name": "corner-bottom"
+    },
+    {
+      "name": "corner-bottom-left"
+    },
+    {
+      "name": "corner-bottom-right"
+    },
+    {
+      "name": "corner-end-end"
+    },
+    {
+      "name": "corner-end-start"
+    },
+    {
+      "name": "corner-inline-end"
+    },
+    {
+      "name": "corner-inline-start"
+    },
+    {
+      "name": "corner-left"
+    },
+    {
+      "name": "corner-right"
+    },
+    {
+      "name": "corner-start-end"
+    },
+    {
+      "name": "corner-start-start"
+    },
+    {
+      "name": "corner-top"
+    },
+    {
+      "name": "corner-top-left"
+    },
+    {
+      "name": "corner-top-right"
     },
     {
       "name": "flex-line-count"
@@ -181,6 +232,9 @@
     },
     {
       "name": "scroll-axis-lock"
+    },
+    {
+      "name": "text-autospace-size"
     },
     {
       "name": "text-decoration-skip-spaces"

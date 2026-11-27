@@ -1,12 +1,30 @@
 {
   "title": "HTML features in the specs that ship in browsers but are missing from VS Code",
-  "generatedFrom": "latest.json (2026-11-26), kept P1+P2+preview",
+  "generatedFrom": "latest.json (2026-11-27), kept P1+P2+preview",
   "vscode": {
     "version": "1.148.0",
     "vscode-css-languageservice": "7.0.0-next.2",
     "vscode-html-languageservice": "6.0.0-next.2"
   },
-  "elements": [],
+  "elements": [
+    {
+      "name": "install",
+      "bcd": "html.elements.install",
+      "description": "The HTML `<install>` element represents a user-agent-rendered control that lets the user initiate a Web Install request.",
+      "attributes": [
+        {
+          "name": "manifest",
+          "bcd": "html.elements.install.manifest",
+          "description": "The `manifest` content attribute gives the URL of the target application manifest."
+        },
+        {
+          "name": "manifestid",
+          "bcd": "html.elements.install.manifestid",
+          "description": "The `manifestid` content attribute gives an optional manifest ID assertion. Relative values are resolved against the element's node document's document base URL."
+        }
+      ]
+    }
+  ],
   "attributes": [],
   "globalAttributes": [
     {
