@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-27T06:36:23.401Z",
+  "generatedAt": "2026-11-28T06:33:21.345Z",
   "sources": {
     "mdn-data": "2.38.1",
     "@mdn/browser-compat-data": "8.1.11",
-    "@webref/css": "8.7.10",
+    "@webref/css": "8.8.0",
     "@webref/elements": "2.9.2",
     "web-features": "3.48.0"
   },
@@ -22,33 +22,33 @@
   },
   "summary": {
     "cssProperties": {
-      "total": 276,
+      "total": 295,
       "P1": 1,
       "P2": 57,
-      "P3": 218,
+      "P3": 237,
       "baseline": 1,
       "standard": 20,
-      "draft": 200,
+      "draft": 219,
       "proprietary": 55
     },
     "atRules": {
-      "total": 36,
+      "total": 37,
       "P1": 0,
       "P2": 1,
-      "P3": 35,
+      "P3": 36,
       "baseline": 0,
       "standard": 0,
-      "draft": 36,
+      "draft": 37,
       "proprietary": 0
     },
     "selectors": {
-      "total": 45,
+      "total": 48,
       "P1": 0,
       "P2": 11,
-      "P3": 34,
+      "P3": 37,
       "baseline": 0,
       "standard": 0,
-      "draft": 42,
+      "draft": 45,
       "proprietary": 3
     },
     "htmlElements": {
@@ -964,6 +964,38 @@
         "priority": "P3"
       },
       {
+        "name": "environment",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-spatial-1/#propdef-environment",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "environment-intensity",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-spatial-1/#propdef-environment-intensity",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "environment-map",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-spatial-1/#propdef-environment-map",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "environment-rotate",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-spatial-1/#propdef-environment-rotate",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
         "name": "event-trigger",
         "level": "draft",
         "shipsIn": [],
@@ -1142,6 +1174,14 @@
         "priority": "P2"
       },
       {
+        "name": "front-limit",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-spatial-1/#propdef-front-limit",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
         "name": "hyphenate-limit-last",
         "level": "draft",
         "shipsIn": [],
@@ -1199,6 +1239,54 @@
         "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-forms-1/#propdef-input-security",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "inset-back",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-spatial-1/#propdef-inset-back",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "inset-bottom",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-spatial-1/#propdef-inset-bottom",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "inset-front",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-spatial-1/#propdef-inset-front",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "inset-left",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-spatial-1/#propdef-inset-left",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "inset-right",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-spatial-1/#propdef-inset-right",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "inset-top",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-spatial-1/#propdef-inset-top",
         "inSpec": true,
         "priority": "P3"
       },
@@ -1378,6 +1466,14 @@
         "priority": "P3"
       },
       {
+        "name": "overscroll-container-type",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-overscroll-2/#propdef-overscroll-container-type",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
         "name": "path-length",
         "level": "standard",
         "bcdKey": "css.properties.path-length",
@@ -1432,6 +1528,38 @@
         "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/pointer-animations-1/#propdef-pointer-timeline-name",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "portal-action",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-spatial-1/#propdef-portal-action",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "portal-stage",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-spatial-1/#propdef-portal-stage",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "portal-transform",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-spatial-1/#propdef-portal-transform",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "position-context",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-spatial-1/#propdef-position-context",
         "inSpec": true,
         "priority": "P3"
       },
@@ -1873,6 +2001,14 @@
         "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-forms-1/#propdef-slider-orientation",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "spatial",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-spatial-1/#propdef-spatial",
         "inSpec": true,
         "priority": "P3"
       },
@@ -2359,6 +2495,22 @@
         "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-exclusions-1/#propdef-wrap-through",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "z-align-items",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-spatial-1/#propdef-z-align-items",
+        "inSpec": true,
+        "priority": "P3"
+      },
+      {
+        "name": "z-align-self",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-spatial-1/#propdef-z-align-self",
         "inSpec": true,
         "priority": "P3"
       },
@@ -3000,6 +3152,13 @@
         "priority": "P3"
       },
       {
+        "name": "@environment-map",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-spatial-1/#at-ruledef-environment-map",
+        "priority": "P3"
+      },
+      {
         "name": "@function",
         "level": "draft",
         "bcdKey": "css.at-rules.function",
@@ -3232,6 +3391,13 @@
         "priority": "P3"
       },
       {
+        "name": "::overscroll-backdrop",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-overscroll-2/#selectordef-overscroll-backdrop",
+        "priority": "P3"
+      },
+      {
         "name": "::reveal-icon",
         "level": "draft",
         "shipsIn": [],
@@ -3450,6 +3616,20 @@
         "level": "draft",
         "shipsIn": [],
         "spec": "https://drafts.csswg.org/css-forms-1/#selectordef-optimal-value",
+        "priority": "P3"
+      },
+      {
+        "name": ":overscroll-closed",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-overscroll-2/#selectordef-overscroll-closed",
+        "priority": "P3"
+      },
+      {
+        "name": ":overscroll-open",
+        "level": "draft",
+        "shipsIn": [],
+        "spec": "https://drafts.csswg.org/css-overscroll-2/#selectordef-overscroll-open",
         "priority": "P3"
       },
       {
